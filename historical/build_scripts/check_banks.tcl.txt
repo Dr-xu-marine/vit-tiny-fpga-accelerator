@@ -1,0 +1,159 @@
+
+proc register_signature {c} {
+ set result {}
+ foreach attr {INIT IS_C_INVERTED IS_D_INVERTED IS_R_INVERTED} {
+  set x [get_property $attr $c]
+  if {$x eq "" && $attr ne "INIT"} {set x 1'b0}
+  lappend result $attr $x
+ }
+ foreach pin {C D CE R} {
+  set drivers {}
+  foreach p [get_pins -quiet -leaf -of_objects [get_nets -segments -of_objects [get_pins -of_objects $c -filter "REF_PIN_NAME == $pin"]] -filter {DIRECTION == OUT}] {
+   set ref [get_property REF_NAME [get_cells -of_objects $p]]
+   lappend drivers [expr {$ref in {GND VCC} ? $ref : $p}]
+  }
+  lappend result $pin [lsort -unique $drivers]
+ }
+ return $result
+}
+proc prepare_reset_aliases {out} {
+ set ::reset_aliases [dict create]
+ set root [get_cells {w8_platform_i/reset_core/U0/ACTIVE_LOW_PR_OUT_DFF[0].FDRE_PER_N}]
+ set canonical [register_signature $root]
+ set f [open [file join $out reset_alias_contract.tsv] w]
+ foreach c [get_cells -hier -quiet -filter {NAME =~ w8_platform_i/reset_core/U0/*FDRE_PER_N* && REF_NAME == FDRE}] {
+  if {[register_signature $c] ne $canonical} {error "Reset age/connection mismatch $c"}
+  foreach pin {C Q} {dict set ::reset_aliases "$c/$pin" "$root/$pin"}
+  puts $f "$c\t[get_property LOC $c]\t$canonical"
+ }
+ close $f
+}
+proc canonical_starts {items} {
+ set out {}
+ foreach p $items {if {[dict exists $::reset_aliases $p]} {lappend out [dict get $::reset_aliases $p]} else {lappend out $p}}
+ return [lsort -unique $out]
+}
+
+
+# Rebuilt hierarchy has generated RAM pins, not original RTL prob_addr ports.
+# Prove control fanin directly from physical RAM address/en/we/reset pins.
+proc probability_selector_context {cell} {
+ if {![regexp {^(.*?/probability\[[01]\])\.bytes_reg_mux_sel_[ab]_pos_[0-9]+.*$} $cell -> stem]} {return {}}
+ set rams {}
+ foreach r [get_cells -hier -quiet -filter {NAME =~ */buffers/probability* && (REF_NAME == RAMB36E2 || REF_NAME == RAMB18E2)}] {
+  if {[string first "${stem}.bytes_reg" $r]==0} {lappend rams $r}
+ }
+ if {![llength $rams]} {return {}}
+ set address [get_pins -quiet -of_objects $rams -filter {DIRECTION == IN && (REF_PIN_NAME =~ ADDR* || REF_PIN_NAME =~ EN*)}]
+ set ctrl [get_pins -quiet -of_objects $rams -filter {DIRECTION == IN && (REF_PIN_NAME =~ ADDR* || REF_PIN_NAME =~ EN* || REF_PIN_NAME =~ WE* || REF_PIN_NAME =~ RST* || REF_PIN_NAME =~ REGCE*)}]
+ set allowed [canonical_starts [all_fanin -flat -startpoints_only -to $ctrl]]
+ set addr [canonical_starts [all_fanin -flat -startpoints_only -to $address]]
+ return [dict create rams $rams allowed $allowed address $addr]
+}
+proc proved_probability_read_selector {cell {override_starts __ACTUAL__}} {
+ if {[get_property REF_NAME $cell] ne "FDRE"} {return 0}
+ set ctx [probability_selector_context $cell]
+ if {![dict size $ctx]} {return 0}
+ set allowed [dict get $ctx allowed];set addr [dict get $ctx address]
+ if {$override_starts eq "__ACTUAL__"} {set starts [all_fanin -flat -startpoints_only -to [get_pins -of_objects $cell -filter {REF_PIN_NAME == D}]]} else {set starts $override_starts}
+ set starts [canonical_starts $starts];set has_address 0
+ foreach x $starts {
+  if {$x in $addr} {set has_address 1}
+  if {$x in $allowed || [string first "${cell}/" $x]==0} {continue}
+  return 0
+ }
+ if {!$has_address} {return 0}
+ set loads [get_pins -quiet -leaf -of_objects [get_nets -segments -of_objects [get_pins -of_objects $cell -filter {REF_PIN_NAME == Q}]] -filter {DIRECTION == IN}]
+ if {![llength $loads]} {return 0}
+ foreach x $loads {
+  if {[get_property REF_NAME [get_cells -of_objects $x]] ni {LUT1 LUT2 LUT3 LUT4 LUT5 LUT6 LUT6_2 MUXF7 MUXF8 MUXF9}} {return 0}
+ }
+ return 1
+}
+
+# Exempt ONLY proved GELU read-bank address controls; data-storage FFs fail.
+proc proved_gelu_read_selector {cell {override_starts __ACTUAL__}} {
+ if {![regexp {/buffers/gelu/.*bytes_reg_mux_sel_b_pos_[01](_replica.*)?$} $cell]} {return 0}
+ if {[get_property REF_NAME $cell] ne "FDRE"} {return 0}
+ if {$override_starts eq "__ACTUAL__"} {
+  set starts [all_fanin -flat -startpoints_only -to [get_pins -of_objects $cell -filter {REF_PIN_NAME == D}]]
+ } else {set starts $override_starts}
+ set addr 0
+ foreach s $starts {
+  if {[regexp {/tile/aux/channel_reg\[([89])\](_replica.*)?/[CQ]$} $s]} {set addr 1;continue}
+  if {[regexp {/tile/aux/state_reg[^/]*/[CQ]$} $s]} {continue}
+  if {[regexp {/idle_reset_local_reg\[4\](_replica.*)?/[CQ]$} $s]} {continue}
+  if {[regexp {/reset_core/U0/ACTIVE_LOW_PR_OUT_DFF\[0\]\.FDRE_PER_N[^/]*/[CQ]$} $s]} {continue}
+  return 0
+ }
+ if {!$addr} {return 0}
+ set nets [get_nets -segments -of_objects [get_pins -of_objects $cell -filter {REF_PIN_NAME == Q}]]
+ set loads [get_pins -quiet -leaf -of_objects $nets -filter {DIRECTION == IN}]
+ if {![llength $loads]} {return 0}
+ foreach pin $loads {
+  set c [get_cells -of_objects $pin];set ref [get_property REF_NAME $c]
+  if {$ref ni {LUT1 LUT2 LUT3 LUT4 LUT5 LUT6 LUT6_2 MUXF7 MUXF8 MUXF9}} {return 0}
+ }
+ return 1
+}
+# New receiver FFs prove this is the 505-source candidate, not its parent/cache.
+proc check_joint_banks {out} {
+ prepare_reset_aliases $out
+ set f [open [file join $out bank_receiver_registers.tsv] w]
+ puts $f "family\tcell\tLOC\tQ_loads"
+ foreach {name pattern expected} {
+  Weight */buffers/learned/banks*.local_write.we_q_reg 16
+  PACK */buffers/dynamic_weights/banks*.local_write.we_q_reg 16
+  RQ */buffers/rq/banks*.we_q_reg 90
+  Params */buffers/params/banks*.we_q_reg 4
+  GELU */buffers/gelu/banks*.we_q_reg 1
+  Exp */buffers/exponential/banks*.we_q_reg 4
+ } {
+  set cells [get_cells -hier -quiet -filter "IS_SEQUENTIAL == 1 && NAME =~ $pattern"]
+  if {[llength $cells]!=$expected} {close $f;error "NEW_RECEIVER_MISSING_OR_MERGED $name expected$expected actual[llength $cells]"}
+  foreach c $cells {
+   set n [get_nets -segments -of_objects [get_pins -of_objects $c -filter {REF_PIN_NAME == Q}]]
+   puts $f "$name\t$c\t[get_property LOC $c]\t[llength [get_pins -quiet -leaf -of_objects $n -filter {DIRECTION == IN}]]"
+  }
+ }
+ close $f
+ set f [open [file join $out memory_classes.tsv] w]
+ puts $f "family\tRAMB36\tRAMB18\tLUTRAM\tnonRAM_array_registers"
+ foreach {name pattern} {
+  A_CACHE */gemm/A_BANK*
+  ACT */buffers/act_storage/banks*
+  Weight */buffers/learned/*
+  PACK */buffers/dynamic_weights/*
+  RQ */buffers/rq/*
+  Params */buffers/params/*
+  GELU */buffers/gelu/*
+  Exp */buffers/exponential/*
+  Score */buffers/score_banks*
+  Probability */buffers/probability*
+ } {
+  set n36 [llength [get_cells -hier -quiet -filter "NAME =~ $pattern && REF_NAME == RAMB36E2"]]
+  set n18 [llength [get_cells -hier -quiet -filter "NAME =~ $pattern && REF_NAME == RAMB18E2"]]
+  set lut [get_cells -hier -quiet -filter "NAME =~ $pattern && (REF_NAME =~ RAMD* || REF_NAME =~ RAMS* || REF_NAME =~ RAM32* || REF_NAME =~ RAM64*)"]
+  # Word/data/forward/read-select FFs are controls, not array storage. The
+  # array-name FF check deliberately excludes these without waiving LUTRAM.
+  set suspects [get_cells -hier -quiet -filter "NAME =~ $pattern && NAME =~ *bytes_reg* && IS_SEQUENTIAL == 1 && REF_NAME !~ RAMB*"]
+  set storage {};set read_controls {}
+  foreach c $suspects {
+   if {($name eq "GELU" && [proved_gelu_read_selector $c]) || ($name eq "Probability" && [proved_probability_read_selector $c])} {lappend read_controls $c} else {lappend storage $c}
+  }
+  set rf [open [file join $out read_select_controls.tsv] a]
+  foreach c $read_controls {puts $rf "$name\t$c\tADDRESS_FANIN_AND_READ_MUX_FANOUT_VERIFIED"}
+  close $rf
+  set payload_bits [expr {$n36*32768+$n18*16384}]
+  set minimum [dict get [dict create ACT 8388608 Weight 8388608 PACK 2097152 RQ 46080 Params 2097152 GELU 2097152 Exp 1048576 Score 2097152 Probability 1048576 A_CACHE 1] $name]
+  if {$payload_bits<$minimum} {close $f;error "INCOMPLETE_BRAM_CAPACITY $name $payload_bits<$minimum"}
+  puts $f "$name\t$n36\t$n18\t[llength $lut]\t[llength $storage]"
+  if {!($n36+$n18) || [llength $lut] || [llength $storage]} {close $f;error "BRAM_ONLY_CLASS_FAILURE $name"}
+ }
+ close $f
+ # Bias is the unchanged historical distributed-memory class, not a waiver
+ # for the above BRAM-only classes. Keep its raw mapping visible.
+ set f [open [file join $out bias_cells.tsv] w]
+ foreach c [get_cells -hier -quiet -filter {NAME =~ */buffers/biases/* && (REF_NAME =~ RAM* || IS_SEQUENTIAL == 1)}] {puts $f "$c\t[get_property REF_NAME $c]"}
+ close $f
+}

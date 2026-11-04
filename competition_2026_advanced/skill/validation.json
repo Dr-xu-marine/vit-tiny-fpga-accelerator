@@ -1,0 +1,21 @@
+{
+  "validator": "C:\\Users\\Lenovo\\.codex\\skills\\.system\\skill-creator\\scripts\\quick_validate.py",
+  "dependency": "existing read-only D:/python1 PyYAML; no installs or environment edits",
+  "results": [
+    {
+      "name": "fpga-golden-check",
+      "pass": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "name": "vivado-evidence-audit",
+      "pass": true,
+      "message": "Skill is valid!"
+    },
+    {
+      "name": "fpga-board-diagnosis",
+      "pass": true,
+      "message": "Skill is valid!"
+    }
+  ]
+}

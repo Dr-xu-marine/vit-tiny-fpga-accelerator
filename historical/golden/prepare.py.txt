@@ -1,0 +1,136 @@
+"""Small PTQ experiment + export. All floats are OFFLINE calibration only."""
+import sys
+sys.dont_write_bytecode=True
+sys.stdout.reconfigure(encoding='utf-8')
+from pathlib import Path
+sys.path.insert(0,str(Path(__file__).resolve().parent))
+import csv,hashlib,io,json,math,time,zipfile
+from fractions import Fraction
+import numpy as np,torch,timm
+from safetensors.torch import load as tensorload
+from PIL import Image
+from timm.data import create_transform,resolve_model_data_config
+import golden as G
+ROOT=Path(__file__).resolve().parents[1]
+ARCHIVE=Path('D:/电脑管家迁移文件/xwechat_files/wxid_81i5gx3dwpmi22_19b9/msg/file/2026-10/ViT_Tiny_Quantization_Candidate_20261027.zip')
+TAR=Path('D:/xu/ILSVRC2012_img_val.tar')
+def sha(p):
+ with Path(p).open('rb')as f:return hashlib.file_digest(f,'sha256').hexdigest()
+def save(p,x):Path(p).write_text(json.dumps(x,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+def enc(ratios):
+ ms=[];rs=[]
+ for x in np.asarray(ratios).reshape(-1):
+  f=Fraction.from_float(float(x))
+  if f<=0:raise ValueError('nonpositive ratio')
+  for r in range(62,-1,-1):
+   m=round(f*(1<<r))
+   if 0<m<1<<31:ms.append(m);rs.append(r);break
+  else:raise OverflowError('U31 scale')
+ return np.asarray(ms,dtype=np.uint32),np.asarray(rs,dtype=np.uint8)
+def qparams(lo,hi):
+ lo=min(float(lo),0.);hi=max(float(hi),0.);sx=max((hi-lo)/255,1e-9);zx=max(-128,min(127,round(-128-lo/sx)));return sx,zx
+def sym(v):return np.maximum(np.asarray(v,dtype=np.float64)/127,1e-9)
+def main():
+ start=time.perf_counter();out=ROOT/'data';out.mkdir(exist_ok=True)
+ if(ROOT/'evidence/PREPARE_STARTED.json').exists():raise FileExistsError('Preserve completed/failed preparation')
+ torch.set_num_threads(2);torch.set_num_interop_threads(1);torch.set_float32_matmul_precision('highest')
+ assert sha(ARCHIVE)=='a073bbca44aaf0ab4049f4290a82c87b5e0385933442b0201012c62e5581a095'
+ with zipfile.ZipFile(ARCHIVE)as z:
+  base='vit_quantization/';raw=z.read(base+'reference/model.safetensors');cfg=json.loads(z.read(base+'exports/fc2b7_a16/config.json'));splits=json.loads(z.read(base+'data/splits.json'));recs={r['id']:r for r in json.loads(z.read(base+'data/index.json'))}
+ assert hashlib.sha256(raw).hexdigest()=='fecf81b492bd13ee7a5297cb74d1d417aac8bf7e1b7d96aed89c4691984587ed'
+ model=timm.create_model('vit_tiny_patch16_224.augreg_in21k_ft_in1k',pretrained=False).eval();model.load_state_dict(tensorload(raw),strict=True);transform=create_transform(**resolve_model_data_config(model),is_training=False)
+ # Fake-quant source is not imported: this starts with same frozen FP32 checkpoint.
+ cal=splits['calibration'][:32];dev=splits['calibration'][32:40];val=splits['holdout'][:8];assert not set(val)&set(cal+dev)
+ receipts=[];images={}
+ for id in cal+dev+val:
+  r=recs[id]
+  with TAR.open('rb')as f:f.seek(r['offset']);jpeg=f.read(r['size'])
+  with Image.open(io.BytesIO(jpeg))as im:x=transform(im.convert('RGB')).unsqueeze(0)
+  images[id]=x;receipts.append(dict(**r,sha256=hashlib.sha256(jpeg).hexdigest()))
+ save(ROOT/'evidence/PREPARE_STARTED.json',dict(status='RUNNING',archive_sha=sha(ARCHIVE),model_sha=hashlib.sha256(raw).hexdigest(),calibration=cal,selection_dev=dev,independent_smoke=val,preprocessing=str(transform),sample_receipts=receipts,profiles=[dict(name='plain',alpha=None),dict(name='balanced',alpha=0.5),dict(name='actheavy',alpha=0.75)],selection='development top1 agreement then normalized logit MSE; independent8 never used for selection',formal_accuracy='NOT_RUN'))
+ stats={};caps={};handles=[]
+ def observe(name):
+  def hook(layer,args,y):
+   x=args[0]
+   if isinstance(layer,torch.nn.Conv2d):x=torch.nn.functional.unfold(x,16,stride=16).transpose(1,2);y=y.flatten(2).transpose(1,2)
+   xx=x.detach().reshape(-1,x.shape[-1]).double().numpy();yy=y.detach().reshape(-1,y.shape[-1]).double().numpy()
+   v=stats.setdefault(name,dict(imin=xx.min(0),imax=xx.max(0),omax=np.abs(yy).max(0)))
+   v['imin']=np.minimum(v['imin'],xx.min(0));v['imax']=np.maximum(v['imax'],xx.max(0));v['omax']=np.maximum(v['omax'],np.abs(yy).max(0))
+  return hook
+ for name,layer in model.named_modules():
+  if isinstance(layer,(torch.nn.Linear,torch.nn.Conv2d)):handles.append(layer.register_forward_hook(observe(name)))
+  if isinstance(layer,torch.nn.LayerNorm):
+   def ln_hook(layer,args,y,n=name):
+    x=args[0].detach().reshape(-1,192).double().numpy();v=stats.setdefault(n,dict(inmax=np.abs(x).max(0)));v['inmax']=np.maximum(v['inmax'],np.abs(x).max(0))
+   handles.append(layer.register_forward_hook(ln_hook))
+ for id in cal:
+  with torch.inference_mode():model(images[id])
+ for h in handles:h.remove()
+ # Cache only host patch inputs and FP32 logits for finite test images.
+ patches={};floating={}
+ for id in dev+val:
+  with torch.inference_mode():floating[id]=model(images[id]).numpy()[0].copy()
+  patches[id]=torch.nn.functional.unfold(images[id],16,stride=16).transpose(1,2)[0].numpy()
+ np.savez_compressed(out/'small_reference.npz',ids=np.asarray(dev+val,dtype=np.int32),patches=np.stack([patches[id]for id in dev+val]),fp32_logits=np.stack([floating[id]for id in dev+val]),labels=np.asarray([recs[id]['target']for id in dev+val],dtype=np.int32))
+ state_scales=[]
+ ln_names=[f'blocks.{i}.{n}'for i in range(12)for n in ['norm1','norm2']]+['norm']
+ for n in ln_names:state_scales.append(sym(stats[n]['inmax']))
+ floating_params={n:t.detach().double().numpy()for n,t in model.state_dict().items()}
+ summaries=[];best=None
+ for label,alpha in [('plain',None),('balanced',0.5),('actheavy',0.75)]:
+  d=out/label;d.mkdir(exist_ok=False);arrays={};linear_meta={};steps={};effective={};stateSy=state_scales
+  for name in cfg['layers']:
+   w=floating_params[name+'.weight'].reshape(floating_params[name+'.weight'].shape[0],-1);bias=floating_params[name+'.bias'];s=stats[name]
+   if name=='patch_embed.proj':D=np.ones(w.shape[1]);sx=2/255;zx=0
+   else:
+    if alpha is None:D=np.ones(w.shape[1])
+    else:
+     ax=np.maximum(np.maximum(np.abs(s['imin']),np.abs(s['imax'])),1e-6);wx=np.maximum(np.abs(w).max(0),1e-6);D=ax**alpha/wx**(1-alpha);D/=np.median(D)
+    sx,zx=qparams((s['imin']/D).min(),(s['imax']/D).max())
+   transformed=w*D[None,:];ws=sym(np.abs(transformed).max(1));qw=np.rint(transformed/ws[:,None]).clip(-128,127).astype(np.int8)
+   if name.endswith('.qkv'):
+    ys=np.repeat(sym(s['omax'].reshape(9,64).max(1)),64)
+   elif name=='head':ys=np.repeat(sym(s['omax'].max()),1000)
+   else:ys=sym(s['omax'])
+   bq=np.rint(bias/(sx*ws)).astype(np.int64);bc=bq-zx*qw.astype(np.int64).sum(1);bound=128*np.abs(qw.astype(np.int64)).sum(1)+np.abs(bc)
+   assert np.all(bound<1<<31),name;M,R=enc(sx*ws/ys);assert all(int(x)*int(m)<1<<63 for x,m in zip(bound,M))
+   arrays.update({name+'.W':qw,name+'.B':bc.astype(np.int32),name+'.M':M,name+'.R':R,name+'.Z':np.zeros(len(ys),dtype=np.int8)})
+   effective[name]=sx*D;steps[name]=ys;linear_meta[name]=dict(sx=sx,zx=zx,effective_input_scale=(sx*D).tolist(),output_scale=ys.tolist(),smoothing_D=D.tolist(),weight_scale=ws.tolist(),shape=list(qw.shape),bits_input=8,bits_weight=8,bits_output=8)
+  for j,name in enumerate(ln_names):
+   down='head'if name=='norm'else name.rsplit('.',1)[0]+('.attn.qkv'if name.endswith('norm1')else '.mlp.fc1');mi,ri=enc(stateSy[j]*(1<<13));mo,ro=enc((2.**-20)/effective[down]);gamma=np.rint(floating_params[name+'.weight']*(1<<20)).astype(np.int64);beta=np.rint(floating_params[name+'.bias']*(1<<20)).astype(np.int64)
+   assert np.all(np.abs(gamma)<1<<31)and np.all(np.abs(beta)<1<<31)
+   arrays.update({name+'.MI':mi,name+'.RI':ri,name+'.G':gamma.astype(np.int32),name+'.B':beta.astype(np.int32),name+'.MO':mo,name+'.RO':ro,name+'.Z':np.full(192,linear_meta[down]['zx'],dtype=np.int8)})
+  position=floating_params['pos_embed'][0].copy();position[0]+=floating_params['cls_token'][0,0];arrays['position_Q20']=np.rint(position*(1<<20)).astype(np.int32);arrays['patch_Q20']=np.rint(steps['patch_embed.proj']*(1<<20)).astype(np.uint32);arrays['front_M'],arrays['front_R']=enc((2.**-20)/stateSy[0])
+  for i in range(12):
+   n=f'blocks.{i}'
+   for side,branch in [(0,n+'.attn.proj'),(1,n+'.mlp.fc2')]:
+    j=2*i+side;pr=f'res{j}.';arrays[pr+'A20']=np.rint(stateSy[j]*(1<<20)).astype(np.uint32);arrays[pr+'B20']=np.rint(steps[branch]*(1<<20)).astype(np.uint32);arrays[pr+'M'],arrays[pr+'R']=enc((2.**-20)/stateSy[j+1])
+   fc1steps=steps[n+'.mlp.fc1'];fc2sx=effective[n+'.mlp.fc2'];code=np.arange(-128,128,dtype=np.float32)[None,:]
+   with torch.inference_mode():
+    y=torch.nn.functional.gelu(torch.from_numpy((fc1steps[:,None]*code).astype(np.float32)));lut=(torch.round(y/torch.tensor(fc2sx[:,None],dtype=torch.float32))+linear_meta[n+'.mlp.fc2']['zx']).clamp(-128,127).to(torch.int8).numpy()
+   arrays[n+'.gelu']=lut
+   qkvsteps=steps[n+'.attn.qkv'].reshape(3,3,64)[:,:,0]
+   for h in range(3):
+    pr=f'attn{i}.{h}.';arrays[pr+'SM'],arrays[pr+'SR']=enc(np.array([qkvsteps[0,h]*qkvsteps[1,h]*(1<<10)/8]));arrays[pr+'AM'],arrays[pr+'AR']=enc(qkvsteps[2,h]/(255*effective[n+'.attn.proj'][h*64:(h+1)*64]));arrays[pr+'AZ']=np.full(64,linear_meta[n+'.attn.proj']['zx'],dtype=np.int8)
+  arrays['exp_Q30']=np.rint(np.exp(-np.arange(16385,dtype=np.float64)/1024)*(1<<30)).astype(np.uint32)
+  assert all(v.dtype.kind in 'iu'for v in arrays.values());np.savez_compressed(d/'integer_parameters.npz',**arrays)
+  meta=dict(schema='vit-tiny-w8a8-pc-v2',layers=12,hidden=192,heads=3,tokens=197,classes=1000,profile=label,alpha=alpha,input_scale=2/255,input_zp=0,linear=linear_meta,state_scales=[x.tolist()for x in stateSy],arrays_sha256=sha(d/'integer_parameters.npz'),runtime='integer only',formal_accuracy='NOT_RUN',rounding='RNE',saturation=[-128,127],score_fraction=10,exp_fraction=30)
+  save(d/'contract.json',meta);modelI=G.Model(meta,arrays);rows=[]
+  for id in dev:
+   q=np.rint(patches[id]/np.float32(2/255)).clip(-128,127).astype(np.int8);pred=modelI.infer(q,capture=False);top=int(pred.argmax());f=floating[id];ff=(f-f.mean());qq=(pred.astype(np.float64)-pred.mean());err=float(np.mean((ff/(np.linalg.norm(ff)+1e-12)-qq/(np.linalg.norm(qq)+1e-12))**2))
+   rows.append(dict(image=id,target=recs[id]['target'],fp32_top1=int(f.argmax()),integer_top1=top,agreement=top==int(f.argmax()),correct=top==recs[id]['target'],normalized_logit_mse=err));print('PTQ_DEV',label,id,top,'fp',int(f.argmax()),flush=True)
+  score=(sum(x['agreement']for x in rows),-sum(x['normalized_logit_mse']for x in rows));entry=dict(profile=label,score=list(score),rows=rows);summaries.append(entry)
+  if best is None or score>best[0]:best=(score,label)
+ selected=best[1];save(ROOT/'evidence/CANDIDATE_SELECTION.json',dict(status='PASS_SMALL_SAMPLE_SELECTION_NOT_ACCURACY',selected=selected,candidates=summaries,validation_used_for_selection=False))
+ # Selected contract is copied, not converted to mixed linear16.
+ import shutil
+ shutil.copyfile(out/selected/'integer_parameters.npz',out/'integer_parameters.npz');shutil.copyfile(out/selected/'contract.json',out/'contract.json');chosen=G.load(out);valrows=[]
+ for id in val:
+  q=np.rint(patches[id]/np.float32(2/255)).clip(-128,127).astype(np.int8);pred=chosen.infer(q,capture=False);valrows.append(dict(image=id,label=recs[id]['target'],fp32_top1=int(floating[id].argmax()),integer_top1=int(pred.argmax()),agreement=int(pred.argmax())==int(floating[id].argmax()),correct=int(pred.argmax())==recs[id]['target']));print('PTQ_INDEPENDENT',id,int(pred.argmax()),flush=True)
+ # One real complete image for program/RTL future Golden. No intermediates are inputs.
+ id=val[0];q=np.rint(patches[id]/np.float32(2/255)).clip(-128,127).astype(np.int8);pred=chosen.infer(q,capture=True);np.save(out/'input_patches.npy',q);np.save(out/'expected_logits.npy',pred);np.savez_compressed(out/'checkpoints.npz',**chosen.trace)
+ save(ROOT/'evidence/PREPARE_RESULT.json',dict(status='PASS',selected=selected,small_validation=valrows,fp32_hits=sum(x['fp32_top1']==x['label']for x in valrows),integer_hits=sum(x['correct']for x in valrows),samples=len(valrows),formal_accuracy='NOT_RUN',within_1pp='BLOCKED_FORMAL_EVALUATION_REQUIRED',full12_integer_fixture_image=id,checkpoint_count=len(chosen.trace),seconds=time.perf_counter()-start))
+ print('PREPARE_COMPLETE',selected,flush=True)
+if __name__=='__main__':
+ try:main()
+ except BaseException as e:save(ROOT/'evidence/PREPARE_ERROR.json',dict(status='FAIL',error=repr(e)));raise

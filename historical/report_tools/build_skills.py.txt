@@ -1,0 +1,154 @@
+"""Package offline skills from existing workflows; never opens FPGA/Vivado."""
+from pathlib import Path
+import json, subprocess, sys
+R=Path(__file__).resolve().parents[1]
+S=R/'skill';S.mkdir(exist_ok=True)
+def put(name,path,text):
+ p=S/name/path;p.parent.mkdir(parents=True,exist_ok=True);p.write_text(text.strip()+'\n',encoding='utf8')
+
+put('fpga-golden-check','SKILL.md','''
+---
+name: fpga-golden-check
+description: Compare frozen byte-code outputs and locate the first mismatch with strict native-exit and dump gates. Use for FPGA Golden logs and captured host outputs, not for claiming full-network coverage from a local test.
+---
+# FPGA Golden checking
+Read `references/evidence.md` before use. Work on copied evidence and bind exact source/data SHA.
+1. Establish scope: local L1, affected-path L2, or complete-network L3. Missing scope is BLOCKED.
+2. Check native launcher and kernel exits independently. Both exit0 plus any new crash dump is FAIL.
+3. Run `scripts/check.py expected.hex actual.hex`; codes must be two hexadecimal digits, one per line.
+4. Report count, mismatches, first index, unsigned and signed codes. Different lengths are FAIL.
+5. Run a copied one-bit corruption test; expected detection is a checker PASS, not numerical PASS.
+6. Require actual expected checkpoint/value/Host counts for L3. A cache hit or old source PASS grants no new numerical PASS.
+Never write expected values into DUT storage or overwrite original traces. A matching label or top1 alone is insufficient.
+''')
+put('fpga-golden-check','scripts/check.py','''
+import json,re,sys
+from pathlib import Path
+def codes(p):
+ lines=Path(p).read_text().splitlines()
+ if not lines or any(not re.fullmatch(r'[0-9a-fA-F]{2}',x.strip()) for x in lines):raise ValueError('INVALID_HEX_FORMAT')
+ return [int(x,16) for x in lines]
+def compare(a,b):
+ bad=[i for i,(x,y) in enumerate(zip(a,b)) if x!=y]
+ first=None
+ if bad:
+  i=bad[0];first={'index':i,'expected':a[i],'actual':b[i],'expected_signed':a[i] if a[i]<128 else a[i]-256,'actual_signed':b[i] if b[i]<128 else b[i]-256}
+ return {'status':'PASS' if len(a)==len(b) and not bad else 'FAIL','expected_count':len(a),'actual_count':len(b),'mismatch_count':len(bad),'first_mismatch':first}
+def native_gate(launcher,kernel,dumps):return 'PASS' if launcher==kernel==0 and not dumps else 'FAIL'
+if __name__=='__main__':
+ r=compare(codes(sys.argv[1]),codes(sys.argv[2]));print(json.dumps(r));sys.exit(0 if r['status']=='PASS' else 1)
+''')
+put('fpga-golden-check','references/evidence.md','''
+# Evidence and boundaries
+Original workflow: experiments/board_closure_20261030/full72_recovery_20261030 (257 checkpoints, 11,532,400 values, 1000 Host outputs, clean native exit) and experiments/board_logit_diagnostic_20261103/capture_1793697684_24312_3377448321 (921 mismatches, stable repeated reads).
+This newly packaged helper is tested offline on copies of those byte outputs. It does not rerun the old RTL, certify a new simulator, or certify the current bank-modified full network.
+Native exit gate tests include exit0 with a dump => FAIL. Original XSim incident evidence is why this rule is mandatory; the helper cannot recover missing native process records.
+''')
+
+put('vivado-evidence-audit','SKILL.md','''
+---
+name: vivado-evidence-audit
+description: Audit existing Vivado setup hold pulse width route and resource reports against a frozen candidate. Use for evidence review and stage-specific PASS decisions; does not run implementation or manufacture constraints.
+---
+# Vivado evidence audit
+1. Bind part, source/DCP SHA, tool version and effective/generated clocks before reading results.
+2. Parse raw timing summary with `scripts/check.py`; retain raw reports and all negative endpoints.
+3. Require setup WNS>=0/TNS=0, hold WHS>=0/THS=0, pulse width margins>=0 and zero unrouted/error nets.
+4. Inspect unconstrained paths, clock interaction, DRC and CDC separately. Warning presence is not automatic failure or automatic clearance; classify every warning family.
+5. Audit actual DSP register properties and intended BRAM classes from mapped/routed cells, not RTL attributes alone.
+6. Report scope precisely: PE, complete GEMM or full board. Bitstream generation never proves inference correctness.
+Do not insert false paths/multicycle exceptions, relax a clock without changing its real generator, or reuse PASS across different netlists.
+See `references/evidence.md`. This package reviews existing files only.
+''')
+put('vivado-evidence-audit','scripts/check.py','''
+import json,re,sys
+from pathlib import Path
+def timing(text):
+ pattern=r'^\\s*(-?\\d+\\.\\d+)\\s+(-?\\d+\\.\\d+)\\s+(\\d+)\\s+(\\d+)\\s+(-?\\d+\\.\\d+)\\s+(-?\\d+\\.\\d+)\\s+(\\d+)\\s+(\\d+)\\s+(-?\\d+\\.\\d+)\\s+(-?\\d+\\.\\d+)\\s+(\\d+)\\s+(\\d+)\\s*$'
+ rows=re.findall(pattern,text,re.M)
+ if len(rows)!=1:raise ValueError('TIMING_SUMMARY_ROW_NOT_UNIQUE')
+ keys=['WNS','TNS','setup_fail','setup_total','WHS','THS','hold_fail','hold_total','WPWS','TPWS','pulse_fail','pulse_total']
+ return dict(zip(keys,[int(x) if i%4 in (2,3) else float(x) for i,x in enumerate(rows[0])]))
+def gate(t):
+ return 'PASS_TIMING_ONLY' if all(t[x]>=0 for x in ['WNS','WHS','WPWS']) and all(t[x]==0 for x in ['TNS','THS','TPWS','setup_fail','hold_fail','pulse_fail']) else 'FAIL'
+if __name__=='__main__':
+ t=timing(Path(sys.argv[1]).read_text());print(json.dumps({'status':gate(t),'metrics':t,'DRC_CDC_source_identity':'REQUIRES_SEPARATE_AUDIT'}))
+''')
+put('vivado-evidence-audit','references/evidence.md','''
+# Evidence and boundaries
+Raw project evidence: experiments/full128_route_20261102/RESULTS.md (200MHz routed WNS -0.583ns FAIL) and experiments/full128_downclock_bit_20261102/delivery_166p7/reports (166.7MHz WNS +0.073ns, WHS +0.005ns).
+The raw-summary parser is validated against the latter and injected negative setup/hold/pulse cases. Structural and DRC/CDC decisions still require the associated cells, clocks, route_status, effective XDC and WARNING_REVIEW.md.
+No synthesis or route is launched by this skill. Packaging is new; cross-project validation is NOT_RUN.
+''')
+
+put('fpga-board-diagnosis','SKILL.md','''
+---
+name: fpga-board-diagnosis
+description: Diagnose FPGA board inference in staged JTAG DDR ABI upload compute and result checks while preserving evidence and session continuity. Use after hardware download or a Golden mismatch; never silently reset or rerun a failed job.
+---
+# Staged board diagnosis
+1. Bind bitstream/LTX/Host ABI/data SHA. Require exactly one intended hardware AXI object; stale handles are BLOCKED.
+2. Read identity, calibration and busy/error/status flags. Preserve current results before any reset, reprogramming or upload.
+3. Verify bounded data upload and readback before a controlled start. Separate transport PASS from numeric PASS.
+4. Capture all 1000 outputs twice read-only; compare each code and read stability. Correct top1 does not close byte mismatches.
+5. Record session continuity explicitly. If reset/reprogram/power cycle intervened, later DDR contents cannot establish the original job's cause.
+6. Locate first divergence using exact-source local or scoped RTL tests. These exclude real DDR/CDC unless explicitly modeled.
+Do not download, write memory, reset, call MIG tests or start inference without scope authorization. This distributed package contains only an offline session checker, not live JTAG commands.
+''')
+put('fpga-board-diagnosis','scripts/check.py','''
+import json,sys
+from pathlib import Path
+def inspect(d):
+ failed=d['initial_inference']['mismatch_values']!=0
+ reset=bool(d.get('user_confirmed_intervening_action'))
+ return {'numeric_status':'FAIL' if failed else 'PASS_CURRENT_CAPTURE_ONLY','root_cause':'UNKNOWN','post_reset_evidence_can_explain_original':False if reset else 'UNKNOWN','new_board_operations':'NOT_RUN'}
+if __name__=='__main__':print(json.dumps(inspect(json.loads(Path(sys.argv[1]).read_text('utf8')))))
+''')
+put('fpga-board-diagnosis','references/evidence.md','''
+# Evidence and boundaries
+Workflow used in experiments/board_logit_diagnostic_20261103 and experiments/board_first_divergence_20261103. Actual output reads: 921/1000 mismatches, repeated-read mismatch zero. User later confirmed reprogramming/power/reset, and later DDR samples therefore are a different session.
+This skill preserves that failure and continuity rule. It does not claim that the board fault is repaired, nor that DDR is its root cause. The offline helper is tested with the saved session observations; live reusable automation and cross-project validation are NOT_RUN.
+''')
+
+for name in ['fpga-golden-check','vivado-evidence-audit','fpga-board-diagnosis']:
+ put(name,'README.md',f'''# {name}
+入口：SKILL.md。仅离线证据审查；输入是冻结证据副本，输出是JSON和人工审核结论。
+运行：python scripts/check.py <input>，Golden检查需要expected与actual两个文件。
+失败条件、权限边界和真实使用范围见SKILL.md及references/evidence.md。
+本包来自同一ViT工程的已用工作流程，2026-11-03新整理；独立跨工程验证NOT_RUN。不能代替原Vivado、XSim或实板验收。
+代码许可尚需作品权利人统一确认，未给历史RTL或第三方IP擅自授权。
+''')
+
+import importlib.util
+def module(name,path):
+ sp=importlib.util.spec_from_file_location(name,path);m=importlib.util.module_from_spec(sp);sp.loader.exec_module(m);return m
+g=module('gc',S/'fpga-golden-check/scripts/check.py')
+t=module('tc',S/'vivado-evidence-audit/scripts/check.py')
+b=module('bc',S/'fpga-board-diagnosis/scripts/check.py')
+e=R/'report/evidence'
+expected=R.parent/'experiments/full128_downclock_bit_20261102/board_kit_166p7/expected_1000.hex'
+a=g.codes(expected);o=g.codes(e/'e29_observed_pass1.hex')
+tests=[]
+def test(n,v):
+ assert v,n
+ tests.append({'name':n,'status':'PASS'})
+test('golden_equal_1000',g.compare(a,a)['status']=='PASS')
+mut=a.copy();mut[37]^=1
+test('golden_fault_bit_at37',g.compare(a,mut)['first_mismatch']['index']==37)
+test('real_board_921_fail',g.compare(a,o)['mismatch_count']==921)
+test('length_mismatch_detected',g.compare(a,a[:-1])['status']=='FAIL')
+test('native_clean_exit',g.native_gate(0,0,[])=='PASS')
+test('native_exit0_with_dump_fail',g.native_gate(0,0,['crash.dmp'])=='FAIL')
+tv=t.timing((e/'e16_timing_summary.rpt').read_text())
+test('routed_raw_timing_pass',t.gate(tv)=='PASS_TIMING_ONLY')
+for key in ['WNS','WHS','WPWS']:
+ v=tv.copy();v[key]=-.001;test('fault_negative_'+key,t.gate(v)=='FAIL')
+for key in ['TNS','THS','TPWS']:
+ v=tv.copy();v[key]=-.001;test('fault_nonzero_'+key,t.gate(v)=='FAIL')
+obs=json.loads((e/'e32_board_session_observations.json').read_text())
+v=b.inspect(obs)
+test('board_numeric_fail_kept',v['numeric_status']=='FAIL')
+test('post_reset_causality_blocked',v['post_reset_evidence_can_explain_original'] is False)
+result={'status':'PASS_OFFLINE_HELPERS_ONLY','tests':tests,'count':len(tests),'simulations':0,'vivado_runs':0,'FPGA_operations':0,'cross_project_validation':'NOT_RUN'}
+(S/'selftest_results.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
+print(json.dumps(result,ensure_ascii=False))

@@ -1,0 +1,70 @@
+{
+  "status": "PASS_OFFLINE_HELPERS_ONLY",
+  "tests": [
+    {
+      "name": "golden_equal_1000",
+      "status": "PASS"
+    },
+    {
+      "name": "golden_fault_bit_at37",
+      "status": "PASS"
+    },
+    {
+      "name": "real_board_921_fail",
+      "status": "PASS"
+    },
+    {
+      "name": "length_mismatch_detected",
+      "status": "PASS"
+    },
+    {
+      "name": "native_clean_exit",
+      "status": "PASS"
+    },
+    {
+      "name": "native_exit0_with_dump_fail",
+      "status": "PASS"
+    },
+    {
+      "name": "routed_raw_timing_pass",
+      "status": "PASS"
+    },
+    {
+      "name": "fault_negative_WNS",
+      "status": "PASS"
+    },
+    {
+      "name": "fault_negative_WHS",
+      "status": "PASS"
+    },
+    {
+      "name": "fault_negative_WPWS",
+      "status": "PASS"
+    },
+    {
+      "name": "fault_nonzero_TNS",
+      "status": "PASS"
+    },
+    {
+      "name": "fault_nonzero_THS",
+      "status": "PASS"
+    },
+    {
+      "name": "fault_nonzero_TPWS",
+      "status": "PASS"
+    },
+    {
+      "name": "board_numeric_fail_kept",
+      "status": "PASS"
+    },
+    {
+      "name": "post_reset_causality_blocked",
+      "status": "PASS"
+    }
+  ],
+  "count": 15,
+  "simulations": 0,
+  "vivado_runs": 0,
+  "FPGA_operations": 0,
+  "cross_project_validation": "NOT_RUN"
+}

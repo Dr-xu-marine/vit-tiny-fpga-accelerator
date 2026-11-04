@@ -1,0 +1,119 @@
+{
+  "schema": "v2_tiered_validation_registry_v1",
+  "reference_root": "D:/fpga/vit_tiny_vcu118_opt",
+  "entries_are_reference_only": true,
+  "full12_contract": {
+    "checkpoints": 257,
+    "checked_values": 11532400,
+    "actual_host_classification_outputs": 1000,
+    "bit_exact": true,
+    "required_faults": ["load_error", "bad_expected"],
+    "native_clean_exit_required": true,
+    "frozen_inputs_unchanged_required": true,
+    "physical_or_board_acceptance": false
+  },
+  "components": {
+    "mac": {"files": ["v2_c0_mac_cell.sv", "c0_mac_cell.v"], "local": ["c0", "tile"], "operator": ["wide_gemm", "real_bram", "shared_path"]},
+    "tile": {"files": ["v2_mac_group4x8.sv", "v2_mac_array8x16.sv", "v2_quant_tile8x16.sv"], "local": ["tile"], "operator": ["wide_gemm", "real_bram", "shared_path"]},
+    "requant": {"files": ["v2_rq_product.sv", "v2_rq_partition_rows.sv", "v2_rq16.sv", "requant.v"], "local": ["tile", "rq_owner"], "operator": ["wide_gemm", "real_bram", "shared_path"]},
+    "gemm": {"files": ["v2_gemm128_wide.sv", "v2_gemm128_subsystem.sv"], "local": ["wide_gemm"], "operator": ["real_bram", "shared_path"]},
+    "memory": {"files": ["v2_gemm128_memory.sv", "tiny_act_banked_ram.v", "tiny_compute_buffers.v", "tiny_banked_weight_ram.v"], "local": ["act_ram", "real_bram"], "operator": ["shared_path", "new128_encoder_path"]},
+    "scheduler": {"files": ["tiny_fsm_scheduler.v"], "local": ["fsm"], "operator": ["shared_path", "new128_encoder_path"]},
+    "dma": {"files": ["tiny_axi_read_dma.v", "tiny_dma_byte_writer.v"], "local": ["dma"], "operator": ["shared_path"]},
+    "network": {"files": ["tiny_compute_tile.v", "tiny_compute_system.v", "tiny_fsm_compute_system.v", "tiny_inference_core.v"], "local": ["shared_path"], "operator": ["new128_encoder_path"]},
+    "softmax15": {"files": ["tiny_softmax_unit.v"], "local": ["softmax15"], "operator": ["new128_encoder_path"]},
+    "layernorm": {"files": ["tiny_layer_norm_unit.v"], "local": ["layernorm"], "operator": ["new128_encoder_path"]},
+    "av_q14": {"files": ["tiny_attention_av_unit.v"], "local": ["av_q14"], "operator": ["new128_encoder_path"]},
+    "gelu": {"files": ["tiny_gelu_unit.v"], "local": ["gelu"], "operator": ["new128_encoder_path"]},
+    "residual": {"files": ["tiny_residual_wide_unit.v"], "local": ["residual"], "operator": ["new128_encoder_path"]},
+    "move": {"files": ["tiny_tensor_move.v"], "local": ["move"], "operator": ["shared_path", "new128_encoder_path"]}
+  },
+  "tests": {
+    "c0": {
+      "reference_entries": ["experiments/pe_300mhz_small_20261024/scripts/run_c0.py"],
+      "scope": "Historical single-PE DSP48E2 C0, integer reference and six fault cases; bind the new candidate wrapper before use",
+      "prepare_only": false
+    },
+    "tile": {
+      "reference_entries": ["experiments/vit_300mhz_v2/gemm128_r2_20261025/scripts/run_functional.py"],
+      "scope": "8x16 quant tile, INT32 prefixes, Bias/RQ, reset/flush/bubble/stall/credit and sixteen faults; not complete GEMM/network",
+      "prepare_only": false
+    },
+    "rq_owner": {
+      "reference_entries": ["experiments/vit_300mhz_v2/v2_128_r1_20261024/scripts/run_owner.py"],
+      "scope": "RQ ownership, wrap/credit, concurrent push/pop, reset/flush and faults; not full network",
+      "prepare_only": false
+    },
+    "act_ram": {
+      "reference_entries": ["experiments/act_wide_cache/run_bounded.py"],
+      "scope": "ACT byte/wide ports, keep/masks, collisions, backpressure and faults; candidate wide memory also needs real_bram",
+      "prepare_only": false
+    },
+    "wide_gemm": {
+      "reference_entries": ["experiments/vit_300mhz_v2/gemm128_r2_20261025/scripts/run_gemm_wide.py"],
+      "scope": "Nine representative GEMM shapes, continuous jobs, 2101 outputs, protocol errors and six faults",
+      "prepare_only": false
+    },
+    "real_bram": {
+      "reference_entries": ["experiments/vit_300mhz_v2/gemm128_r2_20261025/scripts/run_subsystem.py"],
+      "scope": "Actual BRAM/address/Bias/RQ/writeback, 2086 Golden plus 2086 host values, PACK/LB and memory errors; requires --wide-summary",
+      "prepare_only": false
+    },
+    "shared_path": {
+      "reference_entries": ["experiments/vit_300mhz_v2/connection128_r2_20261025/scripts/run_smoke.py"],
+      "scope": "Actual DMA/shared ACT/wide GEMM/MOVE/QK-packed/WB/host, 321 outputs and 5550 host reads, backpressure and bad_expected; no encoder auxiliary chain",
+      "prepare_only": false
+    },
+    "fsm": {
+      "reference_entries": ["validation/run_fsm_scheduler.py"],
+      "scope": "FSM instruction/load/compute scheduling self-check; bind candidate scheduler",
+      "prepare_only": false
+    },
+    "dma": {
+      "reference_entries": ["validation/run_axi_read_dma.py", "validation/run_dma_byte_writer.py"],
+      "scope": "AXI read protocol and byte writer local regressions; actual 128 integration requires shared_path",
+      "prepare_only": false
+    },
+    "softmax15": {
+      "reference_entries": ["experiments/softmax_exact15/run_frozen_rows.py"],
+      "scope": "Exact Softmax15 frozen-score replay: 36 groups, 7092 rows, 1397124 values; not the separate 32-iteration Softmax runner",
+      "prepare_only": false
+    },
+    "layernorm": {
+      "reference_entries": ["validation/run_layer_norm_tiny.py"],
+      "scope": "Frozen V4 LayerNorm module Golden and faults; match candidate source hashes",
+      "prepare_only": false
+    },
+    "av_q14": {
+      "reference_entries": ["validation/run_attention_av_tiny.py"],
+      "scope": "Q14 AV decomposition, 197-token shape, tail/signed/saturation and drop_high fault",
+      "prepare_only": false
+    },
+    "gelu": {
+      "reference_entries": ["validation/run_tiny_vector_units.py"],
+      "scope": "Frozen GELU LUT all 256 addresses and long vectors",
+      "prepare_only": false
+    },
+    "residual": {
+      "reference_entries": ["validation/run_residual_wide.py"],
+      "scope": "V4 scaled wide residual addition and saturation; --generate-only NEW_DIR generates vectors only",
+      "prepare_only": "--generate-only NEW_DIR"
+    },
+    "move": {
+      "reference_entries": ["validation/run_tensor_move.py"],
+      "scope": "Tensor move/layout local TB; bind candidate source",
+      "prepare_only": false
+    },
+    "new128_encoder_path": {
+      "reference_entries": ["validation/run_encoder_connected.py", "experiments/softmax_integration/run_tile.py"],
+      "available": false,
+      "scope": "MISSING: independent new128 LN→QK→Softmax15→Q14AV→projection/residual→GELU/FC path. Reference runners use old 16-lane GEMM and cannot grant this coverage. Until implemented, require full12 fallback.",
+      "prepare_only": "Old encoder --prepare-only is a structural reference, not new128 validation"
+    },
+    "full12": {
+      "reference_entries": ["experiments/vit_300mhz_v2/full128_r2_20261025/network/run_network.py"],
+      "scope": "New128 full12, 257 checkpoints / 11532400 values / 1000 actual host results plus two specific faults and actual cycle accounting; normal shutdown/protection required",
+      "prepare_only": "--prepare-only creates a new private preparation and does not start vendor tools"
+    }
+  }
+}

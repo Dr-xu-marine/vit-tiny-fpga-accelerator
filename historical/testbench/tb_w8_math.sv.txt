@@ -1,0 +1,28 @@
+`include "w8_test_paths.vh"
+`timescale 1ns/1ps
+module tb_w8_math;
+ reg clk=0;always #2.5 clk=~clk;
+ reg rst=1,flush=0,iv=0,ready=0;reg [2:0] op;reg signed [127:0] a,b;reg [6:0] sh;reg [15:0] tag;
+ wire ir,ov,err;wire signed [127:0] data;wire [15:0] ot;
+ w8_math dut(clk,rst,flush,iv,ir,op,a,b,sh,tag,ov,ready,data,ot,err);
+ integer f,scan,code,s,e,n=0,cycles=0;reg [127:0] va,vb,expected,held;reg flip;
+ always @(posedge clk)begin cycles<=cycles+1;if(cycles>500000)$fatal(1,"MATH timeout");end
+ initial begin
+  flip=$test$plusargs("BAD_EXPECTED");f=$fopen({`W8_ROOT,"/tests/math_vectors.txt"},"r");if(!f)$fatal(1,"vectors missing");
+  repeat(4)@(negedge clk);rst=0;
+  while(!$feof(f))begin
+   scan=$fscanf(f,"%d %h %h %d %h %d\n",code,va,vb,s,expected,e);
+   if(scan!=6)$fatal(1,"malformed vector");
+   wait(ir);@(negedge clk);op=code;a=va;b=vb;sh=s;tag=n;iv=1;@(negedge clk);iv=0;
+   wait(ov);#0.2;held=data; // Sample after nonblocking output assignments settle.
+   repeat(3)begin @(negedge clk);if(!ov||data!==held||ot!==n[15:0])$fatal(1,"held result/tag changed");end
+   if(data!==(expected^((flip&&n==7)?128'd1:128'd0))||err!==(e!=0))$fatal(1,"MATH mismatch n=%0d",n);
+   ready=1;@(negedge clk);ready=0;n=n+1;
+  end
+  // Abort an actual in-flight operation; no stale result is permitted.
+  wait(ir);@(negedge clk);op=0;a=123;b=-456;iv=1;@(negedge clk);iv=0;flush=1;@(negedge clk);flush=0;
+  repeat(200)begin @(negedge clk);if(ov)$fatal(1,"stale after flush");end
+  rst=1;@(negedge clk);rst=0;repeat(4)@(negedge clk);if(!ir||ov)$fatal(1,"reset");
+  $display("W8_MATH_PASS vectors=%0d cycles=%0d",n,cycles);$finish;
+ end
+endmodule

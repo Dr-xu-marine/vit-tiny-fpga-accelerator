@@ -1,0 +1,174 @@
+{
+  "label": "bitstream",
+  "tool": "vivado",
+  "args": [
+    "-mode",
+    "batch",
+    "-nojournal",
+    "-log",
+    "D:\\fpga\\vit_tiny_vcu118\\hf03_d166_bit\\vivado.log",
+    "-source",
+    "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_downclock_bit_20261102\\build_scripts\\bitstream_checked_io.tcl",
+    "-tclargs",
+    "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_rt\\07_routed.dcp",
+    "D:\\fpga\\vit_tiny_vcu118\\hf03_d166_bit",
+    "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_downclock_bit_20261102\\clock_contract_166\\scripts\\board_clock.tcl",
+    "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_host75_opt_20261101\\scripts\\clock_checks.tcl"
+  ],
+  "cwd": "D:\\fpga\\vit_tiny_vcu118\\hf03_d166_bit",
+  "started": "2026-11-03T07:58:33.044702+08:00",
+  "timing_origin": "perf_counter elapsed, observation times not exact event timestamps",
+  "processes": [
+    {
+      "pid": 23336,
+      "image": "C:\\Windows\\System32\\cmd.exe",
+      "command_line": {
+        "status": "PASS",
+        "text": "cmd.exe /d /c D:\\fpga\\Vivado\\2023.2\\bin\\vivado.bat -mode batch -nojournal -log D:\\fpga\\vit_tiny_vcu118\\hf03_d166_bit\\vivado.log -source D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_downclock_bit_20261102\\build_scripts\\bitstream_checked_io.tcl -tclargs D:\\fpga\\vit_tiny_vcu118\\hf02_d166_rt\\07_routed.dcp D:\\fpga\\vit_tiny_vcu118\\hf03_d166_bit D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_downclock_bit_20261102\\clock_contract_166\\scripts\\board_clock.tcl D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_host75_opt_20261101\\scripts\\clock_checks.tcl"
+      },
+      "first_seen_t": 0.010976100005791523,
+      "exit_code": 0,
+      "exit_hex": "0x0",
+      "exit_observed_t": 468.73150200000964
+    },
+    {
+      "pid": 25048,
+      "image": "C:\\Windows\\System32\\conhost.exe",
+      "command_line": {
+        "status": "PASS",
+        "text": "\\??\\C:\\Windows\\system32\\conhost.exe 0x4"
+      },
+      "first_seen_t": 0.03581250000570435,
+      "exit_code": 0,
+      "exit_hex": "0x0",
+      "exit_observed_t": 468.73150870000245
+    },
+    {
+      "pid": 23988,
+      "image": "D:\\fpga\\Vivado\\2023.2\\tps\\win64\\xvcredist.exe",
+      "command_line": {
+        "status": "PASS",
+        "text": "\"D:/fpga/Vivado/2023.2\\tps\\win64\\xvcredist.exe\"  -check"
+      },
+      "first_seen_t": 0.18937890000233892,
+      "exit_code": 0,
+      "exit_hex": "0x0",
+      "exit_observed_t": 0.20023180000134744
+    },
+    {
+      "pid": 10984,
+      "image": "D:\\fpga\\Vivado\\2023.2\\bin\\unwrapped\\win64.o\\vivado.exe",
+      "command_line": {
+        "status": "PASS",
+        "text": "\"D:/fpga/Vivado/2023.2/bin/unwrapped/win64.o/vivado.exe\"   -mode batch -nojournal -log D:\\fpga\\vit_tiny_vcu118\\hf03_d166_bit\\vivado.log -source D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_downclock_bit_20261102\\build_scripts\\bitstream_checked_io.tcl -tclargs D:\\fpga\\vit_tiny_vcu118\\hf02_d166_rt\\07_routed.dcp D:\\fpga\\vit_tiny_vcu118\\hf03_d166_bit D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_downclock_bit_20261102\\clock_contract_166\\scripts\\board_clock.tcl D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_host75_opt_20261101\\scripts\\clock_checks.tcl"
+      },
+      "first_seen_t": 0.3235232000006363,
+      "exit_code": 0,
+      "exit_hex": "0x0",
+      "exit_observed_t": 468.7204750000092
+    },
+    {
+      "pid": 5400,
+      "image": "C:\\Windows\\System32\\cmd.exe",
+      "command_line": {
+        "status": "PASS",
+        "text": "C:\\Windows\\system32\\cmd.exe /c /usr/bin/lscpu > D:/fpga/vit_tiny_vcu118/hf03_d166_bit/lscpu.info"
+      },
+      "first_seen_t": 59.86136080000142,
+      "exit_code": 1,
+      "exit_hex": "0x1",
+      "exit_observed_t": 59.87203860000591
+    }
+  ],
+  "argv": [
+    "cmd.exe",
+    "/d",
+    "/c",
+    "D:\\fpga\\Vivado\\2023.2\\bin\\vivado.bat",
+    "-mode",
+    "batch",
+    "-nojournal",
+    "-log",
+    "D:\\fpga\\vit_tiny_vcu118\\hf03_d166_bit\\vivado.log",
+    "-source",
+    "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_downclock_bit_20261102\\build_scripts\\bitstream_checked_io.tcl",
+    "-tclargs",
+    "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_rt\\07_routed.dcp",
+    "D:\\fpga\\vit_tiny_vcu118\\hf03_d166_bit",
+    "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_downclock_bit_20261102\\clock_contract_166\\scripts\\board_clock.tcl",
+    "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_host75_opt_20261101\\scripts\\clock_checks.tcl"
+  ],
+  "entry_cmd_pid": 23336,
+  "entry_cmd_exit": 0,
+  "job_members_before_close": [],
+  "all_observed_handles_signaled_before_job_close": true,
+  "job_close_t": 468.93299390000175,
+  "ended": "2026-11-03T08:06:21.978429+08:00",
+  "seconds": 468.9333035000018,
+  "owned_execution_finished": true,
+  "events": [
+    {
+      "t": 0.20023180000134744,
+      "event": "process_exited",
+      "pid": 23988,
+      "image": "D:\\fpga\\Vivado\\2023.2\\tps\\win64\\xvcredist.exe",
+      "code": 0
+    },
+    {
+      "t": 59.87203860000591,
+      "event": "process_exited",
+      "pid": 5400,
+      "image": "C:\\Windows\\System32\\cmd.exe",
+      "code": 1
+    },
+    {
+      "t": 467.586137899998,
+      "event": "stdout_observed",
+      "line": "# exit 0"
+    },
+    {
+      "t": 468.7204750000092,
+      "event": "process_exited",
+      "pid": 10984,
+      "image": "D:\\fpga\\Vivado\\2023.2\\bin\\unwrapped\\win64.o\\vivado.exe",
+      "code": 0
+    },
+    {
+      "t": 468.73150200000964,
+      "event": "process_exited",
+      "pid": 23336,
+      "image": "C:\\Windows\\System32\\cmd.exe",
+      "code": 0
+    },
+    {
+      "t": 468.73150870000245,
+      "event": "process_exited",
+      "pid": 25048,
+      "image": "C:\\Windows\\System32\\conhost.exe",
+      "code": 0
+    }
+  ],
+  "dumps": [],
+  "abnormal": false,
+  "native_exit_coverage": {
+    "xsim_and_kernel_observed": true,
+    "unobserved_short_lived_processes_cannot_be_excluded": true
+  },
+  "raw_all_child_exits_zero": false,
+  "expected_cpu_probe_exits": [
+    {
+      "pid": 5400,
+      "image": "C:\\Windows\\System32\\cmd.exe",
+      "command_line": {
+        "status": "PASS",
+        "text": "C:\\Windows\\system32\\cmd.exe /c /usr/bin/lscpu > D:/fpga/vit_tiny_vcu118/hf03_d166_bit/lscpu.info"
+      },
+      "first_seen_t": 59.86136080000142,
+      "exit_code": 1,
+      "exit_hex": "0x1",
+      "exit_observed_t": 59.87203860000591
+    }
+  ],
+  "exit_qualification": "EXACT_OWNED_LINUX_CPU_PROBE_EXIT1",
+  "status": "PASS"
+}

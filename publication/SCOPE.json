@@ -1,0 +1,22 @@
+{
+  "original_workspace_read_only": true,
+  "all_new_files_root": "D:\\vit-tiny-fpga-public",
+  "active_rtl_changed": false,
+  "original_report_changed": false,
+  "original_source_hashes_rechecked": true,
+  "publication_operations": [
+    "select/copy files",
+    "path-only test and BD adapters in release",
+    "write documentation/notices",
+    "offline saved-evidence audit",
+    "initialize independent local Git"
+  ],
+  "r2_started": false,
+  "original_tests_interrupted": false,
+  "simulator_started": false,
+  "vivado_started": false,
+  "board_operation": false,
+  "commit_created": false,
+  "public_repository_created": false,
+  "push_performed": false
+}

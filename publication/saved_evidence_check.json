@@ -1,0 +1,27 @@
+{
+  "status": "PASS_SAVED_EVIDENCE_REPRODUCTION_ONLY",
+  "timing_status": "TIMING_PASS",
+  "board_status": "BOARD_NUMERIC_FAIL",
+  "outputs": 1000,
+  "mismatches": 921,
+  "repeated_read_mismatches": 0,
+  "timing": {
+    "WNS": 0.073,
+    "TNS": 0.0,
+    "setup_fail": 0,
+    "setup_total": 223194,
+    "WHS": 0.005,
+    "THS": 0.0,
+    "hold_fail": 0,
+    "hold_total": 222285,
+    "WPWS": 0.039,
+    "TPWS": 0.0,
+    "pulse_fail": 0,
+    "pulse_total": 66447
+  },
+  "root_cause": "UNKNOWN",
+  "offline_fault_checks": "PASS",
+  "new_simulations": 0,
+  "new_vivado_runs": 0,
+  "new_hardware_operations": 0
+}

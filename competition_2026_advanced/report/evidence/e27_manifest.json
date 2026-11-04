@@ -1,0 +1,42 @@
+{
+  "status": "HASH_VERIFIED_BOARD_NOT_RUN",
+  "files": {
+    "ddr.bin": {
+      "bytes": 8990912,
+      "sha256": "1de3ad14541283d55b581cbb534ca2575383faa1cfd23e63f23a862e5062aa79",
+      "source": "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_bank_reset_fix_20261102\\data\\package\\ddr.bin"
+    },
+    "expected_1000.hex": {
+      "bytes": 4000,
+      "sha256": "1117a30836ab44cc1b1585884e7c5e41524cf2558636d821047b8a58f3ce64a2",
+      "source": "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_downclock_bit_20261102\\delivery_166p7\\board_test\\expected_1000.hex"
+    },
+    "first_test.tcl": {
+      "bytes": 1249,
+      "sha256": "2a0f91fb32246669027708411e30992c88b23a1023ed0986ded46e17053b5017",
+      "source": "Independent portable wrapper/instructions; original files unchanged"
+    },
+    "full128_166p7.bit": {
+      "bytes": 80159232,
+      "sha256": "928403c3745abe5b18b57088eaaa1fdb3a181343661a60421b4346aee42d0905",
+      "source": "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_downclock_bit_20261102\\delivery_166p7\\full128_166p7.bit"
+    },
+    "full128_166p7.ltx": {
+      "bytes": 1596,
+      "sha256": "72755007be86b58e4cfe2a8e44a9429a5d9362c2e832d2db689617b7fcb41111",
+      "source": "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_downclock_bit_20261102\\delivery_166p7\\full128_166p7.ltx"
+    },
+    "host_w8.tcl": {
+      "bytes": 7332,
+      "sha256": "3b8b44a54d8b01bce65ce6a6d5313b05bf31cf20cc3ad9fd1fb7c731af8b606d",
+      "source": "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_bank_reset_fix_20261102\\board\\host_w8.tcl"
+    },
+    "README_上板说明.md": {
+      "bytes": 2966,
+      "sha256": "2a0e4808729a436c4e4922ad8b94cec5ad8131d9616b1a30cb2142f61d4e20f6",
+      "source": "Independent portable wrapper/instructions; original files unchanged"
+    }
+  },
+  "original_bitstream_sha256": "928403c3745abe5b18b57088eaaa1fdb3a181343661a60421b4346aee42d0905",
+  "original_final_dcp": "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_downclock_bit_20261102\\delivery_166p7\\full128_166p7_final.dcp"
+}

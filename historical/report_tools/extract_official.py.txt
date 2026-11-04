@@ -1,0 +1,24 @@
+"""Read official PDFs, preserve provenance, and extract text for source review."""
+from pathlib import Path
+import hashlib,json
+from pypdf import PdfReader
+
+ROOT=Path(__file__).resolve().parents[1]
+OUT=ROOT/'report/evidence'
+OUT.mkdir(parents=True,exist_ok=True)
+paths={
+ 'amd_guide':Path('C:/Users/Lenovo/Desktop/AMD.pdf'),
+ 'upload_requirements':Path('D:/电脑管家迁移文件/xwechat_files/wxid_81i5gx3dwpmi22_19b9/temp/RWTemp/2026-11/428769c81000563815599cd72d89cc96/2026FPGA创新设计赛道作品上传要求.pdf')
+}
+records={}
+for name,p in paths.items():
+ target=OUT/(name+'.txt')
+ if target.exists():raise FileExistsError(target)
+ reader=PdfReader(p)
+ pages=[page.extract_text(extraction_mode='layout') for page in reader.pages]
+ target.write_text('\n\n'.join(f'=== PDF PAGE {i+1} ===\n{text}' for i,text in enumerate(pages)),encoding='utf-8')
+ records[name]=dict(path=str(p),sha256=hashlib.sha256(p.read_bytes()).hexdigest(),bytes=p.stat().st_size,
+   pages=len(pages),metadata={str(k):str(v) for k,v in (reader.metadata or {}).items()},
+   extracted_file=str(target),extracted_page_chars=[len(t) for t in pages])
+(OUT/'official_sources.json').write_text(json.dumps(records,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+print(json.dumps(records,ensure_ascii=False,indent=2))

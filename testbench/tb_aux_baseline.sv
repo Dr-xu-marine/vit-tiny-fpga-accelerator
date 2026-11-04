@@ -1,0 +1,31 @@
+`include "w8_test_paths.vh"
+`timescale 1ns/1ps
+module tb_aux_baseline;
+ reg clk=0;always #2.5 clk=~clk;
+ reg rst=1,flush=0,start=0;reg [511:0] command=0;wire busy,done,error;
+ wire [19:0] aa,ba;wire ar,br,bw;wire [7:0] wd;reg [7:0] aq=0,bq=0;
+ wire [15:0] pa;wire pr;reg [31:0] pq=0;wire [17:0] ga;wire gr;reg [7:0] gq=0;
+ wire [14:0] ea;wire er;reg [31:0] eq=0;wire [15:0] sa;wire sr;reg signed [31:0] sq=0;
+ wire [15:0] qa,qw;wire qr,qwe;reg [15:0] qq=0;
+ reg [7:0] act[0:131071],gelu[0:196607];reg [31:0] params_mem[0:65535],exps[0:16384],scores[0:196],expected[0:37823];reg [15:0] probs[0:196];
+ w8_aux_engine_baseline dut(.clk(clk),.rst(rst),.flush(flush),.start(start),.command(command),.busy(busy),.done(done),.error(error),.a_addr(aa),.b_addr(ba),.a_re(ar),.b_re(br),.b_we(bw),.b_wdata(wd),.a_rdata(aq),.b_rdata(bq),.param_addr(pa),.param_re(pr),.param_rdata(pq),.gelu_addr(ga),.gelu_re(gr),.gelu_rdata(gq),.exp_addr(ea),.exp_re(er),.exp_rdata(eq),.score_addr(sa),.score_re(sr),.score_rdata(sq),.prob_addr(qa),.prob_re(qr),.prob_we(qwe),.prob_wdata(qw),.prob_rdata(qq));
+ longint cycles=0;integer f,n,op,space,count,i,passed=0;string prefix;reg [31:0] actual;reg flip;
+ always @(posedge clk)begin
+  cycles<=cycles+1;if(cycles>100000000)$fatal(1,"AUX timeout");
+  if(ar)aq<=act[aa];if(br)bq<=act[ba];if(bw)act[ba]<=wd;
+  if(pr)pq<=params_mem[pa];if(gr)gq<=gelu[ga];if(er)eq<=exps[ea];if(sr)sq<=scores[sa];if(qr)qq<=probs[qa];if(qwe)probs[qa]<=qw;
+ end
+ initial begin
+  flip=$test$plusargs("BAD_EXPECTED");f=$fopen({`W8_ROOT,"/testbench/aux_cases/cases.txt"},"r");if(!f)$fatal(1,"cases missing");repeat(4)@(negedge clk);rst=0;
+  while(!$feof(f))begin
+   n=$fscanf(f,"%d %h %d %d\n",op,command,space,count);if(n!=4)$fatal(1,"case parse");prefix=$sformatf("%s/tests/aux/%0d_",`W8_ROOT,op);
+   $readmemh({prefix,"act.hex"},act);$readmemh({prefix,"param.hex"},params_mem);$readmemh({prefix,"gelu.hex"},gelu);$readmemh({prefix,"exp.hex"},exps);$readmemh({prefix,"score.hex"},scores);$readmemh({prefix,"prob.hex"},probs);$readmemh({prefix,"expected.hex"},expected,0,count-1);
+   @(negedge clk);start=1;@(negedge clk);start=0;wait(done);@(negedge clk);if(error)$fatal(1,"AUX error op=%0d",op);
+   for(i=0;i<count;i=i+1)begin if(space==0)actual={{24{act[65536+i][7]}},act[65536+i]};else actual={16'd0,probs[i]};if(actual!==(expected[i]^((flip&&op==2&&i==0)?32'd1:32'd0)))$fatal(1,"AUX_MISMATCH op=%0d i=%0d got=%h expected=%h",op,i,actual,expected[i]);end
+   passed=passed+1;$display("AUX_CASE_PASS op=%0d count=%0d cycles=%0d",op,count,cycles);
+  end
+  // Abort an actual operation and prove no stale memory write after the barrier.
+  command[3:0]=2;command[223:192]=192;@(negedge clk);start=1;@(negedge clk);start=0;repeat(11)@(negedge clk);flush=1;@(negedge clk);flush=0;repeat(300)begin @(negedge clk);if(bw||qwe||busy)$fatal(1,"stale AUX after flush");end
+  $display("AUX_BASELINE_PASS cases=%0d cycles=%0d",passed,cycles);$finish;
+ end
+endmodule

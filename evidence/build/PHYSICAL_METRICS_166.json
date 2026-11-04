@@ -1,0 +1,96 @@
+{
+  "timing": {
+    "WNS": 0.073,
+    "TNS": 0.0,
+    "setup_fail": 0,
+    "setup_total": 223194,
+    "WHS": 0.005,
+    "THS": 0.0,
+    "hold_fail": 0,
+    "hold_total": 222285,
+    "WPWS": 0.039,
+    "TPWS": 0.0,
+    "pulse_fail": 0,
+    "pulse_total": 66447
+  },
+  "route": {
+    "routable": 123520,
+    "routed": 123520,
+    "routing_errors": 0
+  },
+  "check_timing": {
+    "no_clock": 0,
+    "constant_clock": 0,
+    "unconstrained_internal_endpoints": 0,
+    "multiple_clock": 0,
+    "generated_clocks": 0,
+    "loops": 0,
+    "partial_input_delay": 0,
+    "partial_output_delay": 0,
+    "latch_loops": 0
+  },
+  "drc": [
+    {
+      "rule": "DPIP-2",
+      "severity": "Warning",
+      "count": 3
+    },
+    {
+      "rule": "DPOP-3",
+      "severity": "Warning",
+      "count": 1
+    },
+    {
+      "rule": "DPOP-4",
+      "severity": "Warning",
+      "count": 3
+    },
+    {
+      "rule": "PDCN-1569",
+      "severity": "Warning",
+      "count": 6
+    },
+    {
+      "rule": "REQP-1857",
+      "severity": "Warning",
+      "count": 1
+    },
+    {
+      "rule": "REQP-1858",
+      "severity": "Warning",
+      "count": 2
+    },
+    {
+      "rule": "RTSTAT-10",
+      "severity": "Warning",
+      "count": 1
+    },
+    {
+      "rule": "AVAL-155",
+      "severity": "Advisory",
+      "count": 128
+    }
+  ],
+  "cdc": [
+    {
+      "rule": "CDC-3",
+      "severity": "Info",
+      "count": 206
+    },
+    {
+      "rule": "CDC-9",
+      "severity": "Info",
+      "count": 17
+    },
+    {
+      "rule": "CDC-15",
+      "severity": "Warning",
+      "count": 4
+    }
+  ],
+  "timing_pass": true,
+  "routing_pass": true,
+  "internal_constraint_pass": true,
+  "blocking_DRC": false,
+  "automatic_bitstream_authorization": false
+}

@@ -1,0 +1,107 @@
+"""Read-only V2 regression selection. Prints obligations; never runs or accepts tests."""
+import sys
+sys.dont_write_bytecode = True
+import argparse
+import json
+from pathlib import Path
+
+HERE = Path(__file__).resolve().parent
+REGISTRY = HERE / 'registry.json'
+OPT = Path('D:/fpga/vit_tiny_vcu118_opt')
+LEVELS = {'local': 1, 'datapath': 2, 'scheduling': 2, 'interface': 2,
+          'verification': 2, 'architecture': 3, 'global': 3, 'final': 3}
+
+
+def select(registry, changes, impact, components=(), frozen_changed=False):
+    if frozen_changed:
+        raise ValueError('Frozen weights/Golden/quantization changes are prohibited by the active instructions')
+    if not changes and not components:
+        raise ValueError('Specify changed files or affected components')
+    known = registry['components']
+    selected = set(components)
+    if selected - known.keys():
+        raise ValueError('Unknown component: ' + ', '.join(sorted(selected - known.keys())))
+    unknown = []
+    matched = {}
+    for name in changes:
+        leaf = Path(name.replace('\\', '/')).name.lower()
+        owners = {key for key, value in known.items()
+                  if leaf in {s.lower() for s in value['files']}}
+        if owners:
+            selected.update(owners)
+            matched[name] = sorted(owners)
+        else:
+            unknown.append(name)
+    # Unmapped edits cannot silently evade integration/full-network obligations.
+    level = max(LEVELS[impact], 3 if unknown else 1)
+    if unknown:
+        selected.update(known)
+    references = registry['tests']
+    required = {1: set(), 2: set(), 3: set()}
+    for key in selected:
+        required[1].update(known[key]['local'])
+        if level >= 2:
+            required[2].update(known[key]['operator'])
+    if level == 3:
+        required[3].add('full12')
+    gaps = sorted(test for tests in required.values() for test in tests
+                  if references[test].get('available') is False)
+    if gaps:
+        # Until a representative candidate path exists, full12 is the safe fallback.
+        level = 3
+        required[3].add('full12')
+    groups = []
+    for tier in range(1, level + 1):
+        groups.append({'level': tier, 'required': [dict(id=test, **references[test])
+                       for test in sorted(required[tier])]})
+    return dict(schema='v2_tiered_validation_plan_v1', selected_level=level,
+                impact=impact, components=sorted(selected), matched_files=matched,
+                unmapped_files_require_full=unknown, stages=groups,
+                coverage_gaps=gaps, coverage_gap_fallback='full12' if gaps else None,
+                acceptance_scope=None, functional_pass=False, full_network_pass=False,
+                plan_only=True, vendor_started=False, cached_functional_pass_reuse=False,
+                full12_contract=registry['full12_contract'] if level == 3 else None,
+                rules=['Execute lower required tiers before higher tiers.',
+                       'Bind each test to the changed candidate source and frozen vectors.',
+                       'Reference scripts are not permission to run old source instead of the candidate.',
+                       'Unchanged exact-source local prerequisite receipts may be retained; affected edits require new tests.',
+                       'A local/operator PASS never implies full-network PASS.',
+                       'Native abnormal exit is FAIL even when assertions completed.',
+                       'Do not modify or interrupt the current R2 full12 run.'])
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--change', action='append', default=[], help='Changed path; repeat as needed')
+    parser.add_argument('--component', action='append', default=[])
+    parser.add_argument('--impact', choices=LEVELS)
+    parser.add_argument('--frozen-input-changed', action='store_true')
+    parser.add_argument('--list-components', action='store_true')
+    parser.add_argument('--check-entries', action='store_true')
+    args = parser.parse_args()
+    registry = json.loads(REGISTRY.read_text(encoding='utf-8'))
+    if args.list_components:
+        print('\n'.join(sorted(registry['components'])))
+        return 0
+    if args.check_entries:
+        missing = []
+        for key, value in registry['tests'].items():
+            for name in value['reference_entries']:
+                if not (OPT / name).is_file():
+                    missing.append({'test': key, 'entry': name})
+        print(json.dumps({'read_only': True, 'vendor_started': False,
+                          'entries_exist': not missing, 'missing': missing}, indent=2))
+        return 1 if missing else 0
+    if args.impact is None:
+        parser.error('Specify --impact explicitly; local scope is never assumed')
+    try:
+        result = select(registry, args.change, args.impact, args.component,
+                        args.frozen_input_changed)
+    except ValueError as exc:
+        parser.error(str(exc))
+    print(json.dumps(result, ensure_ascii=False, indent=2))
+    return 0
+
+
+if __name__ == '__main__':
+    raise SystemExit(main())

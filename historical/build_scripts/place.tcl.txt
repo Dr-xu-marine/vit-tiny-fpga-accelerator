@@ -1,0 +1,52 @@
+set_param general.maxThreads 1
+lassign $argv input out candidate checks build_scripts
+foreach command {synth_design opt_design phys_opt_design route_design write_bitstream launch_runs} {
+ trace add execution $command enter {apply {{cmd op} {error "FORBIDDEN_STAGE_IN_PLACE_ONLY_RUN"}}}
+}
+proc stage {name} {set f [open [file join $::out STAGE.txt] w];puts $f $name;close $f;puts "HOST75_PLACE_STAGE $name";flush stdout}
+stage OPEN_OPTIMIZED_DCP
+open_checkpoint $input
+if {[get_property PART [current_design]] ne "xcvu9p-flga2104-2L-e"} {error "Wrong device"}
+source {D:/fpga/vit_tiny_vcu118/experiments/full128_downclock_bit_20261102/clock_contract_166/scripts/board_clock.tcl}
+source $checks
+validate_host75_clocks [file join $out before_clocks.tsv]
+validate_compute_structure $out
+stage LIGHT_WARNING_AND_RESET_CHECKS
+set f [open [file join $out vendor_FIFO_ports.tsv] w]
+set ram [get_cells -hier -quiet -filter {NAME =~ w8_platform_i/host/* && (REF_NAME == RAMB18E2 || REF_NAME == RAMB36E2)}]
+if {[llength $ram]!=3} {error "Unexpected vendor Host FIFO RAM structure; review before placement"}
+foreach c $ram {
+ puts $f "CELL\t$c\t[get_property REF_NAME $c]"
+ foreach k {WRITE_MODE_A WRITE_MODE_B READ_WIDTH_A READ_WIDTH_B DOA_REG DOB_REG} {if {$k in [list_property $c]} {puts $f "$k\t[get_property $k $c]"}}
+ foreach p [get_pins -quiet -of_objects $c -filter {REF_PIN_NAME == CLKARDCLK || REF_PIN_NAME == CLKBWRCLK || REF_PIN_NAME == ENARDEN || REF_PIN_NAME == ENBWREN}] {
+  set net [get_nets -quiet -of_objects $p]
+  puts $f "PIN\t$p\t$net\t[get_clocks -quiet -of_objects $p]\t[get_pins -quiet -leaf -of_objects $net -filter {DIRECTION == OUT}]"
+ }
+}
+close $f
+set ends [all_fanout -flat -endpoints_only -from [get_ports sys_rst]]
+set f [open [file join $out reset_endpoints.tsv] w]
+foreach p $ends {
+ puts $f "$p\t[get_property REF_PIN_NAME $p]"
+ if {[get_property REF_PIN_NAME $p] ni {PRE CLR} || ![string match {*u_ddr4_infrastructure*rst_input_async_reg*} $p]} {error "Unexpected async SYS_RESET consumer; review before place"}
+}
+close $f
+if {[llength $ends]!=2} {error "SYS_RESET endpoint count changed"}
+set f [open [file join $out DRAM_reset_sources.tsv] w]
+foreach p [all_fanin -flat -startpoints_only -to [get_ports c0_ddr4_reset_n]] {puts $f $p}
+close $f
+source [file join $candidate scripts check_new_structure.tcl]
+check_new_structure $out
+source [file join $candidate scripts check_request_structure.tcl]
+check_request_structure $out
+source [file join $build_scripts check_banks.tcl]
+check_joint_banks $out
+stage PLACE_DESIGN
+place_design
+stage SAVE_PLACED_CHECKPOINT
+# Preserve completed placement before querying/reporting anything else.
+write_checkpoint [file join $out 05_placed_host75.dcp]
+close_design
+stage PLACEMENT_COMPLETE_STOP_BEFORE_ROUTE
+puts HOST75_ONE_PLACEMENT_SAVED_NO_ROUTE
+exit 0

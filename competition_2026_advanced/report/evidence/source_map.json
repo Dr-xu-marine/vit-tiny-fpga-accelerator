@@ -1,0 +1,749 @@
+[
+  {
+    "path": "experiments/full128_bank_reset_fix_20261102/rtl/legacy/tiny_axi_lite_control_v128.v",
+    "sha256": "592c2f0bf48599d9d7bf8b5e6d7f4aca9efe79493a97b5dc59da0af11b499ab4",
+    "lines": 107,
+    "anchors": [
+      {
+        "line": 5,
+        "text": "module tiny_axi_lite_control_v128 #("
+      },
+      {
+        "line": 48,
+        "text": "assign s_axi_awready=!rst && !aw_pending && !s_axi_bvalid;"
+      },
+      {
+        "line": 49,
+        "text": "assign s_axi_wready=!rst && !w_pending && !s_axi_bvalid;"
+      },
+      {
+        "line": 50,
+        "text": "assign s_axi_arready=!rst && !s_axi_rvalid && read_state==0;"
+      }
+    ]
+  },
+  {
+    "path": "experiments/full128_bank_reset_fix_20261102/rtl/legacy/tiny_axi_read_dma.v",
+    "sha256": "3bc811a8129a3c34ca6d94b7fcf8fb73509fdfc6b0dd8aa746715eff06b91afd",
+    "lines": 136,
+    "anchors": [
+      {
+        "line": 22,
+        "text": "module tiny_axi_read_dma #("
+      },
+      {
+        "line": 49,
+        "text": "localparam IDLE=0,SETUP=1,ADDRESS=2,READ=3,DRAIN=4,FLUSH=5,REJECT=6;"
+      },
+      {
+        "line": 65,
+        "text": "assign m_axi_rready=!rst && ((state==READ && (!slot_valid || out_ready)) || state==DRAIN);"
+      }
+    ]
+  },
+  {
+    "path": "experiments/full128_bank_reset_fix_20261102/rtl/legacy/tiny_dma_byte_writer.v",
+    "sha256": "9c466ab7cf1b338d22730d6892fc2d6deff3aa873e6d716b77007e5b4a0ddf05",
+    "lines": 86,
+    "anchors": [
+      {
+        "line": 22,
+        "text": "module tiny_dma_byte_writer("
+      },
+      {
+        "line": 38,
+        "text": "localparam IDLE=0,WALK=1,RESP=2;"
+      },
+      {
+        "line": 51,
+        "text": "assign beat_ready=!rst && state==IDLE && configured && !job_start;"
+      }
+    ]
+  },
+  {
+    "path": "experiments/full128_bank_reset_fix_20261102/rtl/legacy/tiny_result_collector.v",
+    "sha256": "e7ff2adde265919482ed2869c8b12f51ea5094b2ea5a42a387e616e4258855e5",
+    "lines": 60,
+    "anchors": [
+      {
+        "line": 3,
+        "text": "module tiny_result_collector #("
+      },
+      {
+        "line": 21,
+        "text": "localparam IDLE=0,ISSUE=1,WAIT_DATA=2;"
+      }
+    ]
+  },
+  {
+    "path": "experiments/full128_bank_reset_fix_20261102/rtl/legacy/v2_c0_mac_cell.sv",
+    "sha256": "2ccc1fa7c389f9f83232aaf14cdaa29e33ae3d5111e2b6101a0efb47a2837a5c",
+    "lines": 85,
+    "anchors": [
+      {
+        "line": 6,
+        "text": "module v2_c0_mac_cell #("
+      },
+      {
+        "line": 16,
+        "text": "output reg commit_valid"
+      },
+      {
+        "line": 23,
+        "text": "// The registered commit_valid is a POST-edge observation of this enable."
+      },
+      {
+        "line": 25,
+        "text": "(FAULT == 3) ? (v_m | commit_valid) :"
+      },
+      {
+        "line": 36,
+        "text": "commit_valid <= 1'b0;"
+      },
+      {
+        "line": 40,
+        "text": "commit_valid <= cep_enable;"
+      },
+      {
+        "line": 46,
+        "text": "DSP48E2 #("
+      },
+      {
+        "line": 48,
+        "text": ".AMULTSEL(\"A\"), .AREG(1),"
+      },
+      {
+        "line": 51,
+        "text": ".BREG(1), .B_INPUT(\"DIRECT\"),"
+      },
+      {
+        "line": 53,
+        "text": ".INMODEREG(0), .MREG(1), .OPMODEREG(0),"
+      },
+      {
+        "line": 54,
+        "text": ".PREADDINSEL(\"A\"), .PREG(1), .RND(48'b0),"
+      }
+    ]
+  },
+  {
+    "path": "experiments/full128_bank_reset_fix_20261102/rtl/legacy/v2_mac_group4x8.sv",
+    "sha256": "78ea937158310870794df20d7cdd5c95a8d6ae80cc5ec5e2953dc1774aa369a6",
+    "lines": 47,
+    "anchors": [
+      {
+        "line": 3,
+        "text": "module v2_mac_group4x8 #(parameter integer CORE_FAULT=0)("
+      },
+      {
+        "line": 8,
+        "text": "output wire commit_valid,output wire [9:0] commit_k,output wire commit_last,"
+      },
+      {
+        "line": 31,
+        "text": ".a(a_leaf),.b(b_leaf),.p(p_all[48*I+:48]),.commit_valid(cell_commit[I]));"
+      },
+      {
+        "line": 45,
+        "text": "assign commit_valid=cell_commit[0];assign commit_k=k_p;assign commit_last=last_p;"
+      }
+    ]
+  },
+  {
+    "path": "experiments/full128_bank_reset_fix_20261102/rtl/w8_command_check.sv",
+    "sha256": "34374d738ac17c2944ff97fcb93b1809457154a0c976dd6285ac32e9c80c71f1",
+    "lines": 92,
+    "anchors": [
+      {
+        "line": 6,
+        "text": "module w8_command_check("
+      },
+      {
+        "line": 10,
+        "text": "localparam IDLE=0,PREP=1,MUL=2,SUM0=3,SUM1=4,CHECK=5,FINISH=6;"
+      }
+    ]
+  },
+  {
+    "path": "experiments/full128_bank_reset_fix_20261102/rtl/w8_tensor_move.sv",
+    "sha256": "06fc48db1b18bb0d4d2b33d4fab132ed1fdd4615196945cd0aa5f4e362b2dd68",
+    "lines": 89,
+    "anchors": [
+      {
+        "line": 3,
+        "text": "module w8_tensor_move #("
+      },
+      {
+        "line": 20,
+        "text": "localparam S_IDLE=0,S_ISSUE=1,S_CAPTURE=2,S_WRITE=3,S_CHECK_START=4,S_CHECK_WAIT=5,S_READ_WAIT=6;"
+      }
+    ]
+  },
+  {
+    "path": "experiments/full128_bank_reset_fix_20261102/rtl/w8_mac_array_local.sv",
+    "sha256": "47968fd5a02ef47355a14731bcb3d9d1133ff7955238eb5768fde3fbc005981d",
+    "lines": 77,
+    "anchors": [
+      {
+        "line": 9,
+        "text": "// This module does not provide A16/AV arithmetic or claim physical timing."
+      },
+      {
+        "line": 10,
+        "text": "module w8_mac_array_local #("
+      },
+      {
+        "line": 19,
+        "text": "output wire commit_valid,"
+      },
+      {
+        "line": 26,
+        "text": "wire [3:0] group_commit_valid,group_commit_last,group_take_valid;"
+      },
+      {
+        "line": 37,
+        "text": ".commit_valid(group_commit_valid[GROUP]),"
+      },
+      {
+        "line": 55,
+        "text": "assign commit_valid=group_commit_valid[0];"
+      },
+      {
+        "line": 67,
+        "text": "if(group_commit_valid[group_index]!==group_commit_valid[0])"
+      },
+      {
+        "line": 71,
+        "text": "if(group_commit_valid[0]&&(group_commit_k[group_index]!==group_commit_k[0]||group_commit_last[group_index]!==group_commit_last[0]))"
+      }
+    ]
+  },
+  {
+    "path": "experiments/full128_bank_reset_fix_20261102/rtl/vendor_byte_banks.v",
+    "sha256": "b8d842bbaf0f3b8d6fd7b0b1c7fbdf6260a3ce601646485365587f51dd9b3f86",
+    "lines": 53,
+    "anchors": [
+      {
+        "line": 2,
+        "text": "module tiny_compute_byte_banks #("
+      },
+      {
+        "line": 15,
+        "text": "output wire write_pending"
+      },
+      {
+        "line": 19,
+        "text": "assign write_pending=pending_q;"
+      },
+      {
+        "line": 22,
+        "text": "(* ram_style=RAM_STYLE, cascade_height=2 *) reg [7:0] bytes [0:(1<<WORD_AW)-1];"
+      },
+      {
+        "line": 31,
+        "text": "// A mux inside q<=...bytes[...] made this RAM infer as LUTRAM."
+      },
+      {
+        "line": 38,
+        "text": "if(we_q) bytes[word_q]<=data_q;"
+      },
+      {
+        "line": 41,
+        "text": "q<=bytes[rd_word];forward_q<=we_q&&word_q==rd_word;forward_data_q<=data_q;"
+      },
+      {
+        "line": 47,
+        "text": "if(wr_en && !rst && wr_lane==lane) bytes[wr_word]<=wr_data;"
+      },
+      {
+        "line": 49,
+        "text": "else if(rd_en && !(wr_en && wr_word==rd_word)) q<=bytes[rd_word];"
+      }
+    ]
+  },
+  {
+    "path": "experiments/full128_bank_reset_fix_20261102/rtl/w8_requant_scalar.sv",
+    "sha256": "687a3ac7c7b1ef6fb838352f4f616508657d43ed31b7f6738fd7b4d4e5c57e1b",
+    "lines": 163,
+    "anchors": [
+      {
+        "line": 2,
+        "text": "module w8_requant_scalar #("
+      },
+      {
+        "line": 57,
+        "text": "wire signed [32:0] input_sum = $signed({in_acc[31],in_acc}) +"
+      },
+      {
+        "line": 61,
+        "text": "input_sum[32] != input_sum[31],"
+      },
+      {
+        "line": 81,
+        "text": "assign out_valid = valid[11];"
+      },
+      {
+        "line": 114,
+        "text": "sum0 <= in_valid ? input_sum : 33'sd0;"
+      }
+    ]
+  },
+  {
+    "path": "experiments/full128_bank_reset_fix_20261102/rtl/w8_rq16.sv",
+    "sha256": "ac5ba893686d45d10decc7bc2ac4c0a6deea4e5a38b66f16f2657a9612f117c9",
+    "lines": 68,
+    "anchors": [
+      {
+        "line": 4,
+        "text": "module w8_rq16 #(parameter RQ_FAULT=0)("
+      },
+      {
+        "line": 13,
+        "text": "localparam IDLE=0,FETCH=1,AUTH=2,CHECK=3,PARAM_REQ=4,PARAM_CAP=5,LATCH=6,START=7,WAIT_RQ=8,NEXT=9,OUTPUT=10,LANE_GROUP=11;"
+      },
+      {
+        "line": 26,
+        "text": "assign reserve_ready=!clear&&!error_valid&&!param_we&&credits<16;"
+      }
+    ]
+  },
+  {
+    "path": "experiments/full128_bank_reset_fix_20261102/rtl/w8_quant_tile.sv",
+    "sha256": "0f474302f58701870d19e6449bffe6e876dae47ed2b9a6bfa39dab545cd03518",
+    "lines": 184,
+    "anchors": [
+      {
+        "line": 2,
+        "text": "module w8_quant_tile #("
+      },
+      {
+        "line": 19,
+        "text": "localparam IDLE=0,CLEAR0=1,CLEAR1=2,CLEAR2=3,RUN=4,WAIT_CORE=5,COLLECT=6,DRAIN=7;"
+      },
+      {
+        "line": 28,
+        "text": "assign busy=!idle;assign start_ready=idle&&!clear_all;"
+      },
+      {
+        "line": 56,
+        "text": "reg bias_pending;reg [3:0] bias_index_q;reg signed [31:0] bias_base_q,bias_correction_q;"
+      },
+      {
+        "line": 58,
+        "text": "if(clear_all)begin bias_pending<=0;bias_index_q<=0;bias_base_q<=0;bias_correction_q<=0;for(integer s=0;s<16;s=s+1)weight_sum[s]<=0;end"
+      },
+      {
+        "line": 65,
+        "text": "if(bias_we&&idle)begin bias_index_q<=bias_col;bias_base_q<=bias_data;bias_correction_q<=dynamic_zp?(-($signed({{24{input_zp[7]}},input_zp})*$signed(weight_sum[bias_col]))):32'sd0;end"
+      },
+      {
+        "line": 66,
+        "text": "if(bias_pending)bias_memory[bias_index_q]<=bias_base_q+bias_correction_q;"
+      },
+      {
+        "line": 70,
+        "text": "wire [6143:0] p_all;wire commit_valid,commit_last;wire [9:0] commit_k;"
+      },
+      {
+        "line": 75,
+        "text": ".commit_valid(commit_valid),.commit_k(commit_k),.commit_last(commit_last),"
+      },
+      {
+        "line": 163,
+        "text": "WAIT_CORE: if(commit_valid && commit_last) state<=COLLECT;"
+      },
+      {
+        "line": 168,
+        "text": "if((state==RUN||state==WAIT_CORE)&&commit_valid) begin"
+      }
+    ]
+  },
+  {
+    "path": "experiments/full128_bank_reset_fix_20261102/rtl/w8_gemm128.sv",
+    "sha256": "a2dae05c832dd90221795f20d29930501b4b89d87ba3cdff3ac5911ca1c882b2",
+    "lines": 425,
+    "anchors": [
+      {
+        "line": 8,
+        "text": "module w8_gemm128 #("
+      },
+      {
+        "line": 37,
+        "text": "localparam IDLE=0,CFG_INIT=1,CFG_MUL=2,CFG_SUM=3,CFG_CHECK=4,"
+      },
+      {
+        "line": 89,
+        "text": "assign start_ready=!clear&&(state==IDLE);"
+      },
+      {
+        "line": 95,
+        "text": "assign a_rsp_ready=!clear&&(state==A_RESPONSE);"
+      }
+    ]
+  },
+  {
+    "path": "experiments/full128_bank_reset_fix_20261102/rtl/w8_math.sv",
+    "sha256": "76ea4cee5e72a1626a2ff057c5eaa1c1c4eb2feb32f10d4d7eee4385275e384b",
+    "lines": 102,
+    "anchors": [
+      {
+        "line": 6,
+        "text": "module w8_math("
+      },
+      {
+        "line": 13,
+        "text": "localparam IDLE=0,PART=1,TERM=2,ADD_PART=3,ADV=4,SIGN=5,NEG=6,FINISH=7,"
+      },
+      {
+        "line": 47,
+        "text": "assign in_ready=!rst&&!flush&&st==IDLE;assign out_valid=!rst&&!flush&&st==FINISH;"
+      }
+    ]
+  },
+  {
+    "path": "experiments/full128_bank_reset_fix_20261102/rtl/w8_aux_engine.sv",
+    "sha256": "4ff9ae2655a723742a8e50ebb530438a7bc67718a7ffa176179d47034057560d",
+    "lines": 162,
+    "anchors": [
+      {
+        "line": 5,
+        "text": "module w8_aux_engine #(parameter integer ACT_READ_LATENCY=1)("
+      },
+      {
+        "line": 16,
+        "text": "localparam IDLE=0,INIT=1,PF=2,PW=3,MS=4,MW=5,"
+      },
+      {
+        "line": 37,
+        "text": "w8_math arithmetic(.clk(clk),.rst(rst),.flush(flush),.in_valid(math_valid),.in_ready(math_ready),.in_op(math_op),.in_a(math_a),.in_b(math_b),.in_shift(math_shift),.in_tag(expected_tag),.out_valid(math_out_valid),.out_ready(state==MW),.out_data(math_result),.out_tag(math_tag),.out_error(math_error));"
+      }
+    ]
+  },
+  {
+    "path": "experiments/full128_bank_reset_fix_20261102/rtl/w8_act_local_ram.sv",
+    "sha256": "ebfaa9d4ccc3c01b4d9cefedb132e8fa3ba7fb02d9b900c9b15d0f732cadbf41",
+    "lines": 122,
+    "anchors": [
+      {
+        "line": 5,
+        "text": "module w8_act_local_ram #(parameter integer ADDR_W=20)("
+      },
+      {
+        "line": 12,
+        "text": "output wire wide_idle,output wire write_pending"
+      },
+      {
+        "line": 26,
+        "text": "assign wr_ready=!rst&&wide_mode;"
+      },
+      {
+        "line": 28,
+        "text": "assign rd_ready=!rst&&wide_mode&&!raw_r_valid&&!(|wide_pipe)&&(!rsp_valid||rsp_ready)&&!(|collision);"
+      },
+      {
+        "line": 30,
+        "text": "assign write_pending=raw_w_valid||raw_legacy_b_we||write_commit_pending;"
+      },
+      {
+        "line": 31,
+        "text": "assign wide_idle=!rsp_valid&&!(|wide_pipe)&&!raw_r_valid&&!write_pending;"
+      },
+      {
+        "line": 113,
+        "text": "(* ram_style=\"block\", cascade_height=2 *) reg [7:0] bytes[0:(1<<WORD_AW)-1];reg [7:0] a_q,b_q;"
+      },
+      {
+        "line": 115,
+        "text": "always @(posedge clk)begin if(rst)a_q<=0;else if(a_enable_q)a_q<=bytes[a_word_q];end"
+      },
+      {
+        "line": 116,
+        "text": "always @(posedge clk)begin if(b_write_q)bytes[b_word_q]<=b_data_q;if(rst)b_q<=0;else if(b_read_q)b_q<=bytes[b_word_q];end"
+      }
+    ]
+  },
+  {
+    "path": "experiments/full128_bank_reset_fix_20261102/rtl/w8_memories.sv",
+    "sha256": "abc6332abeae6d69e502c3bf9d157fb558d63309fbfa6aaebe59ea867517ca56",
+    "lines": 148,
+    "anchors": [
+      {
+        "line": 2,
+        "text": "module w8_upload_ram #(parameter AW=16,LANES=4,STRIDE=2)("
+      },
+      {
+        "line": 4,
+        "text": "input wire re,input wire [AW-1:0] word_addr,output wire [8*LANES-1:0] data,output wire write_pending"
+      },
+      {
+        "line": 7,
+        "text": "assign write_pending=pending_q;"
+      },
+      {
+        "line": 9,
+        "text": "(* ram_style=\"block\", cascade_height=2 *)reg [7:0] bytes[0:(1<<AW)-1];reg [7:0] q;"
+      },
+      {
+        "line": 19,
+        "text": "if(we_q)bytes[word_q]<=data_q;"
+      },
+      {
+        "line": 21,
+        "text": "else if(re)begin q<=bytes[word_addr];forward_q<=we_q&&word_q==word_addr;forward_data_q<=data_q;end"
+      },
+      {
+        "line": 26,
+        "text": "module w8_memories("
+      },
+      {
+        "line": 44,
+        "text": "wire run=compute_lock&&!rst;assign host_ready=!rst&&!compute_lock;assign host_read_ready=host_ready;"
+      },
+      {
+        "line": 60,
+        "text": "assign a_rsp_tag=response_tag;assign host_read_data=act_a_rdata;assign wb_ready=wb_raw?!rst:act_wr_ready;"
+      },
+      {
+        "line": 75,
+        "text": ".rd_valid(a_req_valid&&gemm_mode),.rd_ready(a_req_ready),.rd_addr({4'd0,a_req_addr}),.rd_mask(a_req_keep),.rsp_valid(a_rsp_valid),.rsp_ready(a_rsp_ready),.rsp_data(a_rsp_data),.rsp_mask(a_rsp_keep),.rsp_error(a_rsp_error),.wide_idle(act_idle),.write_pending(bank_writes_pending[0]));"
+      },
+      {
+        "line": 76,
+        "text": "tiny_compute_byte_banks #(.WORD_AW(16),.BYTE_LANES(16),.LOCAL_WRITE_PIPE(1)) learned(.clk(clk),.rst(rst),.wr_en(upload&&host_target==1),.wr_word(host_byte_addr[19:4]),.wr_lane({2'd0,host_byte_addr[3:0]}),.wr_data(host_wdata),.rd_en(gemm_mode),.rd_word(weight_addr),.rd_data(weight_data),.write_pending(bank_writes_pending[1]));"
+      },
+      {
+        "line": 78,
+        "text": "w8_upload_ram #(.AW(6),.LANES(90),.STRIDE(7)) rq(.clk(clk),.rst(rst),.we(upload&&host_target==3&&host_byte_addr[6:0]<90),.byte_addr(host_byte_addr),.byte_data(host_wdata),.re(gemm_mode),.word_addr(rq_addr[5:0]),.data(rq_data),.write_pending(bank_writes_pending[3]));"
+      },
+      {
+        "line": 79,
+        "text": "tiny_compute_byte_banks #(.WORD_AW(14),.BYTE_LANES(16),.LOCAL_WRITE_PIPE(1)) dynamic_weights(.clk(clk),.rst(rst),.wr_en((run&&packed_we)||(upload&&host_target==4)),.wr_word(run?packed_wr_addr[17:4]:host_byte_addr[17:4]),.wr_lane({2'd0,(run?packed_wr_addr[3:0]:host_byte_addr[3:0])}),.wr_data(run?packed_wdata:host_wdata),.rd_en(gemm_mode),.rd_word(packed_addr),.rd_data(packed_data),.write_pending(bank_writes_pending[2]));"
+      },
+      {
+        "line": 80,
+        "text": "w8_upload_ram #(.AW(16),.LANES(4),.STRIDE(2)) params(.clk(clk),.rst(rst),.we(upload&&host_target==12),.byte_addr(host_byte_addr),.byte_data(host_wdata),.re(run&&param_re),.word_addr(param_addr),.data(param_data),.write_pending(bank_writes_pending[4]));"
+      },
+      {
+        "line": 81,
+        "text": "w8_upload_ram #(.AW(18),.LANES(1),.STRIDE(0)) gelu(.clk(clk),.rst(rst),.we(upload&&host_target==10),.byte_addr(host_byte_addr),.byte_data(host_wdata),.re(run&&gelu_re),.word_addr(gelu_addr),.data(gelu_data),.write_pending(bank_writes_pending[5]));"
+      },
+      {
+        "line": 82,
+        "text": "w8_upload_ram #(.AW(15),.LANES(4),.STRIDE(2)) exponential(.clk(clk),.rst(rst),.we(upload&&host_target==9),.byte_addr(host_byte_addr),.byte_data(host_wdata),.re(run&&exp_re),.word_addr(exp_addr),.data(exp_data),.write_pending(bank_writes_pending[6]));"
+      },
+      {
+        "line": 84,
+        "text": "(* ram_style=\"block\" *)reg [7:0] bytes[0:65535];reg [7:0] q;"
+      },
+      {
+        "line": 87,
+        "text": "always @(posedge clk)begin if(cw||hw)bytes[wa]<=wd;if(rst)q<=0;else if(run&&prob_re)q<=bytes[prob_addr];end"
+      },
+      {
+        "line": 112,
+        "text": "(* ram_style=\"block\" *)reg [7:0] bytes[0:4095];reg [7:0] q;"
+      },
+      {
+        "line": 114,
+        "text": "if(cw||(hw&&host_byte_addr[1:0]==by))bytes[wa]<=gemm_mode?wb_raw_data[32*lane+8*by+:8]:host_wdata;"
+      },
+      {
+        "line": 115,
+        "text": "if(rst)q<=0;else if(run&&score_re&&score_addr[3:0]==bank)q<=bytes[score_addr[15:4]];"
+      },
+      {
+        "line": 123,
+        "text": "0:peek_act=act_storage.banks[0].bytes[address[19:4]];1:peek_act=act_storage.banks[1].bytes[address[19:4]];2:peek_act=act_storage.banks[2].bytes[address[19:4]];3:peek_act=act_storage.banks[3].bytes[address[19:4]];"
+      },
+      {
+        "line": 124,
+        "text": "4:peek_act=act_storage.banks[4].bytes[address[19:4]];5:peek_act=act_storage.banks[5].bytes[address[19:4]];6:peek_act=act_storage.banks[6].bytes[address[19:4]];7:peek_act=act_storage.banks[7].bytes[address[19:4]];"
+      },
+      {
+        "line": 125,
+        "text": "8:peek_act=act_storage.banks[8].bytes[address[19:4]];9:peek_act=act_storage.banks[9].bytes[address[19:4]];10:peek_act=act_storage.banks[10].bytes[address[19:4]];11:peek_act=act_storage.banks[11].bytes[address[19:4]];"
+      },
+      {
+        "line": 126,
+        "text": "12:peek_act=act_storage.banks[12].bytes[address[19:4]];13:peek_act=act_storage.banks[13].bytes[address[19:4]];14:peek_act=act_storage.banks[14].bytes[address[19:4]];15:peek_act=act_storage.banks[15].bytes[address[19:4]];"
+      },
+      {
+        "line": 129,
+        "text": "0:peek_score={score_banks[0].byteslice[3].bytes[address[15:4]],score_banks[0].byteslice[2].bytes[address[15:4]],score_banks[0].byteslice[1].bytes[address[15:4]],score_banks[0].byteslice[0].bytes[address[15:4]]};"
+      },
+      {
+        "line": 130,
+        "text": "1:peek_score={score_banks[1].byteslice[3].bytes[address[15:4]],score_banks[1].byteslice[2].bytes[address[15:4]],score_banks[1].byteslice[1].bytes[address[15:4]],score_banks[1].byteslice[0].bytes[address[15:4]]};"
+      },
+      {
+        "line": 131,
+        "text": "2:peek_score={score_banks[2].byteslice[3].bytes[address[15:4]],score_banks[2].byteslice[2].bytes[address[15:4]],score_banks[2].byteslice[1].bytes[address[15:4]],score_banks[2].byteslice[0].bytes[address[15:4]]};"
+      },
+      {
+        "line": 132,
+        "text": "3:peek_score={score_banks[3].byteslice[3].bytes[address[15:4]],score_banks[3].byteslice[2].bytes[address[15:4]],score_banks[3].byteslice[1].bytes[address[15:4]],score_banks[3].byteslice[0].bytes[address[15:4]]};"
+      },
+      {
+        "line": 133,
+        "text": "4:peek_score={score_banks[4].byteslice[3].bytes[address[15:4]],score_banks[4].byteslice[2].bytes[address[15:4]],score_banks[4].byteslice[1].bytes[address[15:4]],score_banks[4].byteslice[0].bytes[address[15:4]]};"
+      },
+      {
+        "line": 134,
+        "text": "5:peek_score={score_banks[5].byteslice[3].bytes[address[15:4]],score_banks[5].byteslice[2].bytes[address[15:4]],score_banks[5].byteslice[1].bytes[address[15:4]],score_banks[5].byteslice[0].bytes[address[15:4]]};"
+      },
+      {
+        "line": 135,
+        "text": "6:peek_score={score_banks[6].byteslice[3].bytes[address[15:4]],score_banks[6].byteslice[2].bytes[address[15:4]],score_banks[6].byteslice[1].bytes[address[15:4]],score_banks[6].byteslice[0].bytes[address[15:4]]};"
+      },
+      {
+        "line": 136,
+        "text": "7:peek_score={score_banks[7].byteslice[3].bytes[address[15:4]],score_banks[7].byteslice[2].bytes[address[15:4]],score_banks[7].byteslice[1].bytes[address[15:4]],score_banks[7].byteslice[0].bytes[address[15:4]]};"
+      },
+      {
+        "line": 137,
+        "text": "8:peek_score={score_banks[8].byteslice[3].bytes[address[15:4]],score_banks[8].byteslice[2].bytes[address[15:4]],score_banks[8].byteslice[1].bytes[address[15:4]],score_banks[8].byteslice[0].bytes[address[15:4]]};"
+      },
+      {
+        "line": 138,
+        "text": "9:peek_score={score_banks[9].byteslice[3].bytes[address[15:4]],score_banks[9].byteslice[2].bytes[address[15:4]],score_banks[9].byteslice[1].bytes[address[15:4]],score_banks[9].byteslice[0].bytes[address[15:4]]};"
+      },
+      {
+        "line": 139,
+        "text": "10:peek_score={score_banks[10].byteslice[3].bytes[address[15:4]],score_banks[10].byteslice[2].bytes[address[15:4]],score_banks[10].byteslice[1].bytes[address[15:4]],score_banks[10].byteslice[0].bytes[address[15:4]]};"
+      },
+      {
+        "line": 140,
+        "text": "11:peek_score={score_banks[11].byteslice[3].bytes[address[15:4]],score_banks[11].byteslice[2].bytes[address[15:4]],score_banks[11].byteslice[1].bytes[address[15:4]],score_banks[11].byteslice[0].bytes[address[15:4]]};"
+      },
+      {
+        "line": 141,
+        "text": "12:peek_score={score_banks[12].byteslice[3].bytes[address[15:4]],score_banks[12].byteslice[2].bytes[address[15:4]],score_banks[12].byteslice[1].bytes[address[15:4]],score_banks[12].byteslice[0].bytes[address[15:4]]};"
+      },
+      {
+        "line": 142,
+        "text": "13:peek_score={score_banks[13].byteslice[3].bytes[address[15:4]],score_banks[13].byteslice[2].bytes[address[15:4]],score_banks[13].byteslice[1].bytes[address[15:4]],score_banks[13].byteslice[0].bytes[address[15:4]]};"
+      },
+      {
+        "line": 143,
+        "text": "14:peek_score={score_banks[14].byteslice[3].bytes[address[15:4]],score_banks[14].byteslice[2].bytes[address[15:4]],score_banks[14].byteslice[1].bytes[address[15:4]],score_banks[14].byteslice[0].bytes[address[15:4]]};"
+      },
+      {
+        "line": 144,
+        "text": "15:peek_score={score_banks[15].byteslice[3].bytes[address[15:4]],score_banks[15].byteslice[2].bytes[address[15:4]],score_banks[15].byteslice[1].bytes[address[15:4]],score_banks[15].byteslice[0].bytes[address[15:4]]};"
+      },
+      {
+        "line": 146,
+        "text": "function [15:0] peek_prob(input [15:0] address);begin peek_prob={probability[1].bytes[address],probability[0].bytes[address]};end endfunction"
+      }
+    ]
+  },
+  {
+    "path": "experiments/full128_bank_reset_fix_20261102/rtl/w8_compute_tile.sv",
+    "sha256": "66d5bc7b7ee64d0f4dacd55b8acef873a3573de57c3218b29ed1a596e528d0f7",
+    "lines": 61,
+    "anchors": [
+      {
+        "line": 2,
+        "text": "module w8_compute_tile #(parameter integer ACT_READ_LATENCY=1,USE_RESET_BRANCHES=0)("
+      },
+      {
+        "line": 17,
+        "text": "localparam IDLE=0,LAUNCH=1,WAITING=2,REJECT=3,CHECK_START=4,CHECK_WAIT=5,DRAIN=6;reg [2:0] state;reg [1:0] drain_count;reg [511:0] cmd;reg [63:0] job_sequence;"
+      },
+      {
+        "line": 20,
+        "text": "assign cmd_ready=!rst&&state==IDLE;assign busy=!rst&&state!=IDLE;assign gemm_mode=!rst&&(state==LAUNCH||state==WAITING||state==DRAIN)&&is_gemm;"
+      }
+    ]
+  },
+  {
+    "path": "experiments/full128_bank_reset_fix_20261102/rtl/w8_compute_system.sv",
+    "sha256": "45c691a17510e0c6390fb39b14a6dab8b427d05a4c0e6016058a3a3b7a1839d3",
+    "lines": 131,
+    "anchors": [
+      {
+        "line": 5,
+        "text": "module w8_compute_system #("
+      },
+      {
+        "line": 44,
+        "text": "assign load_ready=!rst&&!loading&&!tile_busy&&!compute_owner_q&&!memory_writes_pending&&!writer_busy&&!dma_busy;"
+      },
+      {
+        "line": 46,
+        "text": "assign cmd_ready=!rst&&tile_ready&&!compute_owner_q&&!memory_writes_pending&&!loading&&!writer_busy&&!dma_busy&&!load_start&&!load_error;"
+      },
+      {
+        "line": 52,
+        "text": "assign host_read_ready=read_allowed&&read_ready;assign host_read_valid=!rst&&read_valid;assign host_read_error=!rst&&read_error;"
+      }
+    ]
+  },
+  {
+    "path": "experiments/full128_bank_reset_fix_20261102/rtl/w8_program_sequencer.sv",
+    "sha256": "8234e87cb7e9e51ea7dc69e7edea29bade052a8182a73ae93d85a97deea12870",
+    "lines": 33,
+    "anchors": [
+      {
+        "line": 2,
+        "text": "module w8_program_sequencer #("
+      },
+      {
+        "line": 11,
+        "text": "localparam IDLE=0,FETCH=1,DECODE=2,CSEND=3,CWAIT=4,LSEND=5,LWAIT=6,ADVANCE=7;"
+      },
+      {
+        "line": 14,
+        "text": "initial $readmemh(PROGRAM_FILE,instruction_rom);"
+      }
+    ]
+  },
+  {
+    "path": "experiments/full128_bank_reset_fix_20261102/rtl/w8_fsm_compute_system.sv",
+    "sha256": "db6d2058eb658b705ab7d09594e215c6af1dde8e5bc10e4d3cc0f2ae50386653",
+    "lines": 57,
+    "anchors": [
+      {
+        "line": 4,
+        "text": "module w8_fsm_compute_system #("
+      },
+      {
+        "line": 40,
+        "text": "assign host_read_ready=host_allowed && read_ready;"
+      }
+    ]
+  },
+  {
+    "path": "experiments/full128_bank_reset_fix_20261102/rtl/w8_inference_core.sv",
+    "sha256": "6c6d3efbc571d3f957bc57d8e2af2df3f878deee81c10386c5740e42a01c0d72",
+    "lines": 40,
+    "anchors": [
+      {
+        "line": 4,
+        "text": "module w8_inference_core #("
+      }
+    ]
+  },
+  {
+    "path": "experiments/full128_bank_reset_fix_20261102/rtl/w8_hosted_core.sv",
+    "sha256": "283433fd097576fc99981dd0aff6dd6060c0cd0ef74d64482efde521a6c452c3",
+    "lines": 104,
+    "anchors": [
+      {
+        "line": 6,
+        "text": "module w8_hosted_core #("
+      }
+    ]
+  },
+  {
+    "path": "experiments/full128_bank_reset_fix_20261102/board/w8_board_core.v",
+    "sha256": "4812e5627746a2ae023c4cc9513570c538eaebb9ed9ee53ce5cdc57394e732d6",
+    "lines": 47,
+    "anchors": [
+      {
+        "line": 3,
+        "text": "module w8_board_core #("
+      }
+    ]
+  }
+]

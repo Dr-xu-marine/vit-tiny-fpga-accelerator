@@ -1,0 +1,20 @@
+set_param general.maxThreads 1
+lassign $argv input out candidate checks
+foreach cmd {synth_design opt_design place_design phys_opt_design write_bitstream launch_runs} {
+ trace add execution $cmd enter {apply {{cmd op} {error FORBIDDEN_STAGE}}}
+}
+open_checkpoint $input
+if {[get_property PART [current_design]] ne "xcvu9p-flga2104-2L-e"} {error PART_MISMATCH}
+source {D:/fpga/vit_tiny_vcu118/experiments/full128_downclock_bit_20261102/clock_contract_166/scripts/board_clock.tcl}
+source $checks
+validate_host75_clocks [file join $out before_clocks.tsv]
+validate_compute_structure $out
+write_xdc -force [file join $out before_effective.xdc]
+report_route_status -file [file join $out before_route_status.rpt]
+puts "BEGIN_ONE_ROUTE_NO_RESET_COPY"
+flush stdout
+route_design
+write_checkpoint [file join $out 07_routed.dcp]
+report_route_status -file [file join $out route_status.rpt]
+puts "ONE_ROUTE_COMPLETE_CHECKPOINT_SAVED"
+exit 0

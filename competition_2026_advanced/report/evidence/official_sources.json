@@ -1,0 +1,63 @@
+{
+  "amd_guide": {
+    "path": "C:\\Users\\Lenovo\\Desktop\\AMD.pdf",
+    "sha256": "c6ad82acd4f7bdcd13bd412e232ed85d05f2a87dd5e2cdd04f9d219f88b569fc",
+    "bytes": 950952,
+    "pages": 28,
+    "metadata": {
+      "/Producer": "Microsoft® Word 2021",
+      "/Creator": "Microsoft® Word 2021",
+      "/CreationDate": "D:20260831222458+08'00'",
+      "/ModDate": "D:20260831222458+08'00'"
+    },
+    "extracted_file": "D:\\fpga\\vit_tiny_vcu118\\competition_2026_advanced\\report\\evidence\\amd_guide.txt",
+    "extracted_page_chars": [
+      136,
+      4641,
+      1508,
+      715,
+      1076,
+      1463,
+      761,
+      1396,
+      1089,
+      1465,
+      1192,
+      707,
+      1101,
+      1282,
+      1401,
+      1438,
+      1466,
+      1294,
+      1692,
+      1882,
+      1109,
+      1368,
+      1058,
+      1243,
+      1249,
+      985,
+      786,
+      332
+    ]
+  },
+  "upload_requirements": {
+    "path": "D:\\电脑管家迁移文件\\xwechat_files\\wxid_81i5gx3dwpmi22_19b9\\temp\\RWTemp\\2026-11\\428769c81000563815599cd72d89cc96\\2026FPGA创新设计赛道作品上传要求.pdf",
+    "sha256": "7b0bd224129c1d3bdcc498ae4fbffde712e9ca1f5824fa05783dfa4570ecccd2",
+    "bytes": 179735,
+    "pages": 3,
+    "metadata": {
+      "/Producer": "Microsoft® Word 2021",
+      "/Creator": "Microsoft® Word 2021",
+      "/CreationDate": "D:20261102161013+08'00'",
+      "/ModDate": "D:20261102161013+08'00'"
+    },
+    "extracted_file": "D:\\fpga\\vit_tiny_vcu118\\competition_2026_advanced\\report\\evidence\\upload_requirements.txt",
+    "extracted_page_chars": [
+      408,
+      79,
+      260
+    ]
+  }
+}

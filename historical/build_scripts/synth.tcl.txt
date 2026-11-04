@@ -1,0 +1,130 @@
+# One NEW full board synthesis. No opt/place/route/Bitstream or RTL changes.
+set_param general.maxThreads 1
+if {[llength $argv]!=5} {error "Expected SOURCE_XPR OUTPUT CANDIDATE CACHE"}
+lassign $argv source_xpr out candidate cache build_scripts
+proc stage {name} {
+ set f [open [file join $::out STAGE.txt] w];puts $f $name;close $f
+ puts "HOST75_SYNTH_STAGE $name";flush stdout
+}
+set failures {}
+proc checked {name command} {
+ if {[catch {uplevel 1 $command} msg options]} {
+  lappend ::failures $name
+  set f [open [file join $::out ${name}_error.txt] w];puts $f $msg;puts $f [dict get $options -errorinfo];close $f
+  puts $::checks "$name\tFAIL\t[string map {\n { } \t { }} $msg]"
+ } else {puts $::checks "$name\tPASS"}
+ flush $::checks
+}
+stage OPEN_READONLY_AND_CLONE
+open_project -read_only $source_xpr
+save_project_as host75_synth [file join $out project]
+if {[get_property PART [current_project]] ne "xcvu9p-flga2104-2L-e"} {error "Wrong target device"}
+if {[get_property TOP [current_fileset]] ne "w8_platform_wrapper"} {error "Wrong full board top"}
+config_ip_cache -use_cache_location $cache
+set_property IP_CACHE_PERMISSIONS read [current_project]
+update_compile_order -fileset sources_1
+report_ip_status -file [file join $out ip_status.rpt]
+foreach ip [get_ips -quiet] {if {[get_property IS_LOCKED $ip]} {error "Locked IP: $ip"}}
+set f [open [file join $out actual_sources.tsv] w]
+foreach file [get_files -compile_order sources -used_in synthesis] {
+ set path [file normalize [get_property NAME $file]]
+ if {[string first {d:/fpga/vit_tiny_vcu118/} [string tolower $path]]!=0} {error "Source escaped workspace: $path"}
+ if {[string match {*tiny_gemm_per_lane.v} $path]} {error "Old16-MAC fallback forbidden"}
+ puts $f $path
+}
+close $f
+set f [open [file join $out active_xdc.tsv] w]
+foreach file [get_files -all -quiet -filter {FILE_TYPE == XDC}] {
+ puts $f "$file\t[get_property USED_IN $file]\t[get_property PROCESSING_ORDER $file]"
+}
+close $f
+source [file join $build_scripts sources.tcl]
+set f [open [file join $out actual_candidate_sources.tsv] w]
+set actual {}
+foreach file [get_files -compile_order sources -used_in synthesis] {
+ set p [file normalize [get_property NAME $file]];puts $f $p;lappend actual $p
+ if {[string match {*full128_jointfix_20261029/*} $p]} {error STALE_COMPUTE_SOURCE}
+}
+close $f
+foreach p $candidate_sources {if {[lsearch -exact $actual $p]<0} {error "FROZEN_SOURCE_MISSING $p"}}
+
+stage SYNTH_DESIGN
+synth_design -top w8_platform_wrapper -part xcvu9p-flga2104-2L-e -flatten_hierarchy rebuilt
+stage SAVE_RAW_SYNTH_DCP
+# Preserve the expensive result even if a subsequent query/report is unsupported.
+write_checkpoint [file join $out 01_synthesized_raw.dcp]
+set checks [open [file join $out check_status.tsv] w]
+checked compute_clock {source {D:/fpga/vit_tiny_vcu118/experiments/full128_downclock_bit_20261102/clock_contract_166/scripts/board_clock.tcl}}
+checked host75_clock {
+ set host75_report_dir [file join $out host75_clock]
+ set host75_candidate_root {D:/fpga/vit_tiny_vcu118/experiments/full128_downclock_bit_20261102/clock_contract_166}
+ source {D:/fpga/vit_tiny_vcu118/experiments/full128_host75_synth_20261101/scripts/post_synth_host75_no_disconnect.tcl}
+}
+checked DSP128 {
+ set pe [get_cells -hier -quiet -filter {REF_NAME == DSP48E2 && NAME =~ */gemm/tile/core/*}]
+ if {[llength $pe]!=128} {error "Expected128 MAC DSPs, actual[llength $pe]"}
+ set f [open [file join $out core_dsp.tsv] w]
+ foreach d $pe {
+  set row [list $d]
+  foreach k {AREG BREG MREG PREG} {set v [get_property $k $d];lappend row $v;if {$v!=1} {error "DSP register mismatch: $d $k=$v"}}
+  puts $f [join $row "\t"]
+ }
+ close $f
+}
+checked blackboxes {
+ set f [open [file join $out blackboxes.tsv] w]
+ foreach c [get_cells -hier -quiet -filter {IS_BLACKBOX == 1}] {
+  set ref [get_property REF_NAME $c];puts $f "$c\t$ref"
+  if {$c ne "dbg_hub" || $ref ne "dbg_hub_CV"} {error "Unresolved non-Hub blackbox: $c $ref"}
+ }
+ close $f
+}
+checked local_valid {
+ set regs [get_cells -hier -quiet -filter {NAME =~ */local_read_v1_reg* && IS_SEQUENTIAL == 1}]
+ if {[llength $regs]!=4} {error "Local same-age valid replication missing/merged"}
+ set f [open [file join $out local_valid_drivers.tsv] w]
+ foreach c $regs {
+  set pin [get_pins -of_objects $c -filter {REF_PIN_NAME == Q}];set net [get_nets -of_objects $pin]
+  puts $f "$c\t$pin\t$net\t[llength [get_pins -leaf -of_objects $net -filter {DIRECTION == IN}]]\t[get_property LOC $c]"
+ }
+ close $f
+}
+checked primitive_inventory {
+ set f [open [file join $out primitive_counts.tsv] w]
+ foreach ref {LUT1 LUT2 LUT3 LUT4 LUT5 LUT6 LUT6_2 FDRE FDSE FDCE FDPE LDCE LDPE DSP48E2 RAMB36E2 RAMB18E2 URAM288 MMCME4_ADV BUFGCE} {
+  puts $f "$ref\t[llength [get_cells -hier -quiet -filter [list REF_NAME == $ref]]]"
+ }
+ close $f
+ set f [open [file join $out storage_cells.tsv] w]
+ foreach c [get_cells -hier -quiet -filter {REF_NAME =~ RAM* || REF_NAME =~ URAM* || REF_NAME =~ LD*}] {puts $f "$c\t[get_property REF_NAME $c]"}
+ close $f
+}
+checked calibration_status {source [file join $candidate scripts calibration_status_cdc.tcl];apply_calibration_status_contract [file join $out calibration_contract.tsv]}
+checked replicated_control {source [file join $candidate scripts check_new_structure.tcl];check_new_structure $out}
+checked request_fences {source [file join $candidate scripts check_request_structure.tcl];check_request_structure $out}
+checked joint_bank_receivers {source [file join $build_scripts check_banks.tcl];check_joint_banks $out}
+stage SAVE_CHECKED_DCP_AND_REPORTS
+checked save_configured_DCP {write_checkpoint [file join $out 02_synthesized_host75.dcp]}
+checked utilization {report_utilization -file [file join $out utilization.rpt]}
+checked hierarchical_utilization {report_utilization -hierarchical -file [file join $out utilization_hierarchy.rpt]}
+checked memory {report_ram_utilization -include_lutram -file [file join $out memory_mapping.rpt]}
+checked clocks {report_clocks -file [file join $out clocks.rpt]}
+checked clock_interaction {report_clock_interaction -file [file join $out clock_interaction.rpt]}
+checked effective_xdc {write_xdc [file join $out effective_synth.xdc]}
+checked timing_summary {report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -file [file join $out timing_summary.rpt]}
+checked check_timing {check_timing -verbose -file [file join $out check_timing.rpt]}
+checked setup20 {report_timing -delay_type max -max_paths 20 -nworst 1 -path_type full_clock_expanded -input_pins -file [file join $out setup20.rpt]}
+checked hold20 {report_timing -delay_type min -max_paths 20 -nworst 1 -path_type full_clock_expanded -input_pins -file [file join $out hold20.rpt]}
+checked high_fanout {report_high_fanout_nets -timing -max_nets 100 -file [file join $out high_fanout.rpt]}
+checked cdc {report_cdc -details -file [file join $out cdc.rpt]}
+checked methodology {report_methodology -file [file join $out methodology.rpt]}
+checked drc {report_drc -file [file join $out drc.rpt]}
+set f [open [file join $out message_counts.tsv] w]
+foreach severity {ERROR {CRITICAL WARNING} WARNING} {puts $f "$severity\t[get_msg_config -count -severity $severity]"}
+close $f
+close $checks
+if {[llength $failures]} {stage CHECKS_FAILED_RAW_DCP_PRESERVED;error "Post-synthesis checks failed: $failures"}
+close_project
+stage SYNTH_AND_MAPPED_CHECKS_COMPLETE_NO_OPT_NO_PNR
+puts WHOLE_HOST75_SYNTH_MAPPED_CHECKS_COMPLETE_NOT_PHYSICAL_PASS
+exit 0

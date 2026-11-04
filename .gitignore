@@ -1,0 +1,62 @@
+# Tool-generated output and local publication records
+.git/
+.publication/
+/build/
+/runs/
+.Xil/
+**/.Xil/
+**/xsim.dir/
+**/*.cache/
+**/*.runs/
+**/*.sim/
+**/*.gen/
+**/ip_user_files/
+__pycache__/
+*.pyc
+*.jou
+*.log
+*.dmp
+*.wdb
+*.vcd
+*.dcp
+*.bit
+*.ltx
+*.zip
+*.rar
+*.7z
+*.tmp
+# Private model/dataset/runtime inputs. No licensed weights or images in Git.
+*.pt
+*.pth
+*.onnx
+*.safetensors
+*.npz
+*.npy
+*.bin
+*.jpg
+*.jpeg
+*.tar
+*.tar.gz
+data/contract.json
+data/source_image.*
+data/package/ddr*.hex
+testbench/ln/*.hex
+testbench/aux_cases/*.hex
+testbench/short_cases/**/*.hex
+# Credentials and user-specific configuration
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa*
+id_ed25519*
+.ssh/
+credentials*
+secrets*
+# New hardware captures
+host/observed_*.hex
+
+# Preserve selected immutable evidence logs.
+!competition_2026_advanced/report/evidence/*.log

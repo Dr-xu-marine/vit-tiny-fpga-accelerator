@@ -1,0 +1,186 @@
+# Read-only post-placement reports in a fresh process. No implementation commands.
+set_param general.maxThreads 1
+if {[llength $argv]!=5} {error "Expected INPUT_DCP OUTPUT CANDIDATE CLOCK_CHECKS"}
+lassign $argv input out candidate checks build_scripts
+foreach command {synth_design opt_design place_design phys_opt_design route_design write_bitstream launch_runs} {
+ trace add execution $command enter {apply {{cmd op} {error "FORBIDDEN_IMPLEMENTATION_IN_REPORT_PROCESS"}}}
+}
+proc stage {name} {set f [open [file join $::out STAGE.txt] w];puts $f $name;close $f;puts "HOST75_REPORT_STAGE $name";flush stdout}
+stage OPEN_PLACED_DCP
+open_checkpoint $input
+if {[get_property PART [current_design]] ne "xcvu9p-flga2104-2L-e"} {error "Wrong device"}
+source {D:/fpga/vit_tiny_vcu118/experiments/full128_downclock_bit_20261102/clock_contract_166/scripts/board_clock.tcl}
+source $checks
+set failures {}
+set summary [open [file join $out report_status.tsv] w]
+proc checked {name command} {
+ global failures summary
+ stage $name
+ if {[catch {uplevel 1 $command} msg options]} {
+  lappend failures $name
+  puts $summary "$name\tFAIL\t[string map {\n { } \t { }} $msg]"
+  set f [open [file join $::out ${name}_error.txt] w];puts $f $msg;puts $f [dict get $options -errorinfo];close $f
+ } else {puts $summary "$name\tPASS"}
+ flush $summary
+}
+proc prop_or_unknown {object property} {
+ if {[llength $object]!=1 || $property ni [list_property $object]} {return UNKNOWN}
+ return [get_property $property $object]
+}
+proc physical {pin_or_cell} {
+ set c [get_cells -quiet $pin_or_cell]
+ if {[llength $c]!=1} {
+  set p [get_pins -quiet $pin_or_cell]
+  if {[llength $p]==1} {set c [get_cells -quiet -of_objects $p]}
+ }
+ if {[llength $c]!=1} {return {UNKNOWN UNKNOWN UNKNOWN UNKNOWN}}
+ set loc [prop_or_unknown $c LOC];set region UNKNOWN;set slr UNKNOWN
+ if {$loc ne "" && $loc ne "UNKNOWN"} {
+  set site [get_sites -quiet $loc]
+  if {[llength $site]==1} {
+   if {![catch {get_clock_regions -quiet -of_objects $site} q] && [llength $q]} {set region $q}
+   if {![catch {get_slrs -quiet -of_objects $site} q] && [llength $q]} {set slr $q}
+  }
+ }
+ return [list $c $loc $region $slr]
+}
+proc write_path_rows {paths file {include_physical 1}} {
+ set f [open $file w]
+ puts $f "slack_ns\tstartpoint\tendpoint\tpath_group\tlogic_levels\tdata_delay_ns\tstart_cell\tstart_LOC\tstart_CR\tstart_SLR\tend_cell\tend_LOC\tend_CR\tend_SLR"
+ foreach p $paths {
+  set a [prop_or_unknown $p STARTPOINT_PIN];set b [prop_or_unknown $p ENDPOINT_PIN]
+  set ap {NOT_QUERIED NOT_QUERIED NOT_QUERIED NOT_QUERIED};set bp $ap
+  if {$include_physical} {set ap [physical $a];set bp [physical $b]}
+  puts $f "[prop_or_unknown $p SLACK]\t$a\t$b\t[prop_or_unknown $p PATH_GROUP]\t[prop_or_unknown $p LOGIC_LEVELS]\t[prop_or_unknown $p DATAPATH_DELAY]\t[join $ap \t]\t[join $bp \t]"
+ }
+ close $f
+}
+proc negative_inventory {delay} {
+ # One worst path per endpoint, both setup and hold separately; never silently truncate.
+ set cap 250000
+ set paths [get_timing_paths -quiet -delay_type $delay -slack_lesser_than 0 -max_paths $cap -nworst 1]
+ # LOC/SLR are queried for the detailed worst/family paths, avoiding hundreds
+ # of thousands of repeated physical queries in the complete endpoint list.
+ write_path_rows $paths [file join $::out negative_${delay}_endpoints.tsv] 0
+ set f [open [file join $::out negative_${delay}_count.tsv] w]
+ puts $f "count\t[llength $paths]";puts $f "cap\t$cap";puts $f "truncated\t[expr {[llength $paths]>=$cap}]";close $f
+ if {[llength $paths]>=$cap} {error "Negative endpoint inventory reached cap; incomplete, not accepted"}
+}
+proc physical_controls {} {
+ set f [open [file join $::out local_valid_physical.tsv] w]
+ puts $f "cell\tLOC\tclock_region\tSLR\tdriver\tnet\tload_pins"
+ foreach c [get_cells -hier -quiet -filter {NAME =~ */local_read_v1_reg* && IS_SEQUENTIAL == 1}] {
+  set p [get_pins -quiet -of_objects $c -filter {REF_PIN_NAME == Q}]
+  set n [get_nets -quiet -segments -of_objects $p]
+  puts $f "[join [physical $c] \t]\t$p\t$n\t[llength [get_pins -quiet -leaf -of_objects $n -filter {DIRECTION == IN}]]"
+ }
+ close $f
+ set f [open [file join $::out DSP_BRAM_locations.tsv] w]
+ puts $f "cell\tLOC\tclock_region\tSLR\tprimitive\tAREG\tBREG\tMREG\tPREG"
+ foreach c [get_cells -hier -quiet -filter {REF_NAME == DSP48E2 || REF_NAME == RAMB36E2 || REF_NAME == RAMB18E2}] {
+  puts $f "[join [physical $c] \t]\t[get_property REF_NAME $c]\t[prop_or_unknown $c AREG]\t[prop_or_unknown $c BREG]\t[prop_or_unknown $c MREG]\t[prop_or_unknown $c PREG]"
+ }
+ close $f
+}
+proc family_report {name args} {
+ set f [open [file join $::out path_families.tsv] a]
+ foreach delay {max min} {
+  set paths [get_timing_paths -quiet -delay_type $delay -max_paths 10 -nworst 1 {*}$args]
+  puts $f "$name\t$delay\t[llength $paths]\t[expr {[llength $paths] ? [get_property SLACK [lindex $paths 0]] : {NOT_PRESENT}}]"
+  if {[llength $paths]} {
+   report_timing -delay_type $delay -max_paths 10 -nworst 1 {*}$args -path_type full_clock_expanded -input_pins -file [file join $::out family_${name}_${delay}.rpt]
+   write_path_rows $paths [file join $::out family_${name}_${delay}.tsv]
+  }
+ }
+ close $f
+}
+proc all_families {} {
+ set f [open [file join $::out path_families.tsv] w];puts $f "family\tdelay_type\tpaths\tworst_slack_ns";close $f
+ set bram [get_cells -hier -quiet -filter {REF_NAME == RAMB36E2 || REF_NAME == RAMB18E2}]
+ set dsp [get_cells -hier -quiet -filter {REF_NAME == DSP48E2}]
+ set do_pins [get_pins -quiet -of_objects $bram -filter {DIRECTION == OUT && (REF_PIN_NAME =~ DO* || REF_PIN_NAME =~ DOP*)}]
+ set di_pins [get_pins -quiet -of_objects $dsp -filter {DIRECTION == IN && (REF_PIN_NAME =~ A* || REF_PIN_NAME =~ B*)}]
+ if {[llength $do_pins] && [llength $di_pins]} {family_report BRAM_to_DSP -from $do_pins -to $di_pins}
+ set addr [get_pins -quiet -of_objects $bram -filter {DIRECTION == IN && (REF_PIN_NAME =~ ADDR* || REF_PIN_NAME =~ EN* || REF_PIN_NAME =~ WE*)}]
+ if {[llength $addr]} {family_report BRAM_address_enable -to $addr}
+ set ctrl [get_pins -quiet -of_objects $dsp -filter {DIRECTION == IN && (REF_PIN_NAME =~ CE* || REF_PIN_NAME =~ RST* || REF_PIN_NAME =~ OPMODE* || REF_PIN_NAME =~ ALUMODE*)}]
+ if {[llength $ctrl]} {family_report DSP_control -to $ctrl}
+ foreach {name filter} {
+  MAC {IS_SEQUENTIAL == 1 && NAME =~ */gemm/tile/core/*}
+  Bias_RQ {IS_SEQUENTIAL == 1 && NAME =~ */gemm/tile/rq/*}
+  AUX_math {IS_SEQUENTIAL == 1 && NAME =~ */aux/arithmetic/*}
+  scheduler {IS_SEQUENTIAL == 1 && NAME =~ */sequencer/*}
+  writeback_move {IS_SEQUENTIAL == 1 && NAME =~ */tile/move/*}
+ } {
+  set cells [get_cells -hier -quiet -filter $filter]
+  set pins [get_pins -quiet -of_objects $cells -filter {DIRECTION == IN && IS_CLOCK == 0}]
+  if {[llength $pins]} {family_report $name -to $pins} else {
+   set f [open [file join $::out path_families.tsv] a];puts $f "$name\tUNKNOWN\t0\tNOT_PRESENT";close $f
+  }
+ }
+}
+checked host75_clocks {validate_host75_clocks [file join $out clocks_verified.tsv]}
+checked compute_structure {validate_compute_structure $out}
+checked new_control_structure {source [file join $candidate scripts check_new_structure.tcl];check_new_structure $out}
+checked request_fences {source [file join $candidate scripts check_request_structure.tcl];check_request_structure $out;request_physical_samples $out}
+checked joint_bank_receivers {source [file join $build_scripts check_banks.tcl];check_joint_banks $out}
+checked complete_native_RAM_paths {
+ set rams [get_cells -hier -quiet -filter {REF_NAME == RAMB36E2 || REF_NAME == RAMB18E2}]
+ set dsp [get_cells -hier -quiet -filter {REF_NAME == DSP48E2}]
+ family_report RAM_all_cells_to_DSP -from $rams -to [get_pins -of_objects $dsp -filter {DIRECTION == IN && (REF_PIN_NAME =~ A* || REF_PIN_NAME =~ B*)}]
+ foreach {name pattern} {ACT */buffers/act_storage/banks* Weight */buffers/learned/* PACK */buffers/dynamic_weights/* RQ */buffers/rq/*} {
+  set cells [get_cells -hier -quiet -filter "NAME =~ $pattern && (REF_NAME == RAMB36E2 || REF_NAME == RAMB18E2)"]
+  family_report ${name}_all_RAM_cells -from $cells
+ }
+}
+checked route_status {report_route_status -file [file join $out route_status.rpt]}
+checked bus_skew {report_bus_skew -file [file join $out bus_skew.rpt]}
+checked effective_constraints {write_xdc -force [file join $out effective_constraints.xdc]}
+checked clocks {report_clocks -file [file join $out clocks.rpt]}
+checked clock_interaction {report_clock_interaction -file [file join $out clock_interaction.rpt]}
+checked timing_summary {report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -file [file join $out timing_summary.rpt]}
+checked check_timing {check_timing -verbose -file [file join $out check_timing.rpt]}
+checked setup20 {report_timing -delay_type max -max_paths 20 -nworst 1 -path_type full_clock_expanded -input_pins -file [file join $out setup20.rpt]}
+checked hold20 {report_timing -delay_type min -max_paths 20 -nworst 1 -path_type full_clock_expanded -input_pins -file [file join $out hold20.rpt]}
+checked negative_setup {negative_inventory max}
+checked negative_hold {negative_inventory min}
+checked path_families {all_families}
+checked physical_controls {physical_controls}
+
+checked request_path_families {
+ set act [get_cells -hier -quiet -filter {IS_SEQUENTIAL == 1 && NAME =~ */buffers/act_storage/*}]
+ set acache [get_cells -hier -quiet -filter {NAME =~ */gemm/A_BANK* && (REF_NAME == RAMB36E2 || REF_NAME == RAMB18E2)}]
+ family_report ACT_to_A_cache -from $act -to [get_pins -of_objects $acache -filter {DIRECTION == IN && IS_CLOCK == 0}]
+ set raw [get_cells -hier -quiet -filter {IS_SEQUENTIAL == 1 && NAME =~ */act_storage/raw*}]
+ family_report ACT_request_capture -to [get_pins -of_objects $raw -filter {DIRECTION == IN && IS_CLOCK == 0}]
+ set bank [get_cells -hier -quiet -filter {IS_SEQUENTIAL == 1 && (NAME =~ */act_storage/banks*.a_enable_q_reg || NAME =~ */act_storage/banks*.b_read_q_reg || NAME =~ */act_storage/banks*.b_write_q_reg || NAME =~ */act_storage/banks*.a_word_q_reg* || NAME =~ */act_storage/banks*.b_word_q_reg* || NAME =~ */act_storage/banks*.b_data_q_reg*)}]
+ family_report ACT_bank_request -to [get_pins -of_objects $bank -filter {DIRECTION == IN && IS_CLOCK == 0}]
+ set writer [get_cells -hier -quiet -filter {IS_SEQUENTIAL == 1 && NAME =~ */system_unit/writer/*}]
+ family_report DMA_writer -to [get_pins -of_objects $writer -filter {DIRECTION == IN && IS_CLOCK == 0}]
+}
+
+checked high_fanout {report_high_fanout_nets -timing -max_nets 100 -file [file join $out high_fanout.rpt]}
+checked congestion {report_design_analysis -congestion -file [file join $out congestion.rpt]}
+checked logic_levels {report_design_analysis -logic_level_distribution -logic_level_dist_paths 1000 -file [file join $out logic_levels.rpt]}
+checked clock_utilization {report_clock_utilization -file [file join $out clock_utilization.rpt]}
+checked utilization {report_utilization -file [file join $out utilization.rpt]}
+checked utilization_hierarchy {report_utilization -hierarchical -file [file join $out utilization_hierarchy.rpt]}
+checked memory_mapping {report_ram_utilization -include_lutram -file [file join $out memory_mapping.rpt]}
+checked drc {report_drc -file [file join $out drc.rpt]}
+checked methodology {report_methodology -file [file join $out methodology.rpt]}
+checked cdc {report_cdc -details -file [file join $out cdc.rpt]}
+set f [open [file join $out final_checks.tsv] w]
+puts $f "errors\t[get_msg_config -count -severity ERROR]"
+puts $f "critical_warnings_current_project\t[get_msg_config -count -severity {CRITICAL WARNING}]"
+puts $f "report_failures\t$failures"
+close $f
+close $summary
+# Full raw check results retained. External gate reviews all reports before Bitstream.
+set f [open [file join $out clocks_raw.tsv] w]
+foreach c [get_clocks] {puts $f "$c\t[get_property PERIOD $c]\t[get_property IS_GENERATED $c]\t[get_property SOURCE_PINS $c]"}
+close $f
+close_design
+stage ROUTED_REPORTS_COMPLETE_REVIEW_REQUIRED
+if {[llength $failures]} {error "Post-place reporting failures: $failures. Placed DCP preserved."}
+puts ROUTED_REPORT_COMMANDS_COMPLETE_REVIEW_REQUIRED
+exit 0

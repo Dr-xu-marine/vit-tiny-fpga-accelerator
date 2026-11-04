@@ -1,0 +1,23 @@
+{
+  "checked_at": "2026-11-04",
+  "source_remote": "none configured",
+  "ssh_directory": "C:/Users/Lenovo/.ssh absent",
+  "ssh_client": "C:/Windows/System32/OpenSSH/ssh.exe",
+  "ssh_test": "kex_exchange_identification: Connection closed by remote host",
+  "authenticated_account": null,
+  "target_repository": null,
+  "repository_existence": "NOT_CHECKABLE_WITHOUT_ACCOUNT_AND_REPOSITORY",
+  "public_repository_created": false,
+  "push_performed": false,
+  "git_ssh_environment": "no override/agent socket discovered",
+  "global_git_identity": "not configured in inspected environment",
+  "github_cli_auth_files": "not found in checked standard locations",
+  "local_git_initialized": true,
+  "local_branch": "main",
+  "remote_configured": false,
+  "git_add_dry_run": "PASS",
+  "dry_run_file_count": 327,
+  "ignored_public_files": 0,
+  "staged_files": 0,
+  "commit_created": false
+}

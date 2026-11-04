@@ -1,0 +1,2 @@
+`define CONTROL_CASES 19966
+`define CONTROL_CASE_PATH "D:/fpga/vit_tiny_vcu118/experiments/full128_jointfix_20261029/tests/control_cases.hex"

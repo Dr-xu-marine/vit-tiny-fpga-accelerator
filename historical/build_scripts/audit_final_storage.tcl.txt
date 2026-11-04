@@ -1,0 +1,29 @@
+set_param general.maxThreads 1
+lassign $argv input out scripts
+open_checkpoint $input
+source [file join $scripts check_banks.tcl]
+prepare_reset_aliases $out
+set f [open [file join $out gelu_suspect_topology.tsv] w]
+set suspects [get_cells -hier -quiet -filter {NAME =~ */buffers/gelu/*bytes_reg* && IS_SEQUENTIAL == 1 && REF_NAME !~ RAMB*}]
+puts $f "COUNT\t[llength $suspects]"
+foreach c $suspects {
+ puts $f "CELL\t$c\t[get_property REF_NAME $c]\t[get_property LOC $c]"
+ puts $f "OLD_CLASSIFIER\t[proved_gelu_read_selector $c]"
+ foreach name {C D CE R} {
+  set p [get_pins -of_objects $c -filter "REF_PIN_NAME == $name"]
+  foreach s [all_fanin -flat -startpoints_only -to $p] {puts $f "FANIN_$name\t$s"}
+ }
+ set q [get_pins -of_objects $c -filter {REF_PIN_NAME == Q}]
+ foreach p [get_pins -quiet -leaf -of_objects [get_nets -segments -of_objects $q] -filter {DIRECTION == IN}] {puts $f "LOAD\t$p\t[get_property REF_NAME [get_cells -of_objects $p]]"}
+ report_property -all -file [file join $out gelu_[string map {/ _ \[ _ \] _} [file tail $c]].rpt] $c
+}
+close $f
+set f [open [file join $out gelu_RAM_controls.tsv] w]
+set rams [get_cells -hier -quiet -filter {NAME =~ */buffers/gelu/* && (REF_NAME == RAMB36E2 || REF_NAME == RAMB18E2)}]
+puts $f "RAM_COUNT\t[llength $rams]"
+foreach r $rams {puts $f "$r\t[get_property REF_NAME $r]\t[get_property LOC $r]"}
+foreach p [all_fanin -flat -startpoints_only -to [get_pins -of_objects $rams -filter {DIRECTION == IN && (REF_PIN_NAME =~ ADDR* || REF_PIN_NAME =~ EN* || REF_PIN_NAME =~ WE* || REF_PIN_NAME =~ RST* || REF_PIN_NAME =~ REGCE*)}]] {puts $f "CONTROL_SOURCE\t$p"}
+close $f
+source [file join $scripts io_audit.tcl]
+puts FINAL_STORAGE_AND_IO_TOPOLOGY_AUDIT_COMPLETE
+exit 0

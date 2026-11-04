@@ -1,0 +1,71 @@
+ECHO 处于关闭状态。
+ECHO 处于关闭状态。
+
+****** xsim v2023.2 (64-bit)
+  **** SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+  **** IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+  **** SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/scoped_snapshot/xsim_script.tcl
+# xsim {scoped_snapshot} -testplusarg STOP_AFTER_CP=20 -autoloadwcfg -tclbatch {D:/fpga/vit_tiny_vcu118/experiments/board_first_divergence_20261103/run/run.tcl} -onfinish stop -onerror quit
+Time resolution is 1 ps
+source D:/fpga/vit_tiny_vcu118/experiments/board_first_divergence_20261103/run/run.tcl
+## run all
+TRACE_PROGRESS pc=5 checkpoints=0 cycles=1000000
+W8_CHECKPOINT_PASS patch_embed.proj values=37632 cycle=1541041
+TRACE_PROGRESS pc=8 checkpoints=1 cycles=2000000
+TRACE_PROGRESS pc=8 checkpoints=1 cycles=3000000
+TRACE_PROGRESS pc=8 checkpoints=1 cycles=4000000
+TRACE_PROGRESS pc=8 checkpoints=1 cycles=5000000
+TRACE_PROGRESS pc=8 checkpoints=1 cycles=6000000
+TRACE_PROGRESS pc=8 checkpoints=1 cycles=7000000
+TRACE_PROGRESS pc=8 checkpoints=1 cycles=8000000
+TRACE_PROGRESS pc=8 checkpoints=1 cycles=9000000
+TRACE_PROGRESS pc=8 checkpoints=1 cycles=10000000
+W8_CHECKPOINT_PASS frontend values=37824 cycle=10491472
+TRACE_PROGRESS pc=14 checkpoints=2 cycles=11000000
+TRACE_PROGRESS pc=23 checkpoints=2 cycles=12000000
+TRACE_PROGRESS pc=32 checkpoints=2 cycles=13000000
+TRACE_PROGRESS pc=41 checkpoints=2 cycles=14000000
+TRACE_PROGRESS pc=51 checkpoints=2 cycles=15000000
+TRACE_PROGRESS pc=60 checkpoints=2 cycles=16000000
+TRACE_PROGRESS pc=69 checkpoints=2 cycles=17000000
+TRACE_PROGRESS pc=78 checkpoints=2 cycles=18000000
+TRACE_PROGRESS pc=87 checkpoints=2 cycles=19000000
+TRACE_PROGRESS pc=96 checkpoints=2 cycles=20000000
+TRACE_PROGRESS pc=105 checkpoints=2 cycles=21000000
+TRACE_PROGRESS pc=114 checkpoints=2 cycles=22000000
+TRACE_PROGRESS pc=123 checkpoints=2 cycles=23000000
+TRACE_PROGRESS pc=132 checkpoints=2 cycles=24000000
+TRACE_PROGRESS pc=141 checkpoints=2 cycles=25000000
+TRACE_PROGRESS pc=150 checkpoints=2 cycles=26000000
+TRACE_PROGRESS pc=159 checkpoints=2 cycles=27000000
+TRACE_PROGRESS pc=168 checkpoints=2 cycles=28000000
+TRACE_PROGRESS pc=177 checkpoints=2 cycles=29000000
+TRACE_PROGRESS pc=187 checkpoints=2 cycles=30000000
+TRACE_PROGRESS pc=196 checkpoints=2 cycles=31000000
+TRACE_PROGRESS pc=205 checkpoints=2 cycles=32000000
+W8_CHECKPOINT_PASS blocks.0.norm1 values=37824 cycle=32196565
+TRACE_PROGRESS pc=210 checkpoints=3 cycles=33000000
+TRACE_PROGRESS pc=210 checkpoints=3 cycles=34000000
+W8_CHECKPOINT_PASS blocks.0.attn.qkv values=113472 cycle=34598871
+W8_CHECKPOINT_PASS attn0.0.score values=38809 cycle=34867798
+TRACE_PROGRESS pc=229 checkpoints=5 cycles=35000000
+TRACE_PROGRESS pc=248 checkpoints=5 cycles=36000000
+TRACE_PROGRESS pc=268 checkpoints=5 cycles=37000000
+TRACE_PROGRESS pc=287 checkpoints=5 cycles=38000000
+TRACE_PROGRESS pc=306 checkpoints=5 cycles=39000000
+TRACE_PROGRESS pc=325 checkpoints=5 cycles=40000000
+TRACE_PROGRESS pc=345 checkpoints=5 cycles=41000000
+TRACE_PROGRESS pc=364 checkpoints=5 cycles=42000000
+TRACE_PROGRESS pc=383 checkpoints=5 cycles=43000000
+TRACE_PROGRESS pc=402 checkpoints=5 cycles=44000000
+TRACE_PROGRESS pc=422 checkpoints=5 cycles=45000000
+W8_CHECKPOINT_PASS attn0.0.prob values=38809 cycle=45098258
+W8_CHECKPOINT_PASS attn0.0.av values=12608 cycle=45587275
+W8_CHECKPOINT_PASS attn0.1.score values=38809 cycle=45944504
+TRACE_PROGRESS pc=450 checkpoints=8 cycles=46000000
+TRACE_PROGRESS pc=470 checkpoints=8 cycles=47000000
+TRACE_PROGRESS pc=490 checkpoints=8 cycles=48000000

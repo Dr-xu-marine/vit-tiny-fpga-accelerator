@@ -1,0 +1,5 @@
+MAC_DSP	128
+MAC_AREG_BREG_MREG_PREG	1/1/1/1
+local_valid_registers	4
+blackboxes	0
+latches	0

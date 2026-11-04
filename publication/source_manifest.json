@@ -1,0 +1,2312 @@
+{
+  "schema": 1,
+  "source_root_read_only": "D:\\fpga\\vit_tiny_vcu118",
+  "selection": "actual_166p7_synthesis_manifest",
+  "active_sources": [
+    "rtl/board/w8_debug_clock_metadata.v",
+    "rtl/board/w8_board_core.v",
+    "rtl/legacy/tiny_axi_lite_control_v128.v",
+    "rtl/legacy/tiny_axi_read_dma.v",
+    "rtl/legacy/tiny_dma_byte_writer.v",
+    "rtl/legacy/tiny_result_collector.v",
+    "rtl/legacy/v2_c0_mac_cell.sv",
+    "rtl/legacy/v2_mac_group4x8.sv",
+    "rtl/vendor_byte_banks.v",
+    "rtl/w8_act_local_ram.sv",
+    "rtl/w8_aux_engine.sv",
+    "rtl/w8_command_check.sv",
+    "rtl/w8_compute_system.sv",
+    "rtl/w8_compute_tile.sv",
+    "rtl/w8_fsm_compute_system.sv",
+    "rtl/w8_gemm128.sv",
+    "rtl/w8_hosted_core.sv",
+    "rtl/w8_inference_core.sv",
+    "rtl/w8_mac_array_local.sv",
+    "rtl/w8_math.sv",
+    "rtl/w8_memories.sv",
+    "rtl/w8_program_meta.vh",
+    "rtl/w8_program_sequencer.sv",
+    "rtl/w8_quant_tile.sv",
+    "rtl/w8_requant_scalar.sv",
+    "rtl/w8_rq16.sv",
+    "rtl/w8_tensor_move.sv"
+  ],
+  "files": [
+    {
+      "path": "rtl/board/w8_debug_clock_metadata.v",
+      "source": "experiments/board_closure_20261030/rtl/w8_debug_clock_metadata.v",
+      "sha256": "aaf16e65a75f39df687fce911450054a4c630c0c71e033d516cb6d72cef15edc",
+      "bytes": 767,
+      "category": "active_rtl",
+      "exact_copy": true
+    },
+    {
+      "path": "rtl/board/w8_board_core.v",
+      "source": "experiments/full128_bank_reset_fix_20261102/board/w8_board_core.v",
+      "sha256": "4812e5627746a2ae023c4cc9513570c538eaebb9ed9ee53ce5cdc57394e732d6",
+      "bytes": 5188,
+      "category": "active_rtl",
+      "exact_copy": true
+    },
+    {
+      "path": "rtl/legacy/tiny_axi_lite_control_v128.v",
+      "source": "experiments/full128_bank_reset_fix_20261102/rtl/legacy/tiny_axi_lite_control_v128.v",
+      "sha256": "592c2f0bf48599d9d7bf8b5e6d7f4aca9efe79493a97b5dc59da0af11b499ab4",
+      "bytes": 5727,
+      "category": "active_rtl",
+      "exact_copy": true
+    },
+    {
+      "path": "rtl/legacy/tiny_axi_read_dma.v",
+      "source": "experiments/full128_bank_reset_fix_20261102/rtl/legacy/tiny_axi_read_dma.v",
+      "sha256": "3bc811a8129a3c34ca6d94b7fcf8fb73509fdfc6b0dd8aa746715eff06b91afd",
+      "bytes": 6275,
+      "category": "active_rtl",
+      "exact_copy": true
+    },
+    {
+      "path": "rtl/legacy/tiny_dma_byte_writer.v",
+      "source": "experiments/full128_bank_reset_fix_20261102/rtl/legacy/tiny_dma_byte_writer.v",
+      "sha256": "9c466ab7cf1b338d22730d6892fc2d6deff3aa873e6d716b77007e5b4a0ddf05",
+      "bytes": 4277,
+      "category": "active_rtl",
+      "exact_copy": true
+    },
+    {
+      "path": "rtl/legacy/tiny_result_collector.v",
+      "source": "experiments/full128_bank_reset_fix_20261102/rtl/legacy/tiny_result_collector.v",
+      "sha256": "e7ff2adde265919482ed2869c8b12f51ea5094b2ea5a42a387e616e4258855e5",
+      "bytes": 2719,
+      "category": "active_rtl",
+      "exact_copy": true
+    },
+    {
+      "path": "rtl/legacy/v2_c0_mac_cell.sv",
+      "source": "experiments/full128_bank_reset_fix_20261102/rtl/legacy/v2_c0_mac_cell.sv",
+      "sha256": "2ccc1fa7c389f9f83232aaf14cdaa29e33ae3d5111e2b6101a0efb47a2837a5c",
+      "bytes": 3692,
+      "category": "active_rtl",
+      "exact_copy": true
+    },
+    {
+      "path": "rtl/legacy/v2_mac_group4x8.sv",
+      "source": "experiments/full128_bank_reset_fix_20261102/rtl/legacy/v2_mac_group4x8.sv",
+      "sha256": "78ea937158310870794df20d7cdd5c95a8d6ae80cc5ec5e2953dc1774aa369a6",
+      "bytes": 1979,
+      "category": "active_rtl",
+      "exact_copy": true
+    },
+    {
+      "path": "rtl/vendor_byte_banks.v",
+      "source": "experiments/full128_bank_reset_fix_20261102/rtl/vendor_byte_banks.v",
+      "sha256": "b8d842bbaf0f3b8d6fd7b0b1c7fbdf6260a3ce601646485365587f51dd9b3f86",
+      "bytes": 2319,
+      "category": "active_rtl",
+      "exact_copy": true
+    },
+    {
+      "path": "rtl/w8_act_local_ram.sv",
+      "source": "experiments/full128_bank_reset_fix_20261102/rtl/w8_act_local_ram.sv",
+      "sha256": "ebfaa9d4ccc3c01b4d9cefedb132e8fa3ba7fb02d9b900c9b15d0f732cadbf41",
+      "bytes": 8459,
+      "category": "active_rtl",
+      "exact_copy": true
+    },
+    {
+      "path": "rtl/w8_aux_engine.sv",
+      "source": "experiments/full128_bank_reset_fix_20261102/rtl/w8_aux_engine.sv",
+      "sha256": "4ff9ae2655a723742a8e50ebb530438a7bc67718a7ffa176179d47034057560d",
+      "bytes": 11581,
+      "category": "active_rtl",
+      "exact_copy": true
+    },
+    {
+      "path": "rtl/w8_command_check.sv",
+      "source": "experiments/full128_bank_reset_fix_20261102/rtl/w8_command_check.sv",
+      "sha256": "34374d738ac17c2944ff97fcb93b1809457154a0c976dd6285ac32e9c80c71f1",
+      "bytes": 3595,
+      "category": "active_rtl",
+      "exact_copy": true
+    },
+    {
+      "path": "rtl/w8_compute_system.sv",
+      "source": "experiments/full128_bank_reset_fix_20261102/rtl/w8_compute_system.sv",
+      "sha256": "45c691a17510e0c6390fb39b14a6dab8b427d05a4c0e6016058a3a3b7a1839d3",
+      "bytes": 9324,
+      "category": "active_rtl",
+      "exact_copy": true
+    },
+    {
+      "path": "rtl/w8_compute_tile.sv",
+      "source": "experiments/full128_bank_reset_fix_20261102/rtl/w8_compute_tile.sv",
+      "sha256": "66d5bc7b7ee64d0f4dacd55b8acef873a3573de57c3218b29ed1a596e528d0f7",
+      "bytes": 5982,
+      "category": "active_rtl",
+      "exact_copy": true
+    },
+    {
+      "path": "rtl/w8_fsm_compute_system.sv",
+      "source": "experiments/full128_bank_reset_fix_20261102/rtl/w8_fsm_compute_system.sv",
+      "sha256": "db6d2058eb658b705ab7d09594e215c6af1dde8e5bc10e4d3cc0f2ae50386653",
+      "bytes": 3654,
+      "category": "active_rtl",
+      "exact_copy": true
+    },
+    {
+      "path": "rtl/w8_gemm128.sv",
+      "source": "experiments/full128_bank_reset_fix_20261102/rtl/w8_gemm128.sv",
+      "sha256": "a2dae05c832dd90221795f20d29930501b4b89d87ba3cdff3ac5911ca1c882b2",
+      "bytes": 24626,
+      "category": "active_rtl",
+      "exact_copy": true
+    },
+    {
+      "path": "rtl/w8_hosted_core.sv",
+      "source": "experiments/full128_bank_reset_fix_20261102/rtl/w8_hosted_core.sv",
+      "sha256": "283433fd097576fc99981dd0aff6dd6060c0cd0ef74d64482efde521a6c452c3",
+      "bytes": 8712,
+      "category": "active_rtl",
+      "exact_copy": true
+    },
+    {
+      "path": "rtl/w8_inference_core.sv",
+      "source": "experiments/full128_bank_reset_fix_20261102/rtl/w8_inference_core.sv",
+      "sha256": "6c6d3efbc571d3f957bc57d8e2af2df3f878deee81c10386c5740e42a01c0d72",
+      "bytes": 2341,
+      "category": "active_rtl",
+      "exact_copy": true
+    },
+    {
+      "path": "rtl/w8_mac_array_local.sv",
+      "source": "experiments/full128_bank_reset_fix_20261102/rtl/w8_mac_array_local.sv",
+      "sha256": "47968fd5a02ef47355a14731bcb3d9d1133ff7955238eb5768fde3fbc005981d",
+      "bytes": 3703,
+      "category": "active_rtl",
+      "exact_copy": true
+    },
+    {
+      "path": "rtl/w8_math.sv",
+      "source": "experiments/full128_bank_reset_fix_20261102/rtl/w8_math.sv",
+      "sha256": "76ea4cee5e72a1626a2ff057c5eaa1c1c4eb2feb32f10d4d7eee4385275e384b",
+      "bytes": 7093,
+      "category": "active_rtl",
+      "exact_copy": true
+    },
+    {
+      "path": "rtl/w8_memories.sv",
+      "source": "experiments/full128_bank_reset_fix_20261102/rtl/w8_memories.sv",
+      "sha256": "abc6332abeae6d69e502c3bf9d157fb558d63309fbfa6aaebe59ea867517ca56",
+      "bytes": 14467,
+      "category": "active_rtl",
+      "exact_copy": true
+    },
+    {
+      "path": "rtl/w8_program_meta.vh",
+      "source": "experiments/full128_bank_reset_fix_20261102/rtl/w8_program_meta.vh",
+      "sha256": "0cf322a979fabf478fe552f6ae20e016c9ee56ba33c56e5b6c3da0ceec031df4",
+      "bytes": 118,
+      "category": "active_rtl",
+      "exact_copy": true
+    },
+    {
+      "path": "rtl/w8_program_sequencer.sv",
+      "source": "experiments/full128_bank_reset_fix_20261102/rtl/w8_program_sequencer.sv",
+      "sha256": "8234e87cb7e9e51ea7dc69e7edea29bade052a8182a73ae93d85a97deea12870",
+      "bytes": 2183,
+      "category": "active_rtl",
+      "exact_copy": true
+    },
+    {
+      "path": "rtl/w8_quant_tile.sv",
+      "source": "experiments/full128_bank_reset_fix_20261102/rtl/w8_quant_tile.sv",
+      "sha256": "0f474302f58701870d19e6449bffe6e876dae47ed2b9a6bfa39dab545cd03518",
+      "bytes": 9031,
+      "category": "active_rtl",
+      "exact_copy": true
+    },
+    {
+      "path": "rtl/w8_requant_scalar.sv",
+      "source": "experiments/full128_bank_reset_fix_20261102/rtl/w8_requant_scalar.sv",
+      "sha256": "687a3ac7c7b1ef6fb838352f4f616508657d43ed31b7f6738fd7b4d4e5c57e1b",
+      "bytes": 7730,
+      "category": "active_rtl",
+      "exact_copy": true
+    },
+    {
+      "path": "rtl/w8_rq16.sv",
+      "source": "experiments/full128_bank_reset_fix_20261102/rtl/w8_rq16.sv",
+      "sha256": "ac5ba893686d45d10decc7bc2ac4c0a6deea4e5a38b66f16f2657a9612f117c9",
+      "bytes": 5594,
+      "category": "active_rtl",
+      "exact_copy": true
+    },
+    {
+      "path": "rtl/w8_tensor_move.sv",
+      "source": "experiments/full128_bank_reset_fix_20261102/rtl/w8_tensor_move.sv",
+      "sha256": "06fc48db1b18bb0d4d2b33d4fab132ed1fdd4615196945cd0aa5f4e362b2dd68",
+      "bytes": 4031,
+      "category": "active_rtl",
+      "exact_copy": true
+    },
+    {
+      "path": "testbench/act_depth_bank.sv",
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/act_depth_bank.sv",
+      "sha256": "56c09e7e479dc24a1472e95c260a809617033574709d22b7e78f899f583138bd",
+      "bytes": 710,
+      "category": "testbench_or_synthetic_fixture",
+      "exact_copy": true
+    },
+    {
+      "path": "testbench/act_depth_platform.sv",
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/act_depth_platform.sv",
+      "sha256": "b27240dfc09117b57464bbef522e7d64aa911f5bffd87e45542b9498ad1d307e",
+      "bytes": 2602,
+      "category": "testbench_or_synthetic_fixture",
+      "exact_copy": true
+    },
+    {
+      "path": "testbench/act_pattern.hex",
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/act_pattern.hex",
+      "sha256": "d3877422737d2fc46ae0a5c94009e3974b46b6a6dde75a3a2f1a6c1a2559db41",
+      "bytes": 16384,
+      "category": "testbench_or_synthetic_fixture",
+      "exact_copy": true
+    },
+    {
+      "path": "testbench/adopted_case_wrappers.vh",
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/adopted_case_wrappers.vh",
+      "sha256": "be3d9a6952c7a3dc2d694113914417c6c0bdb06e0193a6ec9e240dc731edf8df",
+      "bytes": 168,
+      "category": "testbench_or_synthetic_fixture",
+      "exact_copy": true
+    },
+    {
+      "path": "testbench/aux_baseline.sv",
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/aux_baseline.sv",
+      "sha256": "12c056ef07217a3d6032d774fe96b611b2f782a2291035da704b904eff3691dd",
+      "bytes": 10959,
+      "category": "testbench_or_synthetic_fixture",
+      "exact_copy": true
+    },
+    {
+      "path": "testbench/checkpoints.txt",
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/checkpoints.txt",
+      "sha256": "6784832e1d33acec02b6459117a8e4db750c18917f21aa8b72d772df783ae1bb",
+      "bytes": 7397,
+      "category": "testbench_or_synthetic_fixture",
+      "exact_copy": true
+    },
+    {
+      "path": "testbench/control_cases.vh",
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/control_cases.vh",
+      "sha256": "7cc6b77f1e2641da4948657542680c3c041acdab9fb537c74720b07ac9762ba6",
+      "bytes": 144,
+      "category": "testbench_or_synthetic_fixture",
+      "exact_copy": false,
+      "adaptation": "test-only file literal relocation; original archived",
+      "published_sha256": "e0dd76ca7b0870ca49871c9b9d5d2275d75c46120c045e356005c303d5af27b9"
+    },
+    {
+      "path": "testbench/depth_pattern.hex",
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/depth_pattern.hex",
+      "sha256": "9629e76007c8593c632ae43fdc98f42d2cb2b9ce89962467b764dc2585832cec",
+      "bytes": 262144,
+      "category": "testbench_or_synthetic_fixture",
+      "exact_copy": true
+    },
+    {
+      "path": "testbench/empty.sv",
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/empty.sv",
+      "sha256": "32d3454ceb7ec931ad6ea4e779ed803e2492230c42b6e624eb4a15dcfe1c64e6",
+      "bytes": 101,
+      "category": "testbench_or_synthetic_fixture",
+      "exact_copy": true
+    },
+    {
+      "path": "testbench/expected_logits.hex",
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/expected_logits.hex",
+      "sha256": "1117a30836ab44cc1b1585884e7c5e41524cf2558636d821047b8a58f3ce64a2",
+      "bytes": 4000,
+      "category": "testbench_or_synthetic_fixture",
+      "exact_copy": true
+    },
+    {
+      "path": "testbench/legacy_command_bad.vh",
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/legacy_command_bad.vh",
+      "sha256": "3179be67b166bbc62ac54f4381117d6de00b56cf6e0cc76eb5d9eedfe6ebba36",
+      "bytes": 1392,
+      "category": "testbench_or_synthetic_fixture",
+      "exact_copy": true
+    },
+    {
+      "path": "testbench/math_baseline.sv",
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/math_baseline.sv",
+      "sha256": "bf6509487073e17ebf02428867f5aa1969c596a8d5c3ae9bcbe392093ecc0e20",
+      "bytes": 5186,
+      "category": "testbench_or_synthetic_fixture",
+      "exact_copy": true
+    },
+    {
+      "path": "testbench/math_prevent_vectors.txt",
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/math_prevent_vectors.txt",
+      "sha256": "4f3a8a8a6fdcdc8e01d248b17175abe406ac4024c411739917342bf359c56093",
+      "bytes": 102753,
+      "category": "testbench_or_synthetic_fixture",
+      "exact_copy": true
+    },
+    {
+      "path": "testbench/math_vectors.txt",
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/math_vectors.txt",
+      "sha256": "27b9cb4e866b3ba2d108bc4b904abfce92d09c007e5ac40e694bf1d0ead13991",
+      "bytes": 76677,
+      "category": "testbench_or_synthetic_fixture",
+      "exact_copy": true
+    },
+    {
+      "path": "testbench/rq_limits.txt",
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/rq_limits.txt",
+      "sha256": "70a33f7f65d4bb0b5716feaa5bc46b1593ba17c1ea6786ecf4002d8d82af5c61",
+      "bytes": 3796,
+      "category": "testbench_or_synthetic_fixture",
+      "exact_copy": true
+    },
+    {
+      "path": "testbench/rq_parent.sv",
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/rq_parent.sv",
+      "sha256": "3c6629729d432535a5b2198c658b6bbbfd3454123b30aeca4e4f0f1251a38a54",
+      "bytes": 5400,
+      "category": "testbench_or_synthetic_fixture",
+      "exact_copy": true
+    },
+    {
+      "path": "testbench/rq_stream_vectors.txt",
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/rq_stream_vectors.txt",
+      "sha256": "99012099f4e89445258912ec0028fd02b39a14806db30cef36f7df73c7cad77d",
+      "bytes": 93184,
+      "category": "testbench_or_synthetic_fixture",
+      "exact_copy": true
+    },
+    {
+      "path": "testbench/rq_vectors.txt",
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/rq_vectors.txt",
+      "sha256": "3aec4b48c8001f2526f36099c5ebfa6b6487bf3e6639ff0b3ec5716086da6dfe",
+      "bytes": 9931,
+      "category": "testbench_or_synthetic_fixture",
+      "exact_copy": true
+    },
+    {
+      "path": "testbench/rq_vectors_hex.txt",
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/rq_vectors_hex.txt",
+      "sha256": "ebe5bb6b9a48491b5d63ff53c4f17e2a2ba62a5135903949967f80d097633b4e",
+      "bytes": 14080,
+      "category": "testbench_or_synthetic_fixture",
+      "exact_copy": true
+    },
+    {
+      "path": "testbench/tb_act_depth.sv",
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/tb_act_depth.sv",
+      "sha256": "90112eaa6cdd5a76b964e045549e64bdf589c0a5569f2195c4488d9a7a2914eb",
+      "bytes": 1420,
+      "category": "testbench_or_synthetic_fixture",
+      "exact_copy": false,
+      "adaptation": "test-only file path relocation; original archived",
+      "published_sha256": "fbb037243d14803f634bac1368e23244eb5b446aa75004bb8d638067d2a23718"
+    },
+    {
+      "path": "testbench/tb_act_pipeline.sv",
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/tb_act_pipeline.sv",
+      "sha256": "95ebb0c9d707e7e9169e244e458b0132f5102db979d8e8f2ac0f402635c0a57d",
+      "bytes": 5912,
+      "category": "testbench_or_synthetic_fixture",
+      "exact_copy": false,
+      "adaptation": "test-only file path relocation; original archived",
+      "published_sha256": "eed395b58dd23da9e0d4561bd53a1fbedddfdc0f77d13206baf2c9c8e5748fe4"
+    },
+    {
+      "path": "testbench/tb_adopted_closedloop.sv",
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/tb_adopted_closedloop.sv",
+      "sha256": "752641295321b9d225864f060508df8ca494ec6a94ec34db297d360e4314cab5",
+      "bytes": 7898,
+      "category": "testbench_or_synthetic_fixture",
+      "exact_copy": false,
+      "adaptation": "test-only file path relocation; original archived",
+      "published_sha256": "ee11b583ab2f6f4d48d843b6da604ce66571a06b053314d8d435fdc183944f0a"
+    },
+    {
+      "path": "testbench/tb_aux_baseline.sv",
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/tb_aux_baseline.sv",
+      "sha256": "83bfad10ddac2221a7b9935b6044c3e6a14043f1f5facd483d1b814e90022e83",
+      "bytes": 2971,
+      "category": "testbench_or_synthetic_fixture",
+      "exact_copy": false,
+      "adaptation": "test-only path relocation including Windows reserved AUX directory",
+      "published_sha256": "079f53175a9023fbfbb8448093cc3dd2f1badcbbbc46147debbb75bec32097c7"
+    },
+    {
+      "path": "testbench/tb_calibration_status.sv",
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/tb_calibration_status.sv",
+      "sha256": "bca5c8be3537cb5065a53fc68dc759c66aa396043ae6d285ad72ba68e8421a74",
+      "bytes": 3346,
+      "category": "testbench_or_synthetic_fixture",
+      "exact_copy": false,
+      "adaptation": "test-only file path relocation; original archived",
+      "published_sha256": "8b2facb4f4cc677358fb8996fba966a620f2c44066688e629c0b0e7868103573"
+    },
+    {
+      "path": "testbench/tb_control_joint.sv",
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/tb_control_joint.sv",
+      "sha256": "9a6070e93eab58ee52e6fe859eed9069dc99491d49506f809978189e09104ca6",
+      "bytes": 1714,
+      "category": "testbench_or_synthetic_fixture",
+      "exact_copy": true
+    },
+    {
+      "path": "testbench/tb_math_prevent.sv",
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/tb_math_prevent.sv",
+      "sha256": "8068e667f910dfd93e8459c48dde4eb59612720fccef2f3cd38e036ee54be552",
+      "bytes": 3151,
+      "category": "testbench_or_synthetic_fixture",
+      "exact_copy": false,
+      "adaptation": "test-only file path relocation; original archived",
+      "published_sha256": "8d9040edbb91f2bfd9ae034439b40f2cd0c777974e43a557270e3d205effb62d"
+    },
+    {
+      "path": "testbench/tb_move_joint.sv",
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/tb_move_joint.sv",
+      "sha256": "43f06a71ba147c5dce39eaefc3b451558a856baa355f5d6588fb0f299c30fa69",
+      "bytes": 4018,
+      "category": "testbench_or_synthetic_fixture",
+      "exact_copy": true
+    },
+    {
+      "path": "testbench/tb_real_operators.sv",
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/tb_real_operators.sv",
+      "sha256": "f05671efcaba87e3570a0cdb3d12ad73af0e95bd89b3360233511c587a88f051",
+      "bytes": 5776,
+      "category": "testbench_or_synthetic_fixture",
+      "exact_copy": false,
+      "adaptation": "test-only path relocation including Windows reserved AUX directory",
+      "published_sha256": "2f08d72b7bdac3b26fc2a1ab01ad2388b40a8da3a949a5705928b28807d8ce22"
+    },
+    {
+      "path": "testbench/tb_receiver_write.sv",
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/tb_receiver_write.sv",
+      "sha256": "9e38006fb05b8e15f625b7cb20575a08dc25faf697b8237d5af312b3486a8472",
+      "bytes": 2321,
+      "category": "testbench_or_synthetic_fixture",
+      "exact_copy": true
+    },
+    {
+      "path": "testbench/tb_rq_control.sv",
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/tb_rq_control.sv",
+      "sha256": "861136362a1c80055bec3f91133a137d4e9dbf4f72196bb88f30bdd467e3f106",
+      "bytes": 5533,
+      "category": "testbench_or_synthetic_fixture",
+      "exact_copy": true
+    },
+    {
+      "path": "testbench/tb_rq_stream_prevent.sv",
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/tb_rq_stream_prevent.sv",
+      "sha256": "62aef2228dab67e8dbc09826b03e1c7fc6f7b4badffd3985e86b20feecfbe612",
+      "bytes": 2810,
+      "category": "testbench_or_synthetic_fixture",
+      "exact_copy": false,
+      "adaptation": "test-only file path relocation; original archived",
+      "published_sha256": "1ab5be819226e1b584faa37084996ec228873f65574cbd84650e98d94bf1ccaf"
+    },
+    {
+      "path": "testbench/tb_score_memory.sv",
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/tb_score_memory.sv",
+      "sha256": "1c90971f897c1694af4a2efa94766127ff5489306314bb492c87ad9d74c26eb0",
+      "bytes": 3685,
+      "category": "testbench_or_synthetic_fixture",
+      "exact_copy": true
+    },
+    {
+      "path": "testbench/tb_softmax_closedloop.sv",
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/tb_softmax_closedloop.sv",
+      "sha256": "23b69d4598a1f98f5a0c866607cc21e5163e3c89757bcb573bdad02fb49136bb",
+      "bytes": 7360,
+      "category": "testbench_or_synthetic_fixture",
+      "exact_copy": false,
+      "adaptation": "test-only file path relocation; original archived",
+      "published_sha256": "d73f0a6112257b1f31927ed73e54f7ebc6f6edb33b9508b6b98b03e12dec1aa2"
+    },
+    {
+      "path": "testbench/tb_soft_reset_copies.sv",
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/tb_soft_reset_copies.sv",
+      "sha256": "22250cb4c4017a0c623017ef807c0a49b0df0c071e3d9a05030529f2c09e31ab",
+      "bytes": 10860,
+      "category": "testbench_or_synthetic_fixture",
+      "exact_copy": true
+    },
+    {
+      "path": "testbench/tb_tag_abort.sv",
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/tb_tag_abort.sv",
+      "sha256": "1d3114f59023378b8fe893edbfeafaed691b193f9bfed9d96e7a720e75010704",
+      "bytes": 1206,
+      "category": "testbench_or_synthetic_fixture",
+      "exact_copy": true
+    },
+    {
+      "path": "testbench/tb_w8_aux.sv",
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/tb_w8_aux.sv",
+      "sha256": "c2c709ddfcf31669163ee67facb6f1d44873b65294d583f5dd6527ceee647828",
+      "bytes": 3023,
+      "category": "testbench_or_synthetic_fixture",
+      "exact_copy": false,
+      "adaptation": "test-only path relocation including Windows reserved AUX directory",
+      "published_sha256": "540c6fd542eac877353a9ab05519578a4f5bbca327f176e0364caf480dbfa2ea"
+    },
+    {
+      "path": "testbench/tb_w8_full.sv",
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/tb_w8_full.sv",
+      "sha256": "34087afb57c77867a76f0c20e6f022146d30e2a101e76119cc0aa617ef47bc7e",
+      "bytes": 7538,
+      "category": "testbench_or_synthetic_fixture",
+      "exact_copy": false,
+      "adaptation": "test-only file path relocation; original archived",
+      "published_sha256": "6322e342e418f6123df62191ee838b23fc80bd849f601d057bb62ba3ade1b430"
+    },
+    {
+      "path": "testbench/tb_w8_ln.sv",
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/tb_w8_ln.sv",
+      "sha256": "202e8e00a20360020064582c759fd97674af3c0bd7b70854228c8a03e11414f4",
+      "bytes": 2437,
+      "category": "testbench_or_synthetic_fixture",
+      "exact_copy": false,
+      "adaptation": "test-only file literal relocation; original archived",
+      "published_sha256": "50812909ced2e768f4d229032c5db0e5174827f73ccee3d944facde5c3193fbb"
+    },
+    {
+      "path": "testbench/tb_w8_math.sv",
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/tb_w8_math.sv",
+      "sha256": "4a5ebbfc852aed0a27eb402587251033c3dc0180b195e0863d07b987d316165a",
+      "bytes": 1662,
+      "category": "testbench_or_synthetic_fixture",
+      "exact_copy": false,
+      "adaptation": "test-only file path relocation; original archived",
+      "published_sha256": "992377185b0400dd610bbe601a2775b223471a4febd1eb2cd5b356a1db71f1f0"
+    },
+    {
+      "path": "testbench/tb_w8_math_diagnostic.sv",
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/tb_w8_math_diagnostic.sv",
+      "sha256": "97dcf76513762b2e5d4c89be2d9d3f356ac1010e0fa9d94b99fd3893bd957577",
+      "bytes": 1780,
+      "category": "testbench_or_synthetic_fixture",
+      "exact_copy": false,
+      "adaptation": "test-only file path relocation; original archived",
+      "published_sha256": "2cc44065fb7e5357912a3b15fe51506ed697bd3ceaedab7d75d064d2828454da"
+    },
+    {
+      "path": "testbench/tb_w8_rq.sv",
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/tb_w8_rq.sv",
+      "sha256": "eb91ff5eff96d32ec4900f2004c70df7ceac6b40a8e672057dd5dcdc5715f996",
+      "bytes": 1887,
+      "category": "testbench_or_synthetic_fixture",
+      "exact_copy": false,
+      "adaptation": "test-only file literal relocation; original archived",
+      "published_sha256": "2365ee6952b7fa2e94376397bd43c140605d97d01e5f3fd63026f60070fe435b"
+    },
+    {
+      "path": "testbench/tb_w8_rqlimits.sv",
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/tb_w8_rqlimits.sv",
+      "sha256": "6884a4729ac191ec63402180f07761d5b4952c350219b9e4a710c90e08fe526b",
+      "bytes": 1983,
+      "category": "testbench_or_synthetic_fixture",
+      "exact_copy": false,
+      "adaptation": "test-only file literal relocation; original archived",
+      "published_sha256": "a12841b1e1b872063fd2ca291852d06c2fd029878d0eb9fa7dc08a1c09161589"
+    },
+    {
+      "path": "testbench/tb_w8_rqqueue.sv",
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/tb_w8_rqqueue.sv",
+      "sha256": "8932bab491f8c5d5dcb1ae883cb43b4c7e87fd7b8d9f0fdff081879c2f562e03",
+      "bytes": 3652,
+      "category": "testbench_or_synthetic_fixture",
+      "exact_copy": true
+    },
+    {
+      "path": "testbench/tb_w8_rq_diagnostic.sv",
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/tb_w8_rq_diagnostic.sv",
+      "sha256": "9627a3c5ddc415011d38add84621ae21a44fe2d151b2c320b61a3cb3441d3ef7",
+      "bytes": 1919,
+      "category": "testbench_or_synthetic_fixture",
+      "exact_copy": false,
+      "adaptation": "test-only file path relocation; original archived",
+      "published_sha256": "102cabf62731776d03a56f5996bfe779f61ede50f9d1b34cc5cb6a27b23024d6"
+    },
+    {
+      "path": "testbench/tb_w8_tile.sv",
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/tb_w8_tile.sv",
+      "sha256": "41fb7f7a4fefebec62d5e763f01011759a3155067793a732a6ebee6a1bcdf542",
+      "bytes": 4647,
+      "category": "testbench_or_synthetic_fixture",
+      "exact_copy": true
+    },
+    {
+      "path": "testbench/tb_writer_cycle.sv",
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/tb_writer_cycle.sv",
+      "sha256": "6eb02b4a5f2860722c5b2d03cb9edf5ab7e1f1cefb8e2d2e336d5b78fa49628b",
+      "bytes": 3359,
+      "category": "testbench_or_synthetic_fixture",
+      "exact_copy": true
+    },
+    {
+      "path": "testbench/upload_parent.sv",
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/upload_parent.sv",
+      "sha256": "bc7c7e98ddbf256898bf3c8aab4ec1d15649f95421e4064b5c652d6de4fc8576",
+      "bytes": 610,
+      "category": "testbench_or_synthetic_fixture",
+      "exact_copy": true
+    },
+    {
+      "path": "testbench/vendor_banks_parent.v",
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/vendor_banks_parent.v",
+      "sha256": "e36069bdeedd83eef4dd90ceead3809f568db16db1c2cdec635fd963e8aad555",
+      "bytes": 864,
+      "category": "testbench_or_synthetic_fixture",
+      "exact_copy": true
+    },
+    {
+      "path": "testbench/writer_parent.v",
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/writer_parent.v",
+      "sha256": "bb28f67172abfa9b9a4b4b0a19860e8c07dd2e9d46ccc8da51d2a6ea31fb99d2",
+      "bytes": 4019,
+      "category": "testbench_or_synthetic_fixture",
+      "exact_copy": true
+    },
+    {
+      "path": "testbench/aux_cases/cases.json",
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/aux/cases.json",
+      "sha256": "a79316be4d81dcd28e6f24fc35d81dbf3571364a99a81a87b658921736bfb6d4",
+      "bytes": 1583,
+      "category": "testbench_or_synthetic_fixture",
+      "exact_copy": true
+    },
+    {
+      "path": "testbench/aux_cases/cases.txt",
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/aux/cases.txt",
+      "sha256": "30416df9151cd00813022fa9fe6707746831575f0ffd8d82dced6e7b41363096",
+      "bytes": 831,
+      "category": "testbench_or_synthetic_fixture",
+      "exact_copy": true
+    },
+    {
+      "path": "testbench/ln/cases.json",
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/cases.json",
+      "sha256": "55c3e8da3b231a335c74d9f01c767bae0e1d68bd8a70221507165c9618d9ae21",
+      "bytes": 29391,
+      "category": "testbench_or_synthetic_fixture",
+      "exact_copy": true
+    },
+    {
+      "path": "testbench/ln/cases.txt",
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/cases.txt",
+      "sha256": "ce7a7584ffe1e1b0901bc963423d0cf8ac2331b9617d27615a39a37c7cba55fc",
+      "bytes": 2101,
+      "category": "testbench_or_synthetic_fixture",
+      "exact_copy": true
+    },
+    {
+      "path": "testbench/short_cases/CASES.json",
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/short_cases/CASES.json",
+      "sha256": "ffbf0ca56ca1df53db70ac4ea0b99b47ca114ab9ee395a4df615a6f2fd59988b",
+      "bytes": 2844,
+      "category": "testbench_or_synthetic_fixture",
+      "exact_copy": true
+    },
+    {
+      "path": "testbench/short_cases/head/CASE.json",
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/short_cases/head/CASE.json",
+      "sha256": "7ac17befb6d9746297efc8b9f5b8cf1203519eb7c45353f6a27e05ce9c9417e3",
+      "bytes": 1350,
+      "category": "testbench_or_synthetic_fixture",
+      "exact_copy": true
+    },
+    {
+      "path": "testbench/short_cases/patch/CASE.json",
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/short_cases/patch/CASE.json",
+      "sha256": "728744e755005718fc046cda44f9d3ddc8a184941e00b53603a8b2fe4768f097",
+      "bytes": 1301,
+      "category": "testbench_or_synthetic_fixture",
+      "exact_copy": true
+    },
+    {
+      "path": "testbench/short_cases/smax/CASE.json",
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/short_cases/smax/CASE.json",
+      "sha256": "6bcf77041959b1cfe8468356cb20aa106a0081c57a9f44551d6009bf15795e56",
+      "bytes": 387,
+      "category": "testbench_or_synthetic_fixture",
+      "exact_copy": true
+    },
+    {
+      "path": "historical/w8_test_paths.vh.txt",
+      "source": "experiments/full128_bank_reset_fix_20261102/rtl/w8_test_paths.vh",
+      "sha256": "ccdce80342ea2a8074ad1fa84ee3aff1948865344019e326633e0eff28506d50",
+      "bytes": 261,
+      "category": "historical_path_reference",
+      "exact_copy": true
+    },
+    {
+      "path": "historical/golden/error_audit.py.txt",
+      "source": "experiments/full128_jointfix_20261029/software/error_audit.py",
+      "sha256": "d07535defb15c878b901ab85acc77c5f9ca40f2ab4b83274c03fd4c5decb5c5e",
+      "bytes": 4824,
+      "category": "historical_reference",
+      "exact_copy": true
+    },
+    {
+      "path": "historical/golden/evaluate_imagenet1k.py.txt",
+      "source": "experiments/full128_jointfix_20261029/software/evaluate_imagenet1k.py",
+      "sha256": "95df82519d4097e04b84c28ac813ec59a12773126076fa5d170bc5f98685151e",
+      "bytes": 4456,
+      "category": "historical_reference",
+      "exact_copy": true
+    },
+    {
+      "path": "golden/golden.py",
+      "source": "experiments/full128_jointfix_20261029/software/golden.py",
+      "sha256": "ba5028699422e46507dc872b6559c37a1b93cb698b30bafb9cfe35a015952bff",
+      "bytes": 5565,
+      "category": "integer_reference_inherited_not_new_pass",
+      "exact_copy": true
+    },
+    {
+      "path": "golden/host_input.py",
+      "source": "experiments/full128_jointfix_20261029/software/host_input.py",
+      "sha256": "3f428785074d67c3a66a99f868ccad51aa2e1a08222a3af5f43e4548bae89b60",
+      "bytes": 3036,
+      "category": "integer_reference_inherited_not_new_pass",
+      "exact_copy": true
+    },
+    {
+      "path": "golden/integer_ln.py",
+      "source": "experiments/full128_jointfix_20261029/software/integer_ln.py",
+      "sha256": "94b87b97829bb31961b48119dbe805b08d7fa06f486cf67cf3dc78d497bd684a",
+      "bytes": 2733,
+      "category": "integer_reference_inherited_not_new_pass",
+      "exact_copy": true
+    },
+    {
+      "path": "historical/golden/prepare.py.txt",
+      "source": "experiments/full128_jointfix_20261029/software/prepare.py",
+      "sha256": "0a8bdbac1832dad62c89947ecb2a1e658eceab5ff833c94b8d396a0f903183b3",
+      "bytes": 12291,
+      "category": "historical_reference",
+      "exact_copy": true
+    },
+    {
+      "path": "data/preprocess.json",
+      "source": "experiments/full128_bank_reset_fix_20261102/data/preprocess.json",
+      "sha256": "471f4a9158a531e378646d5417365c7a8bae3e57b4c881fb8c9040d7431ed419",
+      "bytes": 683,
+      "category": "preprocess_metadata_only",
+      "exact_copy": true
+    },
+    {
+      "path": "evidence/board/expected_1000.hex",
+      "source": "experiments/full128_downclock_bit_20261102/board_kit_166p7/expected_1000.hex",
+      "sha256": "1117a30836ab44cc1b1585884e7c5e41524cf2558636d821047b8a58f3ce64a2",
+      "bytes": 4000,
+      "category": "saved_golden_output",
+      "exact_copy": true
+    },
+    {
+      "path": "host/first_test.tcl",
+      "source": "experiments/full128_downclock_bit_20261102/board_kit_166p7/first_test.tcl",
+      "sha256": "2a0f91fb32246669027708411e30992c88b23a1023ed0986ded46e17053b5017",
+      "bytes": 1249,
+      "category": "portable_host_script",
+      "exact_copy": true
+    },
+    {
+      "path": "host/host_w8.tcl",
+      "source": "experiments/full128_downclock_bit_20261102/board_kit_166p7/host_w8.tcl",
+      "sha256": "3b8b44a54d8b01bce65ce6a6d5313b05bf31cf20cc3ad9fd1fb7c731af8b606d",
+      "bytes": 7332,
+      "category": "portable_host_script",
+      "exact_copy": true
+    },
+    {
+      "path": "historical/board_kit_instructions.md",
+      "source": "experiments/full128_downclock_bit_20261102/board_kit_166p7/README_上板说明.md",
+      "sha256": "2a0e4808729a436c4e4922ad8b94cec5ad8131d9616b1a30cb2142f61d4e20f6",
+      "bytes": 2966,
+      "category": "historical_board_instructions",
+      "exact_copy": true
+    },
+    {
+      "path": "ip/configuration/w8_platform.bd",
+      "source": "hf02_d166_sy/project/host75_synth.srcs/sources_1/bd/w8_platform/w8_platform.bd",
+      "sha256": "a7494c83534dd9bbab08dff67ecf40e9256b39187d66fbe46273671e966edc26",
+      "bytes": 57264,
+      "category": "ip_configuration",
+      "exact_copy": true
+    },
+    {
+      "path": "ip/configuration/ip/w8_platform_auto_ds_0/w8_platform_auto_ds_0.xci",
+      "source": "hf02_d166_sy/project/host75_synth.srcs/sources_1/bd/w8_platform/ip/w8_platform_auto_ds_0/w8_platform_auto_ds_0.xci",
+      "sha256": "4531fdb3e0d9a79dd5ed2eee1ca531318dc5f1a060e4247f1f4f33ee74c4ab5d",
+      "bytes": 33803,
+      "category": "ip_configuration",
+      "exact_copy": true
+    },
+    {
+      "path": "ip/configuration/ip/w8_platform_auto_pc_0/w8_platform_auto_pc_0.xci",
+      "source": "hf02_d166_sy/project/host75_synth.srcs/sources_1/bd/w8_platform/ip/w8_platform_auto_pc_0/w8_platform_auto_pc_0.xci",
+      "sha256": "1fdc4ef126a44d8d225ce822d23c1da43ef13ba3bc6fd32ddf811027bc1095d8",
+      "bytes": 30797,
+      "category": "ip_configuration",
+      "exact_copy": true
+    },
+    {
+      "path": "ip/configuration/ip/w8_platform_auto_rs_0/w8_platform_auto_rs_0.xci",
+      "source": "hf02_d166_sy/project/host75_synth.srcs/sources_1/bd/w8_platform/ip/w8_platform_auto_rs_0/w8_platform_auto_rs_0.xci",
+      "sha256": "ab80fe9520a843f40a15c4ebb4282f66c50c3529a2a82a5cebc5edb2ee2235c5",
+      "bytes": 39852,
+      "category": "ip_configuration",
+      "exact_copy": true
+    },
+    {
+      "path": "ip/configuration/ip/w8_platform_auto_rs_1/w8_platform_auto_rs_1.xci",
+      "source": "hf02_d166_sy/project/host75_synth.srcs/sources_1/bd/w8_platform/ip/w8_platform_auto_rs_1/w8_platform_auto_rs_1.xci",
+      "sha256": "a1109d81f03e15e42566f2490d1e640db85e57cbb35a706dcf36bbbc926ae956",
+      "bytes": 40927,
+      "category": "ip_configuration",
+      "exact_copy": true
+    },
+    {
+      "path": "ip/configuration/ip/w8_platform_auto_rs_w_0/w8_platform_auto_rs_w_0.xci",
+      "source": "hf02_d166_sy/project/host75_synth.srcs/sources_1/bd/w8_platform/ip/w8_platform_auto_rs_w_0/w8_platform_auto_rs_w_0.xci",
+      "sha256": "fbe7a2b7a1cc96bbd90b507e1667e6022bb5035481674fad0369eceddbc0fe77",
+      "bytes": 41123,
+      "category": "ip_configuration",
+      "exact_copy": true
+    },
+    {
+      "path": "ip/configuration/ip/w8_platform_auto_rs_w_1/w8_platform_auto_rs_w_1.xci",
+      "source": "hf02_d166_sy/project/host75_synth.srcs/sources_1/bd/w8_platform/ip/w8_platform_auto_rs_w_1/w8_platform_auto_rs_w_1.xci",
+      "sha256": "1491565a32d57106540ad697deb470d0f496d4aedf3165c2fdf6357d48957668",
+      "bytes": 39861,
+      "category": "ip_configuration",
+      "exact_copy": true
+    },
+    {
+      "path": "ip/configuration/ip/w8_platform_auto_us_0/w8_platform_auto_us_0.xci",
+      "source": "hf02_d166_sy/project/host75_synth.srcs/sources_1/bd/w8_platform/ip/w8_platform_auto_us_0/w8_platform_auto_us_0.xci",
+      "sha256": "dbc7c1924228a2193cf625fac7ed393e018722a025458cd6eb57a637ead5bc8d",
+      "bytes": 33617,
+      "category": "ip_configuration",
+      "exact_copy": true
+    },
+    {
+      "path": "ip/configuration/ip/w8_platform_compute_clock_0/w8_platform_compute_clock_0.xci",
+      "source": "hf02_d166_sy/project/host75_synth.srcs/sources_1/bd/w8_platform/ip/w8_platform_compute_clock_0/w8_platform_compute_clock_0.xci",
+      "sha256": "1e84f47e12bdd9bfa49994b40ee05a5adf8789fb1a294ccd66fa553a79e4d28c",
+      "bytes": 69780,
+      "category": "ip_configuration",
+      "exact_copy": true
+    },
+    {
+      "path": "ip/configuration/ip/w8_platform_compute_to_ddr_0/w8_platform_compute_to_ddr_0.xci",
+      "source": "hf02_d166_sy/project/host75_synth.srcs/sources_1/bd/w8_platform/ip/w8_platform_compute_to_ddr_0/w8_platform_compute_to_ddr_0.xci",
+      "sha256": "06e71fdcbdc2be7c032b88b22d767fb93e94ded9bd44e4d312c678bb3e85d016",
+      "bytes": 31048,
+      "category": "ip_configuration",
+      "exact_copy": true
+    },
+    {
+      "path": "ip/configuration/ip/w8_platform_core_0/w8_platform_core_0.xci",
+      "source": "hf02_d166_sy/project/host75_synth.srcs/sources_1/bd/w8_platform/ip/w8_platform_core_0/w8_platform_core_0.xci",
+      "sha256": "7bbfc8393b2250bdcd851417c83ab79449ac9efabfb8b9ffbde365efb850a800",
+      "bytes": 23477,
+      "category": "ip_configuration",
+      "exact_copy": true
+    },
+    {
+      "path": "ip/configuration/ip/w8_platform_fabric_0/w8_platform_fabric_0.xci",
+      "source": "hf02_d166_sy/project/host75_synth.srcs/sources_1/bd/w8_platform/ip/w8_platform_fabric_0/w8_platform_fabric_0.xci",
+      "sha256": "b74a2f419e6775a67a71bec71dd06d561e86a7f6c3394debd8ea618876107dd8",
+      "bytes": 35175,
+      "category": "ip_configuration",
+      "exact_copy": true
+    },
+    {
+      "path": "ip/configuration/ip/w8_platform_host_0/w8_platform_host_0.xci",
+      "source": "hf02_d166_sy/project/host75_synth.srcs/sources_1/bd/w8_platform/ip/w8_platform_host_0/w8_platform_host_0.xci",
+      "sha256": "a66b7f4e1d0859e3725d88451c9513a8247b20b7bcd34a2a46deea085cc85e6f",
+      "bytes": 16778,
+      "category": "ip_configuration",
+      "exact_copy": true
+    },
+    {
+      "path": "ip/configuration/ip/w8_platform_host_clock_0/w8_platform_host_clock_0.xci",
+      "source": "hf02_d166_sy/project/host75_synth.srcs/sources_1/bd/w8_platform/ip/w8_platform_host_clock_0/w8_platform_host_clock_0.xci",
+      "sha256": "1725bc0728a328b22ce9f68906ecb5900c4495a84f81890e950d4e03c72daa45",
+      "bytes": 5000,
+      "category": "ip_configuration",
+      "exact_copy": true
+    },
+    {
+      "path": "ip/configuration/ip/w8_platform_host_to_control_0/w8_platform_host_to_control_0.xci",
+      "source": "hf02_d166_sy/project/host75_synth.srcs/sources_1/bd/w8_platform/ip/w8_platform_host_to_control_0/w8_platform_host_to_control_0.xci",
+      "sha256": "27a8a2ae316dd9a97afbafe34bf9cdf6fc9815e43a71a183944261146338b08d",
+      "bytes": 31104,
+      "category": "ip_configuration",
+      "exact_copy": true
+    },
+    {
+      "path": "ip/configuration/ip/w8_platform_host_to_fabric_0/w8_platform_host_to_fabric_0.xci",
+      "source": "hf02_d166_sy/project/host75_synth.srcs/sources_1/bd/w8_platform/ip/w8_platform_host_to_fabric_0/w8_platform_host_to_fabric_0.xci",
+      "sha256": "6938a9aca77e734372a8423b9e6af94a3b37806fb7734a40687262dce71e2be7",
+      "bytes": 37193,
+      "category": "ip_configuration",
+      "exact_copy": true
+    },
+    {
+      "path": "ip/configuration/ip/w8_platform_memory_0/w8_platform_memory_0.xci",
+      "source": "hf02_d166_sy/project/host75_synth.srcs/sources_1/bd/w8_platform/ip/w8_platform_memory_0/w8_platform_memory_0.xci",
+      "sha256": "85a515ab7b2ec85450a6d92f167dff8caeec69ed2e005e3295acd72947edd00a",
+      "bytes": 58430,
+      "category": "ip_configuration",
+      "exact_copy": true
+    },
+    {
+      "path": "ip/configuration/ip/w8_platform_one_0/w8_platform_one_0.xci",
+      "source": "hf02_d166_sy/project/host75_synth.srcs/sources_1/bd/w8_platform/ip/w8_platform_one_0/w8_platform_one_0.xci",
+      "sha256": "36aa4873b00b47970e4566db7f876499426939ab3c6409d2ae631351ba37a4f2",
+      "bytes": 2199,
+      "category": "ip_configuration",
+      "exact_copy": true
+    },
+    {
+      "path": "ip/configuration/ip/w8_platform_reset_core_0/w8_platform_reset_core_0.xci",
+      "source": "hf02_d166_sy/project/host75_synth.srcs/sources_1/bd/w8_platform/ip/w8_platform_reset_core_0/w8_platform_reset_core_0.xci",
+      "sha256": "d3e06a9b4d335a30182b2707af4c533131fb5d423d61b69424df8cc548a37978",
+      "bytes": 12318,
+      "category": "ip_configuration",
+      "exact_copy": true
+    },
+    {
+      "path": "ip/configuration/ip/w8_platform_reset_host_0/w8_platform_reset_host_0.xci",
+      "source": "hf02_d166_sy/project/host75_synth.srcs/sources_1/bd/w8_platform/ip/w8_platform_reset_host_0/w8_platform_reset_host_0.xci",
+      "sha256": "34b50b97e149a75a7e53c5d75ef38481856b7f35b4606466647e4eb6e999fb9c",
+      "bytes": 12306,
+      "category": "ip_configuration",
+      "exact_copy": true
+    },
+    {
+      "path": "ip/configuration/ip/w8_platform_reset_ui_0/w8_platform_reset_ui_0.xci",
+      "source": "hf02_d166_sy/project/host75_synth.srcs/sources_1/bd/w8_platform/ip/w8_platform_reset_ui_0/w8_platform_reset_ui_0.xci",
+      "sha256": "3b12faade88b01597962ff3eb0f4ee3814799d3d895757068e855eeebc27deca",
+      "bytes": 12304,
+      "category": "ip_configuration",
+      "exact_copy": true
+    },
+    {
+      "path": "ip/configuration/ip/w8_platform_xbar_0/w8_platform_xbar_0.xci",
+      "source": "hf02_d166_sy/project/host75_synth.srcs/sources_1/bd/w8_platform/ip/w8_platform_xbar_0/w8_platform_xbar_0.xci",
+      "sha256": "f99953ea75d21ca7f6e92476132cac43c6fec2edf9597f5aea3bdcb57fca6a64",
+      "bytes": 241472,
+      "category": "ip_configuration",
+      "exact_copy": true
+    },
+    {
+      "path": "ip/configuration/ip/w8_platform_zero_0/w8_platform_zero_0.xci",
+      "source": "hf02_d166_sy/project/host75_synth.srcs/sources_1/bd/w8_platform/ip/w8_platform_zero_0/w8_platform_zero_0.xci",
+      "sha256": "ced935011f107c459d78ca979835c12b216eb9bb5a7a77793690358fe8422281",
+      "bytes": 2204,
+      "category": "ip_configuration",
+      "exact_copy": true
+    },
+    {
+      "path": "historical/bd_after.tcl.txt",
+      "source": "experiments/full128_downclock_bit_20261102/prepare_integer_166/bd_after.tcl",
+      "sha256": "5eeb687c281f0d8cc5b13caf5f610f9a9f70d1e80371f74cc619cbb8dd08b0d2",
+      "bytes": 20295,
+      "category": "actual_166p7_bd_recipe",
+      "exact_copy": true
+    },
+    {
+      "path": "historical/build_scripts/audit_final_storage.tcl.txt",
+      "source": "experiments/full128_downclock_bit_20261102/build_scripts/audit_final_storage.tcl",
+      "sha256": "74ce4a61c9f269f0b971ff49e6f4d74dbbadcf48c1e8101865e5c00b21097630",
+      "bytes": 1721,
+      "category": "historical_build_recipe",
+      "exact_copy": true
+    },
+    {
+      "path": "historical/build_scripts/bitstream.tcl.txt",
+      "source": "experiments/full128_downclock_bit_20261102/build_scripts/bitstream.tcl",
+      "sha256": "9b051cc036bc5da59da2634666885b5f350e461076dc5e109907303cbf11098d",
+      "bytes": 1351,
+      "category": "historical_build_recipe",
+      "exact_copy": true
+    },
+    {
+      "path": "historical/build_scripts/bitstream_checked_io.tcl.txt",
+      "source": "experiments/full128_downclock_bit_20261102/build_scripts/bitstream_checked_io.tcl",
+      "sha256": "29006d177db28cfa4201d5b1ba995d3e02b5dd96e6d1281fba8f96321a9fa6ee",
+      "bytes": 1480,
+      "category": "historical_build_recipe",
+      "exact_copy": true
+    },
+    {
+      "path": "historical/build_scripts/calibration_status_166.tcl.txt",
+      "source": "experiments/full128_downclock_bit_20261102/build_scripts/calibration_status_166.tcl",
+      "sha256": "492daca46e0c63d2fec8c250ec93d4fa7a4ba96b7561b1b576bc5f6a34ad477a",
+      "bytes": 3233,
+      "category": "historical_build_recipe",
+      "exact_copy": true
+    },
+    {
+      "path": "historical/build_scripts/check_banks.tcl.txt",
+      "source": "experiments/full128_downclock_bit_20261102/build_scripts/check_banks.tcl",
+      "sha256": "655243fa75d35417b047b610b0de6b0553deb85514e43a01d1f55b1364098de0",
+      "bytes": 8436,
+      "category": "historical_build_recipe",
+      "exact_copy": true
+    },
+    {
+      "path": "historical/build_scripts/check_final_banks.tcl.txt",
+      "source": "experiments/full128_downclock_bit_20261102/build_scripts/check_final_banks.tcl",
+      "sha256": "9ec0fcd15ff4387d98d2813a403b5f52e9899db34d49700f63b126bde322bba3",
+      "bytes": 3200,
+      "category": "historical_build_recipe",
+      "exact_copy": true
+    },
+    {
+      "path": "historical/build_scripts/close_final_checks.tcl.txt",
+      "source": "experiments/full128_downclock_bit_20261102/build_scripts/close_final_checks.tcl",
+      "sha256": "1f3e757090b631f05bafd0d56def74a3054bfa4b8f9526fc5afaaac4f61ec200",
+      "bytes": 636,
+      "category": "historical_build_recipe",
+      "exact_copy": true
+    },
+    {
+      "path": "historical/build_scripts/io_audit.tcl.txt",
+      "source": "experiments/full128_downclock_bit_20261102/build_scripts/io_audit.tcl",
+      "sha256": "8784ead6e02d166ec115ff8e2c5ebbb3b1321189b98c480aa3062b8998b3c503",
+      "bytes": 1327,
+      "category": "historical_build_recipe",
+      "exact_copy": true
+    },
+    {
+      "path": "historical/build_scripts/opt.tcl.txt",
+      "source": "experiments/full128_downclock_bit_20261102/build_scripts/opt.tcl",
+      "sha256": "7a2c6139b44ce669d347519e6303177467e1059f19e2bf025bf6637a88e429a4",
+      "bytes": 6670,
+      "category": "historical_build_recipe",
+      "exact_copy": true
+    },
+    {
+      "path": "historical/build_scripts/opt_calibrated.tcl.txt",
+      "source": "experiments/full128_downclock_bit_20261102/build_scripts/opt_calibrated.tcl",
+      "sha256": "3266c10ddefc7be7dbbd6c5507e3064078ab8c933c86395d2652c2c30158206b",
+      "bytes": 6930,
+      "category": "historical_build_recipe",
+      "exact_copy": true
+    },
+    {
+      "path": "historical/build_scripts/phys.tcl.txt",
+      "source": "experiments/full128_downclock_bit_20261102/build_scripts/phys.tcl",
+      "sha256": "4b735be0b6d56d298a83104331279561aab8b1ca3120d968ed59c106ec9d883d",
+      "bytes": 817,
+      "category": "historical_build_recipe",
+      "exact_copy": true
+    },
+    {
+      "path": "historical/build_scripts/place.tcl.txt",
+      "source": "experiments/full128_downclock_bit_20261102/build_scripts/place.tcl",
+      "sha256": "a9a1e8cbea945e5db43cd1a8fdf49631e90ada2d11a23da5ba8661e4f574fdbb",
+      "bytes": 2867,
+      "category": "historical_build_recipe",
+      "exact_copy": true
+    },
+    {
+      "path": "historical/build_scripts/report.tcl.txt",
+      "source": "experiments/full128_downclock_bit_20261102/build_scripts/report.tcl",
+      "sha256": "70393217f2ae48db518c44ada032e9ae037ca1a1a774731af083ae581f029684",
+      "bytes": 12293,
+      "category": "historical_build_recipe",
+      "exact_copy": true
+    },
+    {
+      "path": "historical/build_scripts/route.tcl.txt",
+      "source": "experiments/full128_downclock_bit_20261102/build_scripts/route.tcl",
+      "sha256": "2b29e9c37364c43e02575265c71d0a718b852c77d9deae52e53a5ce8079ad02d",
+      "bytes": 946,
+      "category": "historical_build_recipe",
+      "exact_copy": true
+    },
+    {
+      "path": "historical/build_scripts/sources.tcl.txt",
+      "source": "experiments/full128_downclock_bit_20261102/build_scripts/sources.tcl",
+      "sha256": "dac33e5fab3637c383cf0f2a34f515359fbc86d6b2c4febe98a2e0174714bdb2",
+      "bytes": 2315,
+      "category": "historical_build_recipe",
+      "exact_copy": true
+    },
+    {
+      "path": "historical/build_scripts/synth.tcl.txt",
+      "source": "experiments/full128_downclock_bit_20261102/build_scripts/synth.tcl",
+      "sha256": "0f112de1a6ed050d2f576e446da4579dacebdb25d8edfdfd6ba1cf1c2f371d52",
+      "bytes": 7572,
+      "category": "historical_build_recipe",
+      "exact_copy": true
+    },
+    {
+      "path": "historical/prepare_scripts/prepare_board.tcl.txt",
+      "source": "experiments/full128_downclock_bit_20261102/scripts/prepare_board.tcl",
+      "sha256": "e4e9840559507a5308ac98e46e392650e931fa4375dd0a01647b3cd9ffdbf0f2",
+      "bytes": 4597,
+      "category": "historical_prepare_recipe",
+      "exact_copy": true
+    },
+    {
+      "path": "historical/prepare_scripts/prepare_integer.tcl.txt",
+      "source": "experiments/full128_downclock_bit_20261102/scripts/prepare_integer.tcl",
+      "sha256": "cd1453cee939f08fc904dbc6972ec8e84241bf3580068e10e267d148da335560",
+      "bytes": 5189,
+      "category": "historical_prepare_recipe",
+      "exact_copy": true
+    },
+    {
+      "path": "historical/prepare_scripts/prepare_resume.tcl.txt",
+      "source": "experiments/full128_downclock_bit_20261102/scripts/prepare_resume.tcl",
+      "sha256": "15a88aad0b814979ba0b0a3ff3fa21f9401e2699ef43196701ff5aecc076bf5f",
+      "bytes": 4175,
+      "category": "historical_prepare_recipe",
+      "exact_copy": true
+    },
+    {
+      "path": "historical/prepare_scripts/prepare_resume2.tcl.txt",
+      "source": "experiments/full128_downclock_bit_20261102/scripts/prepare_resume2.tcl",
+      "sha256": "c653043ffbcdc59115f59f7f473e324f38269cbb01df5a0157e9ada7d470eeeb",
+      "bytes": 4630,
+      "category": "historical_prepare_recipe",
+      "exact_copy": true
+    },
+    {
+      "path": "historical/prepare_scripts/prepare_resume3.tcl.txt",
+      "source": "experiments/full128_downclock_bit_20261102/scripts/prepare_resume3.tcl",
+      "sha256": "6e228b8823010efd9004fe300c8e5ae62d4c133b615307c35e189783402f9cfa",
+      "bytes": 5009,
+      "category": "historical_prepare_recipe",
+      "exact_copy": true
+    },
+    {
+      "path": "historical/prepare_scripts/sources.tcl.txt",
+      "source": "experiments/full128_downclock_bit_20261102/scripts/sources.tcl",
+      "sha256": "dac33e5fab3637c383cf0f2a34f515359fbc86d6b2c4febe98a2e0174714bdb2",
+      "bytes": 2315,
+      "category": "historical_prepare_recipe",
+      "exact_copy": true
+    },
+    {
+      "path": "constraints/board_clock.tcl",
+      "source": "experiments/full128_downclock_bit_20261102/clock_contract_166/scripts/board_clock.tcl",
+      "sha256": "e5516692bb7e16ee6ac4ab5de9d972aec91d38b818958db78a1014ce2c2d21a2",
+      "bytes": 2116,
+      "category": "actual_clock_contract",
+      "exact_copy": true
+    },
+    {
+      "path": "constraints/calibration_status_166.tcl",
+      "source": "experiments/full128_downclock_bit_20261102/build_scripts/calibration_status_166.tcl",
+      "sha256": "492daca46e0c63d2fec8c250ec93d4fa7a4ba96b7561b1b576bc5f6a34ad477a",
+      "bytes": 3233,
+      "category": "actual_cdc_contract",
+      "exact_copy": true
+    },
+    {
+      "path": "constraints/vcu118_pins.xdc",
+      "source": "experiments/full128_bank_reset_fix_20261102/board/legacy_platform/constraints/vcu118_pins.xdc",
+      "sha256": "4f141dfb1fe9a21f50915e50d8461ebf9f5c69a243fa7205fd8b7cfe390f8ec2",
+      "bytes": 14930,
+      "category": "user_board_constraints",
+      "exact_copy": true
+    },
+    {
+      "path": "constraints/configuration.xdc",
+      "source": "experiments/full128_bank_reset_fix_20261102/board/legacy_platform/constraints/configuration.xdc",
+      "sha256": "332402959c9d98cabaea5ca7cb32c4251a36fd9e00023818763c97b5a6057bc7",
+      "bytes": 156,
+      "category": "user_board_constraints",
+      "exact_copy": true
+    },
+    {
+      "path": "ip/board_repo/vcu118/2.3/board.xml",
+      "source": "experiments/full128_bank_reset_fix_20261102/board/legacy_platform/board_repo/vcu118/2.3/board.xml",
+      "sha256": "53849c58eed6870216976fba7b210035246f0211bda952fd9c33ab5a46767fd7",
+      "bytes": 111515,
+      "category": "amd_board_definition_apache_notice",
+      "exact_copy": true
+    },
+    {
+      "path": "ip/board_repo/vcu118/2.3/changelog.txt",
+      "source": "experiments/full128_bank_reset_fix_20261102/board/legacy_platform/board_repo/vcu118/2.3/changelog.txt",
+      "sha256": "a9c8d92a789ef48d14d3f93aea2106b4b29cd98bebc0a845884881f987f1d38b",
+      "bytes": 463,
+      "category": "amd_board_definition_apache_notice",
+      "exact_copy": true
+    },
+    {
+      "path": "ip/board_repo/vcu118/2.3/LICENSE",
+      "source": "experiments/full128_bank_reset_fix_20261102/board/legacy_platform/board_repo/vcu118/2.3/LICENSE",
+      "sha256": "7fafdec009d89967935f6a9a232ae1e466b3bf0b283b535fdf9177711ce49d31",
+      "bytes": 751,
+      "category": "amd_board_definition_apache_notice",
+      "exact_copy": true
+    },
+    {
+      "path": "ip/board_repo/vcu118/2.3/part0_pins.xml",
+      "source": "experiments/full128_bank_reset_fix_20261102/board/legacy_platform/board_repo/vcu118/2.3/part0_pins.xml",
+      "sha256": "39628bce9d76b3ee0148f26938bbcae9d77d36e992d603b8d8dd011ac3716386",
+      "bytes": 31230,
+      "category": "amd_board_definition_apache_notice",
+      "exact_copy": true
+    },
+    {
+      "path": "ip/board_repo/vcu118/2.3/preset.xml",
+      "source": "experiments/full128_bank_reset_fix_20261102/board/legacy_platform/board_repo/vcu118/2.3/preset.xml",
+      "sha256": "bbcfcc2468ec05659a35631acc1baf08462eca1d7df636f18147b43c8bffa33e",
+      "bytes": 31709,
+      "category": "amd_board_definition_apache_notice",
+      "exact_copy": true
+    },
+    {
+      "path": "ip/board_repo/vcu118/2.3/xitem.json",
+      "source": "experiments/full128_bank_reset_fix_20261102/board/legacy_platform/board_repo/vcu118/2.3/xitem.json",
+      "sha256": "f8f5093d2d36101b2bc0aa077039611168660f464decf790fd6d9a1d930dc2ac",
+      "bytes": 851,
+      "category": "amd_board_definition_apache_notice",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/README.md",
+      "source": "competition_2026_advanced/README.md",
+      "sha256": "bb07de1aece642e01706d3b4b4389294e07c12f89f33802dab5e42eab97c3fd8",
+      "bytes": 4315,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/contribution_review.md",
+      "source": "competition_2026_advanced/report/contribution_review.md",
+      "sha256": "76efbac897e70e08effb45a3178db09c561943e100e629dfb338c30535d4e10e",
+      "bytes": 1526,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/design_report.docx",
+      "source": "competition_2026_advanced/report/design_report.docx",
+      "sha256": "1c341b642dc166460a555f9ee1cb126099015c45f7d68988752e43f70c15ff03",
+      "bytes": 2160367,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/design_report.md",
+      "source": "competition_2026_advanced/report/design_report.md",
+      "sha256": "b2d7c5489cfdc42d2c286189cefd07745322cbe55a0b0067e64a9b275c966ac3",
+      "bytes": 50301,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/design_report.pdf",
+      "source": "competition_2026_advanced/report/design_report.pdf",
+      "sha256": "714dac4ff0a2d9ea5523fe99d3f01f2804c383cc8aee1335c05fe65029ab2803",
+      "bytes": 1888756,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/evidence_index.md",
+      "source": "competition_2026_advanced/report/evidence_index.md",
+      "sha256": "8f7ceee9700e0c44c63f91dcc3b6b2dd67dfb34c3e3e1f4c2dc16e8b232a1a7a",
+      "bytes": 31911,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/llm_collaboration.md",
+      "source": "competition_2026_advanced/report/llm_collaboration.md",
+      "sha256": "337eab60c9201a4994b5b9cda5a9b8002d90244c9467c6eeecf255d533ff1d23",
+      "bytes": 1438,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/missing_evidence.md",
+      "source": "competition_2026_advanced/report/missing_evidence.md",
+      "sha256": "09b75fb789279f5c5d6291b98eff887ae35784e1edb43b994ab600180924773f",
+      "bytes": 1787,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/report_content.json",
+      "source": "competition_2026_advanced/report/report_content.json",
+      "sha256": "3520caa56a6f998f727a539ee6488259351c2364407473a6b1c9afeb480f22f6",
+      "bytes": 70189,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/verification_status.md",
+      "source": "competition_2026_advanced/report/verification_status.md",
+      "sha256": "652244c44725e64378af3e6ee284045d01272ffb4693151b55000043fa2ecbc3",
+      "bytes": 1924,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/skill/README.md",
+      "source": "competition_2026_advanced/skill/README.md",
+      "sha256": "9ceb9a36004f7bd10ae12f35a5d2c63cf2852ecd7f8e352869ef3903263c3d49",
+      "bytes": 1224,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/skill/selftest_results.json",
+      "source": "competition_2026_advanced/skill/selftest_results.json",
+      "sha256": "44d3a9545b9140626f3683176a3384304ccc398497aa928285c6e314778880cb",
+      "bytes": 1366,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/skill/validation.json",
+      "source": "competition_2026_advanced/skill/validation.json",
+      "sha256": "0dc3d0b43bd9dc771f85d7a2ca70cb10420c78cd6b0c1b42fb22001f17d4fe63",
+      "bytes": 553,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "historical/report_tools/audit_project.py.txt",
+      "source": "competition_2026_advanced/tools/audit_project.py",
+      "sha256": "22c95e15088de449dd3e848eb8cd91b874dd0b8b7b30521f9f5ac1a7508650fc",
+      "bytes": 12609,
+      "category": "historical_document_recipe",
+      "exact_copy": true
+    },
+    {
+      "path": "historical/report_tools/build_docx.py.txt",
+      "source": "competition_2026_advanced/tools/build_docx.py",
+      "sha256": "4df27784c5c51aee8c426ffecda73af5dbe3ade5051793dffb591a69d6872044",
+      "bytes": 8775,
+      "category": "historical_document_recipe",
+      "exact_copy": true
+    },
+    {
+      "path": "historical/report_tools/build_report_content.py.txt",
+      "source": "competition_2026_advanced/tools/build_report_content.py",
+      "sha256": "c9e590911b4a2653d7759b57739aa52c6d78d270ea7530640c8089767ea2917f",
+      "bytes": 61950,
+      "category": "historical_document_recipe",
+      "exact_copy": true
+    },
+    {
+      "path": "historical/report_tools/build_skills.py.txt",
+      "source": "competition_2026_advanced/tools/build_skills.py",
+      "sha256": "4d1d907defab4e1e12fb3905b9fecf1ac0b11a81dba65e27f54190020587ad91",
+      "bytes": 11110,
+      "category": "historical_document_recipe",
+      "exact_copy": true
+    },
+    {
+      "path": "historical/report_tools/export_word.ps1.txt",
+      "source": "competition_2026_advanced/tools/export_word.ps1",
+      "sha256": "70d3880d3f3a83d7a4aa2c5884e29b21aa43155b51393022dc0c2bcb6fc5a0c3",
+      "bytes": 1540,
+      "category": "historical_document_recipe",
+      "exact_copy": true
+    },
+    {
+      "path": "historical/report_tools/extract_official.py.txt",
+      "source": "competition_2026_advanced/tools/extract_official.py",
+      "sha256": "11fe7dadba631dac5a7e9476402d21ca3d4f512d5ac378ff9203f7f81661db2d",
+      "bytes": 1295,
+      "category": "historical_document_recipe",
+      "exact_copy": true
+    },
+    {
+      "path": "historical/report_tools/final_checks.py.txt",
+      "source": "competition_2026_advanced/tools/final_checks.py",
+      "sha256": "142630bf64f8750ed0f1e180700f84b595282c8a7b37cd466e1a3080ead4176d",
+      "bytes": 3946,
+      "category": "historical_document_recipe",
+      "exact_copy": true
+    },
+    {
+      "path": "historical/report_tools/make_figures.py.txt",
+      "source": "competition_2026_advanced/tools/make_figures.py",
+      "sha256": "b57ccbab91b1b56c332dc567911e533a8d204ed9c84bcc12643b4b082a413718",
+      "bytes": 13163,
+      "category": "historical_document_recipe",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/skill/fpga-board-diagnosis/README.md",
+      "source": "competition_2026_advanced/skill/fpga-board-diagnosis/README.md",
+      "sha256": "51ebcdb73405a8c3daf93a3da2e42dc3a20ddc881fc4d8d020e1f99aa2d4d644",
+      "bytes": 567,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/skill/fpga-board-diagnosis/SKILL.md",
+      "source": "competition_2026_advanced/skill/fpga-board-diagnosis/SKILL.md",
+      "sha256": "8c3f045fdd12f9c928dfab6ce0684a136c78916cb571d32d848cd25fb9f7cd33",
+      "bytes": 1266,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/skill/fpga-golden-check/README.md",
+      "source": "competition_2026_advanced/skill/fpga-golden-check/README.md",
+      "sha256": "cef9cf4a4e1cd3e2594c8c418badc2dfe2b39f7a421b3b7161dee6e6a2166b69",
+      "bytes": 564,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/skill/fpga-golden-check/SKILL.md",
+      "source": "competition_2026_advanced/skill/fpga-golden-check/SKILL.md",
+      "sha256": "7419a5bd6514b25758a7a5aaa0561c1056216093160128d58841d81e38eeb6ed",
+      "bytes": 1138,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/skill/vivado-evidence-audit/README.md",
+      "source": "competition_2026_advanced/skill/vivado-evidence-audit/README.md",
+      "sha256": "881a5e9c6fd52e2d841e361b9577aef47ebaa89066decfc4005e14a53ee7024a",
+      "bytes": 568,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/skill/vivado-evidence-audit/SKILL.md",
+      "source": "competition_2026_advanced/skill/vivado-evidence-audit/SKILL.md",
+      "sha256": "4f63e472fe58950e2c556b5eba6bff7554475de2ef6cd7399fc70cb0c8b4abbb",
+      "bytes": 1222,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/skill/vivado-evidence-audit/references/evidence.md",
+      "source": "competition_2026_advanced/skill/vivado-evidence-audit/references/evidence.md",
+      "sha256": "ab8d0eb08c216eeff0b09e2b7196dd5d667574e78e70063d19f449b4feeb6698",
+      "bytes": 574,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/skill/vivado-evidence-audit/scripts/check.py",
+      "source": "competition_2026_advanced/skill/vivado-evidence-audit/scripts/check.py",
+      "sha256": "bf168971df011ada26b83ed243b9b563519671f1cac528f2c99aee675a571985",
+      "bytes": 902,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/skill/fpga-golden-check/references/evidence.md",
+      "source": "competition_2026_advanced/skill/fpga-golden-check/references/evidence.md",
+      "sha256": "b40715e69eff837683ebf937d5eaa1d7522b33b487a1ba8874a0373af066d597",
+      "bytes": 673,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/skill/fpga-golden-check/scripts/check.py",
+      "source": "competition_2026_advanced/skill/fpga-golden-check/scripts/check.py",
+      "sha256": "4aa794e914b729f192949b34946a54e85f7e7583e2f2627c4da9ab2f776bb0f5",
+      "bytes": 919,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/skill/fpga-board-diagnosis/references/evidence.md",
+      "source": "competition_2026_advanced/skill/fpga-board-diagnosis/references/evidence.md",
+      "sha256": "7984e8d0d81aa2742fec53515c868d17da6285650156c4a10d1b6f9f0c0b7beb",
+      "bytes": 587,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/skill/fpga-board-diagnosis/scripts/check.py",
+      "source": "competition_2026_advanced/skill/fpga-board-diagnosis/scripts/check.py",
+      "sha256": "5981baa852f87d7fcb1f1fe9780606e7875be56c5f44387e0c9b297ebe69814f",
+      "bytes": 479,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/evidence/audit_facts.json",
+      "source": "competition_2026_advanced/report/evidence/audit_facts.json",
+      "sha256": "e55adc5763eb988e5e70fab64e4d46bdc1d1efb4bac946e044497ae972be825d",
+      "bytes": 164801,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/evidence/e01_source_manifest.json",
+      "source": "competition_2026_advanced/report/evidence/e01_source_manifest.json",
+      "sha256": "bd2004660656ea2f950d7957014924d588e469345cc1ab6fb69e3489eeec8cc8",
+      "bytes": 51695,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/evidence/e02_actual_synth_inputs_166.json",
+      "source": "competition_2026_advanced/report/evidence/e02_actual_synth_inputs_166.json",
+      "sha256": "d0e9fac8a5f021056d14850e8f17fee6ff525a7ba0df77e43fcd53baffd5c837",
+      "bytes": 76002,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/evidence/e03_adopted_baseline.json",
+      "source": "competition_2026_advanced/report/evidence/e03_adopted_baseline.json",
+      "sha256": "db9d0d5b7e54c7240b2ebc6c2e689c3c50209908993ae0ac7a494162d7550cae",
+      "bytes": 2264,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/evidence/e04_confirmation.json",
+      "source": "competition_2026_advanced/report/evidence/e04_confirmation.json",
+      "sha256": "6621aa1db2588e9efb8b52eaf4448d4eecf43fad2c6723f816682b38d1082808",
+      "bytes": 889,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/evidence/e05_confirmation_01.json",
+      "source": "competition_2026_advanced/report/evidence/e05_confirmation_01.json",
+      "sha256": "4fceec131fc646c4d43d91a23508ee64b38efdc27db2894d4a687984f346ffe0",
+      "bytes": 1694,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/evidence/e06_final_result.json",
+      "source": "competition_2026_advanced/report/evidence/e06_final_result.json",
+      "sha256": "2b0b62942e0ef779c9e2baf676c826a3e4ad8a0797ce89379d59f054c7dbdb11",
+      "bytes": 2675,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/evidence/e07_status.json",
+      "source": "competition_2026_advanced/report/evidence/e07_status.json",
+      "sha256": "2b0b62942e0ef779c9e2baf676c826a3e4ad8a0797ce89379d59f054c7dbdb11",
+      "bytes": 2675,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/evidence/e08_simulate.json",
+      "source": "competition_2026_advanced/report/evidence/e08_simulate.json",
+      "sha256": "5ca7833f0ebe2b2c64f0762c5e94e85e64eb3d08149fe885b705d4d4ee8614f2",
+      "bytes": 5526,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/evidence/e09_simulate.stdout.log",
+      "source": "competition_2026_advanced/report/evidence/e09_simulate.stdout.log",
+      "sha256": "120f3c02fd25776d77c9a94891eb0b458031c626d6ef129b88b3308329ea4313",
+      "bytes": 16819,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/evidence/e10_frozen_inputs.json",
+      "source": "competition_2026_advanced/report/evidence/e10_frozen_inputs.json",
+      "sha256": "15ba0ee76df516f94d668913fd2b6002a851da640d83d65093fa842ccc62a62c",
+      "bytes": 99085,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/evidence/e11_results.md",
+      "source": "competition_2026_advanced/report/evidence/e11_results.md",
+      "sha256": "b0c8358487aeab1dda8b04f7d612ababac04f7938c5bfccea6d9f5e1b5fc3326",
+      "bytes": 5803,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/evidence/e12_changed_files.json",
+      "source": "competition_2026_advanced/report/evidence/e12_changed_files.json",
+      "sha256": "4bdd540804672ba7eb401b484db8dccd01979edcf0fec02d598de07dd9822fb3",
+      "bytes": 929,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/evidence/e13_local_tests.json",
+      "source": "competition_2026_advanced/report/evidence/e13_local_tests.json",
+      "sha256": "3fd3e320c2c1bddf6728aed2ee648fe1b35b75f2e47133b2713fd16d5a43fa33",
+      "bytes": 5840,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/evidence/e14_results.md",
+      "source": "competition_2026_advanced/report/evidence/e14_results.md",
+      "sha256": "a0a7b23da4146f4a4a2ffedcb94bd9681f10961bc731a08a766cb3f52f0a48b4",
+      "bytes": 4048,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/evidence/e15_final_status.json",
+      "source": "competition_2026_advanced/report/evidence/e15_final_status.json",
+      "sha256": "372a582ec62026070cccdacf0103dabb234b67355a6adb5b99436d64130e4dbe",
+      "bytes": 2155,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/evidence/e16_timing_summary.rpt",
+      "source": "competition_2026_advanced/report/evidence/e16_timing_summary.rpt",
+      "sha256": "113ca7ca4f9bbb35280f638af6b06b33263f9c97fab50cf6e536c6feef765f95",
+      "bytes": 616491,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/evidence/e17_setup20.rpt",
+      "source": "competition_2026_advanced/report/evidence/e17_setup20.rpt",
+      "sha256": "6cac08e769c1fd9860e605cc8714f3a26368e161015640837035d5a34c197451",
+      "bytes": 260628,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/evidence/e18_hold20.rpt",
+      "source": "competition_2026_advanced/report/evidence/e18_hold20.rpt",
+      "sha256": "89f06621a57462640b4a600734386d066dc57f69931996e4e6dd2b15b2ddd571",
+      "bytes": 245320,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/evidence/e19_utilization.rpt",
+      "source": "competition_2026_advanced/report/evidence/e19_utilization.rpt",
+      "sha256": "a4fb29ea81fbf0fe670d3d0a58be080422c21a23a372bb2d33b97cd1b3f42e5c",
+      "bytes": 19790,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/evidence/e20_drc.rpt",
+      "source": "competition_2026_advanced/report/evidence/e20_drc.rpt",
+      "sha256": "45e7e181300c9e209759f9ec2cf2ad51f0ad18718e2acd79ae1c2919d1e48976",
+      "bytes": 69972,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/evidence/e21_cdc.rpt",
+      "source": "competition_2026_advanced/report/evidence/e21_cdc.rpt",
+      "sha256": "8209c34bc4759615dcb2b8ce0daf48af6ac293159ef6587e65846b8a3cf912b8",
+      "bytes": 94436,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/evidence/e22_route_status.rpt",
+      "source": "competition_2026_advanced/report/evidence/e22_route_status.rpt",
+      "sha256": "e2003552780333c85f334415b7eed1416e6a1f4169d1f0142e0011151ca84930",
+      "bytes": 651,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/evidence/e23_path_families.tsv",
+      "source": "competition_2026_advanced/report/evidence/e23_path_families.tsv",
+      "sha256": "70a6b2a5e0a0614b73658352a0b08a616fe9bd7199a4c5224908d2cf3fb33694",
+      "bytes": 692,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/evidence/e24_warning_review.md",
+      "source": "competition_2026_advanced/report/evidence/e24_warning_review.md",
+      "sha256": "c2bac49f69f6f2cfb586607309e9a941a41d9f8fc72b4401d3bd9ac5a22dc7bc",
+      "bytes": 9769,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/evidence/e25_bit_bitstream.json",
+      "source": "competition_2026_advanced/report/evidence/e25_bit_bitstream.json",
+      "sha256": "596ccb9a4e2d700fbd2353e5c562c121e219d8916cece2dad1b0244ec8d27f3c",
+      "bytes": 6619,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/evidence/e26_bit_header_check.json",
+      "source": "competition_2026_advanced/report/evidence/e26_bit_header_check.json",
+      "sha256": "1100d73a4ef2f0a199f6f1f0fd338b852b2f1ae673f2b7c8653b40672d359e7c",
+      "bytes": 443,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/evidence/e27_manifest.json",
+      "source": "competition_2026_advanced/report/evidence/e27_manifest.json",
+      "sha256": "ba6b0d7df3d90bd6b83a104fa0473d5efa821443cf1da9cdd90ca31478d4cbd1",
+      "bytes": 2089,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/evidence/e28_summary.txt",
+      "source": "competition_2026_advanced/report/evidence/e28_summary.txt",
+      "sha256": "1e49b29a9a1345377a5da81c2d505f1c77faf15c81d98260c07ccd0f78ba9143",
+      "bytes": 1937,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/evidence/e29_observed_pass1.hex",
+      "source": "competition_2026_advanced/report/evidence/e29_observed_pass1.hex",
+      "sha256": "1983c3247342230a3902c74ead92a926ea2db8a089571ec23c41e22a167f36e3",
+      "bytes": 4000,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/evidence/e30_observed_pass2.hex",
+      "source": "competition_2026_advanced/report/evidence/e30_observed_pass2.hex",
+      "sha256": "1983c3247342230a3902c74ead92a926ea2db8a089571ec23c41e22a167f36e3",
+      "bytes": 4000,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/evidence/e31_actual_board_analysis.json",
+      "source": "competition_2026_advanced/report/evidence/e31_actual_board_analysis.json",
+      "sha256": "88da3c6c6c9f84169f2d7364f289af77ef04fd863e9a5aa179e49f1b50a48bea",
+      "bytes": 79529,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/evidence/e32_board_session_observations.json",
+      "source": "competition_2026_advanced/report/evidence/e32_board_session_observations.json",
+      "sha256": "ec5eb5b297bfc56788bf41eefc228c94969428de5e2acd8951d848d8fe526ea2",
+      "bytes": 2019,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/evidence/e33_ddr_single_1793700461_1859422381.tsv",
+      "source": "competition_2026_advanced/report/evidence/e33_ddr_single_1793700461_1859422381.tsv",
+      "sha256": "327661244be2a4a0ad7a0f4db35decf5d0be4061ca01cd372b7306f4c7c7c607",
+      "bytes": 17705,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/evidence/e34_prepared.json",
+      "source": "competition_2026_advanced/report/evidence/e34_prepared.json",
+      "sha256": "31a6e69ff4020a749cf054d8cc49b4d95bf476d116e79c4999c9ddc1563079f2",
+      "bytes": 6298,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/evidence/e35_binding.json",
+      "source": "competition_2026_advanced/report/evidence/e35_binding.json",
+      "sha256": "8d8d8e5d28bf95721285dccd6a737f030db9d49346bd3b75d665199c3f9be53c",
+      "bytes": 6767,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/evidence/e36_scoped_normal.stdout.log",
+      "source": "competition_2026_advanced/report/evidence/e36_scoped_normal.stdout.log",
+      "sha256": "eb4e50cb5cdf8e7620bbff3e30b8cef38aeb923eb547c30d05d9448a2585fdda",
+      "bytes": 3760,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/evidence/e37_l3_source_comparison.json",
+      "source": "competition_2026_advanced/report/evidence/e37_l3_source_comparison.json",
+      "sha256": "6994419637843be3e5a9c6145b76e67f6afdfbf7a698db30ef1c13cb3dcef375",
+      "bytes": 4157,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/evidence/e38_structure_checks.tsv",
+      "source": "competition_2026_advanced/report/evidence/e38_structure_checks.tsv",
+      "sha256": "a3380388b03a80069c9d1731d4e35b960bbddc83356e25e1e057f858de824969",
+      "bytes": 96,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/evidence/e39_bank_receiver_registers.tsv",
+      "source": "competition_2026_advanced/report/evidence/e39_bank_receiver_registers.tsv",
+      "sha256": "cec150b5188da8813501a30d75d29cea2be17aa7e16929dee0b2e35454c58c8c",
+      "bytes": 14730,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/evidence/e40_clocks.rpt",
+      "source": "competition_2026_advanced/report/evidence/e40_clocks.rpt",
+      "sha256": "2336cd09e7859ed1774f88b3431d17a304618bfef79507012bf396e5c6244e4c",
+      "bytes": 26747,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/evidence/e41_preprocess.json",
+      "source": "competition_2026_advanced/report/evidence/e41_preprocess.json",
+      "sha256": "471f4a9158a531e378646d5417365c7a8bae3e57b4c881fb8c9040d7431ed419",
+      "bytes": 683,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/evidence/e42_license",
+      "source": "competition_2026_advanced/report/evidence/e42_license",
+      "sha256": "7fafdec009d89967935f6a9a232ae1e466b3bf0b283b535fdf9177711ce49d31",
+      "bytes": 751,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/evidence/e43_prepare_integer_clock.py",
+      "source": "competition_2026_advanced/report/evidence/e43_prepare_integer_clock.py",
+      "sha256": "6dc327d74f88befff9dc836f73860f9e8589afdcbe84ba8f29ae65e31431e9a4",
+      "bytes": 1082,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/evidence/e44_host_w8.tcl",
+      "source": "competition_2026_advanced/report/evidence/e44_host_w8.tcl",
+      "sha256": "3b8b44a54d8b01bce65ce6a6d5313b05bf31cf20cc3ad9fd1fb7c731af8b606d",
+      "bytes": 7332,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/evidence/gemm_workloads.csv",
+      "source": "competition_2026_advanced/report/evidence/gemm_workloads.csv",
+      "sha256": "ac95baaf807a82fb0d5c5c6e8e9c634c9e3145ac5dfc7976317adcf484cdcda7",
+      "bytes": 5575,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/evidence/official_sources.json",
+      "source": "competition_2026_advanced/report/evidence/official_sources.json",
+      "sha256": "6ebac0ff11c3aa17d80436bca8200741e43ef0edf281552f8124943a3890cfe0",
+      "bytes": 1677,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/evidence/parameter_inventory.json",
+      "source": "competition_2026_advanced/report/evidence/parameter_inventory.json",
+      "sha256": "656d6c5195dbf9c5df36be0868ba212fb8c6e93856e009d1c20dcc0215202c7e",
+      "bytes": 118641,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/evidence/source_map.json",
+      "source": "competition_2026_advanced/report/evidence/source_map.json",
+      "sha256": "808674895abb9f812df2816144e38a5df1a5f2a5d583bf41e695167351db8206",
+      "bytes": 27808,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/figures/fig01_model.png",
+      "source": "competition_2026_advanced/report/figures/fig01_model.png",
+      "sha256": "7a0cf389a7fcac06917d653ddd4b226273fdd90dd3f2547a833a6d9b67ea0d0c",
+      "bytes": 113575,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/figures/fig01_model.svg",
+      "source": "competition_2026_advanced/report/figures/fig01_model.svg",
+      "sha256": "e6bc94581b7de776956087b9197ec6af8a8b1de1ce4f194c3573d5632deba78d",
+      "bytes": 4991,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/figures/fig02_system.png",
+      "source": "competition_2026_advanced/report/figures/fig02_system.png",
+      "sha256": "031e532962264cc9e29d36b3e79bb884cb36526079d303b2c3058783daea2524",
+      "bytes": 256872,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/figures/fig02_system.svg",
+      "source": "competition_2026_advanced/report/figures/fig02_system.svg",
+      "sha256": "ab37a3ac4c564139ce17487d1ff4cdea691fcf50631f0bdaa32cee794e1a1f7e",
+      "bytes": 8493,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/figures/fig03_array.png",
+      "source": "competition_2026_advanced/report/figures/fig03_array.png",
+      "sha256": "6bd10e5909f629a419eb20b6486f6d1f4bcd8b9b9aa62964950575b3880ee6e3",
+      "bytes": 123902,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/figures/fig03_array.svg",
+      "source": "competition_2026_advanced/report/figures/fig03_array.svg",
+      "sha256": "766e4477f6015eae3b21154bf8ec0ca3ccbbd0d9ef3463dd12b74badbf814757",
+      "bytes": 37838,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/figures/fig04_mac.png",
+      "source": "competition_2026_advanced/report/figures/fig04_mac.png",
+      "sha256": "7bcb04582e4faf510757e094b5e1d20af1261cc2d533632e768992022ca730c4",
+      "bytes": 109311,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/figures/fig04_mac.svg",
+      "source": "competition_2026_advanced/report/figures/fig04_mac.svg",
+      "sha256": "445557d8a07c00fcc519d19ceb51050e1756756d54e84445bfbf60b5c4d7552f",
+      "bytes": 4037,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/figures/fig05_pipeline.png",
+      "source": "competition_2026_advanced/report/figures/fig05_pipeline.png",
+      "sha256": "8ac96514820e732ebc6d65d4a067181bd634f715f4a478b80b7b835919c1b22b",
+      "bytes": 102822,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/figures/fig05_pipeline.svg",
+      "source": "competition_2026_advanced/report/figures/fig05_pipeline.svg",
+      "sha256": "3f80750bbec271b83fc21711f4957741601353f17bc228c0d79ea6bcf19c659b",
+      "bytes": 2777,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/figures/fig06_banks.png",
+      "source": "competition_2026_advanced/report/figures/fig06_banks.png",
+      "sha256": "8fcbbb0527b7041d2e1ed083262613738e82015f330554715bb24b07bc8db203",
+      "bytes": 163418,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/figures/fig06_banks.svg",
+      "source": "competition_2026_advanced/report/figures/fig06_banks.svg",
+      "sha256": "2891e0899e299cde706c5aa7fc94f7c8bb0cdfbb5c15ac86a893ffb7c5b53976",
+      "bytes": 12164,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/figures/fig07_write_bypass.png",
+      "source": "competition_2026_advanced/report/figures/fig07_write_bypass.png",
+      "sha256": "f38ac65ea6b366e7d2a6dcae9a81a7de2f5453892523e63b3885df26d295f4f7",
+      "bytes": 130775,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/figures/fig07_write_bypass.svg",
+      "source": "competition_2026_advanced/report/figures/fig07_write_bypass.svg",
+      "sha256": "738f32ff6b50edba7eb0943f606123287531d75a49a12910c3b7ff677f7749e0",
+      "bytes": 3103,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/figures/fig08_control.png",
+      "source": "competition_2026_advanced/report/figures/fig08_control.png",
+      "sha256": "afdc8fff1465e1e87884ebae602207b3324a7bb76e9930d409832b947ce539c4",
+      "bytes": 86307,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/figures/fig08_control.svg",
+      "source": "competition_2026_advanced/report/figures/fig08_control.svg",
+      "sha256": "e78e7c998c4d7444189c226ea469f65f6e60559e9f3392c5b140bc2129cab598",
+      "bytes": 2865,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/figures/fig09_accuracy.png",
+      "source": "competition_2026_advanced/report/figures/fig09_accuracy.png",
+      "sha256": "f466b7f06eeb4be7e6b15e6f5af84a1ceef020e55a771c9bde3e87178244b46f",
+      "bytes": 81916,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/figures/fig09_accuracy.svg",
+      "source": "competition_2026_advanced/report/figures/fig09_accuracy.svg",
+      "sha256": "116a3fc8c65e4ffa411733bdd230279fd63e3b23b0bddb1084d0749fb01c7457",
+      "bytes": 1675,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/figures/fig10_timing.png",
+      "source": "competition_2026_advanced/report/figures/fig10_timing.png",
+      "sha256": "af092a9c4c1f83d5b00a465ab32d3eab74117f84d20a67eb97a4fcb1af5a9a56",
+      "bytes": 120255,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/figures/fig10_timing.svg",
+      "source": "competition_2026_advanced/report/figures/fig10_timing.svg",
+      "sha256": "d029b0e30f55f390b406bd3b141304b19aaf2ae313b2a195d547581693459aff",
+      "bytes": 2252,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/figures/fig11_validation.png",
+      "source": "competition_2026_advanced/report/figures/fig11_validation.png",
+      "sha256": "e001f462822fa8725648ede575eee542186a510be19878dca30d48630dc69d34",
+      "bytes": 191310,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/figures/fig11_validation.svg",
+      "source": "competition_2026_advanced/report/figures/fig11_validation.svg",
+      "sha256": "8c43131cfa9c9a11685ff4aa60d0e8ee2754302164b5368cd060ebae22a2ba53",
+      "bytes": 2450,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/figures/fig12_board_diagnosis.png",
+      "source": "competition_2026_advanced/report/figures/fig12_board_diagnosis.png",
+      "sha256": "8ec10e475991e029f07901181d398d9051c211abdac40bbf0f4c67b5eb5ba4cd",
+      "bytes": 127904,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/figures/fig12_board_diagnosis.svg",
+      "source": "competition_2026_advanced/report/figures/fig12_board_diagnosis.svg",
+      "sha256": "911dbe5b34706386a22866291931c8e97a3cdabcb26059db9a1a6aa074e2f0ed",
+      "bytes": 3434,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/figures/fig13_critical_path.png",
+      "source": "competition_2026_advanced/report/figures/fig13_critical_path.png",
+      "sha256": "102118be26d5427ecb7b256cf9c582fa46167e5750bfc47d442e2982a34a54b8",
+      "bytes": 106440,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/figures/fig13_critical_path.svg",
+      "source": "competition_2026_advanced/report/figures/fig13_critical_path.svg",
+      "sha256": "62585bb1968be4cf90e2c34ffcd96e79401ac438a319ef7d6dfb8225569d4e96",
+      "bytes": 2508,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/figures/fig14_logits.png",
+      "source": "competition_2026_advanced/report/figures/fig14_logits.png",
+      "sha256": "48b82b3e28623206fc20d6a678c1716998eb73cc6d7299c3dd0f8b69131202b5",
+      "bytes": 97051,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/figures/fig14_logits.svg",
+      "source": "competition_2026_advanced/report/figures/fig14_logits.svg",
+      "sha256": "517fe013c1490030a00c50b5fe7e6a9ee8809e667d75765437eecf4df739a587",
+      "bytes": 72177,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/figures/fig15_clocks.png",
+      "source": "competition_2026_advanced/report/figures/fig15_clocks.png",
+      "sha256": "08245d48943ac4a8322c49aad73a5cf5fa123447019e955b6263d72f05616a02",
+      "bytes": 125851,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/figures/fig15_clocks.svg",
+      "source": "competition_2026_advanced/report/figures/fig15_clocks.svg",
+      "sha256": "d10f88dd3b1afa33fe3d3072c717807386acd463739a527391871928991fef94",
+      "bytes": 3254,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/figures/fig16_requant.png",
+      "source": "competition_2026_advanced/report/figures/fig16_requant.png",
+      "sha256": "ee1965d3130e9c3d515b649cd81c8b1edaf6eaa1a34de564beef2ce7c46e5bc6",
+      "bytes": 136097,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "competition_2026_advanced/report/figures/fig16_requant.svg",
+      "source": "competition_2026_advanced/report/figures/fig16_requant.svg",
+      "sha256": "96600033596189e00472285c5725bcb4a1c16c50344e46dd8e69901168f2380a",
+      "bytes": 2910,
+      "category": "competition_report_skill_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "evidence/build/PHYSICAL_METRICS_166.json",
+      "source": "experiments/full128_downclock_bit_20261102/delivery_166p7/PHYSICAL_METRICS_166.json",
+      "sha256": "8f6f722b8f00d3c348e683d6254f49a446ccc7289f13f5ccb8da205c23954c50",
+      "bytes": 1821,
+      "category": "historical_build_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "evidence/build/ACTUAL_SYNTH_INPUTS_166.json",
+      "source": "experiments/full128_downclock_bit_20261102/delivery_166p7/ACTUAL_SYNTH_INPUTS_166.json",
+      "sha256": "d0e9fac8a5f021056d14850e8f17fee6ff525a7ba0df77e43fcd53baffd5c837",
+      "bytes": 76002,
+      "category": "historical_build_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "evidence/build/BUILD_MANIFEST_166.json",
+      "source": "experiments/full128_downclock_bit_20261102/delivery_166p7/BUILD_MANIFEST_166.json",
+      "sha256": "837c633933e0242a214cebfc96b2df81b7c09485f4171c0ec98e510889ca565d",
+      "bytes": 73309,
+      "category": "historical_build_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "evidence/build/BIT_HEADER_CHECK.json",
+      "source": "experiments/full128_downclock_bit_20261102/delivery_166p7/BIT_HEADER_CHECK.json",
+      "sha256": "1100d73a4ef2f0a199f6f1f0fd338b852b2f1ae673f2b7c8653b40672d359e7c",
+      "bytes": 443,
+      "category": "historical_build_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "evidence/build/FINAL_STATUS.json",
+      "source": "experiments/full128_downclock_bit_20261102/delivery_166p7/FINAL_STATUS.json",
+      "sha256": "372a582ec62026070cccdacf0103dabb234b67355a6adb5b99436d64130e4dbe",
+      "bytes": 2155,
+      "category": "historical_build_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "evidence/build/FINAL_RESOURCES.json",
+      "source": "experiments/full128_downclock_bit_20261102/delivery_166p7/FINAL_RESOURCES.json",
+      "sha256": "cc2ac595b7f7ddae0f769054f1bb3c97a3611541985245a55ad494f0cf3d1f2a",
+      "bytes": 340,
+      "category": "historical_build_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "evidence/build/WARNING_REVIEW.md",
+      "source": "experiments/full128_downclock_bit_20261102/delivery_166p7/WARNING_REVIEW.md",
+      "sha256": "c2bac49f69f6f2cfb586607309e9a941a41d9f8fc72b4401d3bd9ac5a22dc7bc",
+      "bytes": 9769,
+      "category": "historical_build_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "evidence/build/RESULTS.md",
+      "source": "experiments/full128_downclock_bit_20261102/delivery_166p7/RESULTS.md",
+      "sha256": "b3a5aa9b20a40c90da730e1834b8ab8ec74ea6795042f24f173cd73424a97e2c",
+      "bytes": 6061,
+      "category": "historical_build_evidence",
+      "exact_copy": true
+    },
+    {
+      "path": "historical/validation_policy/plan.py.txt",
+      "source": "validation/v2_validation/plan.py",
+      "sha256": "e235926f49e4efff65284459748ffc06445ecaaa33fdb7b146ff2119ed3db21e",
+      "bytes": 5115,
+      "category": "historical_validation_policy",
+      "exact_copy": true
+    },
+    {
+      "path": "historical/validation_policy/registry.json",
+      "source": "validation/v2_validation/registry.json",
+      "sha256": "a9336a3e61988dad2e3068b42dacbff1c9c222857fc68b41009615c01802a9a5",
+      "bytes": 7166,
+      "category": "historical_validation_policy",
+      "exact_copy": true
+    },
+    {
+      "path": "historical/validation_policy/RESULTS.md",
+      "source": "validation/v2_validation/RESULTS.md",
+      "sha256": "b2a6a59327d950c5360f6587b446a7aed36afe12287ebe7dca268c60efe13d70",
+      "bytes": 3834,
+      "category": "historical_validation_policy",
+      "exact_copy": true
+    },
+    {
+      "path": "historical/validation_policy/test_plan.py.txt",
+      "source": "validation/v2_validation/test_plan.py",
+      "sha256": "8be807188990f2ae00542d3a2e053e6d3676ba45e6cf46c17c2bddc833571a75",
+      "bytes": 2356,
+      "category": "historical_validation_policy",
+      "exact_copy": true
+    },
+    {
+      "path": "data/package/program.hex",
+      "source": "experiments/full128_bank_reset_fix_20261102/data/package/program.hex",
+      "sha256": "98c7fe5e31198c25bb6f5d91db8d4302412da11881f41b420b13eaa3aef1025d",
+      "bytes": 1693120,
+      "category": "authored_program_or_layout_metadata",
+      "exact_copy": true
+    },
+    {
+      "path": "data/package/package.json",
+      "source": "experiments/full128_bank_reset_fix_20261102/data/package/package.json",
+      "sha256": "96d9082630892fe28452da104b8fbd2613c71c39baaf96b51ecc62574ad87ff7",
+      "bytes": 4125465,
+      "category": "authored_program_or_layout_metadata",
+      "exact_copy": true
+    }
+  ]
+}

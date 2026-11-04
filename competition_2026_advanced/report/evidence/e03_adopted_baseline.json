@@ -1,0 +1,45 @@
+{
+  "status": "USER_ACCEPTED_ENGINEERING_BASELINE",
+  "recorded": "2026-10-29T13:28:52.504776+08:00",
+  "user_statement": "就这样吧，用这个吧",
+  "candidate": "input_grid",
+  "parameters": "D:\\fpga\\vit_tiny_vcu118\\experiments\\w8a8_systematic_calibration_20261029\\parameters\\input_grid",
+  "files": {
+    "D:\\fpga\\vit_tiny_vcu118\\experiments\\w8a8_systematic_calibration_20261029\\parameters\\input_grid\\integer_parameters.npz": "67bbc4304975bd0882b7e5f665982fc97eaecc8986ed59ba7c0e28cfb501f415",
+    "D:\\fpga\\vit_tiny_vcu118\\experiments\\w8a8_systematic_calibration_20261029\\parameters\\input_grid\\contract.json": "d5c8fd8f0346461e557c140487632d5bd69d284b2359beb7d38280076eb36ccf"
+  },
+  "rtl_source_root": "D:\\fpga\\vit_tiny_vcu118\\experiments\\vit_tiny_w8a8_200m_v2",
+  "rtl_source_manifest_sha256": "afbf212bf15e5076daf818cc420968542ae4758a64b42c0705b8dfd570ccff65",
+  "inherits": "w8a8_precision_refine_20261029/parameters/center_midpoint",
+  "delta_vs_center": [
+    "post-resize/crop RGB8 minus128 host encoding",
+    "patch_embed.proj.B compensation"
+  ],
+  "all50_weights_vs_center_unchanged": true,
+  "parameter_loading_requirement": "Use entire selected parameter set including inherited LN centering; do not splice only Patch Bias into original actheavy parameters",
+  "confirmation": {
+    "candidate": "input_grid",
+    "images": 512,
+    "fp32_correct": 383,
+    "correct": 377,
+    "fp32_top1": 74.8046875,
+    "integer_top1": 73.6328125,
+    "drop_pp": 1.171875,
+    "agreement": 461,
+    "normalized_mse": 7.954995023540327e-05
+  },
+  "original_1pp_criterion": "FAIL on512 confirmation; full50000 NOT_RUN",
+  "exact_new_numeric_acceptance_limit": null,
+  "user_acceptance_scope": "Use current candidate for subsequent integration; do not claim <=1pp/global accuracy/RTL/timing PASS",
+  "further_accuracy_search": "STOP_UNLESS_NEW_USER_REQUEST",
+  "RTL_integration": "NOT_RUN",
+  "required_integration": [
+    "new independent build/data export",
+    "matching host input encoding",
+    "candidate-bound Golden and L1/L2/L3 verification"
+  ],
+  "timing200MHz": "NOT_RUN",
+  "full50000": "NOT_RUN",
+  "automatic_heavy_jobs_started": false,
+  "protected_sources_modified": false
+}

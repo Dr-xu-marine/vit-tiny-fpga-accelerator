@@ -1,0 +1,52 @@
+"""Policy guard checks only; no HDL simulation or vendor invocation."""
+import sys
+sys.dont_write_bytecode = True
+import json
+from pathlib import Path
+import unittest
+from plan import select
+
+REGISTRY = json.loads((Path(__file__).parent/'registry.json').read_text(encoding='utf-8'))
+
+
+class GatePolicyTests(unittest.TestCase):
+    def test_local_does_not_grant_network_pass(self):
+        p = select(REGISTRY, ['rtl/v2_rq16.sv'], 'local')
+        self.assertEqual(p['selected_level'], 1)
+        self.assertFalse(p['full_network_pass'])
+        self.assertIsNone(p['acceptance_scope'])
+        self.assertEqual({s['level'] for s in p['stages']}, {1})
+
+    def test_datapath_requires_real_gemm_and_connection(self):
+        p = select(REGISTRY, ['rtl/v2_c0_mac_cell.sv'], 'datapath')
+        self.assertEqual(p['selected_level'], 2)
+        ids = {t['id'] for s in p['stages'] for t in s['required']}
+        self.assertTrue({'c0', 'tile', 'wide_gemm', 'real_bram', 'shared_path'} <= ids)
+
+    def test_important_freezes_and_final_require_exact_full_contract(self):
+        for impact in ['architecture', 'global', 'final']:
+            p = select(REGISTRY, ['v2_rq16.sv'], impact)
+            self.assertEqual(p['selected_level'], 3)
+            self.assertEqual(p['full12_contract']['checkpoints'], 257)
+            self.assertEqual(p['full12_contract']['checked_values'], 11532400)
+            self.assertEqual(p['full12_contract']['actual_host_classification_outputs'], 1000)
+            self.assertFalse(p['functional_pass'])
+
+    def test_unmapped_rtl_cannot_silently_skip_regression(self):
+        p = select(REGISTRY, ['new_unknown_controller.sv'], 'local')
+        self.assertEqual(p['selected_level'], 3)
+        self.assertEqual(p['unmapped_files_require_full'], ['new_unknown_controller.sv'])
+
+    def test_missing_new128_operator_path_requires_full_fallback(self):
+        p = select(REGISTRY, ['tiny_softmax_unit.v'], 'datapath')
+        self.assertEqual(p['selected_level'], 3)
+        self.assertIn('new128_encoder_path', p['coverage_gaps'])
+        self.assertEqual(p['coverage_gap_fallback'], 'full12')
+
+    def test_frozen_input_change_is_not_a_test_scope_option(self):
+        with self.assertRaises(ValueError):
+            select(REGISTRY, ['v2_rq16.sv'], 'local', frozen_changed=True)
+
+
+if __name__ == '__main__':
+    unittest.main()

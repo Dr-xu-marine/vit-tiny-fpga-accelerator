@@ -1,0 +1,30 @@
+`timescale 1ns/1ps
+`include "w8_test_paths.vh"
+module tb_act_depth;
+ reg clk=0;always #2.5 clk=~clk;
+ reg rst=1,ae=0,br=0,bw=0;reg [15:0] aa=0,ba=0;reg [7:0] wd=0;
+ wire [7:0] aq,bq;reg [7:0] golden[0:65535],expected_a=0,expected_b=0;
+ act_depth_bank dut(clk,rst,ae,br,bw,aa,ba,wd,aq,bq);
+ integer checks=0,cycles=0;reg fault;
+ task tick;begin
+  @(posedge clk);
+  if(rst)begin expected_a=0;expected_b=0;end
+  else begin if(ae)expected_a=golden[aa];if(br)expected_b=golden[ba];end
+  if(bw)golden[ba]=wd;
+  #0.2;if(aq!==expected_a||bq!==expected_b)$fatal(1,"DEPTH_MISMATCH cycle=%0d aa=%0d ba=%0d A=%h/%h B=%h/%h",cycles,aa,ba,aq,expected_a,bq,expected_b);
+  checks=checks+2;cycles=cycles+1;@(negedge clk);
+ end endtask
+ initial begin
+  $readmemh({`W8_ROOT,"/testbench/depth_pattern.hex"},golden);fault=$test$plusargs("CORRUPT_DEPTH");tick();rst=0;
+  for(integer i=0;i<65536;i=i+1)begin ba=i;wd=golden[i];bw=1;tick();end
+  bw=0;ae=1;br=1;
+  if(fault)golden[32768]=golden[32768]^8'h01;
+  for(integer i=0;i<65536;i=i+1)begin aa=i;ba=65535-i;tick();end
+  for(integer i=0;i<512;i=i+1)begin
+   rst=(i%71==0);aa=i*127;ba=65535-i*113;ae=i%3!=0;br=i%5!=0;bw=!br;wd=i*59;tick();
+  end
+  rst=0;ae=1;br=1;bw=0;aa=0;ba=65535;tick();
+  $display("ACT_DEPTH_PASS checks=%0d cycles=%0d all_65536_words_dual_port=PASS reset_stall_edges=512",checks,cycles);$finish;
+ end
+ initial begin #2000000;$fatal(1,"DEPTH_MISMATCH timeout");end
+endmodule

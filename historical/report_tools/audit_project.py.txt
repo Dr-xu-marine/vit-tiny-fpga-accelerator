@@ -1,0 +1,148 @@
+"""Read-only engineering audit; copies evidence only into this delivery directory."""
+from pathlib import Path
+from datetime import datetime,timezone,timedelta
+import hashlib,json,re,shutil,subprocess
+import numpy as np
+
+ROOT=Path(__file__).resolve().parents[1]; W=ROOT.parent
+P=W/'experiments/full128_bank_reset_fix_20261102'
+C=W/'experiments/full128_jointfix_20261029'
+D=W/'experiments/full128_downclock_bit_20261102/delivery_166p7'
+E=ROOT/'report/evidence';E.mkdir(parents=True,exist_ok=True)
+TZ=timezone(timedelta(hours=8))
+def sha(p):
+ with Path(p).open('rb') as f:return hashlib.file_digest(f,'sha256').hexdigest()
+def save(p,v):p.write_text(json.dumps(v,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+def load(p):return json.loads(Path(p).read_text(encoding='utf-8-sig'))
+records=[]
+def record(eid,rel,description,version,copy=True):
+ p=W/rel
+ if not p.is_file():records.append(dict(id=eid,path=rel,description=description,version=version,status='MISSING'));return
+ target=E/(eid.lower()+'_'+re.sub('[^a-z0-9_.-]','_',p.name.lower()))
+ if copy:shutil.copyfile(p,target)
+ records.append(dict(id=eid,path=p.relative_to(W).as_posix(),description=description,version=version,
+   sha256=sha(target) if copy else sha(p),bytes=target.stat().st_size if copy else p.stat().st_size,mtime=datetime.fromtimestamp(p.stat().st_mtime,TZ).isoformat(),
+   snapshot=target.relative_to(ROOT).as_posix() if copy else None,status='READ_VERIFIED'))
+
+items=[
+ ('e01','experiments/full128_bank_reset_fix_20261102/SOURCE_MANIFEST.json','当前冻结505文件清单','bank_reset'),
+ ('e02','experiments/full128_downclock_bit_20261102/delivery_166p7/ACTUAL_SYNTH_INPUTS_166.json','实际综合输入身份','166p7'),
+ ('e03','experiments/w8a8_systematic_calibration_20261029/ADOPTED_BASELINE.json','input_grid采用决定及参数绑定','input_grid'),
+ ('e04','experiments/w8a8_systematic_calibration_20261029/CONFIRMATION.json','固定512张确认集','input_grid'),
+ ('e05','experiments/w8a8_systematic_calibration_20261029/native/confirmation_01.json','512确认进程原生退出','input_grid'),
+ ('e06','experiments/board_closure_20261030/full72_recovery_20261030/FINAL_RESULT.json','历史完整257点及Host1000最终结果','jointfix'),
+ ('e07','experiments/board_closure_20261030/full72_recovery_20261030/STATUS.json','历史回归计数与104355秒仿真','jointfix'),
+ ('e08','experiments/board_closure_20261030/full72_recovery_20261030/runs/full_1793359780460422100/simulate.json','历史回归原生进程和dump检查','jointfix'),
+ ('e09','experiments/board_closure_20261030/full72_recovery_20261030/runs/full_1793359780460422100/simulate.stdout.log','历史257点原始日志','jointfix'),
+ ('e10','experiments/board_closure_20261030/full72_recovery_20261030/FROZEN_INPUTS.json','历史L3源码绑定','jointfix'),
+ ('e11','experiments/full128_bank_reset_fix_20261102/RESULTS.md','当前Bank修改及L1/L2结果','bank_reset'),
+ ('e12','experiments/full128_bank_reset_fix_20261102/CHANGED_FILES.json','Bank最后一轮修改清单','bank_reset'),
+ ('e13','experiments/full128_bank_reset_fix_20261102/evidence/LOCAL_TESTS.json','当前局部数值及故障注入记录','bank_reset'),
+ ('e14','experiments/full128_route_20261102/RESULTS.md','完整200MHz真实布线失败结果','200m_route'),
+ ('e15','experiments/full128_downclock_bit_20261102/delivery_166p7/FINAL_STATUS.json','当前166.7MHz物理与Bitstream最终状态','166p7'),
+ ('e16','experiments/full128_downclock_bit_20261102/delivery_166p7/reports/timing_summary.rpt','当前完整Setup/Hold和未约束检查','166p7'),
+ ('e17','experiments/full128_downclock_bit_20261102/delivery_166p7/reports/setup20.rpt','当前最差20条Setup','166p7'),
+ ('e18','experiments/full128_downclock_bit_20261102/delivery_166p7/reports/hold20.rpt','当前最差20条Hold','166p7'),
+ ('e19','experiments/full128_downclock_bit_20261102/delivery_166p7/reports/utilization.rpt','当前完整整机资源','166p7'),
+ ('e20','experiments/full128_downclock_bit_20261102/delivery_166p7/reports/drc.rpt','当前默认DRC原始结果','166p7'),
+ ('e21','experiments/full128_downclock_bit_20261102/delivery_166p7/reports/cdc.rpt','当前CDC原始结果','166p7'),
+ ('e22','experiments/full128_downclock_bit_20261102/delivery_166p7/reports/route_status.rpt','123520条完整布通','166p7'),
+ ('e23','experiments/full128_downclock_bit_20261102/delivery_166p7/reports/path_families.tsv','按路径族Setup/Hold统计','166p7'),
+ ('e24','experiments/full128_downclock_bit_20261102/delivery_166p7/WARNING_REVIEW.md','DRC/CDC告警分类边界','166p7'),
+ ('e25','experiments/full128_downclock_bit_20261102/delivery_166p7/reports/bit_bitstream.json','Bitstream生成及原生退出','166p7'),
+ ('e26','experiments/full128_downclock_bit_20261102/delivery_166p7/BIT_HEADER_CHECK.json','Bitstream文件头与器件','166p7'),
+ ('e27','experiments/full128_downclock_bit_20261102/board_kit_166p7/MANIFEST.json','板级包身份','166p7'),
+ ('e28','experiments/board_logit_diagnostic_20261103/capture_1793697684_24312_3377448321/summary.txt','首次真实板级稳定两遍读回','first_board'),
+ ('e29','experiments/board_logit_diagnostic_20261103/capture_1793697684_24312_3377448321/observed_pass1.hex','实测1000输出第一遍','first_board'),
+ ('e30','experiments/board_logit_diagnostic_20261103/capture_1793697684_24312_3377448321/observed_pass2.hex','实测1000输出第二遍','first_board'),
+ ('e31','experiments/board_logit_diagnostic_20261103/ACTUAL_BOARD_ANALYSIS.json','921项差异统计','first_board'),
+ ('e32','experiments/board_first_divergence_20261103/BOARD_SESSION_OBSERVATIONS.json','后续重新下载/复位状态变更','post_reset'),
+ ('e33','experiments/board_first_divergence_20261103/ddr_single_1793700461_1859422381.tsv','后续DDR抽查340项失败，不归因首次错误','post_reset'),
+ ('e34','experiments/board_first_divergence_20261103/PREPARED.json','当前定向回归范围','scoped'),
+ ('e35','experiments/board_first_divergence_20261103/BINDING.json','定向回归实际输入SHA','scoped'),
+ ('e36','experiments/board_first_divergence_20261103/run/scoped_normal.stdout.log','定向回归截至取证时刻的日志快照','scoped'),
+ ('e37','experiments/board_first_divergence_20261103/L3_SOURCE_COMPARISON.json','当前相对真正L3版本的14项改变/新增','scoped'),
+ ('e38','experiments/full128_downclock_bit_20261102/delivery_166p7/reports/structure_checks.tsv','128 DSP结构与四个局部valid检查','166p7'),
+ ('e39','experiments/full128_downclock_bit_20261102/delivery_166p7/reports/bank_receiver_registers.tsv','实际bank接收寄存器','166p7'),
+ ('e40','experiments/full128_downclock_bit_20261102/delivery_166p7/reports/clocks.rpt','实际生成时钟报告','166p7'),
+ ('e41','experiments/full128_bank_reset_fix_20261102/data/preprocess.json','图像1及预处理来源','input_grid'),
+ ('e42','experiments/full128_bank_reset_fix_20261102/board/legacy_platform/board_repo/vcu118/2.3/LICENSE','板级描述Apache2许可证','vendor'),
+ ('e43','experiments/full128_downclock_bit_20261102/prepare_integer_clock.py','实际M10 D3 O6时钟生成脚本','166p7'),
+ ('e44','experiments/full128_bank_reset_fix_20261102/board/host_w8.tcl','冻结Host上传/比较脚本','bank_reset'),
+]
+for x in items:record(*x)
+for eid,p,desc,ver in [
+ ('h01',P/'data/integer_parameters.npz','完整冻结整数参数','input_grid'),
+ ('h02',P/'data/contract.json','实际W8A8数值合同','input_grid'),
+ ('h03',P/'data/package/package.json','真实13,024指令与DDR布局','bank_reset'),
+ ('h04',D/'full128_166p7.bit','当前下载Bitstream','166p7'),
+ ('h05',D/'full128_166p7_final.dcp','当前最终DCP','166p7'),
+ ('h06',P/'data/package/ddr.bin','8,990,912字节输入/权重包','input_grid'),
+ ('h07',D/'effective_final.xdc','最终有效XDC快照，重建仍需IP作用域','166p7'),
+ ('h08',C/'software/golden.py','当前数值方法的冻结独立整数参考','jointfix')]:record(eid,p.relative_to(W).as_posix(),desc,ver,False)
+
+pkg=load(P/'data/package/package.json'); commands=pkg['events'];by_op={};gemms=[]
+for e in commands:
+ words=e['words'];op=words[0]&15;by_op[str(op)]=by_op.get(str(op),0)+1
+ if op in (1,4):
+  m,k,n=words[4:7];gemms.append(dict(pc=e['pc'],label=e['label'],op=op,m=m,n=n,k=k,macs=m*n*k))
+assert len(gemms)==122
+with (ROOT/'report/evidence/gemm_workloads.csv').open('w',encoding='utf-8') as f:
+ f.write('pc,label,op,m,n,k,macs\n')
+ for g in gemms:f.write(','.join(str(g[k]) for k in ['pc','label','op','m','n','k','macs'])+'\n')
+families={}
+for g in gemms:
+ label=g['label']
+ if 'patch_embed' in label:key='patch'
+ elif label=='head':key='head'
+ elif '.attn.qkv' in label:key='qkv'
+ elif 'QK raw' in label:key='qk'
+ elif 'AV exact' in label:key='av'
+ elif '.attn.proj' in label:key='projection'
+ elif '.mlp.fc1' in label:key='fc1'
+ elif '.mlp.fc2' in label:key='fc2'
+ else:raise ValueError(label)
+ d=families.setdefault(key,dict(commands=0,macs=0,shapes=[]));d['commands']+=1;d['macs']+=g['macs']
+ if [g['m'],g['n'],g['k']] not in d['shapes']:d['shapes'].append([g['m'],g['n'],g['k']])
+
+meta=load(P/'data/contract.json')
+z=np.load(P/'data/integer_parameters.npz',allow_pickle=False)
+params=[dict(name=n,shape=list(z[n].shape),dtype=str(z[n].dtype),minimum=int(z[n].min()),maximum=int(z[n].max()),bytes=z[n].nbytes) for n in z.files]
+z.close()
+save(E/'parameter_inventory.json',params)
+active=load(P/'scripts/sources.json')+['board/w8_board_core.v']
+source_map=[]
+for n in active:
+ p=P/n;lines=p.read_text().splitlines()
+ anchors=[dict(line=i+1,text=line.strip()) for i,line in enumerate(lines) if re.search(r'\bmodule\b|DSP48E2|AREG\(|BREG\(|MREG\(|PREG\(|localparam.*IDLE|assign.*ready|cascade_height|bytes\[|write_pending|bias_correction|commit_valid|AREG|w8_math arithmetic|input_sum|out_valid =|initial.*readmemh',line)]
+ source_map.append(dict(path=p.relative_to(W).as_posix(),sha256=sha(p),lines=len(lines),anchors=anchors))
+save(E/'source_map.json',source_map)
+frozen=load(P/'SOURCE_MANIFEST.json')['files']
+changed=[n for n,h in frozen.items() if sha(P/n)!=h]
+assert not changed,changed
+
+log=(E/'e36_scoped_normal.stdout.log').read_text(errors='replace')
+cps=[dict(name=a,values=int(b),cycle=int(c)) for a,b,c in re.findall(r'W8_CHECKPOINT_PASS (\S+) values=(\d+) cycle=(\d+)',log)]
+progress=re.findall(r'TRACE_PROGRESS pc=(\d+) checkpoints=(\d+) cycles=(\d+)',log)
+scope_status=load(W/'experiments/board_first_divergence_20261103/STATUS.json')
+git=lambda *args:subprocess.check_output(['git',*args],cwd=W,text=True,encoding='utf-8',errors='replace').strip()
+baseline=load(W/'experiments/w8a8_systematic_calibration_20261029/CONFIRMATION.json')
+current=load(D/'FINAL_STATUS.json')
+capture=load(W/'experiments/board_logit_diagnostic_20261103/ACTUAL_BOARD_ANALYSIS.json')
+now=datetime.now(TZ).isoformat(timespec='seconds')
+facts=dict(audit_time=now,workspace=str(W),git=dict(branch=git('branch','--show-current'),commit=git('rev-parse','HEAD'),
+  tracked_status=git('status','--short','--untracked-files=no'),recent_commits=git('log','-5','--format=%h %ad %an %s','--date=short')),
+ current_snapshot=str(P),source_manifest_sha256=sha(P/'SOURCE_MANIFEST.json'),frozen_files_verified=len(frozen),
+ current=current,confirmation=baseline,board=capture,
+ model_meta={k:v for k,v in meta.items() if k not in ['linear','norm','residual','gamma','beta','norm_beta','norm_gamma'] and not isinstance(v,(dict,list))},
+ model=dict(layers=12,tokens=197,embedding=192,heads=3,head_dimension=64,mlp=768,classes=1000),
+ instruction_count=len(commands),op_counts=by_op,gemm_commands=len(gemms),gemm_macs=sum(g['macs'] for g in gemms),gemm_families=families,
+ logical_blobs=pkg['blobs'],ddr_bytes=pkg['ddr_bytes'],parameter_arrays=len(params),weight_arrays=sum(x['name'].endswith('.W') for x in params),
+ historical_full12=load(W/'experiments/board_closure_20261030/full72_recovery_20261030/FINAL_RESULT.json'),
+ scoped=dict(status=scope_status.get('status'),checkpoints=cps,values=sum(x['values'] for x in cps),
+   last_progress=progress[-1] if progress else None,first_divergence=re.findall(r'CHECKPOINT_MISMATCH[^\r\n]*|PREFIX_MISMATCH[^\r\n]*',log)[:1],
+   max_checkpoints=20,max_values=989142,external_memory='AXI protocol model; real DDR/CDC not included'),
+ source_root_license_found=(W/'LICENSE').is_file(),evidence=records)
+save(E/'audit_facts.json',facts)
+print(json.dumps({k:facts[k] for k in ['audit_time','gemm_commands','gemm_macs','gemm_families','scoped','source_root_license_found']},ensure_ascii=False,indent=2))
+print('missing_evidence_ids',[e['id'] for e in records if e['status']=='MISSING'])

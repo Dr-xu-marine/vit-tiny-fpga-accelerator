@@ -1,0 +1,52 @@
+"""Matched FP32 / frozen V4 / NEW full-integer ImageNet-1K comparison.
+--small uses the frozen16 cached preprocessed images; no formal accuracy claim.
+--scope all/holdout is a STAGE TWO entry: never automatically launched.
+"""
+from pathlib import Path
+import argparse,sys,json,hashlib,time
+import numpy as np
+R=Path(__file__).resolve().parents[1];sys.path[:0]=[str(R/'software'),str(R.parents[1])]
+import golden as G
+from vit_fpga.tiny import int8_token_channel as V4
+def sha(p):
+ with Path(p).open('rb')as f:return hashlib.file_digest(f,'sha256').hexdigest()
+def main():
+ ap=argparse.ArgumentParser();ap.add_argument('--small',action='store_true');ap.add_argument('--scope',choices=['all','holdout']);ap.add_argument('--output',type=Path,required=True);args=ap.parse_args()
+ if args.small==(args.scope is not None):ap.error('choose --small OR --scope')
+ args.output.mkdir(exist_ok=False,parents=True);start=time.perf_counter();new=G.load(R/'data');oldpath=R.parents[1]/'assets/quantized_tiny_token_channel';om,oa=V4.load_artifacts(oldpath)
+ if args.small:
+  z=np.load(R/'data/small_reference.npz');ids=z['ids'].tolist();iterator=((int(i),int(t),x,f)for i,t,x,f in zip(z['ids'],z['labels'],z['patches'],z['fp32_logits']))
+ else:
+  # Strictly rebuild the source FP32 from the SAME archive checkpoint. Never
+  # claim same-model accuracy for a downloaded/retrained substitute.
+  import prepare as P
+  import torch,timm,zipfile,io
+  from safetensors.torch import load
+  from timm.data import create_transform,resolve_model_data_config
+  from PIL import Image
+  torch.set_num_threads(2);torch.set_num_interop_threads(1)
+  with zipfile.ZipFile(P.ARCHIVE)as archive:
+   raw=archive.read('vit_quantization/reference/model.safetensors');idx=json.loads(archive.read('vit_quantization/data/index.json'));splits=json.loads(archive.read('vit_quantization/data/splits.json'))
+  assert hashlib.sha256(raw).hexdigest()=='fecf81b492bd13ee7a5297cb74d1d417aac8bf7e1b7d96aed89c4691984587ed'
+  fp=timm.create_model('vit_tiny_patch16_224.augreg_in21k_ft_in1k',pretrained=False).eval();fp.load_state_dict(load(raw),strict=True);tf=create_transform(**resolve_model_data_config(fp),is_training=False);rec={v['id']:v for v in idx}
+  ids=sorted(rec)if args.scope=='all'else splits['holdout'];assert len(ids)==(50000 if args.scope=='all'else 45000)
+  def images():
+   with P.TAR.open('rb')as f:
+    for id in ids:
+     r=rec[id];f.seek(r['offset']);jpeg=f.read(r['size'])
+     with Image.open(io.BytesIO(jpeg))as im:inp=tf(im.convert('RGB')).unsqueeze(0)
+     with torch.inference_mode():logits=fp(inp).numpy()[0];patch=torch.nn.functional.unfold(inp,16,stride=16).transpose(1,2)[0].numpy()
+     yield id,r['target'],patch,logits
+  iterator=images()
+ identity=dict(dataset='ImageNet-1K validation',scope='cached16'if args.small else args.scope,ids=ids,model_sha256='fecf81b492bd13ee7a5297cb74d1d417aac8bf7e1b7d96aed89c4691984587ed',new_parameter_sha=sha(R/'data/integer_parameters.npz'),new_golden_sha=sha(R/'software/golden.py'),old_parameter_sha=sha(oldpath/'quantized_arrays.npz'),preprocess='timm checkpoint config: shorter248 bicubic, center224, RGB mean/std0.5',full50k_contains_calibration=True,formal_acceptance=not args.small)
+ (args.output/'inputs.json').write_text(json.dumps(identity,indent=2));hits=np.zeros(3,np.int64);count=0
+ with(args.output/'predictions.jsonl').open('w',encoding='utf-8')as out:
+  for id,target,patch,fp in iterator:
+   oldq=V4.V1.I.quantize_int8(patch,om['scales']['input']);old,_=V4.forward_patches(oldq,om,oa,capture=False)
+   newq=G.sat8(np.rint(patch/new.meta['input_scale']).astype(np.int64)+new.meta['input_zp']);newlog=new.infer(newq,capture=False)
+   pred=list(map(lambda x:int(np.argmax(x)),[fp,old,newlog]));hits+=np.asarray(pred)==target;count+=1
+   out.write(json.dumps(dict(image=int(id),target=int(target),fp32=pred[0],old_v4=pred[1],new_w8a8=pred[2]))+'\n');out.flush()
+   print('IMAGENET',count,id,pred,'hits',hits.tolist(),flush=True)
+ result=dict(status='PASS',scope=identity['scope'],images=count,hits=hits.tolist(),top1_percent=(hits*100/count).tolist(),new_drop_percentage_points=float((hits[0]-hits[2])*100/count),within_1pp='NOT_QUALIFIED_SMALL_SAMPLE'if args.small else bool((hits[0]-hits[2])*100/count<=1.0),seconds=time.perf_counter()-start)
+ (args.output/'RESULTS.json').write_text(json.dumps(result,indent=2));print(json.dumps(result))
+if __name__=='__main__':main()

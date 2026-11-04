@@ -1,0 +1,63 @@
+# Checker-only extension. Never changes netlist, registers, RAMs or constraints.
+source [file join [file dirname [info script]] check_banks.tcl]
+rename prepare_reset_aliases prepare_root_reset_aliases
+proc idle_same_age_signature {c} {
+ set sig {}
+ foreach a {INIT IS_C_INVERTED IS_D_INVERTED IS_R_INVERTED} {
+  set v [get_property $a $c]
+  if {$v eq "" && $a ne "INIT"} {set v 1'b0}
+  lappend sig $a $v
+ }
+ foreach p {C D CE R} {
+  set ds {}
+  foreach d [get_pins -quiet -leaf -of_objects [get_nets -segments -of_objects [get_pins -of_objects $c -filter "REF_PIN_NAME == $p"]] -filter {DIRECTION == OUT}] {
+   set ref [get_property REF_NAME [get_cells -of_objects $d]]
+   set n [expr {$ref in {GND VCC} ? $ref : [get_property NAME $d]}]
+   if {[dict exists $::reset_aliases $n]} {set n [dict get $::reset_aliases $n]}
+   lappend ds $n
+  }
+  lappend sig $p [lsort -unique $ds]
+ }
+ return $sig
+}
+proc prepare_reset_aliases {out} {
+ prepare_root_reset_aliases $out
+ set regs [get_cells -hier -quiet -filter {REF_NAME == FDRE && NAME =~ */control/idle_reset_local_reg*}]
+ if {[llength $regs]!=6} {error IDLE_RESET_COPIES_NOT_SIX}
+ set root [get_cells {w8_platform_i/core/inst/core/control/idle_reset_local_reg[4]}]
+ if {[llength $root]!=1} {error IDLE_RESET_CANONICAL_NOT_UNIQUE}
+ set expected [idle_same_age_signature $root]
+ set f [open [file join $out idle_reset_same_age_proof.tsv] w]
+ foreach c $regs {
+  set got [idle_same_age_signature $c]
+  puts $f "$c\t[get_property LOC $c]\t$got"
+  if {$got ne $expected} {close $f;error "IDLE_RESET_AGE_OR_INPUT_MISMATCH $c"}
+ }
+ close $f
+ # Only aliases that have just passed exact primitive-input/INIT equality.
+ foreach c $regs {foreach pin {C Q} {dict set ::reset_aliases "$c/$pin" "$root/$pin"}}
+}
+# Retain the original address+state+reset whitelist and output-mux-load proof;
+# canonicalize only rigorously proved same-age reset copies before checking.
+set original_gelu_body [info body proved_gelu_read_selector]
+set needle {set addr 0}
+if {[string first $needle $original_gelu_body]<0} {error CHECKER_PATCH_TARGET_MISSING}
+set revised_gelu_body [string map [list $needle "set starts \[canonical_starts \$starts\]\n $needle"] $original_gelu_body]
+proc proved_gelu_read_selector {cell {override_starts __ACTUAL__}} $revised_gelu_body
+
+proc final_checker_fault_tests {out} {
+ set cells [get_cells -hier -quiet -filter {NAME =~ */buffers/gelu/*bytes_reg_mux_sel_b_pos_* && REF_NAME == FDRE}]
+ if {[llength $cells]!=2} {error GELU_SELECTOR_COUNT_CHANGED}
+ set f [open [file join $out checker_fault_injection.tsv] w]
+ foreach c $cells {
+  if {![proved_gelu_read_selector $c]} {error ACTUAL_GELU_CONTROL_PROOF_FAILED}
+  set starts [all_fanin -flat -startpoints_only -to [get_pins -of_objects $c -filter {REF_PIN_NAME == D}]]
+  set bad [concat $starts {injected_payload_storage_reg/Q}]
+  if {[proved_gelu_read_selector $c $bad]} {error CHECKER_DATA_SOURCE_FI_NOT_DETECTED}
+  set noaddr {}
+  foreach p $starts {if {![regexp {/aux/channel_reg\[[89]\]} $p]} {lappend noaddr $p}}
+  if {[proved_gelu_read_selector $c $noaddr]} {error CHECKER_NO_ADDRESS_FI_NOT_DETECTED}
+  puts $f "$c\tACTUAL_PASS\tPAYLOAD_FI_DETECTED\tMISSING_ADDRESS_FI_DETECTED"
+ }
+ close $f
+}

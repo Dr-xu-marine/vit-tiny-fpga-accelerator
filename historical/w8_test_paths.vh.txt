@@ -1,0 +1,5 @@
+`ifndef W8_TEST_PATHS
+`define W8_TEST_PATHS
+`define W8_ROOT "D:/fpga/vit_tiny_vcu118/experiments/full128_bank_reset_fix_20261102"
+`define W8_PROGRAM_FILE "D:/fpga/vit_tiny_vcu118/experiments/full128_bank_reset_fix_20261102/data/package/program.hex"
+`endif

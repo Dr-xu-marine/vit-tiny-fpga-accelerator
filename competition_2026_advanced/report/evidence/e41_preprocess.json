@@ -1,0 +1,33 @@
+{
+  "config": {
+    "input_size": [
+      3,
+      224,
+      224
+    ],
+    "interpolation": "bicubic",
+    "mean": [
+      0.5,
+      0.5,
+      0.5
+    ],
+    "std": [
+      0.5,
+      0.5,
+      0.5
+    ],
+    "crop_pct": 0.9,
+    "crop_mode": "center"
+  },
+  "FP32_checkpoint_sha256": "fecf81b492bd13ee7a5297cb74d1d417aac8bf7e1b7d96aed89c4691984587ed",
+  "source_image": {
+    "id": 1,
+    "offset": 2919739904,
+    "size": 109527,
+    "target": 65,
+    "name": "ILSVRC2012_val_00000001.JPEG",
+    "sha256": "e31b2caf5d202426e9918522a38b81e473c5cdc31086e6d640c89f594d1c32f9",
+    "split": "holdout",
+    "previous_new_candidate_smoke": true
+  }
+}

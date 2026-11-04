@@ -1,0 +1,22 @@
+{
+  "date": "2026-11-03",
+  "initial_inference": {
+    "status": "FAIL",
+    "capture": "../board_logit_diagnostic_20261103/capture_1793697684_24312_3377448321",
+    "mismatch_values": 921,
+    "read_stability_mismatches": 0,
+    "scope": "Original completed job; current board contents must not replace this evidence"
+  },
+  "subsequent_interface": [
+    {"status": "BLOCKED", "reported_error": "Invalid hw_axi handle", "action": "User rebound exactly one existing current JTAG AXI object; no device reset/program by diagnostic script"},
+    {"status": "BLOCKED", "reported_error": "DDR_SAMPLE_BLOCKED wrong ABI/status", "action": "Did not bypass guard; read actual registers"},
+    {"status": "PASS_IDENTITY_ONLY", "registers": {"status": 8, "identity": "0x56313238", "frequency_metadata": 166666666, "macs": 128, "instructions": 13024, "results": 1000, "retired": 0, "loads": 0}, "interpretation": "Idle and calibrated, no current result, cleared job counters. Metadata is not measured frequency or FPGA configuration readback"},
+    {"status": "FAIL_CURRENT_DDR_COMPARISON_ONLY", "capture": "ddr_single_1793700461_1859422381.tsv", "checked": 340, "mismatches": 340, "first_address": 0, "actual": "0x00000000", "expected": "0x44434040", "writes_to_device": 0, "patterns_observed": ["00000000", "00ffffff", "ffffffff", "33333333", "33b33333"], "not_all_addresses_are_zero": true}
+  ],
+  "user_confirmed_intervening_action": "重新下载、断电或复位过",
+  "interpretation": "A reprogram/power-cycle/reset occurred between original inference and later sampling. The exact action/timing is not separately established. The later cleared counters and altered DDR cannot establish the original 921-mismatch cause. Current DDR comparison failure is not by itself a DDR hardware fault diagnosis.",
+  "root_cause_of_original_inference": "UNKNOWN",
+  "new_inference_or_upload_by_agent": "NOT_RUN",
+  "approved_scoped_RTL_diagnostic": "RUNNING_SEPARATELY",
+  "original_RTL_Golden_bitstream_constraints_changed": false
+}

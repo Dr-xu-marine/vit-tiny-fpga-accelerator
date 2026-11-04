@@ -1,0 +1,28 @@
+$ErrorActionPreference = 'Stop'
+$taskRoot = Split-Path -Parent $PSScriptRoot
+$reportPath = Join-Path $taskRoot 'report\design_report.docx'
+$pdfPath = Join-Path $taskRoot 'report\design_report.pdf'
+$qaPath = Join-Path $taskRoot 'report\qa'
+New-Item -ItemType Directory -Path $qaPath -Force | Out-Null
+$wordApp = $null
+$reportDoc = $null
+try {
+    $wordApp = New-Object -ComObject Word.Application
+    $wordApp.Visible = $false
+    $wordApp.DisplayAlerts = 0
+    $wordApp.Options.UpdateLinksAtOpen = $false
+    $reportDoc = $wordApp.Documents.Open($reportPath, $false, $false)
+    $reportDoc.Fields.Update() | Out-Null
+    foreach ($taskToc in $reportDoc.TablesOfContents) { $taskToc.Update() }
+    $reportDoc.Repaginate()
+    $pageCount = $reportDoc.ComputeStatistics(2)
+    $reportDoc.Save()
+    $reportDoc.ExportAsFixedFormat($pdfPath,17,$false,0,0,1,1,0,$true,$true,1,$true,$true,$false)
+    @{ renderer='Microsoft Word native COM'; pages=$pageCount; docx=$reportPath; pdf=$pdfPath; status='EXPORTED'; utc=[DateTime]::UtcNow.ToString('o') } | ConvertTo-Json | Set-Content -LiteralPath (Join-Path $qaPath 'word_export.json') -Encoding utf8
+    Write-Output "WORD_EXPORT_OK pages=$pageCount path=$pdfPath"
+} finally {
+    if ($null -ne $reportDoc) { $reportDoc.Close(0) }
+    if ($null -ne $wordApp) { $wordApp.Quit() }
+    if ($null -ne $reportDoc) { [void][System.Runtime.InteropServices.Marshal]::ReleaseComObject($reportDoc) }
+    if ($null -ne $wordApp) { [void][System.Runtime.InteropServices.Marshal]::ReleaseComObject($wordApp) }
+}

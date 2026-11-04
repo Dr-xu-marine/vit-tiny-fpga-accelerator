@@ -1,0 +1,11 @@
+{
+  "scope": "One frozen block0 score row only; NOT QK GEMM/full12",
+  "values": 197,
+  "host_transport_bytes": 200,
+  "padding_bytes": 3,
+  "score_source": "tests/aux/3_score.hex",
+  "expected_source": "tests/aux/3_expected.hex",
+  "beats": 1039,
+  "no_computed_outputs_in_DDR": true,
+  "parameters_sha256": "67bbc4304975bd0882b7e5f665982fc97eaecc8986ed59ba7c0e28cfb501f415"
+}

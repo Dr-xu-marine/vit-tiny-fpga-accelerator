@@ -1,0 +1,16 @@
+set_param general.maxThreads 1
+lassign $argv input out scripts clock_script host_checks
+open_checkpoint $input
+source $clock_script
+source $host_checks
+validate_host75_clocks [file join $out clocks_verified.tsv]
+validate_compute_structure $out
+source [file join $scripts calibration_status_166.tcl]
+apply_calibration_status_contract [file join $out calibration_contract.tsv]
+source [file join $scripts check_final_banks.tcl]
+check_joint_banks $out
+final_checker_fault_tests $out
+source [file join $scripts io_audit.tcl]
+write_xdc [file join $out verified_effective.xdc]
+puts FINAL_STRUCTURE_IO_CLOCK_CHECKS_PASS_NO_BITSTREAM_YET
+exit 0

@@ -1,0 +1,94 @@
+[
+  {
+    "status": "PASS",
+    "scope": "operator subgraph, not full12 RTL",
+    "name": "patch",
+    "k": 768,
+    "n": 16,
+    "rows": 1,
+    "instructions": 6,
+    "ddr_beats": 207,
+    "blobs": [
+      {
+        "name": "operator_input",
+        "offset": 0,
+        "bytes": 768,
+        "target": 0,
+        "sha256": "6ab468155d04dcef3c7c46896fad618f38540e9bcb4b73c8a7f1716277eb5ad7"
+      },
+      {
+        "name": "actual_weights",
+        "offset": 768,
+        "bytes": 12288,
+        "target": 1,
+        "sha256": "b20542bfd18ed9cc1b219be9b10dc51b926f60a4321ab78502796105998fa7a4"
+      },
+      {
+        "name": "actual_bias",
+        "offset": 13056,
+        "bytes": 64,
+        "target": 2,
+        "sha256": "6cb0ae406f9fb0307c6afeb9164d498fcf346cfab3dab5b77fc150ded33e9e66"
+      },
+      {
+        "name": "actual_rq",
+        "offset": 13120,
+        "bytes": 128,
+        "target": 3,
+        "sha256": "3896c5471f6b79d7e8cab201a832d124770f65569c73886ee1531e953c0f957e"
+      }
+    ],
+    "no_expected_output_in_DDR": true,
+    "full12_parameters_sha256": "67bbc4304975bd0882b7e5f665982fc97eaecc8986ed59ba7c0e28cfb501f415",
+    "host_read_words": 4,
+    "output_base": 540672,
+    "expected_sha256": "888b818a9c966a8943cbcaddb16afcb930b1c5c87d099df304c5009427b3fbb1",
+    "input_source": "actual adopted image1 RGB patch"
+  },
+  {
+    "status": "PASS",
+    "scope": "operator subgraph, not full12 RTL",
+    "name": "head",
+    "k": 192,
+    "n": 1000,
+    "rows": 1,
+    "instructions": 6,
+    "ddr_beats": 3216,
+    "blobs": [
+      {
+        "name": "operator_input",
+        "offset": 0,
+        "bytes": 192,
+        "target": 0,
+        "sha256": "cfbf6f4340b9d94d6b44c9f4db5df1e7c873edf326f951152aae06b7cd164d08"
+      },
+      {
+        "name": "actual_weights",
+        "offset": 192,
+        "bytes": 193536,
+        "target": 1,
+        "sha256": "86d66a44f2b45b7e78cf0856ee03d4cf165d8ee7b536db0c066b0b11dc89b563"
+      },
+      {
+        "name": "actual_bias",
+        "offset": 193728,
+        "bytes": 4032,
+        "target": 2,
+        "sha256": "7d3079fda1430cb4bc9c3b4de6208fd305fcb1305e59df36798914f0bb540a28"
+      },
+      {
+        "name": "actual_rq",
+        "offset": 197760,
+        "bytes": 8064,
+        "target": 3,
+        "sha256": "0da5abe94f71587d26e6ada7c51188683694b15698f05f2bb14184041c6c7360"
+      }
+    ],
+    "no_expected_output_in_DDR": true,
+    "full12_parameters_sha256": "67bbc4304975bd0882b7e5f665982fc97eaecc8986ed59ba7c0e28cfb501f415",
+    "host_read_words": 250,
+    "output_base": 540672,
+    "expected_sha256": "1117a30836ab44cc1b1585884e7c5e41524cf2558636d821047b8a58f3ce64a2",
+    "input_source": "adopted full12 integer Golden norm CLS as declared Head operator input"
+  }
+]

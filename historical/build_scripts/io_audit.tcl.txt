@@ -1,0 +1,26 @@
+# Read-only top-level electrical checks. Preserve scoped-IP replay warnings.
+set fp [open [file join $out actual_top_IO.tsv] w]
+puts $fp "port\tdirection\tpackage_pin\tIOSTANDARD\tDRIVE\tSLEW"
+foreach p [get_ports] {
+ set row [list $p]
+ foreach k {DIRECTION PACKAGE_PIN IOSTANDARD DRIVE SLEW} {
+  lappend row [expr {$k in [list_property $p] ? [get_property $k $p] : {NOT_APPLICABLE}}]
+ }
+ puts $fp [join $row \t]
+ if {[get_property PACKAGE_PIN $p] eq "" || [get_property IOSTANDARD $p] in {"" DEFAULT}} {error "UNBOUND_PHYSICAL_IO $p"}
+}
+close $fp
+foreach {name pin} {c0_sys_clk_clk_p E12 c0_sys_clk_clk_n D12} {
+ set p [get_ports -quiet $name]
+ if {[llength $p]!=1 || [get_property PACKAGE_PIN $p] ne $pin} {error "WRONG_VCU118_FIXED250_PIN $name"}
+}
+set r [get_ports -quiet c0_ddr4_reset_n]
+if {[llength $r]!=1 || [get_property IOSTANDARD $r] ne "LVCMOS12" || [get_property DRIVE $r]!=8} {error DDR_RESET_ELECTRICAL_CONSTRAINT_MISMATCH}
+set fp [open [file join $out input_buffer_properties.tsv] w]
+foreach c [get_cells -hier -quiet -filter {REF_NAME == IBUFDS || REF_NAME == IBUF || REF_NAME == IOBUF || REF_NAME == IOBUFDS}] {
+ set v NOT_APPLICABLE
+ if {"IBUF_LOW_PWR" in [list_property $c]} {set v [get_property IBUF_LOW_PWR $c]}
+ puts $fp "$c\t[get_property REF_NAME $c]\t$v"
+}
+close $fp
+puts TOP_IO_ELECTRICAL_AUDIT_PASS

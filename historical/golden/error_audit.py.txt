@@ -1,0 +1,58 @@
+"""ONE matched image, real FP32 + V4 + NEW forward stage errors.
+These are accumulated-path errors, NOT isolated causal ablations or accuracy.
+"""
+from pathlib import Path
+import sys,json,zipfile,hashlib,csv
+import numpy as np,torch,timm
+from safetensors.torch import load
+R=Path(__file__).resolve().parents[1];sys.path[:0]=[str(R/'software'),str(R.parents[1])];import prepare as P;import golden as G
+from vit_fpga.tiny import int8_token_channel as V4
+def main():
+ torch.set_num_threads(2);torch.set_num_interop_threads(1);z=np.load(R/'data/small_reference.npz');j=z['ids'].tolist().index(1);patch=z['patches'][j]
+ fp=timm.create_model('vit_tiny_patch16_224.augreg_in21k_ft_in1k',pretrained=False).eval()
+ with zipfile.ZipFile(P.ARCHIVE)as f:raw=f.read('vit_quantization/reference/model.safetensors')
+ assert hashlib.sha256(raw).hexdigest()=='fecf81b492bd13ee7a5297cb74d1d417aac8bf7e1b7d96aed89c4691984587ed';fp.load_state_dict(load(raw),strict=True)
+ ref={};inputs={};hs=[]
+ for n,m in fp.named_modules():
+  if isinstance(m,(torch.nn.Linear,torch.nn.LayerNorm,torch.nn.Conv2d,torch.nn.GELU)):
+   def hook(mod,x,y,name=n):
+    yy=y.detach().numpy();xx=x[0].detach().numpy()
+    if isinstance(mod,torch.nn.Conv2d):yy=yy.reshape(1,192,196).transpose(0,2,1)
+    ref[name]=yy[0].copy();inputs[name]=xx[0].copy()
+   hs.append(m.register_forward_hook(hook))
+ x=torch.nn.functional.fold(torch.from_numpy(patch.T.copy())[None],(224,224),16,stride=16)
+ with torch.inference_mode():float_logits=fp(x).numpy()[0]
+ assert np.array_equal(float_logits,z['fp32_logits'][j]),'FP32 cached input/forward mismatch'
+ oldmeta,olda=V4.load_artifacts(R.parents[1]/'assets/quantized_tiny_token_channel');oldlog,old=V4.forward_patches(V4.V1.I.quantize_int8(patch,oldmeta['scales']['input']),oldmeta,olda,capture=True)
+ new=G.load(R/'data');newlog=new.infer(G.sat8(np.rint(patch/new.meta['input_scale']).astype(np.int64)));rows=[]
+ def add(label,actual,reference,codes):
+  actual=np.asarray(actual,np.float64);reference=np.asarray(reference,np.float64);assert actual.shape==reference.shape,(label,actual.shape,reference.shape);d=actual-reference
+  rows.append(dict(stage=label,elements=d.size,max_abs=float(np.abs(d).max()),mean_abs=float(np.abs(d).mean()),rms=float(np.sqrt(np.mean(d*d))),normalized_rms=float(np.sqrt(np.mean(d*d))/max(1e-12,np.sqrt(np.mean(reference*reference)))),endpoint_code_hits=int(np.sum((codes==-128)|(codes==127))),scope='accumulated-path error; endpoint hits are NOT clipping count'))
+ def oldval(key):
+  s=np.asarray(oldmeta['scales'][key]);v=old[key]
+  if s.ndim==1:
+   if v.ndim==2 and s.size==v.shape[0]:s=s[:,None]
+   elif v.ndim==3 and s.size==v.shape[0]:s=s[:,None,None]
+  return v*s
+ for n in new.meta['linear']:
+  add('new:'+n,new.trace[n]*np.asarray(new.meta['linear'][n]['output_scale']),ref[n]if n!='head'else ref[n].reshape(1,-1),new.trace[n])
+ for i in range(12):
+  p=f'blocks.{i}.'
+  for k in ['norm1','norm2']:
+   name=p+k;down=p+('attn.qkv'if k=='norm1'else'mlp.fc1');lm=new.meta['linear'][down]
+   add('new:'+name,(new.trace[name].astype(np.int64)-lm['zx'])*np.asarray(lm['effective_input_scale']),ref[name],new.trace[name]);add('old:'+name,oldval(name),ref[name],old[name])
+  for kind,slot in [('q',0),('k',1),('v',2)]:
+   name=p+'attn.'+kind;v=ref[p+'attn.qkv'].reshape(197,3,3,64)[:,slot].transpose(1,0,2);add('old:'+name,oldval(name),v,old[name])
+  for key,name in [('attn.projected','attn.proj'),('fc1','mlp.fc1'),('fc2','mlp.fc2'),('gelu','mlp.act')]:
+   add('old:'+p+key,oldval(p+key),ref[p+name],old[p+key])
+  for num,k in [(0,'residual1'),(1,'output')]:
+   r=inputs[p+'norm2']if num==0 else inputs['norm'if i==11 else f'blocks.{i+1}.norm1'];nc=new.trace[f'residual{2*i+num}'];add('new:'+p+k,nc*np.asarray(new.meta['state_scales'][2*i+num+1]),r,nc);add('old:'+p+k,oldval(p+k),r,old[p+k])
+  qkv=ref[p+'attn.qkv'].reshape(197,3,3,64)
+  for h in range(3):
+   scores=(qkv[:,0,h].astype(np.float64)@qkv[:,1,h].astype(np.float64).T)*0.125;e=np.exp(scores-scores.max(-1,keepdims=True));prob=e/e.sum(-1,keepdims=True)
+   add(f'new:attn{i}.{h}.prob',new.trace[f'attn{i}.{h}.prob']/255.,prob,new.trace[f'attn{i}.{h}.prob']);add(f'old:attn{i}.{h}.prob',old[p+'attn.prob'][h]/16384.,prob,old[p+'attn.prob'][h])
+ add('old:logits',oldval('logits'),float_logits,oldlog)
+ with(R/'evidence/MATCHED_STAGE_ERRORS.csv').open('w',newline='')as f:w=csv.DictWriter(f,fieldnames=list(rows[0]));w.writeheader();w.writerows(rows)
+ report=dict(status='PASS',image=1,scope='one matched input, no causal ablation / classification claim',FP32_cached_forward_bitexact=True,stage_comparisons=len(rows),largest_normalized_errors=sorted(rows,key=lambda x:x['normalized_rms'],reverse=True)[:12])
+ (R/'evidence/ERROR_AUDIT.json').write_text(json.dumps(report,indent=2));print('ERROR_AUDIT',len(rows))
+if __name__=='__main__':main()

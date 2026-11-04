@@ -1,0 +1,108 @@
+{
+  "receiver": {
+    "status": "PASS",
+    "test": "receiver",
+    "fault": null,
+    "native": "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_bank_reset_fix_20261102\\build\\receiver_1793598080951147000\\simulate.json",
+    "source_binding": "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_bank_reset_fix_20261102\\build\\receiver_1793598080951147000\\BINDING.json",
+    "markers": [
+      "RECEIVER_WRITE_PASS checks=462690 cycles=4365 writes=2395 accepted_before_reset=31 full_depth_weight=65536 rq_lanes=90"
+    ]
+  },
+  "receiver:receiver": {
+    "status": "PASS",
+    "test": "receiver",
+    "fault": "receiver",
+    "native": "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_bank_reset_fix_20261102\\build\\receiver_fault_receiver_1793598095370467300\\simulate.json",
+    "source_binding": "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_bank_reset_fix_20261102\\build\\receiver_fault_receiver_1793598095370467300\\BINDING.json",
+    "markers": [
+      "Fatal: RECEIVER_MISMATCH cycle=4363 A=b2db8b14130832a320d704a376f36e31 B=b2db8b14130832a320d704a376f36ec5 U=559c4d299e480f5edc483ee510bbbdc416bcca517c9c8528f813f09add27e05f552d0bff8f26d24ab3d7c0744c2df2aca980154980eff301cc0a62272aab3794ca89bcab56fca38f272fb9d63c86fcbe47cf8ec8b39dd68bdfc5 V=559c4d299e480f5edc483ee510bbbdc416bcca517c9c8528f813f09add27e05f552d0bff8f26d24ab3d7c0744c2df2aca980154980eff301cc0a62272aab3794ca89bcab56fca38f272fb9d63c86fcbe47cf8ec8b39dd68bdfc5"
+    ]
+  },
+  "depth": {
+    "status": "PASS",
+    "test": "depth",
+    "fault": null,
+    "native": "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_bank_reset_fix_20261102\\build\\depth_1793597213155959600\\simulate.json",
+    "source_binding": "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_bank_reset_fix_20261102\\build\\depth_1793597213155959600\\BINDING.json",
+    "markers": [
+      "ACT_DEPTH_PASS checks=263172 cycles=131586 all_65536_words_dual_port=PASS reset_stall_edges=512"
+    ]
+  },
+  "depth:depth": {
+    "status": "PASS",
+    "test": "depth",
+    "fault": "depth",
+    "native": "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_bank_reset_fix_20261102\\build\\depth_fault_depth_1793597219914736800\\simulate.json",
+    "source_binding": "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_bank_reset_fix_20261102\\build\\depth_fault_depth_1793597219914736800\\BINDING.json",
+    "markers": [
+      "Fatal: DEPTH_MISMATCH cycle=98304 aa=32767 ba=32768 A=ed/ed B=a5/a4"
+    ]
+  },
+  "act": {
+    "status": "PASS",
+    "test": "act",
+    "fault": null,
+    "native": "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_bank_reset_fix_20261102\\build\\act_1793597226217896900\\simulate.json",
+    "source_binding": "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_bank_reset_fix_20261102\\build\\act_1793597226217896900\\BINDING.json",
+    "markers": [
+      "ACT_PIPELINE_PASS reads=153 checked_bytes=9456 legacy_cycles=12274 reset_phases=9 wide_response_edges=6 scalar_edges=5 cycles=6150"
+    ]
+  },
+  "act:gather": {
+    "status": "PASS",
+    "test": "act",
+    "fault": "gather",
+    "native": "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_bank_reset_fix_20261102\\build\\act_fault_gather_1793597238086802400\\simulate.json",
+    "source_binding": "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_bank_reset_fix_20261102\\build\\act_fault_gather_1793597238086802400\\BINDING.json",
+    "markers": [
+      "Fatal: ACT_RSP_MISMATCH cycle=4369"
+    ]
+  },
+  "act:request": {
+    "status": "PASS",
+    "test": "act",
+    "fault": "request",
+    "native": "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_bank_reset_fix_20261102\\build\\act_fault_request_1793597250170329700\\simulate.json",
+    "source_binding": "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_bank_reset_fix_20261102\\build\\act_fault_request_1793597250170329700\\BINDING.json",
+    "markers": [
+      "Fatal: ACT_RSP_MISMATCH cycle=4369"
+    ]
+  },
+  "operators": {
+    "status": "PASS",
+    "test": "operators",
+    "fault": null,
+    "native": "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_bank_reset_fix_20261102\\build\\operators_1793597261718079800\\simulate.json",
+    "source_binding": "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_bank_reset_fix_20261102\\build\\operators_1793597261718079800\\BINDING.json",
+    "markers": [
+      "REAL_OPERATOR_CASE_PASS op=2 values=192 cycles=241102",
+      "REAL_OPERATOR_CASE_PASS op=3 values=197 cycles=424187",
+      "REAL_OPERATOR_CASE_PASS op=5 values=768 cycles=566785",
+      "REAL_OPERATOR_CASE_PASS op=6 values=192 cycles=754628",
+      "REAL_OPERATOR_CASE_PASS op=9 values=197 cycles=887479",
+      "REAL_OPERATOR_CASE_PASS op=10 values=257 cycles=1078310",
+      "REAL_OPERATORS_PASS aux_cases=6 move_values=63 total_values=1866 reset_phases=4 cycles=1083796"
+    ]
+  },
+  "operators:expected": {
+    "status": "PASS",
+    "test": "operators",
+    "fault": "expected",
+    "native": "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_bank_reset_fix_20261102\\build\\operators_fault_expected_1793597274778684500\\simulate.json",
+    "source_binding": "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_bank_reset_fix_20261102\\build\\operators_fault_expected_1793597274778684500\\BINDING.json",
+    "markers": [
+      "Fatal: REAL_OPERATOR_MISMATCH op=2 index=0 actual=00000002 expected=00000002"
+    ]
+  },
+  "abort": {
+    "status": "PASS",
+    "test": "abort",
+    "fault": null,
+    "native": "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_bank_reset_fix_20261102\\build\\abort_1793598109840231500\\simulate.json",
+    "source_binding": "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_bank_reset_fix_20261102\\build\\abort_1793598109840231500\\BINDING.json",
+    "markers": [
+      "TAG_ABORT_PASS error=0b same_age_abort_cycles=1"
+    ]
+  }
+}

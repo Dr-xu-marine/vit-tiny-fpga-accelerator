@@ -1,0 +1,5 @@
+`ifndef W8_PROGRAM_META
+`define W8_PROGRAM_META
+`define W8_INSTRUCTIONS 13024
+`define W8_DDR_BEATS 140483
+`endif

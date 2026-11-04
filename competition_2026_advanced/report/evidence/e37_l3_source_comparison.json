@@ -1,0 +1,90 @@
+{
+  "scope": "Current active compute and board-core sources against actual successful L3 binding; no RTL changes",
+  "unchanged": 11,
+  "changed_or_new": [
+    {
+      "path": "rtl/legacy/tiny_axi_lite_control_v128.v",
+      "old_L3_sha256": "2dbb35044d5451c156a9382aa87df7015c636b28a8733e1aad67953f14ac43b0",
+      "current_sha256": "592c2f0bf48599d9d7bf8b5e6d7f4aca9efe79493a97b5dc59da0af11b499ab4",
+      "old_current_file_matches_record": true
+    },
+    {
+      "path": "rtl/legacy/tiny_dma_byte_writer.v",
+      "old_L3_sha256": "937bc671eb45fd7cae2288190c6f903682af0113dd222518b6c243b6bb3cc2cc",
+      "current_sha256": "9c466ab7cf1b338d22730d6892fc2d6deff3aa873e6d716b77007e5b4a0ddf05",
+      "old_current_file_matches_record": true
+    },
+    {
+      "path": "rtl/w8_tensor_move.sv",
+      "old_L3_sha256": "4fe11e7b26bee73c28cabb76424d4b496c5ee56f266b8ed13470400c04f98959",
+      "current_sha256": "06fc48db1b18bb0d4d2b33d4fab132ed1fdd4615196945cd0aa5f4e362b2dd68",
+      "old_current_file_matches_record": true
+    },
+    {
+      "path": "rtl/vendor_byte_banks.v",
+      "old_L3_sha256": "1a9dbcc8f3f892940944cb549591a34ee83d8421b4961b52eb95ad71f9dccd9b",
+      "current_sha256": "b8d842bbaf0f3b8d6fd7b0b1c7fbdf6260a3ce601646485365587f51dd9b3f86",
+      "old_current_file_matches_record": true
+    },
+    {
+      "path": "rtl/w8_rq16.sv",
+      "old_L3_sha256": "a122ec0c02c3e66214653cd41314e68921ed94046d857ae80af6ba4d8faaacb5",
+      "current_sha256": "ac5ba893686d45d10decc7bc2ac4c0a6deea4e5a38b66f16f2657a9612f117c9",
+      "old_current_file_matches_record": true
+    },
+    {
+      "path": "rtl/w8_gemm128.sv",
+      "old_L3_sha256": "2b6c7c61d2fb44be8c716715d8e48a5e24e4250538a88d4e555d47f4c3257926",
+      "current_sha256": "a2dae05c832dd90221795f20d29930501b4b89d87ba3cdff3ac5911ca1c882b2",
+      "old_current_file_matches_record": true
+    },
+    {
+      "path": "rtl/w8_aux_engine.sv",
+      "old_L3_sha256": "66aa573f2ca151e74d050a5ab0202bc79993025722562e1d0c0e17489128ed63",
+      "current_sha256": "4ff9ae2655a723742a8e50ebb530438a7bc67718a7ffa176179d47034057560d",
+      "old_current_file_matches_record": true
+    },
+    {
+      "path": "rtl/w8_act_local_ram.sv",
+      "old_L3_sha256": null,
+      "current_sha256": "ebfaa9d4ccc3c01b4d9cefedb132e8fa3ba7fb02d9b900c9b15d0f732cadbf41",
+      "old_current_file_matches_record": false
+    },
+    {
+      "path": "rtl/w8_memories.sv",
+      "old_L3_sha256": "67f31d6d03e58439af9622c3effe2f964107ca035160ac49674ff8c841d8ac69",
+      "current_sha256": "abc6332abeae6d69e502c3bf9d157fb558d63309fbfa6aaebe59ea867517ca56",
+      "old_current_file_matches_record": true
+    },
+    {
+      "path": "rtl/w8_compute_tile.sv",
+      "old_L3_sha256": "d3c04ab19f3da46dfdbb8c63f6c69f0d194535648fec4c64aaf9a8759832407f",
+      "current_sha256": "66d5bc7b7ee64d0f4dacd55b8acef873a3573de57c3218b29ed1a596e528d0f7",
+      "old_current_file_matches_record": true
+    },
+    {
+      "path": "rtl/w8_compute_system.sv",
+      "old_L3_sha256": "4762581699100dafd946a142df5e5ccf94f2e903f2c0225390c2d473c24e8cce",
+      "current_sha256": "45c691a17510e0c6390fb39b14a6dab8b427d05a4c0e6016058a3a3b7a1839d3",
+      "old_current_file_matches_record": true
+    },
+    {
+      "path": "rtl/w8_fsm_compute_system.sv",
+      "old_L3_sha256": "1deb37a66e9d03c59d7dba1cb855e06f20e6a2c8ff9537e9a39dcd486fa4dc80",
+      "current_sha256": "db6d2058eb658b705ab7d09594e215c6af1dde8e5bc10e4d3cc0f2ae50386653",
+      "old_current_file_matches_record": true
+    },
+    {
+      "path": "rtl/w8_inference_core.sv",
+      "old_L3_sha256": "52838a73f695a60fcf4847de181109d70c37e08da25fc7b9b461b7f286c5cab3",
+      "current_sha256": "6c6d3efbc571d3f957bc57d8e2af2df3f878deee81c10386c5740e42a01c0d72",
+      "old_current_file_matches_record": true
+    },
+    {
+      "path": "rtl/w8_hosted_core.sv",
+      "old_L3_sha256": "bb6bef5f6aff35be0cffe802cf8e7eeb40e64e29fd063d1341a08f52888bb365",
+      "current_sha256": "283433fd097576fc99981dd0aff6dd6060c0cd0ef74d64482efde521a6c452c3",
+      "old_current_file_matches_record": true
+    }
+  ]
+}

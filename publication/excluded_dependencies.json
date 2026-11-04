@@ -1,0 +1,3571 @@
+{
+  "schema": 1,
+  "files": [
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/hdl/w8_platform_wrapper.v",
+      "sha256": "ef756d92035246df38fb17c20a6d2d133da56894b113da4641046b03378e6902",
+      "bytes": 2450,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_auto_ds_0/synth/w8_platform_auto_ds_0.v",
+      "sha256": "3130fcb7e5be57063f92da988a96be45d623318c22bb7d79ce3e7e4ca015c781",
+      "bytes": 16715,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_auto_ds_0/w8_platform_auto_ds_0_clocks.xdc",
+      "sha256": "17be2f87bd6002db58fd8de9f49fdfe27df65785484893d871ab5cc8c0017ed8",
+      "bytes": 7740,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_auto_ds_0/w8_platform_auto_ds_0_ooc.xdc",
+      "sha256": "a4a35a7990110943d569015b1681d293f147fc3149d04bf94d30ede3e2913676",
+      "bytes": 2367,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_auto_pc_0/synth/w8_platform_auto_pc_0.v",
+      "sha256": "45ff7dd07181f1107d9232ad50833cbbdadccf1e63f8f8d579c9e9b8a4dafbb8",
+      "bytes": 14444,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_auto_pc_0/w8_platform_auto_pc_0_ooc.xdc",
+      "sha256": "bdd2a4e25b02fa8805dc04a423a7a7b80442a889216a8643ab570a968998f40f",
+      "bytes": 2400,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_auto_rs_0/synth/w8_platform_auto_rs_0.v",
+      "sha256": "5d3a14997415755b154ea7190abbdb34d4ff6a371fdc1568125f56ee9951a69f",
+      "bytes": 17396,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_auto_rs_0/w8_platform_auto_rs_0_clocks.xdc",
+      "sha256": "9b1c1a7f9211076d475b7c14ae79d7001ce20d0262136afbc6b9298665a93d30",
+      "bytes": 3692,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_auto_rs_1/synth/w8_platform_auto_rs_1.v",
+      "sha256": "5ac287a256a3a510869d0dedba086f4b8a4616421346980fe95082c6fc8e58b2",
+      "bytes": 18362,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_auto_rs_1/w8_platform_auto_rs_1_clocks.xdc",
+      "sha256": "df3c726d2f950d9f7d95a0e03372cdef2166edeee75f4ce85b49b2663a1401ef",
+      "bytes": 3692,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_auto_rs_w_0/synth/w8_platform_auto_rs_w_0.v",
+      "sha256": "37c31f7ad582be8a2c9eb7acd41ee367444cfef01cb151649c1376c237c7cbff",
+      "bytes": 18376,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_auto_rs_w_0/w8_platform_auto_rs_w_0_clocks.xdc",
+      "sha256": "ca6f36a73a0f952b42bf9aad2d035a65a691731aa1512f7ee5e426eb02aed6a1",
+      "bytes": 3694,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_auto_rs_w_1/synth/w8_platform_auto_rs_w_1.v",
+      "sha256": "65497614cfa454370266ca3b7ef94c36dacb09f7c7a1436b16f2d695606ad238",
+      "bytes": 17412,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_auto_rs_w_1/w8_platform_auto_rs_w_1_clocks.xdc",
+      "sha256": "f2eee8fb9530301c66f5f3c1476ce60a80f2e13c997f8f603c08db7a7aa7f59c",
+      "bytes": 3694,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_auto_us_0/synth/w8_platform_auto_us_0.v",
+      "sha256": "ed43aeeb38a4de40d1fe5f6eecd5d04f4c4ffd02d7c08f36fa02233f0ce5d0c0",
+      "bytes": 16714,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_auto_us_0/w8_platform_auto_us_0_clocks.xdc",
+      "sha256": "385c42e122465cf4e94c04539656aa0376a262711c6495d9c3b731c05494969e",
+      "bytes": 7740,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_auto_us_0/w8_platform_auto_us_0_ooc.xdc",
+      "sha256": "a4a35a7990110943d569015b1681d293f147fc3149d04bf94d30ede3e2913676",
+      "bytes": 2367,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_compute_clock_0/w8_platform_compute_clock_0.v",
+      "sha256": "7363a98bf3f1e3bd6a73b51c95716763da66f556fc0cc035db1962d0afd383e1",
+      "bytes": 4042,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_compute_clock_0/w8_platform_compute_clock_0.xdc",
+      "sha256": "fe91f3a570601db7f55fd94227aad72a2ca6dffca073a06f9047574c3e3fa186",
+      "bytes": 2662,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_compute_clock_0/w8_platform_compute_clock_0_board.xdc",
+      "sha256": "7ad209b673e69e5dc7667668407b509d8ac03974abdb527313a511db77cf15bd",
+      "bytes": 60,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_compute_clock_0/w8_platform_compute_clock_0_clk_wiz.v",
+      "sha256": "1d7464c37fe475a54998d0f366afacda172cb72d4c87c8261521271ad429bd9a",
+      "bytes": 7104,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_compute_clock_0/w8_platform_compute_clock_0_late.xdc",
+      "sha256": "63ee8b96147ce16f051e7337079a2bf542cffced420e70dd93c78b1155914075",
+      "bytes": 2210,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_compute_clock_0/w8_platform_compute_clock_0_ooc.xdc",
+      "sha256": "3bd5c5009f9bfd4a603a4e1a463ba887815250d9fa16269b222781d915faafa8",
+      "bytes": 2542,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_compute_to_ddr_0/synth/w8_platform_compute_to_ddr_0.v",
+      "sha256": "93708aa453bf38e3939d8c2e8b62175e664fb92fe68d89de220129395861ed5e",
+      "bytes": 13079,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_compute_to_ddr_0/w8_platform_compute_to_ddr_0_clocks.xdc",
+      "sha256": "d69a160f7b5fcabebee7e1764a38dfb41e3a5be5fb58ec9d4787f808dc9347ae",
+      "bytes": 9075,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_compute_to_ddr_0/w8_platform_compute_to_ddr_0_ooc.xdc",
+      "sha256": "2ab60a88df20854c0a1814b755ea7709b2be9be2522bd67fb6978b686a7d4009",
+      "bytes": 2411,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_core_0/synth/w8_platform_core_0.v",
+      "sha256": "236611ec612db5ad7337ca410eb7a729756614d77087b3a41ebb0da5c56c610a",
+      "bytes": 9970,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_host_0/constraints/jtag_axi.xdc",
+      "sha256": "2c881f3dd733f44698c5d66161918f1be9341338d7049346ff56397c861f35ed",
+      "bytes": 5607,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_host_0/constraints/w8_platform_host_0_impl.xdc",
+      "sha256": "cb3bff1f0027c91f53dbe2b838815bd56c6a71174667c37998572997dd6794a8",
+      "bytes": 11153,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_host_0/synth/w8_platform_host_0.v",
+      "sha256": "513b9d659359eaf13cd71ecccb19c5286b849496cae222a790818ad8b4f0a7a3",
+      "bytes": 9867,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_host_clock_0/synth/w8_platform_host_clock_0.v",
+      "sha256": "e7d02cd1e70ca10833622f688f2b149d3e20f93757339241ec0ddf58656df1bf",
+      "bytes": 3527,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_host_to_control_0/synth/w8_platform_host_to_control_0.v",
+      "sha256": "45e87747514235b8bcc1c613d36419b9dd7cf23461e68597a412bdbe6ff43934",
+      "bytes": 13141,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_host_to_control_0/w8_platform_host_to_control_0_clocks.xdc",
+      "sha256": "1cab5d9e46bbdabb68292a8a94b3cc8d92dba6e02d6710c45a83e2a627b9330f",
+      "bytes": 7820,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_host_to_control_0/w8_platform_host_to_control_0_ooc.xdc",
+      "sha256": "2ab60a88df20854c0a1814b755ea7709b2be9be2522bd67fb6978b686a7d4009",
+      "bytes": 2411,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_host_to_fabric_0/synth/w8_platform_host_to_fabric_0.v",
+      "sha256": "cd19f3007c3064c2c133133abff1ee1595d8a1a6d570cf57b4521acee1c8ac81",
+      "bytes": 18230,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_host_to_fabric_0/w8_platform_host_to_fabric_0_clocks.xdc",
+      "sha256": "804ba9cbbb49ef20aef52a73b8919faac318b42e086b641b836fc110af402d23",
+      "bytes": 9075,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_host_to_fabric_0/w8_platform_host_to_fabric_0_ooc.xdc",
+      "sha256": "2ab60a88df20854c0a1814b755ea7709b2be9be2522bd67fb6978b686a7d4009",
+      "bytes": 2411,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/bd_0/bd_a1c9.bd",
+      "sha256": "e92cf7c50721ed525e4ba969ae85131e97df2f74128a735e9b04bf2bac04e2a2",
+      "bytes": 14855,
+      "reason": "IP configuration is included under ip/configuration"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/bd_0/bd_a1c9_ooc.xdc",
+      "sha256": "5e260624930ba61d6cda162d44fe8888dfeabb77d00c6fbcf1e0ed8776de13ba",
+      "bytes": 600,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/bd_0/ip/ip_0/bd_a1c9_microblaze_I_0.xci",
+      "sha256": "cd27dfef2e697cd747fe80c9dc418b20fd67b906df3faf6176225251ca19f561",
+      "bytes": 58365,
+      "reason": "IP configuration is included under ip/configuration"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/bd_0/ip/ip_0/bd_a1c9_microblaze_I_0.xdc",
+      "sha256": "b0dfcc0585273930f9f458e5a15356d869f2c9039d6d841266c314986a33fe31",
+      "bytes": 3895,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/bd_0/ip/ip_0/bd_a1c9_microblaze_I_0_ooc_debug.xdc",
+      "sha256": "4f3a0042baa4bc774563e533b3373bbc96dee3627da2b67cd37e00a03f65a6a7",
+      "bytes": 337,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/bd_0/ip/ip_0/synth/bd_a1c9_microblaze_I_0.vhd",
+      "sha256": "6b3e90f8fa3994a670477f3fa1a5537973698491c09cea1e332ca23e29f8f1f8",
+      "bytes": 57481,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/bd_0/ip/ip_1/bd_a1c9_rst_0_0.xci",
+      "sha256": "8f947d14dd93996cba00ad773b0a41953c8511cf5211a5ae9f15ad585ce8ce68",
+      "bytes": 12081,
+      "reason": "IP configuration is included under ip/configuration"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/bd_0/ip/ip_1/bd_a1c9_rst_0_0.xdc",
+      "sha256": "d7027bbc0b0279ed2ca581ec0a69d9b4e90424c75a5ddae1d6e1b3a9b9dfd4c1",
+      "bytes": 2595,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/bd_0/ip/ip_1/bd_a1c9_rst_0_0_board.xdc",
+      "sha256": "7ad209b673e69e5dc7667668407b509d8ac03974abdb527313a511db77cf15bd",
+      "bytes": 60,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/bd_0/ip/ip_1/synth/bd_a1c9_rst_0_0.vhd",
+      "sha256": "854d4ab62479f1f7507c636090b2316cbb2a287edb55d4cb1973157a30bdd58c",
+      "bytes": 8161,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/bd_0/ip/ip_10/bd_a1c9_iomodule_0_0.xci",
+      "sha256": "f611a4b10f069be2d41459144a3d622754c3b4c90b6b9320c8bd7de1c70faee4",
+      "bytes": 34327,
+      "reason": "IP configuration is included under ip/configuration"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/bd_0/ip/ip_10/bd_a1c9_iomodule_0_0_board.xdc",
+      "sha256": "7ad209b673e69e5dc7667668407b509d8ac03974abdb527313a511db77cf15bd",
+      "bytes": 60,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/bd_0/ip/ip_10/synth/bd_a1c9_iomodule_0_0.vhd",
+      "sha256": "60f08f76af4d2bf48041ffcbbf6170743c9885d30a9703f9cff9f707af105ced",
+      "bytes": 19096,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/bd_0/ip/ip_2/bd_a1c9_ilmb_0.xci",
+      "sha256": "4b6e3305af3c5565f45593d7c2eb0014c7137533f71854e623fbb1e66b2b280a",
+      "bytes": 12595,
+      "reason": "IP configuration is included under ip/configuration"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/bd_0/ip/ip_2/bd_a1c9_ilmb_0.xdc",
+      "sha256": "032c64c8f7804cbb66350a812449b20d38462463d434d2cf3c75db93d3f90a33",
+      "bytes": 46,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/bd_0/ip/ip_2/synth/bd_a1c9_ilmb_0.vhd",
+      "sha256": "3e986b4f918b016f2027ad2aeae982307f689139cdfda1f0d235c9824665e3df",
+      "bytes": 10569,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/bd_0/ip/ip_3/bd_a1c9_dlmb_0.xci",
+      "sha256": "a9e3f50d9de5a2b48030353e841a02a4609e85c87d7884d352f795d9255e1bcb",
+      "bytes": 14558,
+      "reason": "IP configuration is included under ip/configuration"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/bd_0/ip/ip_3/bd_a1c9_dlmb_0.xdc",
+      "sha256": "032c64c8f7804cbb66350a812449b20d38462463d434d2cf3c75db93d3f90a33",
+      "bytes": 46,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/bd_0/ip/ip_3/synth/bd_a1c9_dlmb_0.vhd",
+      "sha256": "462f203d590d6b072d6a3c8422326bd1c0187edab710928403b187b4dc857397",
+      "bytes": 11225,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/bd_0/ip/ip_4/bd_a1c9_dlmb_cntlr_0.xci",
+      "sha256": "d3d5189f2cad316e6d31c17d6d81469a7bb764b2430ec94f9b0ba816446fe4f0",
+      "bytes": 22518,
+      "reason": "IP configuration is included under ip/configuration"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/bd_0/ip/ip_4/synth/bd_a1c9_dlmb_cntlr_0.vhd",
+      "sha256": "c87c9c04f6c5ecd2f62f7897dbb9b57831b5af2d25b1a745ac79aad29532de39",
+      "bytes": 17545,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/bd_0/ip/ip_5/bd_a1c9_ilmb_cntlr_0.xci",
+      "sha256": "4c97cc7dfc8d8c0749ff091d88466a04dc3839bd264966f545b243f150e060fe",
+      "bytes": 22518,
+      "reason": "IP configuration is included under ip/configuration"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/bd_0/ip/ip_5/synth/bd_a1c9_ilmb_cntlr_0.vhd",
+      "sha256": "390a1beaaec685694e89696096f3397a231d27bf03861613cdfdff152b569b86",
+      "bytes": 17545,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/bd_0/ip/ip_6/bd_a1c9_lmb_bram_I_0.xci",
+      "sha256": "178952729968f6776ce43fcd063b48f9bac830d9551ab496824a5460449ffd5a",
+      "bytes": 25262,
+      "reason": "IP configuration is included under ip/configuration"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/bd_0/ip/ip_6/bd_a1c9_lmb_bram_I_0_ooc.xdc",
+      "sha256": "9a7b261a7d40e28119cfbfa88cb6e41353ab39c7610a2d93d6cd551a14c4966f",
+      "bytes": 2678,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/bd_0/ip/ip_6/synth/bd_a1c9_lmb_bram_I_0.vhd",
+      "sha256": "e19cfd4f5d4bc15dea0cea41909acf7655760bce013d01f00cac8404636ff627",
+      "bytes": 16377,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/bd_0/ip/ip_7/bd_a1c9_second_dlmb_cntlr_0.xci",
+      "sha256": "b9414208bb846c77931527997d24b628f82dfbe36bb20e6fb3be873807795f8b",
+      "bytes": 22539,
+      "reason": "IP configuration is included under ip/configuration"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/bd_0/ip/ip_7/synth/bd_a1c9_second_dlmb_cntlr_0.vhd",
+      "sha256": "c5862d8ecac74beb4da99860ee87268eb761e3a3ab9c2f8676fcd55d402861ee",
+      "bytes": 17622,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/bd_0/ip/ip_8/bd_a1c9_second_ilmb_cntlr_0.xci",
+      "sha256": "215d1bc7063bc9e1645a5b38b783ae3123225d36b8148958f78cb286eee23e09",
+      "bytes": 22539,
+      "reason": "IP configuration is included under ip/configuration"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/bd_0/ip/ip_8/synth/bd_a1c9_second_ilmb_cntlr_0.vhd",
+      "sha256": "c6fdda26a430c472151a9a672a8d24843d61b03fdd7f0fbf9e9be36404086cb5",
+      "bytes": 17622,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/bd_0/ip/ip_9/bd_a1c9_second_lmb_bram_I_0.xci",
+      "sha256": "487dec62eb7a73fde6c2ac427266ae6266ca225ab11af2f0a42033f18c02d474",
+      "bytes": 25291,
+      "reason": "IP configuration is included under ip/configuration"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/bd_0/ip/ip_9/bd_a1c9_second_lmb_bram_I_0_ooc.xdc",
+      "sha256": "9a7b261a7d40e28119cfbfa88cb6e41353ab39c7610a2d93d6cd551a14c4966f",
+      "bytes": 2678,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/bd_0/ip/ip_9/synth/bd_a1c9_second_lmb_bram_I_0.vhd",
+      "sha256": "4a2149133615df4a14e202eeb4d0bb2cd698b50288c6431e36594b7165329a8e",
+      "bytes": 16458,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/bd_0/synth/bd_a1c9.v",
+      "sha256": "19ae441a03a081a214d7bbdabfb109e1f30800a76fdab5ffdc2ca14b9d344c2f",
+      "bytes": 29818,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/ip_0/synth/w8_platform_memory_0_microblaze_mcs.v",
+      "sha256": "fcea748f84b7e8f2c5052ef2f823cf4afb829807411596567043e9389952b502",
+      "bytes": 11476,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/ip_0/w8_platform_memory_0_microblaze_mcs.xci",
+      "sha256": "f504eeeeea8ff9c0830a5c6c6f4bdcec97d07056cadebc547d38c30c237fe2b5",
+      "bytes": 20659,
+      "reason": "IP configuration is included under ip/configuration"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/ip_0/w8_platform_memory_0_microblaze_mcs_board.xdc",
+      "sha256": "7ad209b673e69e5dc7667668407b509d8ac03974abdb527313a511db77cf15bd",
+      "bytes": 60,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/ip_0/w8_platform_memory_0_microblaze_mcs_ooc.xdc",
+      "sha256": "c9f7cb8ba40542d8f296bc803980b2df227b5930293e756a0f76a0e573de6020",
+      "bytes": 410,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/ip_1/par/w8_platform_memory_0_phy_ooc.xdc",
+      "sha256": "44bfefbcbdf6a6703537bf61ed501333e0376e30d0e7a45d9957ae645d10c845",
+      "bytes": 94,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/ip_1/rtl/clocking/ddr4_phy_v2_2_pll.sv",
+      "sha256": "1313785febad74967988f92b0cf78744687eaa8d90cf284efa51e79cbbe7b9fc",
+      "bytes": 9621,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/ip_1/rtl/iob/ddr4_phy_v2_2_iob.sv",
+      "sha256": "1c94b5fc7b2524a3bbd368fda471e245a1aaae7ba5ce6ce0b9fe615b89fa52c4",
+      "bytes": 4778,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/ip_1/rtl/iob/ddr4_phy_v2_2_iob_byte.sv",
+      "sha256": "859235a40f89200bcc11967632eb91baf05829b28770e115bb7d8642beeb0f9a",
+      "bytes": 8483,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/ip_1/rtl/ip_top/w8_platform_memory_0_phy.sv",
+      "sha256": "1773661060a969dc6156d360e137b9d2dccff5f9a4d254ac81b2ba39afbf396e",
+      "bytes": 15845,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/ip_1/rtl/map/w8_platform_memory_0_phy_ddrMapDDR4.vh",
+      "sha256": "08107c43bbacbb8746f70fe388695b6bcecb915f4cf0ad98b8b6addf8deddbc9",
+      "bytes": 14089,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/ip_1/rtl/map/w8_platform_memory_0_phy_iobMapDDR4.vh",
+      "sha256": "11f9d9a911edd462200aae5dd5eb1bfc2e52b844baab7ad366e241438b9e75f6",
+      "bytes": 2063,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/ip_1/rtl/map/w8_platform_memory_0_phy_riuMap.vh",
+      "sha256": "a01901d143a09751059583b3bd7804c3ba4cf04a83ba67a9b8506b02c68d8494",
+      "bytes": 21444,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/ip_1/rtl/phy/ddr4_phy_v2_2_xiphy.sv",
+      "sha256": "e78c77cb5bb3fc9e06341549d40011545cd45497c67f74bd0a1d70dd9af9d9fa",
+      "bytes": 22838,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/ip_1/rtl/phy/w8_platform_memory_0_phy_ddr4.sv",
+      "sha256": "f1ca2403628963532d4bd833c4040bd6fe98a7586e2b21cd1a8a963667b1f862",
+      "bytes": 49025,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/ip_1/rtl/xiphy_files/ddr4_phy_v2_2_xiphy_bitslice_wrapper.sv",
+      "sha256": "84a6b6689204086d9403a2d143f438b456c880a970d7dbe389715f971e2ed19a",
+      "bytes": 11349,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/ip_1/rtl/xiphy_files/ddr4_phy_v2_2_xiphy_byte_wrapper.sv",
+      "sha256": "105695b6648a8ce6efb251ff2370cbf48f6a37ff4213e4e67ef7a5fded8510de",
+      "bytes": 67729,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/ip_1/rtl/xiphy_files/ddr4_phy_v2_2_xiphy_control_wrapper.sv",
+      "sha256": "40478be1b9ca0f24c1cfb087fb5be15a173bc9ec58c1b5b3bac3c0f519890465",
+      "bytes": 17620,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/ip_1/rtl/xiphy_files/ddr4_phy_v2_2_xiphy_riuor_wrapper.sv",
+      "sha256": "615bf770c66f9b9297dbeaa5508502cc341620d4e30165178e61f0f4aef03f30",
+      "bytes": 3976,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/ip_1/rtl/xiphy_files/ddr4_phy_v2_2_xiphy_tristate_wrapper.sv",
+      "sha256": "87ee59955fa6321cab85403b68df40e7465e0e45bd0fc36b6674c3c9d2eaa4cd",
+      "bytes": 6604,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/ip_1/w8_platform_memory_0_phy.xci",
+      "sha256": "7a90a4a469735c748b90b0111d090e0b58944bb2a2b0f6bb26b4de87a0646e9e",
+      "bytes": 69273,
+      "reason": "IP configuration is included under ip/configuration"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/par/w8_platform_memory_0.xdc",
+      "sha256": "2321247cd863d9bf24bc2160e0ecce79193a23a44134234fc319c490d7ea305e",
+      "bytes": 25901,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/axi/ddr4_v2_2_a_upsizer.sv",
+      "sha256": "3753c2f9791b4569c8f11ee4796457aeb0e71f7b9355fa2c600cdd27e2f0a4f6",
+      "bytes": 50253,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/axi/ddr4_v2_2_axi.sv",
+      "sha256": "e7d90b821727ed444f830d50344105c38e463bc69f891cba0721d592ced9c935",
+      "bytes": 52287,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/axi/ddr4_v2_2_axi_ar_channel.sv",
+      "sha256": "fbdf618bd9fdc61d3cdd677259c55d2ae482401d61dbc0f6f425903ece60597f",
+      "bytes": 10240,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/axi/ddr4_v2_2_axi_aw_channel.sv",
+      "sha256": "ee84ae47142408a6a1f29e30e9fd533592c902602daa1865bc85897f7f18f452",
+      "bytes": 10635,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/axi/ddr4_v2_2_axi_b_channel.sv",
+      "sha256": "d9f431d60619d3029a322bf19ef6ac1b6a1e89242de1af5cdbc4770fb6d3fcb0",
+      "bytes": 7363,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/axi/ddr4_v2_2_axi_cmd_arbiter.sv",
+      "sha256": "ca4e46aae0a9935806b37223fe2080925ebdced86bf619bf799b31bd5f893adc",
+      "bytes": 12277,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/axi/ddr4_v2_2_axi_cmd_fsm.sv",
+      "sha256": "0a0456e5d38be1e514c7b191d187bb85049a287104c5676d097b1f2ef214d313",
+      "bytes": 6004,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/axi/ddr4_v2_2_axi_cmd_translator.sv",
+      "sha256": "f9ae50ac4ccc9197feab904018d9230fe27281c9683247773ef445e19c7fddf4",
+      "bytes": 9679,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/axi/ddr4_v2_2_axi_fifo.sv",
+      "sha256": "5d6538548e38991de567463e01cfea0b7c6a3972e5241b3e0e2b8c40e6b52ec1",
+      "bytes": 6189,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/axi/ddr4_v2_2_axi_incr_cmd.sv",
+      "sha256": "761d805d4274f382fb1ec172f7001c10a2757fdc8ce0de629293249c8d3df982",
+      "bytes": 9936,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/axi/ddr4_v2_2_axi_r_channel.sv",
+      "sha256": "7d7fcba1c518e7a90926f0de848f30a950ab0fdc338187dbfa27958d8ced6ac1",
+      "bytes": 12547,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/axi/ddr4_v2_2_axi_register_slice.sv",
+      "sha256": "ec127db79506d8834fb20fcb4d784e8fdf50e293a31ba33a057e8f30fbbeca47",
+      "bytes": 23019,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/axi/ddr4_v2_2_axi_upsizer.sv",
+      "sha256": "f844589f66a494bd7a56a82410792e33bc930287489970a76209df6ea7d41290",
+      "bytes": 44385,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/axi/ddr4_v2_2_axi_w_channel.sv",
+      "sha256": "f6d3b8151f314e7a756c66f9895a36567d7e2d12b43cb32d3c61dfeaf870a8c0",
+      "bytes": 11061,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/axi/ddr4_v2_2_axi_wr_cmd_fsm.sv",
+      "sha256": "6872b39591b98070beac04562112c869aa17caa1016c7980431271672ebddfd5",
+      "bytes": 6488,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/axi/ddr4_v2_2_axi_wrap_cmd.sv",
+      "sha256": "549b4ba2a282214714bced2264516125667809a39a8e36b95244a5dd84401201",
+      "bytes": 10968,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/axi/ddr4_v2_2_axic_register_slice.sv",
+      "sha256": "68d078fa4af8fa62abd5c52fde9b7bef31e72e337141d3fb161db4518e8edc47",
+      "bytes": 19581,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/axi/ddr4_v2_2_carry_and.sv",
+      "sha256": "6d49814545d448776e44ed3af2f20029b5d06c47a9f9259d52e2feace5a0d7d2",
+      "bytes": 4299,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/axi/ddr4_v2_2_carry_latch_and.sv",
+      "sha256": "0bf6cd46420d07560f2107201b2416a6158672a8133492b22970448da6d94c4b",
+      "bytes": 4308,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/axi/ddr4_v2_2_carry_latch_or.sv",
+      "sha256": "9b6b4249ea11ad5056876eb1da6e07f7fb0cb5ec4c2beeea0de8830ac8c495a1",
+      "bytes": 4239,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/axi/ddr4_v2_2_carry_or.sv",
+      "sha256": "6a3067aadf7655e9cb3f60e0904142eda1ef489764a71b2cf7cc03b4334f6ba0",
+      "bytes": 4398,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/axi/ddr4_v2_2_command_fifo.sv",
+      "sha256": "a5d8c7714a649e7715b428c9a2dc69482b5cf2e89b340eb86386c7eb8e3909d6",
+      "bytes": 15017,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/axi/ddr4_v2_2_comparator.sv",
+      "sha256": "d3b166dc9149e6acd8d8efa4e274ee79a8604ce9c900f306dcf707461c4c2cd4",
+      "bytes": 6282,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/axi/ddr4_v2_2_comparator_sel.sv",
+      "sha256": "db34716508e96438146a84fb114c0947e0d3a51a50196bdbb622bd03ba59e5bd",
+      "bytes": 6734,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/axi/ddr4_v2_2_comparator_sel_static.sv",
+      "sha256": "1e9aecb1670f4a9297b92d2b354d2c588c37de7b012c01685f1a85a1cea6bd95",
+      "bytes": 6974,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/axi/ddr4_v2_2_r_upsizer.sv",
+      "sha256": "ec67acf20856642a64bf91ad82a52517280e590cb49c19d57652493551754af6",
+      "bytes": 36671,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/axi/ddr4_v2_2_w_upsizer.sv",
+      "sha256": "9c69fac1e863f322dcfc3c2e3921d701870313c2b5b53f58385a8d34e5d0d61c",
+      "bytes": 68393,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/axi_ctrl/ddr4_v2_2_axi_ctrl_addr_decode.sv",
+      "sha256": "22e7a4b95fdd21e5c3a8c4fc742bf15e79261d7e0d6a0f465a177d251c7a8e1f",
+      "bytes": 6050,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/axi_ctrl/ddr4_v2_2_axi_ctrl_read.sv",
+      "sha256": "c2862b0f43945547ae3a7ebc68aaa87984683595e9b9902685d66a072708a79a",
+      "bytes": 5348,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/axi_ctrl/ddr4_v2_2_axi_ctrl_reg.sv",
+      "sha256": "ea52933d21531a6b46d6dbc89541e17c01f8e534dc9c75fded6a984e59369bec",
+      "bytes": 5310,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/axi_ctrl/ddr4_v2_2_axi_ctrl_reg_bank.sv",
+      "sha256": "d15fe79a01efc0a06f02c596a363057f9d1b13f32ec1b37ac55025994a7bc347",
+      "bytes": 25965,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/axi_ctrl/ddr4_v2_2_axi_ctrl_top.sv",
+      "sha256": "bf1e65102e78adde1d5b2f7e90155491bc6afb1f52e3b54d7a4d824f8e8ed051",
+      "bytes": 27902,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/axi_ctrl/ddr4_v2_2_axi_ctrl_write.sv",
+      "sha256": "ae5d3919305f305e321e858953b1a446ecf7446aae239e5f2f11f8d85379d1ed",
+      "bytes": 6808,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/cal/ddr4_v2_2_20_cal_assert.vh",
+      "sha256": "abb245f225dfbb0c51e534a1e46a63aa58f8d30b02073306fbe277e3fb31ec06",
+      "bytes": 5491,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/cal/ddr4_v2_2_20_chipscope_icon2xsdb_mstrbr_ver_inc.vh",
+      "sha256": "f20cf27d1978faf4a0e0e28395e39dbb7218ff69252588f3bef88e37f86002d7",
+      "bytes": 4280,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/cal/ddr4_v2_2_20_cs_ver_inc.vh",
+      "sha256": "49a6ca48082f7d946f814c59bda5dd74d516447c2a0a216d99837093437c1711",
+      "bytes": 5486,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/cal/ddr4_v2_2_cal.sv",
+      "sha256": "f3af9fa26a40c716eabf5d985f516d792e46bbf79cbebe7adcd886dc2820c647",
+      "bytes": 86169,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/cal/ddr4_v2_2_cal_addr_decode.sv",
+      "sha256": "dc5941b6b64482cb55bcb2d0d7e73bff7b67e67e5b871930399c54a793381ecd",
+      "bytes": 95728,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/cal/ddr4_v2_2_cal_config_rom.sv",
+      "sha256": "a42884f32badf3c29950ec1926e45b43cee1d2f46654e03f4f092dc38db98fbc",
+      "bytes": 7322,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/cal/ddr4_v2_2_cal_cplx.sv",
+      "sha256": "7fc530b154617bbb09dde0d514323a15935669379e5b5597a832647e4cabf5a2",
+      "bytes": 37039,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/cal/ddr4_v2_2_cal_cplx_data.sv",
+      "sha256": "759381cb68e3d7b9f0c2a2a99fece258cfa28952304885c58d02fa36516abecb",
+      "bytes": 25283,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/cal/ddr4_v2_2_cal_debug_microblaze.sv",
+      "sha256": "792528b2cdce298400fc140b63face0a38cea38d58b0959ce666db9615200d08",
+      "bytes": 61032,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/cal/ddr4_v2_2_cal_mc_odt.sv",
+      "sha256": "218875610effd1737c6351257d6683e6c48a6328a26cd3ec7e5c7389c6ad7f8c",
+      "bytes": 8358,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/cal/ddr4_v2_2_cal_pi.sv",
+      "sha256": "4360cc7f370060a877d0935fbfac24984444029da634174d5921a11458fb932f",
+      "bytes": 10226,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/cal/ddr4_v2_2_cal_rd_en.sv",
+      "sha256": "8757108ca95aa40924a459c0a6a3f2a5d22872a0438dfca08bb92d3d6837740b",
+      "bytes": 13288,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/cal/ddr4_v2_2_cal_read.sv",
+      "sha256": "573d79130b892e3d5470b50835b6b3d390c3922f5c9dd606ee9d23b7cec63278",
+      "bytes": 7636,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/cal/ddr4_v2_2_cal_sync.sv",
+      "sha256": "5e230ea2a3f8f54f64438ea4b7ee5b5092fd689fdf9162a166f4d496a6e181ad",
+      "bytes": 4084,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/cal/ddr4_v2_2_cal_top.sv",
+      "sha256": "207c615ac8d71ad65e47b937501746431e49e3e2799f4bf200f9f519b2c6d2a3",
+      "bytes": 68227,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/cal/ddr4_v2_2_cal_wr_bit.sv",
+      "sha256": "1f6cc1ab94b10a9aa5dc77b3823282a1d0732e2b0a666fbf05d7b3a2340d32c8",
+      "bytes": 3701,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/cal/ddr4_v2_2_cal_wr_byte.sv",
+      "sha256": "3c82c3b176b00f4e9cf147b2ad74bd5732319a3835f48b909fff656e45aca1b4",
+      "bytes": 3962,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/cal/ddr4_v2_2_cal_write.sv",
+      "sha256": "ea241d5a0ee732220b5a54d2a0aa404042e1504c65923b4d35a6ac9815db60e9",
+      "bytes": 11006,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/cal/ddr4_v2_2_cal_xsdb_arbiter.sv",
+      "sha256": "4e0db73fb5d938a47cf4ef29fe8a6db813744112d51911e2cc750746c88299d0",
+      "bytes": 9648,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/cal/ddr4_v2_2_cal_xsdb_bram.sv",
+      "sha256": "4a1ab2ec6a6a2c07e7edff638eb13114916109d0b34666df7102c9911100ae23",
+      "bytes": 25205,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/cal/ddr4_v2_2_chipscope_xsdb_slave.sv",
+      "sha256": "2cd96da501cf6b5b2a080a49a54b17e14b98334eedfe297f05d3e74b41dcbb1a",
+      "bytes": 8552,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/cal/ddr4_v2_2_dp_AB9.sv",
+      "sha256": "f7154c1cec703dc1d4531ed14982fdf0c21bb4004a636445c9ef3f2b757219b2",
+      "bytes": 7716,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/cal/w8_platform_memory_0_ddr4_cal_riu.sv",
+      "sha256": "ef2b7b1782b7716cc174c57a44c5903b26cd7dacf1b7acc6599b1b029cd72936",
+      "bytes": 10779,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/clocking/ddr4_v2_2_infrastructure.sv",
+      "sha256": "c24c8a359457a18f209aa51b63356621d49453af1162f7a22c0fc1dfe9bc4f3b",
+      "bytes": 21464,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/controller/ddr4_v2_2_mc.sv",
+      "sha256": "78d29fa7349f8653cba7e6dd0634070994f13c17973441e9c3707e06cba89ca1",
+      "bytes": 32673,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/controller/ddr4_v2_2_mc_act_rank.sv",
+      "sha256": "e9cb8e765cb957d8e63087bcbbad3a3ee43074e85d8db8c6af9be36890dde491",
+      "bytes": 20016,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/controller/ddr4_v2_2_mc_act_timer.sv",
+      "sha256": "33c49bb4034b2d458054981dc472898c5add172381af18b7754571dd08c77137",
+      "bytes": 10826,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/controller/ddr4_v2_2_mc_arb_a.sv",
+      "sha256": "1fee5e58f480c9aa738f1e2751aceb400680736648ae8feb49c7788725b34e06",
+      "bytes": 9441,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/controller/ddr4_v2_2_mc_arb_c.sv",
+      "sha256": "bcd6a6d31acd8f5243d48eb0f35c39c2c8407226117105167c196d255825d14f",
+      "bytes": 16753,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/controller/ddr4_v2_2_mc_arb_mux_p.sv",
+      "sha256": "11b2dd05258571d6526878acffe8e40276ce5ccdfd0ec4ffcea6af2cd2c12022",
+      "bytes": 16877,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/controller/ddr4_v2_2_mc_arb_p.sv",
+      "sha256": "e755f1b3b4d2a90642f4945fb6eed8390faaa3a778e73e0dc42331986f63f192",
+      "bytes": 4591,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/controller/ddr4_v2_2_mc_cmd_mux_ap.sv",
+      "sha256": "1c7c03df125dc49291edefe5d080a5672d25b50d1f5b15e14132f09bd7902ebd",
+      "bytes": 4633,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/controller/ddr4_v2_2_mc_cmd_mux_c.sv",
+      "sha256": "5888680fdafd863030f17f1abf3b18f89b41343901053131c37108423798f083",
+      "bytes": 6086,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/controller/ddr4_v2_2_mc_ctl.sv",
+      "sha256": "cedaedcedb9a90702b154702b26cd975ae06d05fa301eff447cf184dc9d10a1f",
+      "bytes": 30465,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/controller/ddr4_v2_2_mc_ecc.sv",
+      "sha256": "cced952a41fe3c6f8f4b33c7237be2ae97f1fba1d084c0ab4ccd7571c80280a1",
+      "bytes": 23766,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/controller/ddr4_v2_2_mc_ecc_buf.sv",
+      "sha256": "ca9065a0273736ca006f7a5a153194353dff8ea3a900ae457bb8474b75bb0c03",
+      "bytes": 6341,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/controller/ddr4_v2_2_mc_ecc_dec_fix.sv",
+      "sha256": "ad2075f0e23ba0298bfbe1ec9a6441f842de6f54f680f2e4f56bfb9e8060b5d5",
+      "bytes": 12101,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/controller/ddr4_v2_2_mc_ecc_fi_xor.sv",
+      "sha256": "fdcad477b24900b9c181e0dbb930c6afd033c612f77336974a6beb2a5032e627",
+      "bytes": 7850,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/controller/ddr4_v2_2_mc_ecc_gen.sv",
+      "sha256": "6cd4e508547f6923a71941bd898b50705ac48538e09dce45f863fdedd7a02aa7",
+      "bytes": 7830,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/controller/ddr4_v2_2_mc_ecc_merge_enc.sv",
+      "sha256": "75705f08f691699b24dcf34691dcb4f46467db5ada10bc470d5991c8ef27cca8",
+      "bytes": 6412,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/controller/ddr4_v2_2_mc_group.sv",
+      "sha256": "42788a5915c8a7ecfef2241f32e083f57a02d590b9c03cd205b758116389e0cf",
+      "bytes": 64557,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/controller/ddr4_v2_2_mc_periodic.sv",
+      "sha256": "e6d67afe32015b1f6f963f888fe5f9640f6bede4b5cd10cd0e4c6192ab73f944",
+      "bytes": 21678,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/controller/ddr4_v2_2_mc_rd_wr.sv",
+      "sha256": "53c0d2cfb0a745143057236249960cc4240ea9b954499e8bceb9dd7ce5771543",
+      "bytes": 17804,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/controller/ddr4_v2_2_mc_ref.sv",
+      "sha256": "f68813805a940336c23788c610a6e7563dad13c418860d60b6fd1942c9b88c51",
+      "bytes": 44023,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/controller/ddr4_v2_2_mc_wtr.sv",
+      "sha256": "f0fd491814d1064143e271c31c415e67b7b28ad7ab5896798778b1ac7bf61f25",
+      "bytes": 6894,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/ip_top/ddr4_v2_2_20_ddr4_assert.vh",
+      "sha256": "6742c2f98e5eac1ac063c67ff814fc65b298455387781726e622add6496e25d0",
+      "bytes": 73749,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/ip_top/w8_platform_memory_0.sv",
+      "sha256": "a0d90a60d9eaa4a7cf51752213dc6ef47392765e6ecdbe9034e5c984dae1940c",
+      "bytes": 11912,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/ip_top/w8_platform_memory_0_ddr4.sv",
+      "sha256": "8c09775a5065e9c05be4d964ecb17c8a86ec010be79764f431ef57306d7861c6",
+      "bytes": 46179,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/ip_top/w8_platform_memory_0_ddr4_mem_intfc.sv",
+      "sha256": "9743bafe18ba310a7d94d8bd45762bfdb8250a51ded931379aa25d91193eb4de",
+      "bytes": 64615,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/ui/ddr4_v2_2_ui.sv",
+      "sha256": "c12db2c67cb04b5e1c3457e8c1c33d570723210c3628ecd91b68913c21d98be1",
+      "bytes": 16065,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/ui/ddr4_v2_2_ui_cmd.sv",
+      "sha256": "dabea3dee42c7d098cc760e5e19ff98c8ce06b4288d8c9b49a0776d916e5108f",
+      "bytes": 23847,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/ui/ddr4_v2_2_ui_rd_data.sv",
+      "sha256": "adcb49bc3a326c8425583a89c50120ac20b69ae34b22ac7be03f4265ecb8cfc6",
+      "bytes": 29450,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/rtl/ui/ddr4_v2_2_ui_wr_data.sv",
+      "sha256": "2df0c0b9b46876444436ca09a854a94faa96071862f5684f302d9153f5dfb6b4",
+      "bytes": 21052,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_memory_0/w8_platform_memory_0_board.xdc",
+      "sha256": "4e52cec339eb8610da892630369dd166c133bac56f330d20c9264346aa4f4dfb",
+      "bytes": 8549,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_one_0/synth/w8_platform_one_0.v",
+      "sha256": "14c548b94574f4f82542dfe3e90deb45e76ef502e7cba3f02e0239c341e42296",
+      "bytes": 2997,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_reset_core_0/synth/w8_platform_reset_core_0.vhd",
+      "sha256": "21ef4cefb688dbcae00408fbf92cf04f50bf6f06b5b322cc8c7593166f5b2823",
+      "bytes": 8286,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_reset_core_0/w8_platform_reset_core_0.xdc",
+      "sha256": "608cd441f7bfaa210071b7bfbc068c555ee142bb2c89932503cd3c4605c8cd73",
+      "bytes": 2604,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_reset_core_0/w8_platform_reset_core_0_board.xdc",
+      "sha256": "7ad209b673e69e5dc7667668407b509d8ac03974abdb527313a511db77cf15bd",
+      "bytes": 60,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_reset_host_0/synth/w8_platform_reset_host_0.vhd",
+      "sha256": "d709afddbca12b713db6c9f28a57aa2288bb7fef9d342552b6159816af05137a",
+      "bytes": 8273,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_reset_host_0/w8_platform_reset_host_0.xdc",
+      "sha256": "4c89cd70aeb8a70451928dcb21483648ee61fd1b4d18180223be7f5da957449f",
+      "bytes": 2604,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_reset_host_0/w8_platform_reset_host_0_board.xdc",
+      "sha256": "7ad209b673e69e5dc7667668407b509d8ac03974abdb527313a511db77cf15bd",
+      "bytes": 60,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_reset_ui_0/synth/w8_platform_reset_ui_0.vhd",
+      "sha256": "26cc017122db7ff70207e50c23901d09e8da69364f79b96a6ae7ca945b0888ff",
+      "bytes": 8264,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_reset_ui_0/w8_platform_reset_ui_0.xdc",
+      "sha256": "ea7612150f0d4f4236c84038b954ebee973c26b86efa715445ec7985e66bff93",
+      "bytes": 2602,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_reset_ui_0/w8_platform_reset_ui_0_board.xdc",
+      "sha256": "7ad209b673e69e5dc7667668407b509d8ac03974abdb527313a511db77cf15bd",
+      "bytes": 60,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_xbar_0/synth/w8_platform_xbar_0.v",
+      "sha256": "eb5a636a290b01433e0703b9fda47f6fde4941ed7eeb93b29957c5bed9aea4da",
+      "bytes": 25522,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ip/w8_platform_zero_0/synth/w8_platform_zero_0.v",
+      "sha256": "c10031ae8b504ca1e0a2791cba64d148b2546a826d9398dec616cf25585b1382",
+      "bytes": 3000,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ipshared/10ab/hdl/generic_baseblocks_v2_1_vl_rfs.v",
+      "sha256": "052a0d90ba4b5ad1f0e7086fa83c0ba4430bbc7ad39c8d8c654292464281358d",
+      "bytes": 109253,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ipshared/1ca4/hdl/lmb_bram_if_cntlr_v4_0_vh_rfs.vhd",
+      "sha256": "4c3a22071d9f369038cda964d539d909c54005aefe0403970a24bcf1c8f3ef3a",
+      "bytes": 270289,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ipshared/279e/hdl/axi_data_fifo_v2_1_vl_rfs.v",
+      "sha256": "6d714b4a87c3bd2a217b3de4e554e16d9c265f9816f743ba884f831cd0c8458c",
+      "bytes": 72202,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ipshared/3c0c/hdl/blk_mem_gen_v8_4_vhsyn_rfs.vhd",
+      "sha256": "3e4d8909ea98db7c0cfa599a2676cca42199cceee8e6f0ede05ce3fe5fdef38b",
+      "bytes": 14870105,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ipshared/408c/hdl/proc_sys_reset_v5_0_vh_rfs.vhd",
+      "sha256": "94840c0410ad69ffde6ba1a2d3c345e8aec7ea8a8db60212ec0ca1acbd2c15b2",
+      "bytes": 67896,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ipshared/670d/hdl/axi_dwidth_converter_v2_1_vlsyn_rfs.v",
+      "sha256": "f7a75d89398dba21d5c8a2a6193d8c4bb0c76d6083e6de35c2036757fd3557fb",
+      "bytes": 614656,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ipshared/769c/hdl/axi_clock_converter_v2_1_vl_rfs.v",
+      "sha256": "9f05db0c98f134e7df112a01e76f16e2d21eb5bdedaa6e6a92731d948e8faf65",
+      "bytes": 101914,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ipshared/a29c/hdl/verilog/xsdbs_v1_0_3_i2x.vh",
+      "sha256": "ae350566fb5890f43fa3e773306e539305f01e0862db8d84903bba8946332cbe",
+      "bytes": 2134,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ipshared/a29c/hdl/verilog/xsdbs_v1_0_3_in.vh",
+      "sha256": "8bb9024b81e1dcf9c6e3de2418fd0e58203f1df11c80473c1de86687e05cb79d",
+      "bytes": 3304,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ipshared/a29c/hdl/xsdbs_v1_0_vl_rfs.v",
+      "sha256": "56f724a590362555ff34a40d9a212c092a0d189cc274d313314b566be4b4962a",
+      "bytes": 40610,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ipshared/a63f/hdl/axi_protocol_converter_v2_1_vl_rfs.v",
+      "sha256": "0c4c649835d20395e266b6f463216186a81f1020a68496d8b5ee475dc74bcdfe",
+      "bytes": 246013,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ipshared/ac72/hdl/fifo_generator_v13_2_vhsyn_rfs.vhd",
+      "sha256": "b03326bb7c8a330b1ec33aa4fef07fc13d74886aaedae4eee8fd654029c3203b",
+      "bytes": 2439937,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ipshared/ae24/hdl/lmb_v10_v3_0_vh_rfs.vhd",
+      "sha256": "ad4021023739fd5d3f8fe44dffff91b5bb7dbb38b23337f031c304de7a638941",
+      "bytes": 10242,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ipshared/b140/hdl/jtag_axi_v1_2_syn_rfs.v",
+      "sha256": "ed2aa748f3948fb48ae7fed817384307c9d6182e72c26d2a42ccc2eac5dfdc9d",
+      "bytes": 238185,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ipshared/c29d/hdl/iomodule_v3_1_vh_rfs.vhd",
+      "sha256": "494783ecaf83ab218ca62b38887653b9993d1a11ed3bf964be663fced5e6474c",
+      "bytes": 414839,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ipshared/c2c6/mmcm_pll_drp_func_7s_mmcm.vh",
+      "sha256": "cb6259dc85e41582d115449bbf8fc6c002853e9e225354a95da19f83bf48302d",
+      "bytes": 24700,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ipshared/c2c6/mmcm_pll_drp_func_7s_pll.vh",
+      "sha256": "f1f234705549666997cd3fc989e46098c9c330441f93934b744adcd8bec86038",
+      "bytes": 19604,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ipshared/c2c6/mmcm_pll_drp_func_us_mmcm.vh",
+      "sha256": "4ab7d9af8568c56cabbd51a99e9879f5f9384f8b393f4ad5b39cf092dab24716",
+      "bytes": 24700,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ipshared/c2c6/mmcm_pll_drp_func_us_pll.vh",
+      "sha256": "35119dfda232b24a866c8c535aa8af47ccb7626c9c706e01095deec87ccd5aa3",
+      "bytes": 19924,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ipshared/c2c6/mmcm_pll_drp_func_us_plus_mmcm.vh",
+      "sha256": "dba7a26da5bac79f19075d4a9b6a2a98f7047bf355a3e4c85e5ac871db3805dc",
+      "bytes": 33084,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ipshared/c2c6/mmcm_pll_drp_func_us_plus_pll.vh",
+      "sha256": "b5817437a92aa100ec92d27117987c9a49f2bd1637cd661d4f01017eac092230",
+      "bytes": 20191,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ipshared/d390/hdl/xlconstant_v1_1_vl_rfs.v",
+      "sha256": "97f9ad44585576c0a05be89a535f0224c75452c304478f58760298aec175e8e9",
+      "bytes": 3176,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ipshared/e2ba/hdl/ltlib_v1_0_vl_rfs.v",
+      "sha256": "88126dc2a1b115a3b26e13b082f1f62fe70e31a20744ad8c383ca7fad67428ff",
+      "bytes": 93521,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ipshared/e2ba/hdl/verilog/ltlib_v1_0_1_lib_fn.vh",
+      "sha256": "949a5513cab4e642e121b79b89cc898ad5b1f3b3c580abf1bc1252ce35780490",
+      "bytes": 3427,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ipshared/e2ba/hdl/verilog/ltlib_v1_0_1_ver.vh",
+      "sha256": "5bc61708187f0764f1ea953a99a94fb84c037b7f63c0af04fa02dc0516b37c3d",
+      "bytes": 3261,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ipshared/ec67/hdl/axi_infrastructure_v1_1_0.vh",
+      "sha256": "6f75042bd294dd05d9e4d326fe845e6bd44ec51637b1ad8ce66fbc295f16cc52",
+      "bytes": 8325,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v",
+      "sha256": "64a5966a7f6c9f296102fb2816e0f4ac4808888b2b64bc0bdafae9ea019a72c4",
+      "bytes": 29851,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd",
+      "sha256": "07195bf629bd1500781ea9e8f01aa5b897f7e714dc999c0d5c623f1e3c8122b2",
+      "bytes": 49940,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ipshared/f557/hdl/microblaze_v11_0_vh_rfs.vhd",
+      "sha256": "31f3bd1960fd4c948e25b04ce7ddbb6d81583cea122a8090afa5b73336fbc35c",
+      "bytes": 10084725,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ipshared/fb47/hdl/axi_crossbar_v2_1_vl_rfs.v",
+      "sha256": "3a906e8ef6fb333de95ac7e0ad144c333fa8409bedc78562f18c7a00322f98b8",
+      "bytes": 309459,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/ipshared/ff9f/hdl/axi_register_slice_v2_1_vl_rfs.v",
+      "sha256": "a7fd32be7d1c10618460bbb01abe55ffab3f6010b7bfcfef11a6861a7fc0fe33",
+      "bytes": 174522,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/synth/w8_platform.v",
+      "sha256": "f22832cd2aab9d84608524a137addb56e01efe83439d0387aed9cd9de0f1467c",
+      "bytes": 145098,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.gen/sources_1/bd/w8_platform/w8_platform_ooc.xdc",
+      "sha256": "8da0c79c7c88969c22e35e912604bcf7a6ce5d725f565406cf0c345712bfd1e8",
+      "bytes": 625,
+      "reason": "Regenerate vendor IP/output products in licensed Vivado; descriptors separately included"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.srcs/sources_1/bd/w8_platform/ip/w8_platform_auto_ds_0/w8_platform_auto_ds_0.xci",
+      "sha256": "4531fdb3e0d9a79dd5ed2eee1ca531318dc5f1a060e4247f1f4f33ee74c4ab5d",
+      "bytes": 33803,
+      "reason": "IP configuration is included under ip/configuration"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.srcs/sources_1/bd/w8_platform/ip/w8_platform_auto_pc_0/w8_platform_auto_pc_0.xci",
+      "sha256": "1fdc4ef126a44d8d225ce822d23c1da43ef13ba3bc6fd32ddf811027bc1095d8",
+      "bytes": 30797,
+      "reason": "IP configuration is included under ip/configuration"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.srcs/sources_1/bd/w8_platform/ip/w8_platform_auto_rs_0/w8_platform_auto_rs_0.xci",
+      "sha256": "ab80fe9520a843f40a15c4ebb4282f66c50c3529a2a82a5cebc5edb2ee2235c5",
+      "bytes": 39852,
+      "reason": "IP configuration is included under ip/configuration"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.srcs/sources_1/bd/w8_platform/ip/w8_platform_auto_rs_1/w8_platform_auto_rs_1.xci",
+      "sha256": "a1109d81f03e15e42566f2490d1e640db85e57cbb35a706dcf36bbbc926ae956",
+      "bytes": 40927,
+      "reason": "IP configuration is included under ip/configuration"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.srcs/sources_1/bd/w8_platform/ip/w8_platform_auto_rs_w_0/w8_platform_auto_rs_w_0.xci",
+      "sha256": "fbe7a2b7a1cc96bbd90b507e1667e6022bb5035481674fad0369eceddbc0fe77",
+      "bytes": 41123,
+      "reason": "IP configuration is included under ip/configuration"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.srcs/sources_1/bd/w8_platform/ip/w8_platform_auto_rs_w_1/w8_platform_auto_rs_w_1.xci",
+      "sha256": "1491565a32d57106540ad697deb470d0f496d4aedf3165c2fdf6357d48957668",
+      "bytes": 39861,
+      "reason": "IP configuration is included under ip/configuration"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.srcs/sources_1/bd/w8_platform/ip/w8_platform_auto_us_0/w8_platform_auto_us_0.xci",
+      "sha256": "dbc7c1924228a2193cf625fac7ed393e018722a025458cd6eb57a637ead5bc8d",
+      "bytes": 33617,
+      "reason": "IP configuration is included under ip/configuration"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.srcs/sources_1/bd/w8_platform/ip/w8_platform_compute_clock_0/w8_platform_compute_clock_0.xci",
+      "sha256": "1e84f47e12bdd9bfa49994b40ee05a5adf8789fb1a294ccd66fa553a79e4d28c",
+      "bytes": 69780,
+      "reason": "IP configuration is included under ip/configuration"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.srcs/sources_1/bd/w8_platform/ip/w8_platform_compute_to_ddr_0/w8_platform_compute_to_ddr_0.xci",
+      "sha256": "06e71fdcbdc2be7c032b88b22d767fb93e94ded9bd44e4d312c678bb3e85d016",
+      "bytes": 31048,
+      "reason": "IP configuration is included under ip/configuration"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.srcs/sources_1/bd/w8_platform/ip/w8_platform_core_0/w8_platform_core_0.xci",
+      "sha256": "7bbfc8393b2250bdcd851417c83ab79449ac9efabfb8b9ffbde365efb850a800",
+      "bytes": 23477,
+      "reason": "IP configuration is included under ip/configuration"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.srcs/sources_1/bd/w8_platform/ip/w8_platform_fabric_0/w8_platform_fabric_0.xci",
+      "sha256": "b74a2f419e6775a67a71bec71dd06d561e86a7f6c3394debd8ea618876107dd8",
+      "bytes": 35175,
+      "reason": "IP configuration is included under ip/configuration"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.srcs/sources_1/bd/w8_platform/ip/w8_platform_host_0/w8_platform_host_0.xci",
+      "sha256": "a66b7f4e1d0859e3725d88451c9513a8247b20b7bcd34a2a46deea085cc85e6f",
+      "bytes": 16778,
+      "reason": "IP configuration is included under ip/configuration"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.srcs/sources_1/bd/w8_platform/ip/w8_platform_host_clock_0/w8_platform_host_clock_0.xci",
+      "sha256": "1725bc0728a328b22ce9f68906ecb5900c4495a84f81890e950d4e03c72daa45",
+      "bytes": 5000,
+      "reason": "IP configuration is included under ip/configuration"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.srcs/sources_1/bd/w8_platform/ip/w8_platform_host_to_control_0/w8_platform_host_to_control_0.xci",
+      "sha256": "27a8a2ae316dd9a97afbafe34bf9cdf6fc9815e43a71a183944261146338b08d",
+      "bytes": 31104,
+      "reason": "IP configuration is included under ip/configuration"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.srcs/sources_1/bd/w8_platform/ip/w8_platform_host_to_fabric_0/w8_platform_host_to_fabric_0.xci",
+      "sha256": "6938a9aca77e734372a8423b9e6af94a3b37806fb7734a40687262dce71e2be7",
+      "bytes": 37193,
+      "reason": "IP configuration is included under ip/configuration"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.srcs/sources_1/bd/w8_platform/ip/w8_platform_memory_0/w8_platform_memory_0.xci",
+      "sha256": "85a515ab7b2ec85450a6d92f167dff8caeec69ed2e005e3295acd72947edd00a",
+      "bytes": 58430,
+      "reason": "IP configuration is included under ip/configuration"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.srcs/sources_1/bd/w8_platform/ip/w8_platform_one_0/w8_platform_one_0.xci",
+      "sha256": "36aa4873b00b47970e4566db7f876499426939ab3c6409d2ae631351ba37a4f2",
+      "bytes": 2199,
+      "reason": "IP configuration is included under ip/configuration"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.srcs/sources_1/bd/w8_platform/ip/w8_platform_reset_core_0/w8_platform_reset_core_0.xci",
+      "sha256": "d3e06a9b4d335a30182b2707af4c533131fb5d423d61b69424df8cc548a37978",
+      "bytes": 12318,
+      "reason": "IP configuration is included under ip/configuration"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.srcs/sources_1/bd/w8_platform/ip/w8_platform_reset_host_0/w8_platform_reset_host_0.xci",
+      "sha256": "34b50b97e149a75a7e53c5d75ef38481856b7f35b4606466647e4eb6e999fb9c",
+      "bytes": 12306,
+      "reason": "IP configuration is included under ip/configuration"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.srcs/sources_1/bd/w8_platform/ip/w8_platform_reset_ui_0/w8_platform_reset_ui_0.xci",
+      "sha256": "3b12faade88b01597962ff3eb0f4ee3814799d3d895757068e855eeebc27deca",
+      "bytes": 12304,
+      "reason": "IP configuration is included under ip/configuration"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.srcs/sources_1/bd/w8_platform/ip/w8_platform_xbar_0/w8_platform_xbar_0.xci",
+      "sha256": "f99953ea75d21ca7f6e92476132cac43c6fec2edf9597f5aea3bdcb57fca6a64",
+      "bytes": 241472,
+      "reason": "IP configuration is included under ip/configuration"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.srcs/sources_1/bd/w8_platform/ip/w8_platform_zero_0/w8_platform_zero_0.xci",
+      "sha256": "ced935011f107c459d78ca979835c12b216eb9bb5a7a77793690358fe8422281",
+      "bytes": 2204,
+      "reason": "IP configuration is included under ip/configuration"
+    },
+    {
+      "source": "hf02_d166_sy/project/host75_synth.srcs/sources_1/bd/w8_platform/w8_platform.bd",
+      "sha256": "a7494c83534dd9bbab08dff67ecf40e9256b39187d66fbe46273671e966edc26",
+      "bytes": 57264,
+      "reason": "IP configuration is included under ip/configuration"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/checkpoint_values.bin",
+      "sha256": "bd33c353bd9bf85e0342ee658e1333979871788cf8c33bcd429b33edef85ee0a",
+      "bytes": 44163520,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/control_cases.hex",
+      "sha256": "6dc13ffa1d1e05acbe1fc4b25cf3203269d2d381bd1e74d8efdc0dfdc9be66e9",
+      "bytes": 2615546,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/aux/10_act.hex",
+      "sha256": "60296724ff9e3465512a974ef2459d089deb93616108e4ff6de3d2f8182ac190",
+      "bytes": 524288,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/aux/10_exp.hex",
+      "sha256": "2f807ba6a3ca0e5fae4163cc63895df1a861a65dd3e03726ee41e44ae1e63969",
+      "bytes": 163850,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/aux/10_expected.hex",
+      "sha256": "2f8c805ac1dd25a6b526a217d93e977ca6ba3f0eb755f4ff159ec1ac318f36ad",
+      "bytes": 378240,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/aux/10_gelu.hex",
+      "sha256": "3a47925fb4ea5e026366debc15b06d3c4b9716c3ea900fea7ee64958dfbbe2b9",
+      "bytes": 786432,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/aux/10_param.hex",
+      "sha256": "36a392483bd59b1443a8c4fd1b721e2b7a2baf7dea03a4953526750a6aa693a6",
+      "bytes": 655360,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/aux/10_prob.hex",
+      "sha256": "2ea865086c3f2e6d9064625a17d696b1775886126b5acbed0a18446e3e021a24",
+      "bytes": 1182,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/aux/10_score.hex",
+      "sha256": "ac0efc26ada9db1c3f2da40839b400a6647a405764d4133afb1dfe015dc28925",
+      "bytes": 1970,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/aux/2_act.hex",
+      "sha256": "3ec84a75021b185be888edc6a7912d8b962a0903264898e8c66266c115ca7196",
+      "bytes": 524288,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/aux/2_exp.hex",
+      "sha256": "2f807ba6a3ca0e5fae4163cc63895df1a861a65dd3e03726ee41e44ae1e63969",
+      "bytes": 163850,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/aux/2_expected.hex",
+      "sha256": "ba57caec726642559e59c67b709c2045e397ae130d278033c7a74766762826e2",
+      "bytes": 1920,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/aux/2_gelu.hex",
+      "sha256": "3a47925fb4ea5e026366debc15b06d3c4b9716c3ea900fea7ee64958dfbbe2b9",
+      "bytes": 786432,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/aux/2_param.hex",
+      "sha256": "b842443f19b3d2f40f257a1e6a177c3fd05f14101feb89d58c9639bb575222eb",
+      "bytes": 655360,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/aux/2_prob.hex",
+      "sha256": "2ea865086c3f2e6d9064625a17d696b1775886126b5acbed0a18446e3e021a24",
+      "bytes": 1182,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/aux/2_score.hex",
+      "sha256": "ac0efc26ada9db1c3f2da40839b400a6647a405764d4133afb1dfe015dc28925",
+      "bytes": 1970,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/aux/3_act.hex",
+      "sha256": "d08824a9d10ff14c0f38eb76cc1289b198b6a5e076614e5235d15680ef270fcf",
+      "bytes": 524288,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/aux/3_exp.hex",
+      "sha256": "2f807ba6a3ca0e5fae4163cc63895df1a861a65dd3e03726ee41e44ae1e63969",
+      "bytes": 163850,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/aux/3_expected.hex",
+      "sha256": "b86b18cf195315f3d24672dc26605469bb9ab306528fe6046874dc179d8658c8",
+      "bytes": 1970,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/aux/3_gelu.hex",
+      "sha256": "3a47925fb4ea5e026366debc15b06d3c4b9716c3ea900fea7ee64958dfbbe2b9",
+      "bytes": 786432,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/aux/3_param.hex",
+      "sha256": "d254f3ee15774f09590aa3879485e0494344261258314ce3c51f7d0ddb3f9db9",
+      "bytes": 655360,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/aux/3_prob.hex",
+      "sha256": "2ea865086c3f2e6d9064625a17d696b1775886126b5acbed0a18446e3e021a24",
+      "bytes": 1182,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/aux/3_score.hex",
+      "sha256": "b3bbb72963d8eb1106dec91ae89757d83a897e14dfa8e506ae27ba6240fd7185",
+      "bytes": 1970,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/aux/5_act.hex",
+      "sha256": "3352326448f9c5817b081fdee5a9ba22831a46b670d5923c5ea8bcf890589de0",
+      "bytes": 524288,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/aux/5_exp.hex",
+      "sha256": "2f807ba6a3ca0e5fae4163cc63895df1a861a65dd3e03726ee41e44ae1e63969",
+      "bytes": 163850,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/aux/5_expected.hex",
+      "sha256": "5551fd3d01491aca39041a1ca1f38516bee3cab86382df96d7a9ece4b9c6ecb6",
+      "bytes": 7680,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/aux/5_gelu.hex",
+      "sha256": "7438fb077d74b9b529f7e0784f4a3294b60884c3bdda0cf8a29c8ecebd827443",
+      "bytes": 786432,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/aux/5_param.hex",
+      "sha256": "d254f3ee15774f09590aa3879485e0494344261258314ce3c51f7d0ddb3f9db9",
+      "bytes": 655360,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/aux/5_prob.hex",
+      "sha256": "2ea865086c3f2e6d9064625a17d696b1775886126b5acbed0a18446e3e021a24",
+      "bytes": 1182,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/aux/5_score.hex",
+      "sha256": "ac0efc26ada9db1c3f2da40839b400a6647a405764d4133afb1dfe015dc28925",
+      "bytes": 1970,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/aux/6_act.hex",
+      "sha256": "8a89338ab24d9def1fdc3f5219c8b7cd80752a1ac3336d1aeecd01b665889e6f",
+      "bytes": 524288,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/aux/6_exp.hex",
+      "sha256": "2f807ba6a3ca0e5fae4163cc63895df1a861a65dd3e03726ee41e44ae1e63969",
+      "bytes": 163850,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/aux/6_expected.hex",
+      "sha256": "1d5c816dd2ad5591b4668b06cd52bd029c4132450f3d46e383a0bc17ab064ce0",
+      "bytes": 1920,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/aux/6_gelu.hex",
+      "sha256": "3a47925fb4ea5e026366debc15b06d3c4b9716c3ea900fea7ee64958dfbbe2b9",
+      "bytes": 786432,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/aux/6_param.hex",
+      "sha256": "10bbf5e90355cbf0b02feb1fbcce2e4532ab313825c3a1ee6c3fb9c445b1effe",
+      "bytes": 655360,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/aux/6_prob.hex",
+      "sha256": "2ea865086c3f2e6d9064625a17d696b1775886126b5acbed0a18446e3e021a24",
+      "bytes": 1182,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/aux/6_score.hex",
+      "sha256": "ac0efc26ada9db1c3f2da40839b400a6647a405764d4133afb1dfe015dc28925",
+      "bytes": 1970,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/aux/9_act.hex",
+      "sha256": "d08824a9d10ff14c0f38eb76cc1289b198b6a5e076614e5235d15680ef270fcf",
+      "bytes": 524288,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/aux/9_exp.hex",
+      "sha256": "2f807ba6a3ca0e5fae4163cc63895df1a861a65dd3e03726ee41e44ae1e63969",
+      "bytes": 163850,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/aux/9_expected.hex",
+      "sha256": "307b527c2292f2037598072c9faf4fbea39608d562c0ca4de05230de3aa9d19a",
+      "bytes": 1970,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/aux/9_gelu.hex",
+      "sha256": "3a47925fb4ea5e026366debc15b06d3c4b9716c3ea900fea7ee64958dfbbe2b9",
+      "bytes": 786432,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/aux/9_param.hex",
+      "sha256": "d254f3ee15774f09590aa3879485e0494344261258314ce3c51f7d0ddb3f9db9",
+      "bytes": 655360,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/aux/9_prob.hex",
+      "sha256": "e99c411a458e4062bac9255883d2f293076842bf5f46bed80fed22f0358ed270",
+      "bytes": 1182,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/aux/9_score.hex",
+      "sha256": "ac0efc26ada9db1c3f2da40839b400a6647a405764d4133afb1dfe015dc28925",
+      "bytes": 1970,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/000_expected.hex",
+      "sha256": "4d43771489c94fc52e64b9d223c16f1f75d8c34229a077b4812e7999a6d54a99",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/000_input.hex",
+      "sha256": "d36040ff1ccc62f213286c200a893ce1d8509796c51a97a3ff7fa84b039a2d49",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/001_expected.hex",
+      "sha256": "6887a6463b2bda18f9e9a5fcfc4f6d3d0703f54983c9d441add40f066b08b3a1",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/001_input.hex",
+      "sha256": "c99345740e104621725d49a9b2cae910b6659d6e2e04223feaa9859772bd51e0",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/002_expected.hex",
+      "sha256": "228175d782167863667047fac4757e42ec200883c5c9b149a76a8bb000a24c81",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/002_input.hex",
+      "sha256": "b56c6187dbbb1b2c992d62a20f61adacfdbd9748839a89282582091f98ccbc38",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/003_expected.hex",
+      "sha256": "84d843dd5329ee13a578a7a371b93cf672cf8bdbc36d3846e3385c8d399c8a9e",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/003_input.hex",
+      "sha256": "f8a50f5c52089d4b65021a639231ec8a1d7144a2631adbeae47a557f854963c0",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/004_expected.hex",
+      "sha256": "0aa1a1ea239c2d400e9ebd121c2449a679e56ed92923f34f8433ec07d9ccbc68",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/004_input.hex",
+      "sha256": "bbcc9c1df4169a3dc7048bd9567415b8cf70d9effc8d6a301611aa804117a64a",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/005_expected.hex",
+      "sha256": "417f30443883294ba9e75bc377d058d2a91044a4568470197323dc57acb5efdc",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/005_input.hex",
+      "sha256": "0763253edb546e5292deeb353ca2416adeb442535274a970761191ba2ef0b567",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/006_expected.hex",
+      "sha256": "0b5d88860470c28d0ff85ba45b3680af6b28192f16bebdfd0d192052b1af5ffd",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/006_input.hex",
+      "sha256": "9be5072539ef8d5cbbffda13a222aa09aa816377246d9c8fbd7b999b6428dbbd",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/007_expected.hex",
+      "sha256": "47b0cbbda1e4d388dfc280dd07e14480823c43b4e58210112e86761f3429375e",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/007_input.hex",
+      "sha256": "a87ec85428abc17c33dd0f8a5ee099465b818c0f5d77122de79a3c7d992547b9",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/008_expected.hex",
+      "sha256": "f1d08964d133b2d4aab2a6c84466f38ca372281b42d46999cf67d41836609239",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/008_input.hex",
+      "sha256": "f8a50f5c52089d4b65021a639231ec8a1d7144a2631adbeae47a557f854963c0",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/009_expected.hex",
+      "sha256": "5b7ef578a438d5a3094e5b54d4e9303bf383aac064c8ff68a26d41fb55ae230d",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/009_input.hex",
+      "sha256": "bbcc9c1df4169a3dc7048bd9567415b8cf70d9effc8d6a301611aa804117a64a",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/00_param.hex",
+      "sha256": "c3817506795398c1ea761710552bbc69c2ae23c384851163cbbdebcb2d334c51",
+      "bytes": 15360,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/010_expected.hex",
+      "sha256": "242c9579c95bf77f097e028a5c1c00e16c336ab5dcc0f14b5416a6214eb79c82",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/010_input.hex",
+      "sha256": "eb0df9fe4f8bd43f7785e18ce499cdd43e66b3377f4cc86f85539bc92b5759a2",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/011_expected.hex",
+      "sha256": "2bb15a39033a77c26b40621adf6359c41ac9f8f9405a657fa87af70e9010eba2",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/011_input.hex",
+      "sha256": "cb847a6afc1a8c347f9db5fad81d2a479e3ffe66006ce74493ccf4fb5df4746a",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/012_expected.hex",
+      "sha256": "4e7781194d180c0955c4f1339cbeb6a0cb5a2e30c49abcb0a7cd301c199144f6",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/012_input.hex",
+      "sha256": "1b781258b015a6d6e02a63f52b54fac6f6e6415d990da42cab8f4079e6de0255",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/013_expected.hex",
+      "sha256": "73969d8323b8552de879980f3a10279429d6621701c780f9e86dc6370ebf2b8e",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/013_input.hex",
+      "sha256": "f8a50f5c52089d4b65021a639231ec8a1d7144a2631adbeae47a557f854963c0",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/014_expected.hex",
+      "sha256": "c32ac12160073a2673e817fe4b15f0e0313f1a90400933cc02fdea65d276625b",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/014_input.hex",
+      "sha256": "bbcc9c1df4169a3dc7048bd9567415b8cf70d9effc8d6a301611aa804117a64a",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/015_expected.hex",
+      "sha256": "8bf37bec226da88efa99e3f2667d168205d81dd918279d9b19f7e122cf4e8914",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/015_input.hex",
+      "sha256": "473e26c9c300e7eb9c1cfc95542e286fb417ceba823798a85a3827b48fe9bd5d",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/016_expected.hex",
+      "sha256": "344913379bcd0192b3ff3400941e8ff9cfc25c3ffe0adb2770bc528d9664c2f0",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/016_input.hex",
+      "sha256": "4c2951af40ad0545c07e4507cf9d08e3ddd666476f616dd4c69629111acc251f",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/017_expected.hex",
+      "sha256": "15347b336ea1660de91a6d498c36fa476e7a33e407fdaed2f5609b2df6c1a11e",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/017_input.hex",
+      "sha256": "8ccd862762f0470cb06318f707fed008400c1d7d4226309fbb955accbf2fb832",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/018_expected.hex",
+      "sha256": "642d9e34bcb2ceff7204a327a61fce620429a1b3ea99c13da8cbd00c5d5a186f",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/018_input.hex",
+      "sha256": "f8a50f5c52089d4b65021a639231ec8a1d7144a2631adbeae47a557f854963c0",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/019_expected.hex",
+      "sha256": "db862c8b9fe82fa37cf93ca0df616e9ac6943a26efa7ac97cbe570d176803ebe",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/019_input.hex",
+      "sha256": "bbcc9c1df4169a3dc7048bd9567415b8cf70d9effc8d6a301611aa804117a64a",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/01_param.hex",
+      "sha256": "107b2ccab02323648d2c6be1f90659f154f99c7992e69274a6193b875d7e7561",
+      "bytes": 15360,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/020_expected.hex",
+      "sha256": "75502afaba86456c3b81a77c2b07b2aa86de9f950bc1da26ca3f4f74b9e4cbd1",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/020_input.hex",
+      "sha256": "2339b5354515d296d5186a3e3246cff53c60f23b70953b2dac4d907a57d4091b",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/021_expected.hex",
+      "sha256": "2df71c8545bd234c2e1581225e7a350dbce889fb59ab7e7a2570e64ca6b915dd",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/021_input.hex",
+      "sha256": "08bdf598600807639575151414e42e47c836fd2e78bbab980bfaf3171c4fb356",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/022_expected.hex",
+      "sha256": "a4db97fffb17b5806c2903b98731da4aa320bf7fdf541df18ab3ea47c2412bd1",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/022_input.hex",
+      "sha256": "0581dea4929d7c768761238eaf6f0208488325890baa1742f1ea8d411147c429",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/023_expected.hex",
+      "sha256": "42c8dd5965951555379a713072ab919c682332b69ce0fa638031311f488dc931",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/023_input.hex",
+      "sha256": "f8a50f5c52089d4b65021a639231ec8a1d7144a2631adbeae47a557f854963c0",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/024_expected.hex",
+      "sha256": "5eb7c506a880fd143c114d04339e571106844dec66ab03185d02db7f891f90d3",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/024_input.hex",
+      "sha256": "bbcc9c1df4169a3dc7048bd9567415b8cf70d9effc8d6a301611aa804117a64a",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/025_expected.hex",
+      "sha256": "2f7300f9707220a4bb0b375d22e6d4d9a657a0ff5aa5dee6dda31d3afb87e103",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/025_input.hex",
+      "sha256": "a02038a03bb43892b4990fcda62299c152a9198220185318b46956f6f733df8e",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/026_expected.hex",
+      "sha256": "093a5c2fc39467190b9e8ac51069e293ff248985865a2f8649ae1cd365183c4b",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/026_input.hex",
+      "sha256": "f57d49ad0c54d328c33ebe237ea2b78654f6320d04e75983af3fea94c289b5d6",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/027_expected.hex",
+      "sha256": "90e7552f96b62fad89ab9aeef106f4b3ca681d51e1ef36bdf695d1558fb6ae81",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/027_input.hex",
+      "sha256": "5a4f7ef7e3b71984d1558e325308b64dbfbe132cdf2bd64350445833aa41a71c",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/028_expected.hex",
+      "sha256": "feee095200de01852a8b08ed29d007ef6a6e98256a7d1f4470f91c479bc2a8e3",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/028_input.hex",
+      "sha256": "f8a50f5c52089d4b65021a639231ec8a1d7144a2631adbeae47a557f854963c0",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/029_expected.hex",
+      "sha256": "921d11cde2584884b5512b43905c071499c931310d21fcfa5fec5e52a33797b3",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/029_input.hex",
+      "sha256": "bbcc9c1df4169a3dc7048bd9567415b8cf70d9effc8d6a301611aa804117a64a",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/02_param.hex",
+      "sha256": "f7e48346100371ab2f7ed746a60113f3aa60c188dbe4451d882f8d265c640b04",
+      "bytes": 15360,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/030_expected.hex",
+      "sha256": "f34c0af7f04208798bb75d5c2c58e73cba30a4bb378c82be15a546af49ea11b8",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/030_input.hex",
+      "sha256": "e7d49cb6e30ad1cc59597e6cc0521efebfe6116f1eda6e4eeb2482bfb870413e",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/031_expected.hex",
+      "sha256": "1d2d2a1df2d1510fb0ed4f1198a7ee1b173e1728200c253dc1df0d8777d3e0ba",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/031_input.hex",
+      "sha256": "9bb39771551ee7406b8e6589d69c619ccc0aa4407ca10cb8254bba639f63f8cc",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/032_expected.hex",
+      "sha256": "f1ed6766eb482b0e1c063b02277977fc8f130c3767c46777d4fbdcb86e8b742f",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/032_input.hex",
+      "sha256": "ea600638a7c122d799650d091cb67804aeddbe59a2133752c0f066e9c2fd80ea",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/033_expected.hex",
+      "sha256": "4ead546c43215a1cf535cc38230e464cf0cc30f95b6fdfb53daaa4f3033ee78b",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/033_input.hex",
+      "sha256": "f8a50f5c52089d4b65021a639231ec8a1d7144a2631adbeae47a557f854963c0",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/034_expected.hex",
+      "sha256": "f7d6020f887d17d37a2dc6cf8b729c09107f4f0f87a2772fcb7010522bd10bbf",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/034_input.hex",
+      "sha256": "bbcc9c1df4169a3dc7048bd9567415b8cf70d9effc8d6a301611aa804117a64a",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/035_expected.hex",
+      "sha256": "16f24423dc2ebb253056afadd065de8f645c7f4a7bf36a03db894d57608c609c",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/035_input.hex",
+      "sha256": "944fe33ccd80f0dd3c7c71cc7546543f250d2d0006f505b6b8ab0305da0b64b7",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/036_expected.hex",
+      "sha256": "bfe710482e3c1621fbd38c04521e31d3fe962107c7c6a8d0f9113db629ca291d",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/036_input.hex",
+      "sha256": "02cafa4f19666b5d99f303eb657de57ca2b5b119093013fc4624c393bfd5b3d2",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/037_expected.hex",
+      "sha256": "2f9e495b8d711ad31335dc9898ffb8267d2dc5087882bcf7b3fdb2fdf51ef72d",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/037_input.hex",
+      "sha256": "e5a86c8c071a9b98443daf689ed7fb3b03bf939e784583cc0b9f6039b9e1eca2",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/038_expected.hex",
+      "sha256": "83dedd4e56a5745ffdcbdb3e7d484539c625238d6f371e32444bbf9cce989b93",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/038_input.hex",
+      "sha256": "f8a50f5c52089d4b65021a639231ec8a1d7144a2631adbeae47a557f854963c0",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/039_expected.hex",
+      "sha256": "379830092160088999bab8d6bb769ea6e8a69de297213d159b4c8e8fd6556f9b",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/039_input.hex",
+      "sha256": "bbcc9c1df4169a3dc7048bd9567415b8cf70d9effc8d6a301611aa804117a64a",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/03_param.hex",
+      "sha256": "6eed0a7003f58cc0b8f653404c75b7dc85498035a520c3dce036ae076c192862",
+      "bytes": 15360,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/040_expected.hex",
+      "sha256": "15f5e0f7f8d64699a64fc87fa05a4eab48381a97b90591bb9adf6df505bd0241",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/040_input.hex",
+      "sha256": "ab00b9821734141406215cbc71d1e81fc3f9df10c881e35bb8801c211981c3b8",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/041_expected.hex",
+      "sha256": "66da35d35668c751a1c64ff179265a457d8dce3744c918ab2dfe6f79af674350",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/041_input.hex",
+      "sha256": "435e8c0793a3b162aaec9d5cb2aa2231f9eab3915138c9ba4187a00217c55926",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/042_expected.hex",
+      "sha256": "29d773e4bb6d153e0f0ed10197e7b7e17bbf863ecb41fb384c7ef2821baaac89",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/042_input.hex",
+      "sha256": "ee3d06764fd7114b1c02c1bd11128ed42dc9f437fae6a0ad94f58974b7679de4",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/043_expected.hex",
+      "sha256": "b15d333735493f3e14432429eb2a4525b350df19f28063a0cf9b8b7151b1eba8",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/043_input.hex",
+      "sha256": "f8a50f5c52089d4b65021a639231ec8a1d7144a2631adbeae47a557f854963c0",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/044_expected.hex",
+      "sha256": "fdf8730cba5a05d6c4176f352b09d22757dc7c95256b6eb266befcdb4cab84c5",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/044_input.hex",
+      "sha256": "bbcc9c1df4169a3dc7048bd9567415b8cf70d9effc8d6a301611aa804117a64a",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/045_expected.hex",
+      "sha256": "6dc3724e7a5a061b344d5915b15ef781a8f565afdc706d6fcd385ad1733c5089",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/045_input.hex",
+      "sha256": "5397c76bf2454187eeac8a9fea5b9b9351b8d48df0e811fae77663235fefbc59",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/046_expected.hex",
+      "sha256": "bd614759dcf04907a74614f460269072a33038f643f4760a0cb02607baa04026",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/046_input.hex",
+      "sha256": "5ec3c04b1e0b08e36174a3bec7b1a4f880bb9e795d29cc2c6ef37b9385b3ddf4",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/047_expected.hex",
+      "sha256": "37654bb8f737f4d0a05b3a9f88a404f31d72fc24e0cba419def4ec58ec97ecab",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/047_input.hex",
+      "sha256": "a43bd38a1ae5416088a1b307be7110ccecc3298d357edf7b7dbe2b66721b30d3",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/048_expected.hex",
+      "sha256": "39c1201218f81c2ecc0118ea00196db21857bc00bbfb135da04b397b424a656e",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/048_input.hex",
+      "sha256": "f8a50f5c52089d4b65021a639231ec8a1d7144a2631adbeae47a557f854963c0",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/049_expected.hex",
+      "sha256": "45f3e53ee2d726275483b20dabc72fa43de3dca180f9374a28454c11e08c50df",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/049_input.hex",
+      "sha256": "bbcc9c1df4169a3dc7048bd9567415b8cf70d9effc8d6a301611aa804117a64a",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/04_param.hex",
+      "sha256": "cb38602ec88e618be491012193b01be8b6fa7f831eb1a656f2e192ef92e091bb",
+      "bytes": 15360,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/050_expected.hex",
+      "sha256": "926d20cc8232940945bfc63dbb688f40ac766994f10994e6583df77bd4b60ea4",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/050_input.hex",
+      "sha256": "8b700024b6bf8602db63e7666823b659203e1d436e6ce675bf3e371731be9051",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/051_expected.hex",
+      "sha256": "b01127cc12493f0f1a3fdde6b4325ae4ffd9d036c51a9b2ce916b34ed7f18268",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/051_input.hex",
+      "sha256": "153394a9682a12eee3624793d6f3709326b58ede691b3607d2c34a701ecc023f",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/052_expected.hex",
+      "sha256": "bf26cf2774734aba82e27d20603f04d1b8546b6deb24b721387f69e758a4d671",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/052_input.hex",
+      "sha256": "6ffad673066c218714614ef8d935555d82e18b3469cecf7901e6c19d6fd60c3e",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/053_expected.hex",
+      "sha256": "18eda8684c08a7d8b0228a981ae125213b3cecb52776e18cbbda37232383f849",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/053_input.hex",
+      "sha256": "f8a50f5c52089d4b65021a639231ec8a1d7144a2631adbeae47a557f854963c0",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/054_expected.hex",
+      "sha256": "5fa93c1440e0ccafa3f546f07ea111dc22eb59ebfc862469648367a58fc3012b",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/054_input.hex",
+      "sha256": "bbcc9c1df4169a3dc7048bd9567415b8cf70d9effc8d6a301611aa804117a64a",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/055_expected.hex",
+      "sha256": "b2854b1100480533b934e091b70d60deb574b703b043406576e227d1f4c3fde1",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/055_input.hex",
+      "sha256": "85221f4a8231f9b041942d2ccdfbb58a8278f445858271d6efd4eec59494e32e",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/056_expected.hex",
+      "sha256": "6e3c2a51e76c9d7f47d0c415c62cd252fa5c93ad7af25ee77d9ca718db130cc6",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/056_input.hex",
+      "sha256": "b0759bdb4417b004fef1e373267ab911fcfbfd404d5c731642a1cce41f72de68",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/057_expected.hex",
+      "sha256": "a9d6b668802fa231c255ed194c86e5304da904e978a9428df8226a62513cc450",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/057_input.hex",
+      "sha256": "58ae035c06519414543cebddbef6e78f1fefca9064c10bed572cbe79ba61fa43",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/058_expected.hex",
+      "sha256": "aa603ea8fedcdcfb78c39750e27fa8a29bce00977b2d74077849940391c6c2ac",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/058_input.hex",
+      "sha256": "f8a50f5c52089d4b65021a639231ec8a1d7144a2631adbeae47a557f854963c0",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/059_expected.hex",
+      "sha256": "ea20af5d88e135e279337579ef5b260c105d3520bae9040f3fba1d3d47807160",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/059_input.hex",
+      "sha256": "bbcc9c1df4169a3dc7048bd9567415b8cf70d9effc8d6a301611aa804117a64a",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/05_param.hex",
+      "sha256": "11d6846cfb03bee80b9c2b97dd92b793ad235e944af6c111eb066133d2231585",
+      "bytes": 15360,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/060_expected.hex",
+      "sha256": "58110a761db634594608ef1cd44185dfbb58c095fb54a48ca9ad6d952804a55b",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/060_input.hex",
+      "sha256": "e38924cfd9e3ceac33266104476a7e89ad715d3be6f9fb8bbb5bdeac78afe8de",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/061_expected.hex",
+      "sha256": "3c1e78c50dcc6ad1c8497a88d13465b394844e8c5f1b27f63d03513eb183f0f7",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/061_input.hex",
+      "sha256": "7c5033fe5d9b1c0c979ac5e00aab7886e0a30efe18bdd6d5f9703f341ae895a3",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/062_expected.hex",
+      "sha256": "34ea33f204457fd30ebf94b1b88f90de83abe4847a9bb923fb9876970cf3318d",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/062_input.hex",
+      "sha256": "0aeb9a2f6a47c98c677b12206bcb243777fe816e721df6360783a3e13c0043b5",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/063_expected.hex",
+      "sha256": "c9399e3f97f6f22520e574953860927e1ac8fc711fa33f7ed9e45e867f064728",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/063_input.hex",
+      "sha256": "f8a50f5c52089d4b65021a639231ec8a1d7144a2631adbeae47a557f854963c0",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/064_expected.hex",
+      "sha256": "bebb7c31b9240a58dc2b691c70cab7cd82e94fb39a212db86c14c5035bcdb425",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/064_input.hex",
+      "sha256": "bbcc9c1df4169a3dc7048bd9567415b8cf70d9effc8d6a301611aa804117a64a",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/065_expected.hex",
+      "sha256": "9baf6195b11328e7e0075c03329633ba28d60ff1bd10f5ddda50cd77c66b75b4",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/065_input.hex",
+      "sha256": "0e032ebd3338c6c104ef98bb9f475e4d772fe31793b5981d2c957184250a8c69",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/066_expected.hex",
+      "sha256": "58eb2ee0fb78b72e4029e9f71ddec185d70723c07bd830788f0e22c7e937d706",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/066_input.hex",
+      "sha256": "777ce98fefe3c9fc7e3980bfa2a6edbc7dcb41a65f47caccf2021bd9c03a6923",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/067_expected.hex",
+      "sha256": "f503ed14c0668e1ddc34541869bd4657808361fc970b705e84dd08f9c4f0f312",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/067_input.hex",
+      "sha256": "41a2d1b5a7c8c9e8921e88a38b7d001f7a8c36012b5ca824ef98110e324a9b39",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/068_expected.hex",
+      "sha256": "d7a2ab5882c10a286dc2e7a125b080864f15ea590fb6b51ec89e9302a7905577",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/068_input.hex",
+      "sha256": "f8a50f5c52089d4b65021a639231ec8a1d7144a2631adbeae47a557f854963c0",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/069_expected.hex",
+      "sha256": "a299d7c6c6fae52cf7079aff891dcc739e8d2480c60f3fbab35beb504bf549a8",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/069_input.hex",
+      "sha256": "bbcc9c1df4169a3dc7048bd9567415b8cf70d9effc8d6a301611aa804117a64a",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/06_param.hex",
+      "sha256": "e044c24c9510181ed947f7c8c8e19928170c672d7e7efda2b06f56c931923d27",
+      "bytes": 15360,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/070_expected.hex",
+      "sha256": "f254d17123c7ad930073d84ebad1a8aa5d9bcd3d2eaddbb40e9c2fb05ba6bac8",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/070_input.hex",
+      "sha256": "0dde4b1882d04c628f7467f25faf39d4c96d7599fc3a0fe2a5507fa3db2f51e7",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/071_expected.hex",
+      "sha256": "cafd8022832bcd01b6697369032885703f44815f0a45f7dbf3a2c9aaa8c084d5",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/071_input.hex",
+      "sha256": "985cd272e0c4a3c1175d7f64680a74a29510fb353b05e5bec3d0029200e4d905",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/072_expected.hex",
+      "sha256": "5c3661b452844dc040d2b9face55be69d0fbaf70fa63e532d6cfedd39315c6f9",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/072_input.hex",
+      "sha256": "379225d787e096a1bfc2319408f45d0572f2a8508cd86c2be01486883b73e033",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/073_expected.hex",
+      "sha256": "0a0fd70bdc88bdcff15d3a852848b4ce4f69040aca32583f4f64a41e2a7eb060",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/073_input.hex",
+      "sha256": "5201046798e4fbc344309e19a302a5a62d92b040b15138692d91cf45b256254d",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/074_expected.hex",
+      "sha256": "8c9ac841036140bb9a785e04b865491767bdbf0a637e2f1205414a2f7df4bede",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/074_input.hex",
+      "sha256": "f8a50f5c52089d4b65021a639231ec8a1d7144a2631adbeae47a557f854963c0",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/075_expected.hex",
+      "sha256": "ea8d428ae44f2b01cbe39f7a50dbfa6d0fef0cdc52b739fb9e911ab29ca048d1",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/075_input.hex",
+      "sha256": "bbcc9c1df4169a3dc7048bd9567415b8cf70d9effc8d6a301611aa804117a64a",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/076_expected.hex",
+      "sha256": "2d7a58ae82b5d5b25c4d8be42799aa3b9cc5ed71a9c3c6b258f949d5a510423c",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/076_input.hex",
+      "sha256": "43476a7a3192eda8cec83cb727493d71c302e165273a71925eede86e3316a37b",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/077_expected.hex",
+      "sha256": "3aed6d2305bfb492498951903f20e46fa5f5285ecf4daa0b52c423217ac5848f",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/077_input.hex",
+      "sha256": "a9bba0995e4788e434473e68a76545f404bdb20e71b0439ed598fb9f8500823e",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/078_expected.hex",
+      "sha256": "f101659f5bbc542e982cd70b95c838d0ca5ebe518f8caeed6fee6a20d8ac9009",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/078_input.hex",
+      "sha256": "b0aa90a74f4b57ceea9c3bdcc35317f7430da6ca7fb7c133aa96e2a86c471afa",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/079_expected.hex",
+      "sha256": "3c6633668c97fe1371efb8007a072a449e63386ba26e268c61252eb3a46db070",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/079_input.hex",
+      "sha256": "79ba919ce1b9bb2ad57aa8a404a49cf3905ddbc024c10f79111a32978af5bd4a",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/07_param.hex",
+      "sha256": "85ecce06215bf3c3cbf35fdd9c164ea587c016c1267ed184f70ecf3f6507c6d7",
+      "bytes": 15360,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/080_expected.hex",
+      "sha256": "ad40d8bb642740c9af4d4b0aa5b248eba48aaa1459a45c49e41a938eba16b7f2",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/080_input.hex",
+      "sha256": "f8a50f5c52089d4b65021a639231ec8a1d7144a2631adbeae47a557f854963c0",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/081_expected.hex",
+      "sha256": "cf5bf964b19212f7cd09640e906e747176161482e9619609c7e986261cc7a7de",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/081_input.hex",
+      "sha256": "bbcc9c1df4169a3dc7048bd9567415b8cf70d9effc8d6a301611aa804117a64a",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/082_expected.hex",
+      "sha256": "f8a8a1ce4738f21523d6f3c198d0eb7cc99fb31eeec5a1d986a3110d6f8a0b44",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/082_input.hex",
+      "sha256": "1c9de5e274bfbe7e5c142daed59c3cb2e4fa9df3db77d4fa5e3cdb6956aa8aaa",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/083_expected.hex",
+      "sha256": "7683d03986e1e0873274a4192be5322056464a61d7c869326ffe433d3b285fa6",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/083_input.hex",
+      "sha256": "718c40f3566f660fe9675de81aac50f7639b205ded288db8ea5e5913d2d00ab1",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/084_expected.hex",
+      "sha256": "cc67f6e5e1dd05d2b29dfa94b094dffbe991a953c273acafa0a41a1b4c8b2b58",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/084_input.hex",
+      "sha256": "53bfa7ef1db86998ae403cfdb909116a7408f1bf2369f0445808ccf36ae8a32b",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/085_expected.hex",
+      "sha256": "562b7fd46ac22e51a201baee3823872722f5e4776309666d8e1914888d757418",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/085_input.hex",
+      "sha256": "f8a50f5c52089d4b65021a639231ec8a1d7144a2631adbeae47a557f854963c0",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/086_expected.hex",
+      "sha256": "25af2cbad81e439018bce8d99397cc3f9fc9487df692c04a38a439d0849f5ed0",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/086_input.hex",
+      "sha256": "bbcc9c1df4169a3dc7048bd9567415b8cf70d9effc8d6a301611aa804117a64a",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/087_expected.hex",
+      "sha256": "8d014995a98df56e1859daf0343651dea0c8e76556a02a1f2490f864e477d94f",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/087_input.hex",
+      "sha256": "60c9659ef3342fb0396a0a85d4311d221f49cf613c10d59d96a942c74e7e17b3",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/088_expected.hex",
+      "sha256": "9b1ed02f4a9ce195c81962e4a46a07f4792cb6f68cd624c8524084bf15e81f95",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/088_input.hex",
+      "sha256": "ae19ff7ec0e9325b1608caee454c35ca1a7c6af64cd92888320c4fbbb26e404c",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/089_expected.hex",
+      "sha256": "8fe89d2847bc56d9d5e2e76d40e19b0b7fb64da31e57b4fd61afb3f6515411f4",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/089_input.hex",
+      "sha256": "1873eaf0061fbbeaf2d1beed66003b0470eb0da9bf330ba2474f9cbd60e0c964",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/08_param.hex",
+      "sha256": "d1ff1287be6f64986991cd5716dc16be76e882806f3fcdee9ea2311ad5bd0e55",
+      "bytes": 15360,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/090_expected.hex",
+      "sha256": "a51b1ea3f3e33519f9d5a58684f12b8248aa7361d52aeb35d3d991bd04a13c63",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/090_input.hex",
+      "sha256": "f8a50f5c52089d4b65021a639231ec8a1d7144a2631adbeae47a557f854963c0",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/091_expected.hex",
+      "sha256": "d012a3ecc2ebba21821ecd9c4e634e4c15bbd4301f96da71e0f6a8527a2df813",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/091_input.hex",
+      "sha256": "bbcc9c1df4169a3dc7048bd9567415b8cf70d9effc8d6a301611aa804117a64a",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/092_expected.hex",
+      "sha256": "f05ccbff5c3c2e8054df330915bf11c233ec9b3f1e3bba2c4a0077c5471c7feb",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/092_input.hex",
+      "sha256": "d364804287124ad3e5ed84ec5037b1a426be6142240f502d985080e2382d8bfb",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/093_expected.hex",
+      "sha256": "d31df70c3c0ba0d6a8a181b1f5c3077e4e750bf55c332062ec36a10335056a9e",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/093_input.hex",
+      "sha256": "aea54fabb68f5ee00b910b11d0e2e8b144a375755efcc15d6f49987da7de3dd2",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/094_expected.hex",
+      "sha256": "f59cf5315d47fd8b19c8c25d99d82e802f46b595ad1ad5dcb9786465359e4a50",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/094_input.hex",
+      "sha256": "f8a50f5c52089d4b65021a639231ec8a1d7144a2631adbeae47a557f854963c0",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/095_expected.hex",
+      "sha256": "592be1e215f355f5ca18413ddbb1684a1c85ec2ac01861ebe0a4e3e33c646da7",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/095_input.hex",
+      "sha256": "bbcc9c1df4169a3dc7048bd9567415b8cf70d9effc8d6a301611aa804117a64a",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/096_expected.hex",
+      "sha256": "fb20487bcc4a098a47bf8048259fcbdb60df9499c79633830c1e19c5bec99479",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/096_input.hex",
+      "sha256": "073b6a52090c4ccb483a4219b1466265fb609590a786d54364be28bd6b1983f0",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/097_expected.hex",
+      "sha256": "8f45650ef15826082b69f8b0fd766f868667d2a354bf58c04b9ddba4c6adb578",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/097_input.hex",
+      "sha256": "b5579d7b77db24d277e0e9730ff36d69261fd3f7d157c1ad68324206ff3b353c",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/098_expected.hex",
+      "sha256": "eb24c2377e698a50b033f80c9c3fc8ed5e441482765fe3d4eab78ddfcfc661bc",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/098_input.hex",
+      "sha256": "c3d03b70c9769220d258e8407c97a02deda424e17b3ef1c93e5a1544a9f0eef7",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/099_expected.hex",
+      "sha256": "cce302bf12ff0fe311b8f36b0f7f3fe8e97f3869b18bc90b2087c83e5dbe4495",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/099_input.hex",
+      "sha256": "f8a50f5c52089d4b65021a639231ec8a1d7144a2631adbeae47a557f854963c0",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/09_param.hex",
+      "sha256": "1a47a9f7e7c73ad4251106c52a8f50724c22294f78b1b4e6fde445a07dd213da",
+      "bytes": 15360,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/100_expected.hex",
+      "sha256": "8335e9cfe757d1a2b24bfab0a83a7071a35e9ed526ad8f0fd4c78a41da790a41",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/100_input.hex",
+      "sha256": "bbcc9c1df4169a3dc7048bd9567415b8cf70d9effc8d6a301611aa804117a64a",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/101_expected.hex",
+      "sha256": "c38332682f6496569c269e5e291fb2222294bb8f00dbf36dc21ccc14847541b5",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/101_input.hex",
+      "sha256": "8265f0db504c9171d4ba565e8676fec9e6cd117c522e4222adede3e00111cdcf",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/102_expected.hex",
+      "sha256": "409f5c769309531e743648d2e87361670cf411fbef621046acf281784389e1df",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/102_input.hex",
+      "sha256": "557807d73845c2a539c2c188627152071bb6e8fbb343d0ccb38f059d50842086",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/103_expected.hex",
+      "sha256": "f254889d0ef195dbdebec48b041409388d0a15e34ab611211cd04157ffe731b9",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/103_input.hex",
+      "sha256": "7fb771544101ed9d3155ffa11ac680ac0c2bb8a7592ba99c35a9622b056f024d",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/104_expected.hex",
+      "sha256": "fdead76776d30662ef464cc597227bae1e6ae4cce04007735c5a9a6682a0ae07",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/104_input.hex",
+      "sha256": "f8a50f5c52089d4b65021a639231ec8a1d7144a2631adbeae47a557f854963c0",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/105_expected.hex",
+      "sha256": "397ce3384863350296bebe69c772fe4eb2c9805f7201147487b740cfdecab51d",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/105_input.hex",
+      "sha256": "bbcc9c1df4169a3dc7048bd9567415b8cf70d9effc8d6a301611aa804117a64a",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/106_expected.hex",
+      "sha256": "792dd7fd511f72bbbcc5e298a97486e5af9edec47364360e20263b7893ccf63b",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/106_input.hex",
+      "sha256": "40dbd412e54406eeeea967101bfbc362b2ce4894cde13f4c6771c2e111edcd97",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/107_expected.hex",
+      "sha256": "f5a2f16b47a08ab9194d72996e95e9439adee67c0bdf23a879ef036f265d9745",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/107_input.hex",
+      "sha256": "756d127227689b0c15dd771ff0ab3ebd4de74a2a85a2eb6c0a9468144c4b5639",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/108_expected.hex",
+      "sha256": "3593abce3cddc88513ce6400898f7bcc9021b0b79442ad93da64ff9b8e9aac6c",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/108_input.hex",
+      "sha256": "45787d91c0f3895e2224bd8f42e75369dcf7abc345a9c67810b4d0cfe5bcbc66",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/109_expected.hex",
+      "sha256": "391438716d6a2f78b016dc45d1dd186aaf2be6ff0f673c491c5333b1958a5a75",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/109_input.hex",
+      "sha256": "f8a50f5c52089d4b65021a639231ec8a1d7144a2631adbeae47a557f854963c0",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/10_param.hex",
+      "sha256": "2406f75294e2f65499302e4b224dea9bd361f84f9dcd5b35fc95ecbd9e5d302f",
+      "bytes": 15360,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/110_expected.hex",
+      "sha256": "7e1cfa72d1beb5bff07d829f2f81acf335013c356b8ecf7f70ebd7bb5895d081",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/110_input.hex",
+      "sha256": "bbcc9c1df4169a3dc7048bd9567415b8cf70d9effc8d6a301611aa804117a64a",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/111_expected.hex",
+      "sha256": "10ed6c781d7ab4ada4d660f0162513e1194623efb1b903b0ec008a7e62304f38",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/111_input.hex",
+      "sha256": "b610087acf22a51bbe1c9362f8bc8e61241cf8dd610d3b22f01f9fde8d61ac01",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/112_expected.hex",
+      "sha256": "18be98aa022ef72d9cd76fd0374a82580019b0b11de01fa9e9bccd547cd52c3b",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/112_input.hex",
+      "sha256": "87612f45e072170abf459382cb520f6cb83c4a8b0b05fc3e3d1c9d0a5b5e1132",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/113_expected.hex",
+      "sha256": "feb7f3a57a265cebd93fc520288ca1a03e7b89fef46a9b6f10a3dadca0c9d8c3",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/113_input.hex",
+      "sha256": "47e5984f06f1a9581b6b70858e3b3c3674529ea9cbc0266806ef738cd39245bd",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/114_expected.hex",
+      "sha256": "4a25d47e6eb381df8930b82dde045fc5dd29ac814b241d4747f348485b92f7c2",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/114_input.hex",
+      "sha256": "f8a50f5c52089d4b65021a639231ec8a1d7144a2631adbeae47a557f854963c0",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/115_expected.hex",
+      "sha256": "cf9e9244fe709314bea87775bad5d12fda256d50e9575d49191a14d0556d1555",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/115_input.hex",
+      "sha256": "bbcc9c1df4169a3dc7048bd9567415b8cf70d9effc8d6a301611aa804117a64a",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/116_expected.hex",
+      "sha256": "00bea9ad7cb68d96615a526373a347b0231946906e2e3682073467a10e88477a",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/116_input.hex",
+      "sha256": "392df2044bddeb9efa7db7051eb117790c037d45f2770bdb4d8ad1552053e77e",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/117_expected.hex",
+      "sha256": "8da53397af741b49666710dad791d2ff55af8f34889ecb7b82fdbcea12b76266",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/117_input.hex",
+      "sha256": "8895e43981059cd71846d17ab54220558dd0f1685dd83a619c90f79b43eb4d1d",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/118_expected.hex",
+      "sha256": "91fa45771051e9fd35b40f4623f500f1a5c4f09ed2f28e3f3aac756d742c58e7",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/118_input.hex",
+      "sha256": "d92a9561a276d9afbc6fb1a1480210d649f418b840ca206007052d81dd1b8fec",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/119_expected.hex",
+      "sha256": "b78081935ff65e650714fdd249c6ca331d29e69fc3635f644a0df9844ba9d7a5",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/119_input.hex",
+      "sha256": "f8a50f5c52089d4b65021a639231ec8a1d7144a2631adbeae47a557f854963c0",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/11_param.hex",
+      "sha256": "55433dba8ad85cca97da52d60260b4909178caae59c69cbfd0cfe324f8a1f679",
+      "bytes": 15360,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/120_expected.hex",
+      "sha256": "834e041b2a7b53bc56f54da46bec7fbdaa2a6d43679ebffc479c6d0734fa56c2",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/120_input.hex",
+      "sha256": "bbcc9c1df4169a3dc7048bd9567415b8cf70d9effc8d6a301611aa804117a64a",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/121_expected.hex",
+      "sha256": "6de58e11c1a3367d12c73367d7c62d0e0ce15a4a55e64efdce467e20a056fc73",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/121_input.hex",
+      "sha256": "a7bdae4cd277742d9a76da709d23fc2df387821d61671eb17147d662e7e00e93",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/122_expected.hex",
+      "sha256": "5bf34cf62424138437654c7aa642ee667da7d0f078a9adaecd80dd5a0ba950c0",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/122_input.hex",
+      "sha256": "a97cedf2f5b1edac3992a535b8e57b4756c95fb0d4a78005d29364e36da7bd80",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/123_expected.hex",
+      "sha256": "e3007a673f23bc6105562572c6cea254710146b87cc9a8138b35f63b4b83fe94",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/123_input.hex",
+      "sha256": "f8a50f5c52089d4b65021a639231ec8a1d7144a2631adbeae47a557f854963c0",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/124_expected.hex",
+      "sha256": "62c5ba3974e2cd8e7b02eb7b1416278c09db1bde5298cb15aabacad30b847e31",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/124_input.hex",
+      "sha256": "bbcc9c1df4169a3dc7048bd9567415b8cf70d9effc8d6a301611aa804117a64a",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/12_param.hex",
+      "sha256": "f5c6307c04d27ea6595111dc7a9660f135ed1675ce53517d48896b529f4ca484",
+      "bytes": 15360,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/13_param.hex",
+      "sha256": "0cb1881a85142edffc78e79dd87fc918daf48ea88a670948640c9424e62d718d",
+      "bytes": 15360,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/14_param.hex",
+      "sha256": "058ae8b70c1a31e358bbc5a464328da147f4c7735c8e83b6250d6f1bab6b7164",
+      "bytes": 15360,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/15_param.hex",
+      "sha256": "03dac362f326c5c94566c03a358b188083367abba7f763a08c82df63cb7ff62d",
+      "bytes": 15360,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/16_param.hex",
+      "sha256": "9290f38c8a150c9e23b33670ec8334c866cadd1e6758b986c88caead494afbef",
+      "bytes": 15360,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/17_param.hex",
+      "sha256": "abf23a17f21a6c31f940d146fc62dd5910596d5cee72bd62769fe8696e0d5cfe",
+      "bytes": 15360,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/18_param.hex",
+      "sha256": "558f5bda058feee58760d96b87e7ae9a8a8d45315ff1fdde518e7b0c814f9f1d",
+      "bytes": 15360,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/19_param.hex",
+      "sha256": "f411286f86dd5265b29ebf468d17b56d05de887c64ff8a2c832cdc2e508ea460",
+      "bytes": 15360,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/20_param.hex",
+      "sha256": "7831ed95f19fcc0db983012d83e923b719515d83a33e7bf4fc3c0c107415f77e",
+      "bytes": 15360,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/21_param.hex",
+      "sha256": "271f35c1b45359b4682c347bbda12463544497de2abcc09ea3a95cfa9955e011",
+      "bytes": 15360,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/22_param.hex",
+      "sha256": "296357eef9ee0c810d1c00d508372b4cfc801c79a2c08179d1969a3afe3379f0",
+      "bytes": 15360,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/23_param.hex",
+      "sha256": "7fa303b76d1d75bb557895d58527ea7a1a8187d59d79feedeb72fb1d3737af35",
+      "bytes": 15360,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/ln/24_param.hex",
+      "sha256": "9150e11137b09360c70152ef5e8c572584c1e8ccecc75ff69b9a48c0b7ca0808",
+      "bytes": 15360,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/short_cases/head/ddr.bin",
+      "sha256": "7a9863de4f8281df8ab08e4d7b9bbee6ce832f9c6fad4464646acf7e6885dd10",
+      "bytes": 205824,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/short_cases/head/ddr512.hex",
+      "sha256": "87bacb505983f0e61f15c62a4091a8b1bc0a18bb11cfd9e3bf64d65dc867bbdb",
+      "bytes": 418080,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/short_cases/head/expected.hex",
+      "sha256": "1117a30836ab44cc1b1585884e7c5e41524cf2558636d821047b8a58f3ce64a2",
+      "bytes": 4000,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/short_cases/head/input.hex",
+      "sha256": "6de58e11c1a3367d12c73367d7c62d0e0ce15a4a55e64efdce467e20a056fc73",
+      "bytes": 768,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/short_cases/head/program.hex",
+      "sha256": "c9902ebe0b43a3bd18d0717c146cd1c0b62c8424adb06f372c64cbfc60377620",
+      "bytes": 780,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/short_cases/patch/ddr.bin",
+      "sha256": "edc7d405620b4661130f287ba492dc51a6e98c91406677b8d73873f7c7e925b2",
+      "bytes": 13248,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/short_cases/patch/ddr512.hex",
+      "sha256": "061c99eb293910baa17bae54a1e93114d43d46818951cafcbb5aa5d508040542",
+      "bytes": 26910,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/short_cases/patch/ddr_bad_input.hex",
+      "sha256": "8e513eb9b9fb09e3dda5123dd591d7f4840122fe761b99e738e1a099ef482fd5",
+      "bytes": 26910,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/short_cases/patch/expected.hex",
+      "sha256": "888b818a9c966a8943cbcaddb16afcb930b1c5c87d099df304c5009427b3fbb1",
+      "bytes": 64,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/short_cases/patch/input.hex",
+      "sha256": "d0826e25f03fc2e4588cab7a608a9d2cb790a1b18127d0b9068a6c19ddccae91",
+      "bytes": 3072,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/short_cases/patch/program.hex",
+      "sha256": "7a49bf1104588645d17e2fba99c8b02ff5980a3bd3847f54591d23d881210227",
+      "bytes": 780,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/short_cases/smax/ddr.bin",
+      "sha256": "6ebcbf5b91206353855ffc31e9c86d95fc0c8ce3926a09a86184551568020219",
+      "bytes": 66496,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/short_cases/smax/ddr512.hex",
+      "sha256": "a71eaf700f4e0ce59800cdc51a47840c519aaf3a23ac5b2321c71f44a9fc82ed",
+      "bytes": 135070,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/short_cases/smax/expected.hex",
+      "sha256": "167c694f63eb2f3a0590333205e5a715cf959c5f4f2e5c17ead81c1286c202fb",
+      "bytes": 800,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/short_cases/smax/input.hex",
+      "sha256": "56a468fa75d7e429e99b3f560bbdcef20821e79f63a70a7ade6660fac6617682",
+      "bytes": 4,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/short_cases/smax/prob_expected.hex",
+      "sha256": "e99c411a458e4062bac9255883d2f293076842bf5f46bed80fed22f0358ed270",
+      "bytes": 1182,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/tests/short_cases/smax/program.hex",
+      "sha256": "88d75574b30f9dd4baedf0585e18927948908026c4b26cd9810dc087477061c3",
+      "bytes": 780,
+      "reason": "Model/data-derived fixture or runtime payload; redistribution rights unconfirmed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/data/contract.json",
+      "sha256": "d5c8fd8f0346461e557c140487632d5bd69d284b2359beb7d38280076eb36ccf",
+      "bytes": 1876832,
+      "reason": "External runtime dependency; model/ImageNet rights not assumed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/data/expected_logits.npy",
+      "sha256": "f495a91cacc01c6a66b08848be1aad12d2996db32f02c8962da917bc70a14531",
+      "bytes": 1128,
+      "reason": "External runtime dependency; model/ImageNet rights not assumed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/data/input_patches.npy",
+      "sha256": "e6f3f7c8ac0fec69a0e54075e4979bcf0618afca98624f084219c7328476e643",
+      "bytes": 150656,
+      "reason": "External runtime dependency; model/ImageNet rights not assumed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/data/integer_parameters.npz",
+      "sha256": "67bbc4304975bd0882b7e5f665982fc97eaecc8986ed59ba7c0e28cfb501f415",
+      "bytes": 6079813,
+      "reason": "External runtime dependency; model/ImageNet rights not assumed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/data/network_fixture.npz",
+      "sha256": "3fd3fe08677307206e92d45537acd3844fb28d9785da9d817c779c44d09ad92e",
+      "bytes": 24822631,
+      "reason": "External runtime dependency; model/ImageNet rights not assumed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/data/preprocess.json",
+      "sha256": "471f4a9158a531e378646d5417365c7a8bae3e57b4c881fb8c9040d7431ed419",
+      "bytes": 683,
+      "reason": "External runtime dependency; model/ImageNet rights not assumed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/data/source_image.jpg",
+      "sha256": "e31b2caf5d202426e9918522a38b81e473c5cdc31086e6d640c89f594d1c32f9",
+      "bytes": 109527,
+      "reason": "External runtime dependency; model/ImageNet rights not assumed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/data/package/ddr.bin",
+      "sha256": "1de3ad14541283d55b581cbb534ca2575383faa1cfd23e63f23a862e5062aa79",
+      "bytes": 8990912,
+      "reason": "External runtime dependency; model/ImageNet rights not assumed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/data/package/ddr512.hex",
+      "sha256": "c1b0cf0199d29baebfdbee46ce0bc52d3a07d9937423ac804f7bc3a3dab50470",
+      "bytes": 18262790,
+      "reason": "External runtime dependency; model/ImageNet rights not assumed"
+    },
+    {
+      "source": "experiments/full128_bank_reset_fix_20261102/data/package/program.bin",
+      "sha256": "e081ab1dac2130adf31671749590770e0337ef6e3efda34e935aff1a1f4c002a",
+      "bytes": 833536,
+      "reason": "External runtime dependency; model/ImageNet rights not assumed"
+    }
+  ],
+  "excluded_categories": [
+    "Vivado caches and run trees",
+    "generated vendor HDL/netlists and encrypted IP",
+    "DCP/BIT/LTX and large archives",
+    "private keys, credentials and source .git history",
+    "FP32/quantized learned weights",
+    "ImageNet images and derived activation/runtime payloads"
+  ]
+}

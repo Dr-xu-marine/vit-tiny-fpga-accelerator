@@ -1,0 +1,186 @@
+{
+  "status": "PREPARED_NOT_RUN",
+  "source_files": [
+    "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_bank_reset_fix_20261102\\rtl\\legacy\\tiny_axi_lite_control_v128.v",
+    "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_bank_reset_fix_20261102\\rtl\\legacy\\tiny_axi_read_dma.v",
+    "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_bank_reset_fix_20261102\\rtl\\legacy\\tiny_dma_byte_writer.v",
+    "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_bank_reset_fix_20261102\\rtl\\legacy\\tiny_result_collector.v",
+    "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_bank_reset_fix_20261102\\rtl\\legacy\\v2_c0_mac_cell.sv",
+    "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_bank_reset_fix_20261102\\rtl\\legacy\\v2_mac_group4x8.sv",
+    "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_bank_reset_fix_20261102\\rtl\\w8_command_check.sv",
+    "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_bank_reset_fix_20261102\\rtl\\w8_tensor_move.sv",
+    "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_bank_reset_fix_20261102\\rtl\\w8_mac_array_local.sv",
+    "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_bank_reset_fix_20261102\\rtl\\vendor_byte_banks.v",
+    "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_bank_reset_fix_20261102\\rtl\\w8_requant_scalar.sv",
+    "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_bank_reset_fix_20261102\\rtl\\w8_rq16.sv",
+    "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_bank_reset_fix_20261102\\rtl\\w8_quant_tile.sv",
+    "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_bank_reset_fix_20261102\\rtl\\w8_gemm128.sv",
+    "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_bank_reset_fix_20261102\\rtl\\w8_math.sv",
+    "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_bank_reset_fix_20261102\\rtl\\w8_aux_engine.sv",
+    "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_bank_reset_fix_20261102\\rtl\\w8_act_local_ram.sv",
+    "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_bank_reset_fix_20261102\\rtl\\w8_memories.sv",
+    "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_bank_reset_fix_20261102\\rtl\\w8_compute_tile.sv",
+    "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_bank_reset_fix_20261102\\rtl\\w8_compute_system.sv",
+    "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_bank_reset_fix_20261102\\rtl\\w8_program_sequencer.sv",
+    "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_bank_reset_fix_20261102\\rtl\\w8_fsm_compute_system.sv",
+    "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_bank_reset_fix_20261102\\rtl\\w8_inference_core.sv",
+    "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_bank_reset_fix_20261102\\rtl\\w8_hosted_core.sv",
+    "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_bank_reset_fix_20261102\\board\\w8_board_core.v"
+  ],
+  "testbench": "D:\\fpga\\vit_tiny_vcu118\\experiments\\board_first_divergence_20261103\\tb_board_first_divergence.sv",
+  "testbench_sha256": "8c7e4c427c500f851efa41f3b6b122f3592af18a48f9f95ab8c5921b776cbc33",
+  "frozen_source_files_verified": 505,
+  "same_actual_synthesis_compute_sources": true,
+  "checkpoint_count": 20,
+  "checkpoint_values": 989142,
+  "checkpoints": [
+    {
+      "pc": 5,
+      "space": 0,
+      "address": 196608,
+      "count": 37632,
+      "name": "patch_embed.proj"
+    },
+    {
+      "pc": 8,
+      "space": 0,
+      "address": 262144,
+      "count": 37824,
+      "name": "frontend"
+    },
+    {
+      "pc": 206,
+      "space": 0,
+      "address": 327680,
+      "count": 37824,
+      "name": "blocks.0.norm1"
+    },
+    {
+      "pc": 210,
+      "space": 0,
+      "address": 393216,
+      "count": 113472,
+      "name": "blocks.0.attn.qkv"
+    },
+    {
+      "pc": 226,
+      "space": 1,
+      "address": 0,
+      "count": 38809,
+      "name": "attn0.0.score"
+    },
+    {
+      "pc": 423,
+      "space": 2,
+      "address": 0,
+      "count": 38809,
+      "name": "attn0.0.prob"
+    },
+    {
+      "pc": 431,
+      "space": 0,
+      "address": 589824,
+      "count": 12608,
+      "name": "attn0.0.av"
+    },
+    {
+      "pc": 448,
+      "space": 1,
+      "address": 0,
+      "count": 38809,
+      "name": "attn0.1.score"
+    },
+    {
+      "pc": 645,
+      "space": 2,
+      "address": 0,
+      "count": 38809,
+      "name": "attn0.1.prob"
+    },
+    {
+      "pc": 653,
+      "space": 0,
+      "address": 589824,
+      "count": 12608,
+      "name": "attn0.1.av"
+    },
+    {
+      "pc": 670,
+      "space": 1,
+      "address": 0,
+      "count": 38809,
+      "name": "attn0.2.score"
+    },
+    {
+      "pc": 867,
+      "space": 2,
+      "address": 0,
+      "count": 38809,
+      "name": "attn0.2.prob"
+    },
+    {
+      "pc": 875,
+      "space": 0,
+      "address": 589824,
+      "count": 12608,
+      "name": "attn0.2.av"
+    },
+    {
+      "pc": 880,
+      "space": 0,
+      "address": 589824,
+      "count": 37824,
+      "name": "blocks.0.attn.proj"
+    },
+    {
+      "pc": 882,
+      "space": 0,
+      "address": 262144,
+      "count": 37824,
+      "name": "residual0"
+    },
+    {
+      "pc": 1080,
+      "space": 0,
+      "address": 327680,
+      "count": 37824,
+      "name": "blocks.0.norm2"
+    },
+    {
+      "pc": 1084,
+      "space": 0,
+      "address": 655360,
+      "count": 151296,
+      "name": "blocks.0.mlp.fc1"
+    },
+    {
+      "pc": 1086,
+      "space": 0,
+      "address": 851968,
+      "count": 151296,
+      "name": "blocks.0.gelu"
+    },
+    {
+      "pc": 1090,
+      "space": 0,
+      "address": 589824,
+      "count": 37824,
+      "name": "blocks.0.mlp.fc2"
+    },
+    {
+      "pc": 1092,
+      "space": 0,
+      "address": 262144,
+      "count": 37824,
+      "name": "residual1"
+    }
+  ],
+  "max_pc": 1092,
+  "max_cycles": 200000000,
+  "simulation_timeout_seconds": 10800,
+  "real_DSP48E2_UNISIM_required": true,
+  "full12": "NOT_RUN_NOT_AUTHORIZED",
+  "fault_injection": "Only after normal scoped PASS: original BAD_CP with PRECHECK; real Patch result compared against one intentionally corrupted expected code; not a datapath FI",
+  "external_DDR_MMCM_CDC": "NOT_SIMULATED; AXI DDR response model with stalls only",
+  "testbench_origin": "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_bank_reset_fix_20261102\\tests\\tb_w8_full.sv"
+}

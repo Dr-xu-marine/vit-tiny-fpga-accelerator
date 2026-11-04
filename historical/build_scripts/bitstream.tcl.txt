@@ -1,0 +1,25 @@
+# Invoked only after independent review of the complete routed reports.
+set_param general.maxThreads 1
+lassign $argv input out clock_script clock_checks
+open_checkpoint $input
+if {[get_property PART [current_design]] ne "xcvu9p-flga2104-2L-e"} {error PART_MISMATCH}
+source $clock_script
+source $clock_checks
+validate_host75_clocks [file join $out clocks_verified.tsv]
+validate_compute_structure $out
+foreach delay {max min} {
+ set p [get_timing_paths -quiet -delay_type $delay -max_paths 1]
+ if {[llength $p]!=1 || [get_property SLACK $p]<0} {error "NEGATIVE_OR_MISSING_TIMING $delay"}
+}
+report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -file [file join $out final_timing_summary.rpt]
+report_route_status -file [file join $out final_route_status.rpt]
+report_drc -file [file join $out final_drc.rpt]
+set blocking [get_drc_violations -quiet -filter {SEVERITY == Error || SEVERITY == {Critical Warning}}]
+if {[llength $blocking]} {error "BLOCKING_DRC $blocking"}
+write_xdc [file join $out effective_final.xdc]
+write_checkpoint [file join $out full128_166p7_final.dcp]
+write_debug_probes [file join $out full128_166p7.ltx]
+# No DRC downgrade, no exception edit, no special override of safety checks.
+write_bitstream [file join $out full128_166p7.bit]
+puts BITSTREAM_GENERATED_TIMING_PASS_BOARD_NOT_YET_VERIFIED
+exit 0

@@ -1,0 +1,171 @@
+"""Editable SVG and matching PNG diagrams from audited engineering facts."""
+from pathlib import Path
+import json,math,html
+from PIL import Image,ImageDraw,ImageFont
+R=Path(__file__).resolve().parents[1]; O=R/'report/figures';O.mkdir(parents=True,exist_ok=True)
+F=json.loads((R/'report/evidence/audit_facts.json').read_text(encoding='utf-8'))
+FONT='C:/Windows/Fonts/msyh.ttc';S=3
+class Canvas:
+ def __init__(self,name,w=1000,h=440):
+  self.name=name;self.w=w;self.h=h;self.svg=[];self.im=Image.new('RGB',(w*S,h*S),'white');self.d=ImageDraw.Draw(self.im)
+ def box(self,x,y,w,h,label,fill='#edf3f8',stroke='#35546a',size=18):
+  self.svg.append(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="7" fill="{fill}" stroke="{stroke}" stroke-width="1.5"/>')
+  self.d.rounded_rectangle((x*S,y*S,(x+w)*S,(y+h)*S),radius=7*S,fill=fill,outline=stroke,width=4)
+  self.text(x+w/2,y+h/2,label,size,anchor='middle')
+ def text(self,x,y,label,size=18,color='#182a35',anchor='start'):
+  lines=str(label).split('\n');font=ImageFont.truetype(FONT,size*S)
+  start=y-(len(lines)-1)*size*.65
+  for i,line in enumerate(lines):
+   yy=start+i*size*1.3
+   self.svg.append(f'<text x="{x}" y="{yy}" text-anchor="{anchor}" dominant-baseline="middle" font-family="Microsoft YaHei,sans-serif" font-size="{size}" fill="{color}">{html.escape(line)}</text>')
+   self.d.text((x*S,yy*S),line,font=font,fill=color,anchor='mm' if anchor=='middle' else 'lm')
+ def line(self,x1,y1,x2,y2,color='#4c6474',arrow=True,width=2):
+  self.svg.append(f'<line x1="{x1}" y1="{y1}" x2="{x2}" y2="{y2}" stroke="{color}" stroke-width="{width}"/>')
+  self.d.line((x1*S,y1*S,x2*S,y2*S),fill=color,width=width*S)
+  if arrow:
+   a=math.atan2(y2-y1,x2-x1);pts=[(x2,y2),(x2-10*math.cos(a)+5*math.sin(a),y2-10*math.sin(a)-5*math.cos(a)),(x2-10*math.cos(a)-5*math.sin(a),y2-10*math.sin(a)+5*math.cos(a))]
+   self.svg.append('<polygon points="'+' '.join(f'{x},{y}' for x,y in pts)+f'" fill="{color}"/>')
+   self.d.polygon([(int(x*S),int(y*S)) for x,y in pts],fill=color)
+ def dot(self,x,y,r=2,color='#315f86'):
+  self.svg.append(f'<circle cx="{x}" cy="{y}" r="{r}" fill="{color}" fill-opacity="0.65"/>')
+  self.d.ellipse(((x-r)*S,(y-r)*S,(x+r)*S,(y+r)*S),fill=color)
+ def save(self):
+  (O/(self.name+'.svg')).write_text(f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {self.w} {self.h}" width="{self.w}" height="{self.h}"><rect width="100%" height="100%" fill="white"/>'+''.join(self.svg)+'</svg>',encoding='utf-8')
+  self.im.save(O/(self.name+'.png'),dpi=(300,300))
+
+c=Canvas('fig01_model',1000,390)
+for x,w,t in [(20,150,'RGB 224×224\n16×16 Patch'),(210,160,'196×768\nPatch GEMM'),(410,170,'CLS＋位置编码\n197×192'),(620,160,'Encoder ×12\n3 Heads'),(820,160,'最终LN＋CLS\nHead 192→1000')]:c.box(x,35,w,85,t)
+for a,b in [(170,210),(370,410),(580,620),(780,820)]:c.line(a,78,b,78)
+labels=['LN1→QKV','QK^T→Softmax→AV','Projection→Residual','LN2→FC1→GELU','FC2→Residual']
+for i,t in enumerate(labels):c.box(20+i*195,205,180,70,t,size=16)
+for i in range(4):c.line(200+i*195,240,215+i*195,240)
+c.text(500,335,'N=197，D=192，H=3，d=64，MLP=768；结构来自实际冻结程序',18,anchor='middle');c.save()
+
+c=Canvas('fig02_system',1000,650)
+c.box(20,20,200,70,'PC Tcl Host\nJTAG AXI 32bit');c.box(270,20,190,70,'AXI互连与CDC\nHost 75MHz');c.box(510,20,190,70,'MIG DDR4\nUI 300MHz');c.box(760,20,220,70,'板载DDR\n8,990,912字节包')
+for a,b in [(220,270),(460,510),(700,760)]:c.line(a,55,b,55)
+c.box(230,155,490,70,'程序ROM＋Sequencer＋命令检查\nLOAD与算子调度',size=19)
+c.box(760,155,220,85,'AXI读取DMA\n512bit→字节Writer',size=17)
+c.line(605,90,605,120,arrow=False);c.line(605,120,870,120,arrow=False);c.line(870,120,870,155)
+c.line(720,190,760,190)
+for x,t in [(20,'128 MAC GEMM\n8×16＋Bias/RQ'),(355,'AUX整数算子\nLN / Softmax / GELU'),(690,'Tensor Move\n转置与重排')]:c.box(x,290,290,85,t,size=19)
+c.line(475,225,475,255,arrow=False);c.line(165,255,835,255,arrow=False)
+for x in [165,500,835]:c.line(x,255,x,290)
+c.box(20,450,960,80,'共享存储与所有权仲裁\nACT / Weight / PACK / Bias / RQ / 参数 / Score / Probability / LUT',size=19)
+for x in [165,500,835]:c.line(x-7,375,x-7,450);c.line(x+7,450,x+7,375)
+c.line(870,240,990,240,arrow=False);c.line(990,240,990,490,arrow=False);c.line(990,490,980,490)
+c.box(20,560,290,65,'Collector＋CSR\n经ACT读取1000码',size=18);c.line(165,530,165,560)
+c.line(20,592,5,592,arrow=False);c.line(5,592,5,55,arrow=False);c.line(5,55,20,55)
+c.text(665,585,'计算域166.6667MHz\n图中数据通路均有实际RTL实例',18,anchor='middle');c.save()
+
+c=Canvas('fig03_array',1000,430)
+for row in range(8):
+ c.text(70,93+row*34,f'A[{row}]',16)
+ c.line(125,93+row*34,950,93+row*34,'#c6d4df',False,1)
+ for col in range(16):c.box(150+col*49,78+row*34,43,28,'PE',fill='#dfeaf4',size=12)
+for col in range(16):c.text(170+col*49,48,f'B{col}',12,anchor='middle')
+c.text(500,385,'每个有效K拍：8个A字节＋16个B字节 → 128次乘加；内部供数24B/拍',19,anchor='middle')
+c.text(500,414,'由4个4×8分组组成；局部leaf寄存与同龄valid/K/last流水',17,anchor='middle');c.save()
+
+c=Canvas('fig04_mac',1000,330)
+for x,w,t in [(15,140,'A signed8\n符号扩展30bit'),(15,140,'B signed8\n符号扩展18bit')]:
+ y=30 if t.startswith('A') else 140;c.box(x,y,w,75,t,size=16)
+c.box(220,65,150,110,'AREG / BREG\n1 / 1');c.line(155,68,220,95);c.line(155,177,220,145)
+c.box(430,85,140,70,'乘法与MREG\nMREG=1');c.line(370,120,430,120)
+c.box(635,85,150,70,'ALU＋P反馈\nPREG=1');c.line(570,120,635,120)
+c.box(840,85,140,70,'P signed48\nINT32检查');c.line(785,120,840,120)
+c.line(900,155,900,235,arrow=False);c.line(900,235,710,235,arrow=False);c.line(710,235,710,155)
+c.text(500,290,'C端固定0；OPMODE=000100101；CEP跟随延迟后的有效乘积',18,anchor='middle');c.save()
+
+c=Canvas('fig05_pipeline',1000,310)
+stages=[('e0','leaf A/B＋valid/K/last'),('e1','DSP AREG/BREG'),('e2','DSP MREG'),('e3','DSP PREG＋commit')]
+for i,(edge,t) in enumerate(stages):c.box(20+i*245,65,225,85,edge+'\n'+t,size=17)
+for i in range(3):c.line(245+i*245,107,265+i*245,107)
+c.text(500,205,'CEM=v_ab；CEP=v_m；bubble延迟后只关闭对应P更新，不重复累加',18,anchor='middle')
+c.text(500,253,'首K由CLEAR0/1/2复位屏障处理；连续MAC II=1；last与K随流水到达',18,anchor='middle');c.save()
+
+c=Canvas('fig06_banks',1000,440)
+for i in range(16):c.box(20+i*60,35,53,110,f'ACT\n{i}\n64Ki×8',size=13)
+c.text(500,185,'字节地址a：bank=a[3:0]，word=a[19:4]；16 Bank并行组织128bit',18,anchor='middle')
+for x,t in [(20,'Weight\n16 Bank / 128bit\n1MiB逻辑容量'),(270,'PACK\n16 Bank / 128bit\n256KiB逻辑容量'),(520,'参数 / Exp / GELU\n4×8 / 4×8 / 1×8\n按真实字宽读取'),(770,'Bias / RQ\n512bit / 720bit\n小深度与对齐填充')]:c.box(x,235,210,110,t,size=17)
+c.text(500,400,'逻辑容量不等于BRAM利用率；实际RAMB36=1129，RAMB18=97',18,anchor='middle');c.save()
+
+c=Canvas('fig07_write_bypass',1000,390)
+for i,t in enumerate(['e0 接受写W','e1 提交W / 接受读','e2 使用读数据']):c.box(180+i*260,35,235,65,t,size=17)
+for row,label in enumerate(['外部写接口','Bank局部寄存','BRAM与读结果']):c.text(18,145+row*70,label,17)
+c.box(180,120,235,55,'we / addr / data',size=17);c.box(440,190,235,55,'we_q / word_q / data_q',size=16)
+c.box(700,260,260,55,'同地址：forward_data_q\n其他地址：同步BRAM q',size=16)
+c.line(415,145,440,215);c.line(675,215,700,285)
+c.text(500,355,'图示为Weight/上传RAM一拍写提交；ACT接受后两拍提交，另有排空保护',17,anchor='middle');c.save()
+
+c=Canvas('fig08_control',1000,370)
+labels=['FETCH / DECODE','LOAD→DMA/Writer','等待writes_pending=0','CSEND→CHECK','LAUNCH→WAIT','DRAIN→ADVANCE']
+for i,t in enumerate(labels):
+ x=20+(i%3)*330;y=35+(i//3)*150;c.box(x,y,300,75,t,size=17)
+ if i%3!=2:c.line(x+300,y+38,x+330,y+38)
+c.line(835,110,835,155,arrow=False);c.line(835,155,170,155,arrow=False);c.line(170,155,170,185)
+c.text(500,328,'13,024条程序：323 LOAD＋12,700计算/搬运命令＋1 END；最后Collector读ACT',18,anchor='middle');c.save()
+
+c=Canvas('fig09_accuracy',1000,400)
+base=310
+for x,value,n,label,col in [(250,74.8046875,383,'FP32','#497ca0'),(610,73.6328125,377,'静态W8A8','#7a9ab0')]:
+ h=value*3;c.box(x,base-h,160,h,'',fill=col,stroke=col);c.text(x+80,base-h-28,f'{value:.7f}%',22,anchor='middle');c.text(x+80,340,f'{label}  {n}/512',20,anchor='middle')
+c.line(150,base,900,base,arrow=False);c.text(500,382,'同一512张固定确认集；下降1.171875个百分点；完整50,000张 NOT_RUN',17,anchor='middle');c.save()
+
+c=Canvas('fig10_timing',1000,350)
+c.text(500,27,'完整板级候选真实布线后结果',22,anchor='middle')
+for y,label,wns,col in [(105,'200MHz / 5ns',-.583,'#b84f45'),(225,'166.7MHz / 6ns',.073,'#3d8065')]:
+ c.text(25,y,label,20);c.line(650,y-42,650,y+42,'#adb8bf',False,1)
+ x=650+wns*600;left=min(x,650);c.box(left,y-22,max(3,abs(x-650)),44,'',fill=col,stroke=col)
+ c.text(790,y,f'WNS {wns:+.3f}ns',20);c.text(790,y+35,'WHS +0.005ns',16)
+c.text(500,325,'两个频率分别实现；不以放宽XDC替代真实MMCM降频，不归因于单一Bank改动',16,anchor='middle');c.save()
+
+c=Canvas('fig11_validation',1000,400)
+c.box(20,45,290,120,'历史jointfix\n257 / 11,532,400 / 1000\nRTL Golden PASS',fill='#e4f0e9',size=20)
+cp=len(F['scoped']['checkpoints']);nv=F['scoped']['values']
+c.box(355,45,290,120,f'当前Bank版定向回归\n{cp}/20检查点，{nv:,}值已通过\n整体状态 {F["scoped"]["status"]}',fill='#fff1d7',size=18)
+c.box(690,45,290,120,'当前Bitstream实板\n1000值中921不一致\n数值验收 FAIL',fill='#f8e4e2',size=20)
+c.text(500,238,'历史PASS不跨版本继承；局部PASS不授予完整网络PASS',22,anchor='middle')
+c.text(500,298,'物理TIMING_PASS、Bitstream生成、板级数值正确性分别验收',20,anchor='middle');c.save()
+
+c=Canvas('fig12_board_diagnosis',1000,390)
+rows=[['下载已完成','MIG CAL PASS','Host身份核对','上传与回读检查'],['程序完成计数正确','两遍1000读回一致','Golden：921差异','保存原始现场证据']]
+for r,row in enumerate(rows):
+ for i,t in enumerate(row):
+  fill='#f8e4e2' if '921' in t else '#edf3f8';c.box(15+i*250,40+r*140,230,75,t,fill=fill,size=17)
+  if i<3:c.line(245+i*250,78+r*140,265+i*250,78+r*140)
+c.text(500,335,'之后发生重新下载/断电/复位：后续DDR抽查属于另一状态，不能归因首次错误',17,anchor='middle');c.save()
+
+c=Canvas('fig13_critical_path',1000,360)
+c.box(20,35,220,85,'wb_addr_q_reg[9]\n源FDRE');c.box(335,35,300,85,'CARRY8×2＋LUT5×3\n＋LUT6×5 / 10级');c.box(735,35,240,85,'state_reg[0]_replica_8\nCE端点')
+c.line(240,78,335,78);c.line(635,78,735,78)
+c.box(80,190,157,52,'逻辑 1.125ns',fill='#9bb3c5',size=16);c.box(237,190,651,52,'布线 4.656ns / 80.54%',fill='#d1dce5',size=18)
+c.text(500,298,'数据5.781ns，Setup slack +0.073ns；总不确定度0.171ns，其中用户0.100ns',17,anchor='middle');c.save()
+
+c=Canvas('fig14_logits',1000,430)
+actual=[int(x,16) for x in (R/'report/evidence/e29_observed_pass1.hex').read_text().split()]
+expected=[int(x,16) for x in (R.parent/'experiments/full128_downclock_bit_20261102/board_kit_166p7/expected_1000.hex').read_text().split()]
+actual=[v-256 if v>=128 else v for v in actual];expected=[v-256 if v>=128 else v for v in expected]
+def xy(v,w):return 150+(v+50)*5,350-(w+50)*2
+c.line(150,350,900,350,arrow=False);c.line(150,350,150,35,arrow=False)
+for tick in [-40,0,40,80]:
+ x,_=xy(tick,0);_,y=xy(0,tick);c.text(x,374,str(tick),15,anchor='middle');c.text(110,y,str(tick),15,anchor='middle')
+c.line(*xy(-45,-45),*xy(95,95),color='#bdc7cd',arrow=False,width=1)
+for a,e in zip(actual,expected):c.dot(*xy(e,a),r=1.7)
+c.text(700,55,'首次真实实板 1000点\n921项不一致，最大码差21',18,anchor='middle')
+c.text(500,411,'横轴：冻结Golden有符号码；纵轴：实板有符号码；虚线为完全一致',17,anchor='middle');c.save()
+
+c=Canvas('fig15_clocks',1000,380)
+c.box(20,120,170,90,'固定差分时钟\n250MHz / E12,D12');c.box(260,120,210,90,'MIG MMCM\nDDR UI=300MHz');c.line(190,165,260,165)
+c.box(560,35,220,75,'CLKOUT5→Host/Hub\n75MHz');c.line(470,140,560,73)
+c.box(560,230,220,85,'Compute MMCM\nM=10，D=3，O=6');c.line(470,185,560,272)
+c.box(825,230,155,85,'计算域\n166.6667MHz');c.line(780,272,825,272)
+c.text(500,350,'时钟来自同一板级参考的生成关系；AXI转换器及各域复位仍按实际CDC协议处理',17,anchor='middle');c.save()
+
+c=Canvas('fig16_requant',1000,370)
+labels=['acc32＋Bias32\nsum33 / 溢出检查','四个部分乘积\n重组signed64','幅值与粗/细移位\nguard＋sticky','RNE＋符号恢复\n加输出ZP＋sat8']
+for i,t in enumerate(labels):c.box(15+i*250,50,230,100,t,size=18)
+for i in range(3):c.line(245+i*250,100,265+i*250,100)
+c.box(80,215,840,75,'valid / shift / zero-point / int8 / last / tag / error：同龄12级流水',size=18)
+c.text(500,335,'16-lane行FIFO＋credit先预留；共享标量RQ逐lane处理，不宣称16路RQ同时计算',17,anchor='middle');c.save()
+print('Generated16 editable SVGs and16 matching PNGs')

@@ -1,0 +1,4172 @@
+{
+  "audit_time": "2026-11-03T19:36:38+08:00",
+  "workspace": "D:\\fpga\\vit_tiny_vcu118",
+  "git": {
+    "branch": "codex/vit-tiny-vcu118",
+    "commit": "2cdbc5b7fd03084d545686ce255fa76574829350",
+    "tracked_status": "M AGENTS.md\n D demo_compare_fp32_int8.py\n M evidence/checkpoint_float_latest.json\n M vit/vit_tiny_vcu118.xpr",
+    "recent_commits": "2cdbc5b 2026-10-17 Codex Validate full autonomous Tiny and ImageNetV2, generate reviewed VCU118 bring-up bitstream\nc5293e8 2026-10-16 Codex Audit frozen INT32 accumulation bounds and document actual system dataflow\nc4776af 2026-10-16 Codex Record whole-platform synthesis and stage physical implementation with honest timing gates\n4d57ef7 2026-10-16 Codex Add autonomous V4 inference, host controls and VCU118 platform generation\n8ea7751 2026-10-16 Codex Audit ImageNetV2 data integrity and preserve numeric class labels"
+  },
+  "current_snapshot": "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_bank_reset_fix_20261102",
+  "source_manifest_sha256": "bd2004660656ea2f950d7957014924d588e469345cc1ab6fb69e3489eeec8cc8",
+  "frozen_files_verified": 505,
+  "current": {
+    "status": [
+      "BITSTREAM_GENERATED",
+      "TIMING_PASS",
+      "BOARD_NOT_YET_VERIFIED"
+    ],
+    "frequency_MHz": 166.66666666666666,
+    "compute_period_ns": 6.0,
+    "host_MHz": 75,
+    "DDR_UI_MHz": 300,
+    "MMCM": {
+      "input_MHz": 300,
+      "M": 10,
+      "D": 3,
+      "O": 6,
+      "VCO_MHz": 1000
+    },
+    "timing": {
+      "WNS": 0.073,
+      "TNS": 0.0,
+      "setup_fail": 0,
+      "setup_total": 223194,
+      "WHS": 0.005,
+      "THS": 0.0,
+      "hold_fail": 0,
+      "hold_total": 222285,
+      "WPWS": 0.039,
+      "TPWS": 0.0,
+      "pulse_fail": 0,
+      "pulse_total": 66447
+    },
+    "route": {
+      "routable": 123520,
+      "routed": 123520,
+      "routing_errors": 0
+    },
+    "resources": {
+      "peak_private_GiB": 9.917671203613281,
+      "peak_working_set_GiB": 8.977348327636719,
+      "max_system_commit_GiB": 26.29082489013672,
+      "max_commit_fraction": 0.8268242547585107,
+      "max_pagefile_GiB": 4.374126434326172,
+      "min_available_RAM_GiB": 0.0112457275390625,
+      "max_observed_system_physical_used_GiB": 15.786109924316406
+    },
+    "FPGA_utilization": {
+      "LUT": 49299,
+      "FF": 59093,
+      "DSP": 137,
+      "MAC_DSP": 128,
+      "RAMB36E2": 1129,
+      "RAMB18E2": 97,
+      "BRAM36_equiv": 1177.5,
+      "URAM": 0
+    },
+    "bitstream": "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_downclock_bit_20261102\\delivery_166p7\\full128_166p7.bit",
+    "bitstream_sha256": "928403c3745abe5b18b57088eaaa1fdb3a181343661a60421b4346aee42d0905",
+    "final_dcp": "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_downclock_bit_20261102\\delivery_166p7\\full128_166p7_final.dcp",
+    "final_dcp_sha256": "25c8f75978fb10f65acb18292bb39930801118c4dd43f16201db1370ba001027",
+    "compute_RTL_changed": false,
+    "clock_IP_and_frequency_metadata_changed": true,
+    "latest_full12_L3": "NOT_RUN",
+    "board": "NOT_RUN",
+    "FPS_power": "NOT_RUN",
+    "P_source_manifest_sha256": "bd2004660656ea2f950d7957014924d588e469345cc1ab6fb69e3489eeec8cc8",
+    "protected_history": "PASS_FROZEN505_BUILD_SCRIPTS_HISTORY",
+    "finished": "2026-11-03T08:06:36.999582+08:00",
+    "complete_frequency_PnR_attempts": 1,
+    "fallback150": "NOT_RUN_NOT_NEEDED"
+  },
+  "confirmation": {
+    "status": "PASS",
+    "scope": "bounded software numerical experiment; not full precision signoff",
+    "results": [
+      {
+        "candidate": "center",
+        "images": 512,
+        "fp32_correct": 383,
+        "correct": 377,
+        "fp32_top1": 74.8046875,
+        "integer_top1": 73.6328125,
+        "drop_pp": 1.171875,
+        "agreement": 462,
+        "normalized_mse": 7.922590495089981e-05
+      },
+      {
+        "candidate": "input_grid",
+        "images": 512,
+        "fp32_correct": 383,
+        "correct": 377,
+        "fp32_top1": 74.8046875,
+        "integer_top1": 73.6328125,
+        "drop_pp": 1.171875,
+        "agreement": 461,
+        "normalized_mse": 7.954995023540327e-05
+      }
+    ],
+    "selected": "input_grid",
+    "confirmation_cannot_reselect": true,
+    "seconds": 1538.4756974000047,
+    "formal_full50000": "NOT_RUN",
+    "RTL": "NOT_RUN",
+    "timing200MHz": "NOT_RUN"
+  },
+  "board": {
+    "status": "BOARD_FUNCTIONAL_FAIL",
+    "basis": "Actual saved board result files; no new board execution",
+    "input_files": {
+      "comparison_pass1.csv": {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\experiments\\board_logit_diagnostic_20261103\\capture_1793697684_24312_3377448321\\comparison_pass1.csv",
+        "sha256": "1d485dd80d62d6dd01508d2c9942908b8041278336bf70d8396bd7a87c8114b9"
+      },
+      "comparison_pass2.csv": {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\experiments\\board_logit_diagnostic_20261103\\capture_1793697684_24312_3377448321\\comparison_pass2.csv",
+        "sha256": "1d485dd80d62d6dd01508d2c9942908b8041278336bf70d8396bd7a87c8114b9"
+      },
+      "observed_pass1.hex": {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\experiments\\board_logit_diagnostic_20261103\\capture_1793697684_24312_3377448321\\observed_pass1.hex",
+        "sha256": "1983c3247342230a3902c74ead92a926ea2db8a089571ec23c41e22a167f36e3"
+      },
+      "observed_pass2.hex": {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\experiments\\board_logit_diagnostic_20261103\\capture_1793697684_24312_3377448321\\observed_pass2.hex",
+        "sha256": "1983c3247342230a3902c74ead92a926ea2db8a089571ec23c41e22a167f36e3"
+      },
+      "summary.txt": {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\experiments\\board_logit_diagnostic_20261103\\capture_1793697684_24312_3377448321\\summary.txt",
+        "sha256": "1e49b29a9a1345377a5da81c2d505f1c77faf15c81d98260c07ccd0f78ba9143"
+      },
+      "words_pass1.tsv": {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\experiments\\board_logit_diagnostic_20261103\\capture_1793697684_24312_3377448321\\words_pass1.tsv",
+        "sha256": "aed6707f86ccfcabe866afb4e383dc873f390f2b0a39c8af886b9d62a4eea356"
+      },
+      "words_pass2.tsv": {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\experiments\\board_logit_diagnostic_20261103\\capture_1793697684_24312_3377448321\\words_pass2.tsv",
+        "sha256": "aed6707f86ccfcabe866afb4e383dc873f390f2b0a39c8af886b9d62a4eea356"
+      }
+    },
+    "expected_file": {
+      "path": "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_downclock_bit_20261102\\board_kit_166p7\\expected_1000.hex",
+      "sha256": "1117a30836ab44cc1b1585884e7c5e41524cf2558636d821047b8a58f3ce64a2"
+    },
+    "repeated_read_mismatches": 0,
+    "comparison": {
+      "mismatch_count": 921,
+      "max_abs_error": 21,
+      "mean_abs_error": 4.065,
+      "rms_error": 5.225227267784628,
+      "mean_signed_error": 0.005,
+      "correlation": 0.9389213270059239,
+      "actual_range": [
+        -42,
+        87
+      ],
+      "expected_range": [
+        -35,
+        91
+      ],
+      "actual_top1": 65,
+      "expected_top1": 65,
+      "actual_top10": [
+        65,
+        62,
+        61,
+        58,
+        34,
+        60,
+        66,
+        68,
+        390,
+        54
+      ],
+      "expected_top10": [
+        65,
+        62,
+        61,
+        390,
+        58,
+        60,
+        68,
+        66,
+        34,
+        395
+      ]
+    },
+    "error_histogram": {
+      "-19": 1,
+      "-16": 2,
+      "-15": 1,
+      "-14": 1,
+      "-13": 4,
+      "-12": 8,
+      "-11": 7,
+      "-10": 20,
+      "-9": 13,
+      "-8": 23,
+      "-7": 34,
+      "-6": 35,
+      "-5": 39,
+      "-4": 51,
+      "-3": 55,
+      "-2": 64,
+      "-1": 84,
+      "0": 79,
+      "1": 93,
+      "2": 86,
+      "3": 63,
+      "4": 54,
+      "5": 42,
+      "6": 43,
+      "7": 30,
+      "8": 19,
+      "9": 16,
+      "10": 12,
+      "11": 7,
+      "12": 4,
+      "13": 4,
+      "14": 3,
+      "15": 1,
+      "16": 1,
+      "21": 1
+    },
+    "error_abs_le1": 256,
+    "worst20": [
+      {
+        "index": 502,
+        "actual": 15,
+        "expected": -6,
+        "error": 21
+      },
+      {
+        "index": 433,
+        "actual": -6,
+        "expected": 13,
+        "error": -19
+      },
+      {
+        "index": 770,
+        "actual": 23,
+        "expected": 7,
+        "error": 16
+      },
+      {
+        "index": 793,
+        "actual": 1,
+        "expected": 17,
+        "error": -16
+      },
+      {
+        "index": 852,
+        "actual": -1,
+        "expected": 15,
+        "error": -16
+      },
+      {
+        "index": 343,
+        "actual": 21,
+        "expected": 6,
+        "error": 15
+      },
+      {
+        "index": 396,
+        "actual": 8,
+        "expected": 23,
+        "error": -15
+      },
+      {
+        "index": 114,
+        "actual": 15,
+        "expected": 1,
+        "error": 14
+      },
+      {
+        "index": 235,
+        "actual": 30,
+        "expected": 16,
+        "error": 14
+      },
+      {
+        "index": 484,
+        "actual": 1,
+        "expected": 15,
+        "error": -14
+      },
+      {
+        "index": 853,
+        "actual": -11,
+        "expected": -25,
+        "error": 14
+      },
+      {
+        "index": 71,
+        "actual": 11,
+        "expected": -2,
+        "error": 13
+      },
+      {
+        "index": 275,
+        "actual": 5,
+        "expected": -8,
+        "error": 13
+      },
+      {
+        "index": 328,
+        "actual": 6,
+        "expected": 19,
+        "error": -13
+      },
+      {
+        "index": 336,
+        "actual": 13,
+        "expected": 0,
+        "error": 13
+      },
+      {
+        "index": 630,
+        "actual": 18,
+        "expected": 5,
+        "error": 13
+      },
+      {
+        "index": 747,
+        "actual": -14,
+        "expected": -1,
+        "error": -13
+      },
+      {
+        "index": 913,
+        "actual": 21,
+        "expected": 34,
+        "error": -13
+      },
+      {
+        "index": 973,
+        "actual": 22,
+        "expected": 35,
+        "error": -13
+      },
+      {
+        "index": 42,
+        "actual": 23,
+        "expected": 11,
+        "error": 12
+      }
+    ],
+    "mismatches_by_byte_lane": [
+      232,
+      228,
+      231,
+      230
+    ],
+    "byte_order_hypothesis": {
+      "scope": "Offline diagnostic only; original order and evidence unchanged",
+      "best5": [
+        {
+          "permutation": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "mismatch_count": 921
+        },
+        {
+          "permutation": [
+            3,
+            1,
+            2,
+            0
+          ],
+          "mismatch_count": 944
+        },
+        {
+          "permutation": [
+            0,
+            2,
+            1,
+            3
+          ],
+          "mismatch_count": 946
+        },
+        {
+          "permutation": [
+            0,
+            1,
+            3,
+            2
+          ],
+          "mismatch_count": 949
+        },
+        {
+          "permutation": [
+            1,
+            0,
+            2,
+            3
+          ],
+          "mismatch_count": 950
+        }
+      ],
+      "any_exact_match": false
+    },
+    "previous_expected_vectors": [
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\experiments\\vit_tiny_w8a8_200m_v2\\data\\expected_logits.npy",
+        "sha256": "746d224dd4746296eefa26d7b8f9e55a49b51159609b7274dc75c99cd65d98b1",
+        "mismatch_count": 908,
+        "max_abs_error": 14,
+        "mean_abs_error": 3.189,
+        "rms_error": 4.010361579708244,
+        "mean_signed_error": 0.007,
+        "correlation": 0.966381569989655,
+        "actual_range": [
+          -42,
+          87
+        ],
+        "expected_range": [
+          -42,
+          94
+        ],
+        "actual_top1": 65,
+        "expected_top1": 65,
+        "actual_top10": [
+          65,
+          62,
+          61,
+          58,
+          34,
+          60,
+          66,
+          68,
+          390,
+          54
+        ],
+        "expected_top10": [
+          65,
+          62,
+          390,
+          58,
+          61,
+          60,
+          66,
+          68,
+          34,
+          395
+        ]
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_act_request_fix_20261102\\data\\expected_logits.npy",
+        "sha256": "f495a91cacc01c6a66b08848be1aad12d2996db32f02c8962da917bc70a14531",
+        "mismatch_count": 921,
+        "max_abs_error": 21,
+        "mean_abs_error": 4.065,
+        "rms_error": 5.225227267784628,
+        "mean_signed_error": 0.005,
+        "correlation": 0.9389213270059239,
+        "actual_range": [
+          -42,
+          87
+        ],
+        "expected_range": [
+          -35,
+          91
+        ],
+        "actual_top1": 65,
+        "expected_top1": 65,
+        "actual_top10": [
+          65,
+          62,
+          61,
+          58,
+          34,
+          60,
+          66,
+          68,
+          390,
+          54
+        ],
+        "expected_top10": [
+          65,
+          62,
+          61,
+          390,
+          58,
+          60,
+          68,
+          66,
+          34,
+          395
+        ]
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_bank_reset_fix_20261102\\data\\expected_logits.npy",
+        "sha256": "f495a91cacc01c6a66b08848be1aad12d2996db32f02c8962da917bc70a14531",
+        "mismatch_count": 921,
+        "max_abs_error": 21,
+        "mean_abs_error": 4.065,
+        "rms_error": 5.225227267784628,
+        "mean_signed_error": 0.005,
+        "correlation": 0.9389213270059239,
+        "actual_range": [
+          -42,
+          87
+        ],
+        "expected_range": [
+          -35,
+          91
+        ],
+        "actual_top1": 65,
+        "expected_top1": 65,
+        "actual_top10": [
+          65,
+          62,
+          61,
+          58,
+          34,
+          60,
+          66,
+          68,
+          390,
+          54
+        ],
+        "expected_top10": [
+          65,
+          62,
+          61,
+          390,
+          58,
+          60,
+          68,
+          66,
+          34,
+          395
+        ]
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_input_grid_integration_20261029\\data\\expected_logits.npy",
+        "sha256": "f495a91cacc01c6a66b08848be1aad12d2996db32f02c8962da917bc70a14531",
+        "mismatch_count": 921,
+        "max_abs_error": 21,
+        "mean_abs_error": 4.065,
+        "rms_error": 5.225227267784628,
+        "mean_signed_error": 0.005,
+        "correlation": 0.9389213270059239,
+        "actual_range": [
+          -42,
+          87
+        ],
+        "expected_range": [
+          -35,
+          91
+        ],
+        "actual_top1": 65,
+        "expected_top1": 65,
+        "actual_top10": [
+          65,
+          62,
+          61,
+          58,
+          34,
+          60,
+          66,
+          68,
+          390,
+          54
+        ],
+        "expected_top10": [
+          65,
+          62,
+          61,
+          390,
+          58,
+          60,
+          68,
+          66,
+          34,
+          395
+        ]
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_jointfix_20261029\\data\\expected_logits.npy",
+        "sha256": "f495a91cacc01c6a66b08848be1aad12d2996db32f02c8962da917bc70a14531",
+        "mismatch_count": 921,
+        "max_abs_error": 21,
+        "mean_abs_error": 4.065,
+        "rms_error": 5.225227267784628,
+        "mean_signed_error": 0.005,
+        "correlation": 0.9389213270059239,
+        "actual_range": [
+          -42,
+          87
+        ],
+        "expected_range": [
+          -35,
+          91
+        ],
+        "actual_top1": 65,
+        "expected_top1": 65,
+        "actual_top10": [
+          65,
+          62,
+          61,
+          58,
+          34,
+          60,
+          66,
+          68,
+          390,
+          54
+        ],
+        "expected_top10": [
+          65,
+          62,
+          61,
+          390,
+          58,
+          60,
+          68,
+          66,
+          34,
+          395
+        ]
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_routed_jointfix_20261102\\data\\expected_logits.npy",
+        "sha256": "f495a91cacc01c6a66b08848be1aad12d2996db32f02c8962da917bc70a14531",
+        "mismatch_count": 921,
+        "max_abs_error": 21,
+        "mean_abs_error": 4.065,
+        "rms_error": 5.225227267784628,
+        "mean_signed_error": 0.005,
+        "correlation": 0.9389213270059239,
+        "actual_range": [
+          -42,
+          87
+        ],
+        "expected_range": [
+          -35,
+          91
+        ],
+        "actual_top1": 65,
+        "expected_top1": 65,
+        "actual_top10": [
+          65,
+          62,
+          61,
+          58,
+          34,
+          60,
+          66,
+          68,
+          390,
+          54
+        ],
+        "expected_top10": [
+          65,
+          62,
+          61,
+          390,
+          58,
+          60,
+          68,
+          66,
+          34,
+          395
+        ]
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_supply_control_fix_20261101\\data\\expected_logits.npy",
+        "sha256": "f495a91cacc01c6a66b08848be1aad12d2996db32f02c8962da917bc70a14531",
+        "mismatch_count": 921,
+        "max_abs_error": 21,
+        "mean_abs_error": 4.065,
+        "rms_error": 5.225227267784628,
+        "mean_signed_error": 0.005,
+        "correlation": 0.9389213270059239,
+        "actual_range": [
+          -42,
+          87
+        ],
+        "expected_range": [
+          -35,
+          91
+        ],
+        "actual_top1": 65,
+        "expected_top1": 65,
+        "actual_top10": [
+          65,
+          62,
+          61,
+          58,
+          34,
+          60,
+          66,
+          68,
+          390,
+          54
+        ],
+        "expected_top10": [
+          65,
+          62,
+          61,
+          390,
+          58,
+          60,
+          68,
+          66,
+          34,
+          395
+        ]
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_timing_prevent_20261029\\data\\expected_logits.npy",
+        "sha256": "f495a91cacc01c6a66b08848be1aad12d2996db32f02c8962da917bc70a14531",
+        "mismatch_count": 921,
+        "max_abs_error": 21,
+        "mean_abs_error": 4.065,
+        "rms_error": 5.225227267784628,
+        "mean_signed_error": 0.005,
+        "correlation": 0.9389213270059239,
+        "actual_range": [
+          -42,
+          87
+        ],
+        "expected_range": [
+          -35,
+          91
+        ],
+        "actual_top1": 65,
+        "expected_top1": 65,
+        "actual_top10": [
+          65,
+          62,
+          61,
+          58,
+          34,
+          60,
+          66,
+          68,
+          390,
+          54
+        ],
+        "expected_top10": [
+          65,
+          62,
+          61,
+          390,
+          58,
+          60,
+          68,
+          66,
+          34,
+          395
+        ]
+      }
+    ],
+    "actual_synthesis_inputs_checked": [
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\experiments\\board_closure_20261030\\rtl\\w8_debug_clock_metadata.v",
+        "expected": "aaf16e65a75f39df687fce911450054a4c630c0c71e033d516cb6d72cef15edc",
+        "actual": "aaf16e65a75f39df687fce911450054a4c630c0c71e033d516cb6d72cef15edc",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_bank_reset_fix_20261102\\board\\w8_board_core.v",
+        "expected": "4812e5627746a2ae023c4cc9513570c538eaebb9ed9ee53ce5cdc57394e732d6",
+        "actual": "4812e5627746a2ae023c4cc9513570c538eaebb9ed9ee53ce5cdc57394e732d6",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_bank_reset_fix_20261102\\rtl\\legacy\\tiny_axi_lite_control_v128.v",
+        "expected": "592c2f0bf48599d9d7bf8b5e6d7f4aca9efe79493a97b5dc59da0af11b499ab4",
+        "actual": "592c2f0bf48599d9d7bf8b5e6d7f4aca9efe79493a97b5dc59da0af11b499ab4",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_bank_reset_fix_20261102\\rtl\\legacy\\tiny_axi_read_dma.v",
+        "expected": "3bc811a8129a3c34ca6d94b7fcf8fb73509fdfc6b0dd8aa746715eff06b91afd",
+        "actual": "3bc811a8129a3c34ca6d94b7fcf8fb73509fdfc6b0dd8aa746715eff06b91afd",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_bank_reset_fix_20261102\\rtl\\legacy\\tiny_dma_byte_writer.v",
+        "expected": "9c466ab7cf1b338d22730d6892fc2d6deff3aa873e6d716b77007e5b4a0ddf05",
+        "actual": "9c466ab7cf1b338d22730d6892fc2d6deff3aa873e6d716b77007e5b4a0ddf05",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_bank_reset_fix_20261102\\rtl\\legacy\\tiny_result_collector.v",
+        "expected": "e7ff2adde265919482ed2869c8b12f51ea5094b2ea5a42a387e616e4258855e5",
+        "actual": "e7ff2adde265919482ed2869c8b12f51ea5094b2ea5a42a387e616e4258855e5",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_bank_reset_fix_20261102\\rtl\\legacy\\v2_c0_mac_cell.sv",
+        "expected": "2ccc1fa7c389f9f83232aaf14cdaa29e33ae3d5111e2b6101a0efb47a2837a5c",
+        "actual": "2ccc1fa7c389f9f83232aaf14cdaa29e33ae3d5111e2b6101a0efb47a2837a5c",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_bank_reset_fix_20261102\\rtl\\legacy\\v2_mac_group4x8.sv",
+        "expected": "78ea937158310870794df20d7cdd5c95a8d6ae80cc5ec5e2953dc1774aa369a6",
+        "actual": "78ea937158310870794df20d7cdd5c95a8d6ae80cc5ec5e2953dc1774aa369a6",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_bank_reset_fix_20261102\\rtl\\vendor_byte_banks.v",
+        "expected": "b8d842bbaf0f3b8d6fd7b0b1c7fbdf6260a3ce601646485365587f51dd9b3f86",
+        "actual": "b8d842bbaf0f3b8d6fd7b0b1c7fbdf6260a3ce601646485365587f51dd9b3f86",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_bank_reset_fix_20261102\\rtl\\w8_act_local_ram.sv",
+        "expected": "ebfaa9d4ccc3c01b4d9cefedb132e8fa3ba7fb02d9b900c9b15d0f732cadbf41",
+        "actual": "ebfaa9d4ccc3c01b4d9cefedb132e8fa3ba7fb02d9b900c9b15d0f732cadbf41",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_bank_reset_fix_20261102\\rtl\\w8_aux_engine.sv",
+        "expected": "4ff9ae2655a723742a8e50ebb530438a7bc67718a7ffa176179d47034057560d",
+        "actual": "4ff9ae2655a723742a8e50ebb530438a7bc67718a7ffa176179d47034057560d",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_bank_reset_fix_20261102\\rtl\\w8_command_check.sv",
+        "expected": "34374d738ac17c2944ff97fcb93b1809457154a0c976dd6285ac32e9c80c71f1",
+        "actual": "34374d738ac17c2944ff97fcb93b1809457154a0c976dd6285ac32e9c80c71f1",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_bank_reset_fix_20261102\\rtl\\w8_compute_system.sv",
+        "expected": "45c691a17510e0c6390fb39b14a6dab8b427d05a4c0e6016058a3a3b7a1839d3",
+        "actual": "45c691a17510e0c6390fb39b14a6dab8b427d05a4c0e6016058a3a3b7a1839d3",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_bank_reset_fix_20261102\\rtl\\w8_compute_tile.sv",
+        "expected": "66d5bc7b7ee64d0f4dacd55b8acef873a3573de57c3218b29ed1a596e528d0f7",
+        "actual": "66d5bc7b7ee64d0f4dacd55b8acef873a3573de57c3218b29ed1a596e528d0f7",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_bank_reset_fix_20261102\\rtl\\w8_fsm_compute_system.sv",
+        "expected": "db6d2058eb658b705ab7d09594e215c6af1dde8e5bc10e4d3cc0f2ae50386653",
+        "actual": "db6d2058eb658b705ab7d09594e215c6af1dde8e5bc10e4d3cc0f2ae50386653",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_bank_reset_fix_20261102\\rtl\\w8_gemm128.sv",
+        "expected": "a2dae05c832dd90221795f20d29930501b4b89d87ba3cdff3ac5911ca1c882b2",
+        "actual": "a2dae05c832dd90221795f20d29930501b4b89d87ba3cdff3ac5911ca1c882b2",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_bank_reset_fix_20261102\\rtl\\w8_hosted_core.sv",
+        "expected": "283433fd097576fc99981dd0aff6dd6060c0cd0ef74d64482efde521a6c452c3",
+        "actual": "283433fd097576fc99981dd0aff6dd6060c0cd0ef74d64482efde521a6c452c3",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_bank_reset_fix_20261102\\rtl\\w8_inference_core.sv",
+        "expected": "6c6d3efbc571d3f957bc57d8e2af2df3f878deee81c10386c5740e42a01c0d72",
+        "actual": "6c6d3efbc571d3f957bc57d8e2af2df3f878deee81c10386c5740e42a01c0d72",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_bank_reset_fix_20261102\\rtl\\w8_mac_array_local.sv",
+        "expected": "47968fd5a02ef47355a14731bcb3d9d1133ff7955238eb5768fde3fbc005981d",
+        "actual": "47968fd5a02ef47355a14731bcb3d9d1133ff7955238eb5768fde3fbc005981d",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_bank_reset_fix_20261102\\rtl\\w8_math.sv",
+        "expected": "76ea4cee5e72a1626a2ff057c5eaa1c1c4eb2feb32f10d4d7eee4385275e384b",
+        "actual": "76ea4cee5e72a1626a2ff057c5eaa1c1c4eb2feb32f10d4d7eee4385275e384b",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_bank_reset_fix_20261102\\rtl\\w8_memories.sv",
+        "expected": "abc6332abeae6d69e502c3bf9d157fb558d63309fbfa6aaebe59ea867517ca56",
+        "actual": "abc6332abeae6d69e502c3bf9d157fb558d63309fbfa6aaebe59ea867517ca56",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_bank_reset_fix_20261102\\rtl\\w8_program_meta.vh",
+        "expected": "0cf322a979fabf478fe552f6ae20e016c9ee56ba33c56e5b6c3da0ceec031df4",
+        "actual": "0cf322a979fabf478fe552f6ae20e016c9ee56ba33c56e5b6c3da0ceec031df4",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_bank_reset_fix_20261102\\rtl\\w8_program_sequencer.sv",
+        "expected": "8234e87cb7e9e51ea7dc69e7edea29bade052a8182a73ae93d85a97deea12870",
+        "actual": "8234e87cb7e9e51ea7dc69e7edea29bade052a8182a73ae93d85a97deea12870",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_bank_reset_fix_20261102\\rtl\\w8_quant_tile.sv",
+        "expected": "0f474302f58701870d19e6449bffe6e876dae47ed2b9a6bfa39dab545cd03518",
+        "actual": "0f474302f58701870d19e6449bffe6e876dae47ed2b9a6bfa39dab545cd03518",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_bank_reset_fix_20261102\\rtl\\w8_requant_scalar.sv",
+        "expected": "687a3ac7c7b1ef6fb838352f4f616508657d43ed31b7f6738fd7b4d4e5c57e1b",
+        "actual": "687a3ac7c7b1ef6fb838352f4f616508657d43ed31b7f6738fd7b4d4e5c57e1b",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_bank_reset_fix_20261102\\rtl\\w8_rq16.sv",
+        "expected": "ac5ba893686d45d10decc7bc2ac4c0a6deea4e5a38b66f16f2657a9612f117c9",
+        "actual": "ac5ba893686d45d10decc7bc2ac4c0a6deea4e5a38b66f16f2657a9612f117c9",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_bank_reset_fix_20261102\\rtl\\w8_tensor_move.sv",
+        "expected": "06fc48db1b18bb0d4d2b33d4fab132ed1fdd4615196945cd0aa5f4e362b2dd68",
+        "actual": "06fc48db1b18bb0d4d2b33d4fab132ed1fdd4615196945cd0aa5f4e362b2dd68",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\hdl\\w8_platform_wrapper.v",
+        "expected": "ef756d92035246df38fb17c20a6d2d133da56894b113da4641046b03378e6902",
+        "actual": "ef756d92035246df38fb17c20a6d2d133da56894b113da4641046b03378e6902",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_auto_ds_0\\synth\\w8_platform_auto_ds_0.v",
+        "expected": "3130fcb7e5be57063f92da988a96be45d623318c22bb7d79ce3e7e4ca015c781",
+        "actual": "3130fcb7e5be57063f92da988a96be45d623318c22bb7d79ce3e7e4ca015c781",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_auto_pc_0\\synth\\w8_platform_auto_pc_0.v",
+        "expected": "45ff7dd07181f1107d9232ad50833cbbdadccf1e63f8f8d579c9e9b8a4dafbb8",
+        "actual": "45ff7dd07181f1107d9232ad50833cbbdadccf1e63f8f8d579c9e9b8a4dafbb8",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_auto_rs_0\\synth\\w8_platform_auto_rs_0.v",
+        "expected": "5d3a14997415755b154ea7190abbdb34d4ff6a371fdc1568125f56ee9951a69f",
+        "actual": "5d3a14997415755b154ea7190abbdb34d4ff6a371fdc1568125f56ee9951a69f",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_auto_rs_1\\synth\\w8_platform_auto_rs_1.v",
+        "expected": "5ac287a256a3a510869d0dedba086f4b8a4616421346980fe95082c6fc8e58b2",
+        "actual": "5ac287a256a3a510869d0dedba086f4b8a4616421346980fe95082c6fc8e58b2",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_auto_rs_w_0\\synth\\w8_platform_auto_rs_w_0.v",
+        "expected": "37c31f7ad582be8a2c9eb7acd41ee367444cfef01cb151649c1376c237c7cbff",
+        "actual": "37c31f7ad582be8a2c9eb7acd41ee367444cfef01cb151649c1376c237c7cbff",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_auto_rs_w_1\\synth\\w8_platform_auto_rs_w_1.v",
+        "expected": "65497614cfa454370266ca3b7ef94c36dacb09f7c7a1436b16f2d695606ad238",
+        "actual": "65497614cfa454370266ca3b7ef94c36dacb09f7c7a1436b16f2d695606ad238",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_auto_us_0\\synth\\w8_platform_auto_us_0.v",
+        "expected": "ed43aeeb38a4de40d1fe5f6eecd5d04f4c4ffd02d7c08f36fa02233f0ce5d0c0",
+        "actual": "ed43aeeb38a4de40d1fe5f6eecd5d04f4c4ffd02d7c08f36fa02233f0ce5d0c0",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_compute_clock_0\\w8_platform_compute_clock_0.v",
+        "expected": "7363a98bf3f1e3bd6a73b51c95716763da66f556fc0cc035db1962d0afd383e1",
+        "actual": "7363a98bf3f1e3bd6a73b51c95716763da66f556fc0cc035db1962d0afd383e1",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_compute_clock_0\\w8_platform_compute_clock_0_clk_wiz.v",
+        "expected": "1d7464c37fe475a54998d0f366afacda172cb72d4c87c8261521271ad429bd9a",
+        "actual": "1d7464c37fe475a54998d0f366afacda172cb72d4c87c8261521271ad429bd9a",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_compute_to_ddr_0\\synth\\w8_platform_compute_to_ddr_0.v",
+        "expected": "93708aa453bf38e3939d8c2e8b62175e664fb92fe68d89de220129395861ed5e",
+        "actual": "93708aa453bf38e3939d8c2e8b62175e664fb92fe68d89de220129395861ed5e",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_core_0\\synth\\w8_platform_core_0.v",
+        "expected": "236611ec612db5ad7337ca410eb7a729756614d77087b3a41ebb0da5c56c610a",
+        "actual": "236611ec612db5ad7337ca410eb7a729756614d77087b3a41ebb0da5c56c610a",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_host_0\\synth\\w8_platform_host_0.v",
+        "expected": "513b9d659359eaf13cd71ecccb19c5286b849496cae222a790818ad8b4f0a7a3",
+        "actual": "513b9d659359eaf13cd71ecccb19c5286b849496cae222a790818ad8b4f0a7a3",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_host_clock_0\\synth\\w8_platform_host_clock_0.v",
+        "expected": "e7d02cd1e70ca10833622f688f2b149d3e20f93757339241ec0ddf58656df1bf",
+        "actual": "e7d02cd1e70ca10833622f688f2b149d3e20f93757339241ec0ddf58656df1bf",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_host_to_control_0\\synth\\w8_platform_host_to_control_0.v",
+        "expected": "45e87747514235b8bcc1c613d36419b9dd7cf23461e68597a412bdbe6ff43934",
+        "actual": "45e87747514235b8bcc1c613d36419b9dd7cf23461e68597a412bdbe6ff43934",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_host_to_fabric_0\\synth\\w8_platform_host_to_fabric_0.v",
+        "expected": "cd19f3007c3064c2c133133abff1ee1595d8a1a6d570cf57b4521acee1c8ac81",
+        "actual": "cd19f3007c3064c2c133133abff1ee1595d8a1a6d570cf57b4521acee1c8ac81",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\bd_0\\synth\\bd_a1c9.v",
+        "expected": "19ae441a03a081a214d7bbdabfb109e1f30800a76fdab5ffdc2ca14b9d344c2f",
+        "actual": "19ae441a03a081a214d7bbdabfb109e1f30800a76fdab5ffdc2ca14b9d344c2f",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\ip_0\\synth\\w8_platform_memory_0_microblaze_mcs.v",
+        "expected": "fcea748f84b7e8f2c5052ef2f823cf4afb829807411596567043e9389952b502",
+        "actual": "fcea748f84b7e8f2c5052ef2f823cf4afb829807411596567043e9389952b502",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\ip_1\\rtl\\clocking\\ddr4_phy_v2_2_pll.sv",
+        "expected": "1313785febad74967988f92b0cf78744687eaa8d90cf284efa51e79cbbe7b9fc",
+        "actual": "1313785febad74967988f92b0cf78744687eaa8d90cf284efa51e79cbbe7b9fc",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\ip_1\\rtl\\iob\\ddr4_phy_v2_2_iob.sv",
+        "expected": "1c94b5fc7b2524a3bbd368fda471e245a1aaae7ba5ce6ce0b9fe615b89fa52c4",
+        "actual": "1c94b5fc7b2524a3bbd368fda471e245a1aaae7ba5ce6ce0b9fe615b89fa52c4",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\ip_1\\rtl\\iob\\ddr4_phy_v2_2_iob_byte.sv",
+        "expected": "859235a40f89200bcc11967632eb91baf05829b28770e115bb7d8642beeb0f9a",
+        "actual": "859235a40f89200bcc11967632eb91baf05829b28770e115bb7d8642beeb0f9a",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\ip_1\\rtl\\ip_top\\w8_platform_memory_0_phy.sv",
+        "expected": "1773661060a969dc6156d360e137b9d2dccff5f9a4d254ac81b2ba39afbf396e",
+        "actual": "1773661060a969dc6156d360e137b9d2dccff5f9a4d254ac81b2ba39afbf396e",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\ip_1\\rtl\\map\\w8_platform_memory_0_phy_ddrMapDDR4.vh",
+        "expected": "08107c43bbacbb8746f70fe388695b6bcecb915f4cf0ad98b8b6addf8deddbc9",
+        "actual": "08107c43bbacbb8746f70fe388695b6bcecb915f4cf0ad98b8b6addf8deddbc9",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\ip_1\\rtl\\map\\w8_platform_memory_0_phy_iobMapDDR4.vh",
+        "expected": "11f9d9a911edd462200aae5dd5eb1bfc2e52b844baab7ad366e241438b9e75f6",
+        "actual": "11f9d9a911edd462200aae5dd5eb1bfc2e52b844baab7ad366e241438b9e75f6",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\ip_1\\rtl\\map\\w8_platform_memory_0_phy_riuMap.vh",
+        "expected": "a01901d143a09751059583b3bd7804c3ba4cf04a83ba67a9b8506b02c68d8494",
+        "actual": "a01901d143a09751059583b3bd7804c3ba4cf04a83ba67a9b8506b02c68d8494",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\ip_1\\rtl\\phy\\ddr4_phy_v2_2_xiphy.sv",
+        "expected": "e78c77cb5bb3fc9e06341549d40011545cd45497c67f74bd0a1d70dd9af9d9fa",
+        "actual": "e78c77cb5bb3fc9e06341549d40011545cd45497c67f74bd0a1d70dd9af9d9fa",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\ip_1\\rtl\\phy\\w8_platform_memory_0_phy_ddr4.sv",
+        "expected": "f1ca2403628963532d4bd833c4040bd6fe98a7586e2b21cd1a8a963667b1f862",
+        "actual": "f1ca2403628963532d4bd833c4040bd6fe98a7586e2b21cd1a8a963667b1f862",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\ip_1\\rtl\\xiphy_files\\ddr4_phy_v2_2_xiphy_bitslice_wrapper.sv",
+        "expected": "84a6b6689204086d9403a2d143f438b456c880a970d7dbe389715f971e2ed19a",
+        "actual": "84a6b6689204086d9403a2d143f438b456c880a970d7dbe389715f971e2ed19a",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\ip_1\\rtl\\xiphy_files\\ddr4_phy_v2_2_xiphy_byte_wrapper.sv",
+        "expected": "105695b6648a8ce6efb251ff2370cbf48f6a37ff4213e4e67ef7a5fded8510de",
+        "actual": "105695b6648a8ce6efb251ff2370cbf48f6a37ff4213e4e67ef7a5fded8510de",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\ip_1\\rtl\\xiphy_files\\ddr4_phy_v2_2_xiphy_control_wrapper.sv",
+        "expected": "40478be1b9ca0f24c1cfb087fb5be15a173bc9ec58c1b5b3bac3c0f519890465",
+        "actual": "40478be1b9ca0f24c1cfb087fb5be15a173bc9ec58c1b5b3bac3c0f519890465",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\ip_1\\rtl\\xiphy_files\\ddr4_phy_v2_2_xiphy_riuor_wrapper.sv",
+        "expected": "615bf770c66f9b9297dbeaa5508502cc341620d4e30165178e61f0f4aef03f30",
+        "actual": "615bf770c66f9b9297dbeaa5508502cc341620d4e30165178e61f0f4aef03f30",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\ip_1\\rtl\\xiphy_files\\ddr4_phy_v2_2_xiphy_tristate_wrapper.sv",
+        "expected": "87ee59955fa6321cab85403b68df40e7465e0e45bd0fc36b6674c3c9d2eaa4cd",
+        "actual": "87ee59955fa6321cab85403b68df40e7465e0e45bd0fc36b6674c3c9d2eaa4cd",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\axi\\ddr4_v2_2_a_upsizer.sv",
+        "expected": "3753c2f9791b4569c8f11ee4796457aeb0e71f7b9355fa2c600cdd27e2f0a4f6",
+        "actual": "3753c2f9791b4569c8f11ee4796457aeb0e71f7b9355fa2c600cdd27e2f0a4f6",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\axi\\ddr4_v2_2_axi.sv",
+        "expected": "e7d90b821727ed444f830d50344105c38e463bc69f891cba0721d592ced9c935",
+        "actual": "e7d90b821727ed444f830d50344105c38e463bc69f891cba0721d592ced9c935",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\axi\\ddr4_v2_2_axi_ar_channel.sv",
+        "expected": "fbdf618bd9fdc61d3cdd677259c55d2ae482401d61dbc0f6f425903ece60597f",
+        "actual": "fbdf618bd9fdc61d3cdd677259c55d2ae482401d61dbc0f6f425903ece60597f",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\axi\\ddr4_v2_2_axi_aw_channel.sv",
+        "expected": "ee84ae47142408a6a1f29e30e9fd533592c902602daa1865bc85897f7f18f452",
+        "actual": "ee84ae47142408a6a1f29e30e9fd533592c902602daa1865bc85897f7f18f452",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\axi\\ddr4_v2_2_axi_b_channel.sv",
+        "expected": "d9f431d60619d3029a322bf19ef6ac1b6a1e89242de1af5cdbc4770fb6d3fcb0",
+        "actual": "d9f431d60619d3029a322bf19ef6ac1b6a1e89242de1af5cdbc4770fb6d3fcb0",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\axi\\ddr4_v2_2_axi_cmd_arbiter.sv",
+        "expected": "ca4e46aae0a9935806b37223fe2080925ebdced86bf619bf799b31bd5f893adc",
+        "actual": "ca4e46aae0a9935806b37223fe2080925ebdced86bf619bf799b31bd5f893adc",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\axi\\ddr4_v2_2_axi_cmd_fsm.sv",
+        "expected": "0a0456e5d38be1e514c7b191d187bb85049a287104c5676d097b1f2ef214d313",
+        "actual": "0a0456e5d38be1e514c7b191d187bb85049a287104c5676d097b1f2ef214d313",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\axi\\ddr4_v2_2_axi_cmd_translator.sv",
+        "expected": "f9ae50ac4ccc9197feab904018d9230fe27281c9683247773ef445e19c7fddf4",
+        "actual": "f9ae50ac4ccc9197feab904018d9230fe27281c9683247773ef445e19c7fddf4",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\axi\\ddr4_v2_2_axi_fifo.sv",
+        "expected": "5d6538548e38991de567463e01cfea0b7c6a3972e5241b3e0e2b8c40e6b52ec1",
+        "actual": "5d6538548e38991de567463e01cfea0b7c6a3972e5241b3e0e2b8c40e6b52ec1",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\axi\\ddr4_v2_2_axi_incr_cmd.sv",
+        "expected": "761d805d4274f382fb1ec172f7001c10a2757fdc8ce0de629293249c8d3df982",
+        "actual": "761d805d4274f382fb1ec172f7001c10a2757fdc8ce0de629293249c8d3df982",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\axi\\ddr4_v2_2_axi_r_channel.sv",
+        "expected": "7d7fcba1c518e7a90926f0de848f30a950ab0fdc338187dbfa27958d8ced6ac1",
+        "actual": "7d7fcba1c518e7a90926f0de848f30a950ab0fdc338187dbfa27958d8ced6ac1",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\axi\\ddr4_v2_2_axi_register_slice.sv",
+        "expected": "ec127db79506d8834fb20fcb4d784e8fdf50e293a31ba33a057e8f30fbbeca47",
+        "actual": "ec127db79506d8834fb20fcb4d784e8fdf50e293a31ba33a057e8f30fbbeca47",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\axi\\ddr4_v2_2_axi_upsizer.sv",
+        "expected": "f844589f66a494bd7a56a82410792e33bc930287489970a76209df6ea7d41290",
+        "actual": "f844589f66a494bd7a56a82410792e33bc930287489970a76209df6ea7d41290",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\axi\\ddr4_v2_2_axi_w_channel.sv",
+        "expected": "f6d3b8151f314e7a756c66f9895a36567d7e2d12b43cb32d3c61dfeaf870a8c0",
+        "actual": "f6d3b8151f314e7a756c66f9895a36567d7e2d12b43cb32d3c61dfeaf870a8c0",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\axi\\ddr4_v2_2_axi_wr_cmd_fsm.sv",
+        "expected": "6872b39591b98070beac04562112c869aa17caa1016c7980431271672ebddfd5",
+        "actual": "6872b39591b98070beac04562112c869aa17caa1016c7980431271672ebddfd5",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\axi\\ddr4_v2_2_axi_wrap_cmd.sv",
+        "expected": "549b4ba2a282214714bced2264516125667809a39a8e36b95244a5dd84401201",
+        "actual": "549b4ba2a282214714bced2264516125667809a39a8e36b95244a5dd84401201",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\axi\\ddr4_v2_2_axic_register_slice.sv",
+        "expected": "68d078fa4af8fa62abd5c52fde9b7bef31e72e337141d3fb161db4518e8edc47",
+        "actual": "68d078fa4af8fa62abd5c52fde9b7bef31e72e337141d3fb161db4518e8edc47",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\axi\\ddr4_v2_2_carry_and.sv",
+        "expected": "6d49814545d448776e44ed3af2f20029b5d06c47a9f9259d52e2feace5a0d7d2",
+        "actual": "6d49814545d448776e44ed3af2f20029b5d06c47a9f9259d52e2feace5a0d7d2",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\axi\\ddr4_v2_2_carry_latch_and.sv",
+        "expected": "0bf6cd46420d07560f2107201b2416a6158672a8133492b22970448da6d94c4b",
+        "actual": "0bf6cd46420d07560f2107201b2416a6158672a8133492b22970448da6d94c4b",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\axi\\ddr4_v2_2_carry_latch_or.sv",
+        "expected": "9b6b4249ea11ad5056876eb1da6e07f7fb0cb5ec4c2beeea0de8830ac8c495a1",
+        "actual": "9b6b4249ea11ad5056876eb1da6e07f7fb0cb5ec4c2beeea0de8830ac8c495a1",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\axi\\ddr4_v2_2_carry_or.sv",
+        "expected": "6a3067aadf7655e9cb3f60e0904142eda1ef489764a71b2cf7cc03b4334f6ba0",
+        "actual": "6a3067aadf7655e9cb3f60e0904142eda1ef489764a71b2cf7cc03b4334f6ba0",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\axi\\ddr4_v2_2_command_fifo.sv",
+        "expected": "a5d8c7714a649e7715b428c9a2dc69482b5cf2e89b340eb86386c7eb8e3909d6",
+        "actual": "a5d8c7714a649e7715b428c9a2dc69482b5cf2e89b340eb86386c7eb8e3909d6",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\axi\\ddr4_v2_2_comparator.sv",
+        "expected": "d3b166dc9149e6acd8d8efa4e274ee79a8604ce9c900f306dcf707461c4c2cd4",
+        "actual": "d3b166dc9149e6acd8d8efa4e274ee79a8604ce9c900f306dcf707461c4c2cd4",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\axi\\ddr4_v2_2_comparator_sel.sv",
+        "expected": "db34716508e96438146a84fb114c0947e0d3a51a50196bdbb622bd03ba59e5bd",
+        "actual": "db34716508e96438146a84fb114c0947e0d3a51a50196bdbb622bd03ba59e5bd",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\axi\\ddr4_v2_2_comparator_sel_static.sv",
+        "expected": "1e9aecb1670f4a9297b92d2b354d2c588c37de7b012c01685f1a85a1cea6bd95",
+        "actual": "1e9aecb1670f4a9297b92d2b354d2c588c37de7b012c01685f1a85a1cea6bd95",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\axi\\ddr4_v2_2_r_upsizer.sv",
+        "expected": "ec67acf20856642a64bf91ad82a52517280e590cb49c19d57652493551754af6",
+        "actual": "ec67acf20856642a64bf91ad82a52517280e590cb49c19d57652493551754af6",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\axi\\ddr4_v2_2_w_upsizer.sv",
+        "expected": "9c69fac1e863f322dcfc3c2e3921d701870313c2b5b53f58385a8d34e5d0d61c",
+        "actual": "9c69fac1e863f322dcfc3c2e3921d701870313c2b5b53f58385a8d34e5d0d61c",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\axi_ctrl\\ddr4_v2_2_axi_ctrl_addr_decode.sv",
+        "expected": "22e7a4b95fdd21e5c3a8c4fc742bf15e79261d7e0d6a0f465a177d251c7a8e1f",
+        "actual": "22e7a4b95fdd21e5c3a8c4fc742bf15e79261d7e0d6a0f465a177d251c7a8e1f",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\axi_ctrl\\ddr4_v2_2_axi_ctrl_read.sv",
+        "expected": "c2862b0f43945547ae3a7ebc68aaa87984683595e9b9902685d66a072708a79a",
+        "actual": "c2862b0f43945547ae3a7ebc68aaa87984683595e9b9902685d66a072708a79a",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\axi_ctrl\\ddr4_v2_2_axi_ctrl_reg.sv",
+        "expected": "ea52933d21531a6b46d6dbc89541e17c01f8e534dc9c75fded6a984e59369bec",
+        "actual": "ea52933d21531a6b46d6dbc89541e17c01f8e534dc9c75fded6a984e59369bec",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\axi_ctrl\\ddr4_v2_2_axi_ctrl_reg_bank.sv",
+        "expected": "d15fe79a01efc0a06f02c596a363057f9d1b13f32ec1b37ac55025994a7bc347",
+        "actual": "d15fe79a01efc0a06f02c596a363057f9d1b13f32ec1b37ac55025994a7bc347",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\axi_ctrl\\ddr4_v2_2_axi_ctrl_top.sv",
+        "expected": "bf1e65102e78adde1d5b2f7e90155491bc6afb1f52e3b54d7a4d824f8e8ed051",
+        "actual": "bf1e65102e78adde1d5b2f7e90155491bc6afb1f52e3b54d7a4d824f8e8ed051",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\axi_ctrl\\ddr4_v2_2_axi_ctrl_write.sv",
+        "expected": "ae5d3919305f305e321e858953b1a446ecf7446aae239e5f2f11f8d85379d1ed",
+        "actual": "ae5d3919305f305e321e858953b1a446ecf7446aae239e5f2f11f8d85379d1ed",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\cal\\ddr4_v2_2_20_cal_assert.vh",
+        "expected": "abb245f225dfbb0c51e534a1e46a63aa58f8d30b02073306fbe277e3fb31ec06",
+        "actual": "abb245f225dfbb0c51e534a1e46a63aa58f8d30b02073306fbe277e3fb31ec06",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\cal\\ddr4_v2_2_20_chipscope_icon2xsdb_mstrbr_ver_inc.vh",
+        "expected": "f20cf27d1978faf4a0e0e28395e39dbb7218ff69252588f3bef88e37f86002d7",
+        "actual": "f20cf27d1978faf4a0e0e28395e39dbb7218ff69252588f3bef88e37f86002d7",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\cal\\ddr4_v2_2_20_cs_ver_inc.vh",
+        "expected": "49a6ca48082f7d946f814c59bda5dd74d516447c2a0a216d99837093437c1711",
+        "actual": "49a6ca48082f7d946f814c59bda5dd74d516447c2a0a216d99837093437c1711",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\cal\\ddr4_v2_2_cal.sv",
+        "expected": "f3af9fa26a40c716eabf5d985f516d792e46bbf79cbebe7adcd886dc2820c647",
+        "actual": "f3af9fa26a40c716eabf5d985f516d792e46bbf79cbebe7adcd886dc2820c647",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\cal\\ddr4_v2_2_cal_addr_decode.sv",
+        "expected": "dc5941b6b64482cb55bcb2d0d7e73bff7b67e67e5b871930399c54a793381ecd",
+        "actual": "dc5941b6b64482cb55bcb2d0d7e73bff7b67e67e5b871930399c54a793381ecd",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\cal\\ddr4_v2_2_cal_config_rom.sv",
+        "expected": "a42884f32badf3c29950ec1926e45b43cee1d2f46654e03f4f092dc38db98fbc",
+        "actual": "a42884f32badf3c29950ec1926e45b43cee1d2f46654e03f4f092dc38db98fbc",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\cal\\ddr4_v2_2_cal_cplx.sv",
+        "expected": "7fc530b154617bbb09dde0d514323a15935669379e5b5597a832647e4cabf5a2",
+        "actual": "7fc530b154617bbb09dde0d514323a15935669379e5b5597a832647e4cabf5a2",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\cal\\ddr4_v2_2_cal_cplx_data.sv",
+        "expected": "759381cb68e3d7b9f0c2a2a99fece258cfa28952304885c58d02fa36516abecb",
+        "actual": "759381cb68e3d7b9f0c2a2a99fece258cfa28952304885c58d02fa36516abecb",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\cal\\ddr4_v2_2_cal_debug_microblaze.sv",
+        "expected": "792528b2cdce298400fc140b63face0a38cea38d58b0959ce666db9615200d08",
+        "actual": "792528b2cdce298400fc140b63face0a38cea38d58b0959ce666db9615200d08",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\cal\\ddr4_v2_2_cal_mc_odt.sv",
+        "expected": "218875610effd1737c6351257d6683e6c48a6328a26cd3ec7e5c7389c6ad7f8c",
+        "actual": "218875610effd1737c6351257d6683e6c48a6328a26cd3ec7e5c7389c6ad7f8c",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\cal\\ddr4_v2_2_cal_pi.sv",
+        "expected": "4360cc7f370060a877d0935fbfac24984444029da634174d5921a11458fb932f",
+        "actual": "4360cc7f370060a877d0935fbfac24984444029da634174d5921a11458fb932f",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\cal\\ddr4_v2_2_cal_rd_en.sv",
+        "expected": "8757108ca95aa40924a459c0a6a3f2a5d22872a0438dfca08bb92d3d6837740b",
+        "actual": "8757108ca95aa40924a459c0a6a3f2a5d22872a0438dfca08bb92d3d6837740b",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\cal\\ddr4_v2_2_cal_read.sv",
+        "expected": "573d79130b892e3d5470b50835b6b3d390c3922f5c9dd606ee9d23b7cec63278",
+        "actual": "573d79130b892e3d5470b50835b6b3d390c3922f5c9dd606ee9d23b7cec63278",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\cal\\ddr4_v2_2_cal_sync.sv",
+        "expected": "5e230ea2a3f8f54f64438ea4b7ee5b5092fd689fdf9162a166f4d496a6e181ad",
+        "actual": "5e230ea2a3f8f54f64438ea4b7ee5b5092fd689fdf9162a166f4d496a6e181ad",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\cal\\ddr4_v2_2_cal_top.sv",
+        "expected": "207c615ac8d71ad65e47b937501746431e49e3e2799f4bf200f9f519b2c6d2a3",
+        "actual": "207c615ac8d71ad65e47b937501746431e49e3e2799f4bf200f9f519b2c6d2a3",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\cal\\ddr4_v2_2_cal_wr_bit.sv",
+        "expected": "1f6cc1ab94b10a9aa5dc77b3823282a1d0732e2b0a666fbf05d7b3a2340d32c8",
+        "actual": "1f6cc1ab94b10a9aa5dc77b3823282a1d0732e2b0a666fbf05d7b3a2340d32c8",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\cal\\ddr4_v2_2_cal_wr_byte.sv",
+        "expected": "3c82c3b176b00f4e9cf147b2ad74bd5732319a3835f48b909fff656e45aca1b4",
+        "actual": "3c82c3b176b00f4e9cf147b2ad74bd5732319a3835f48b909fff656e45aca1b4",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\cal\\ddr4_v2_2_cal_write.sv",
+        "expected": "ea241d5a0ee732220b5a54d2a0aa404042e1504c65923b4d35a6ac9815db60e9",
+        "actual": "ea241d5a0ee732220b5a54d2a0aa404042e1504c65923b4d35a6ac9815db60e9",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\cal\\ddr4_v2_2_cal_xsdb_arbiter.sv",
+        "expected": "4e0db73fb5d938a47cf4ef29fe8a6db813744112d51911e2cc750746c88299d0",
+        "actual": "4e0db73fb5d938a47cf4ef29fe8a6db813744112d51911e2cc750746c88299d0",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\cal\\ddr4_v2_2_cal_xsdb_bram.sv",
+        "expected": "4a1ab2ec6a6a2c07e7edff638eb13114916109d0b34666df7102c9911100ae23",
+        "actual": "4a1ab2ec6a6a2c07e7edff638eb13114916109d0b34666df7102c9911100ae23",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\cal\\ddr4_v2_2_chipscope_xsdb_slave.sv",
+        "expected": "2cd96da501cf6b5b2a080a49a54b17e14b98334eedfe297f05d3e74b41dcbb1a",
+        "actual": "2cd96da501cf6b5b2a080a49a54b17e14b98334eedfe297f05d3e74b41dcbb1a",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\cal\\ddr4_v2_2_dp_AB9.sv",
+        "expected": "f7154c1cec703dc1d4531ed14982fdf0c21bb4004a636445c9ef3f2b757219b2",
+        "actual": "f7154c1cec703dc1d4531ed14982fdf0c21bb4004a636445c9ef3f2b757219b2",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\cal\\w8_platform_memory_0_ddr4_cal_riu.sv",
+        "expected": "ef2b7b1782b7716cc174c57a44c5903b26cd7dacf1b7acc6599b1b029cd72936",
+        "actual": "ef2b7b1782b7716cc174c57a44c5903b26cd7dacf1b7acc6599b1b029cd72936",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\clocking\\ddr4_v2_2_infrastructure.sv",
+        "expected": "c24c8a359457a18f209aa51b63356621d49453af1162f7a22c0fc1dfe9bc4f3b",
+        "actual": "c24c8a359457a18f209aa51b63356621d49453af1162f7a22c0fc1dfe9bc4f3b",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\controller\\ddr4_v2_2_mc.sv",
+        "expected": "78d29fa7349f8653cba7e6dd0634070994f13c17973441e9c3707e06cba89ca1",
+        "actual": "78d29fa7349f8653cba7e6dd0634070994f13c17973441e9c3707e06cba89ca1",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\controller\\ddr4_v2_2_mc_act_rank.sv",
+        "expected": "e9cb8e765cb957d8e63087bcbbad3a3ee43074e85d8db8c6af9be36890dde491",
+        "actual": "e9cb8e765cb957d8e63087bcbbad3a3ee43074e85d8db8c6af9be36890dde491",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\controller\\ddr4_v2_2_mc_act_timer.sv",
+        "expected": "33c49bb4034b2d458054981dc472898c5add172381af18b7754571dd08c77137",
+        "actual": "33c49bb4034b2d458054981dc472898c5add172381af18b7754571dd08c77137",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\controller\\ddr4_v2_2_mc_arb_a.sv",
+        "expected": "1fee5e58f480c9aa738f1e2751aceb400680736648ae8feb49c7788725b34e06",
+        "actual": "1fee5e58f480c9aa738f1e2751aceb400680736648ae8feb49c7788725b34e06",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\controller\\ddr4_v2_2_mc_arb_c.sv",
+        "expected": "bcd6a6d31acd8f5243d48eb0f35c39c2c8407226117105167c196d255825d14f",
+        "actual": "bcd6a6d31acd8f5243d48eb0f35c39c2c8407226117105167c196d255825d14f",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\controller\\ddr4_v2_2_mc_arb_mux_p.sv",
+        "expected": "11b2dd05258571d6526878acffe8e40276ce5ccdfd0ec4ffcea6af2cd2c12022",
+        "actual": "11b2dd05258571d6526878acffe8e40276ce5ccdfd0ec4ffcea6af2cd2c12022",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\controller\\ddr4_v2_2_mc_arb_p.sv",
+        "expected": "e755f1b3b4d2a90642f4945fb6eed8390faaa3a778e73e0dc42331986f63f192",
+        "actual": "e755f1b3b4d2a90642f4945fb6eed8390faaa3a778e73e0dc42331986f63f192",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\controller\\ddr4_v2_2_mc_cmd_mux_ap.sv",
+        "expected": "1c7c03df125dc49291edefe5d080a5672d25b50d1f5b15e14132f09bd7902ebd",
+        "actual": "1c7c03df125dc49291edefe5d080a5672d25b50d1f5b15e14132f09bd7902ebd",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\controller\\ddr4_v2_2_mc_cmd_mux_c.sv",
+        "expected": "5888680fdafd863030f17f1abf3b18f89b41343901053131c37108423798f083",
+        "actual": "5888680fdafd863030f17f1abf3b18f89b41343901053131c37108423798f083",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\controller\\ddr4_v2_2_mc_ctl.sv",
+        "expected": "cedaedcedb9a90702b154702b26cd975ae06d05fa301eff447cf184dc9d10a1f",
+        "actual": "cedaedcedb9a90702b154702b26cd975ae06d05fa301eff447cf184dc9d10a1f",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\controller\\ddr4_v2_2_mc_ecc.sv",
+        "expected": "cced952a41fe3c6f8f4b33c7237be2ae97f1fba1d084c0ab4ccd7571c80280a1",
+        "actual": "cced952a41fe3c6f8f4b33c7237be2ae97f1fba1d084c0ab4ccd7571c80280a1",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\controller\\ddr4_v2_2_mc_ecc_buf.sv",
+        "expected": "ca9065a0273736ca006f7a5a153194353dff8ea3a900ae457bb8474b75bb0c03",
+        "actual": "ca9065a0273736ca006f7a5a153194353dff8ea3a900ae457bb8474b75bb0c03",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\controller\\ddr4_v2_2_mc_ecc_dec_fix.sv",
+        "expected": "ad2075f0e23ba0298bfbe1ec9a6441f842de6f54f680f2e4f56bfb9e8060b5d5",
+        "actual": "ad2075f0e23ba0298bfbe1ec9a6441f842de6f54f680f2e4f56bfb9e8060b5d5",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\controller\\ddr4_v2_2_mc_ecc_fi_xor.sv",
+        "expected": "fdcad477b24900b9c181e0dbb930c6afd033c612f77336974a6beb2a5032e627",
+        "actual": "fdcad477b24900b9c181e0dbb930c6afd033c612f77336974a6beb2a5032e627",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\controller\\ddr4_v2_2_mc_ecc_gen.sv",
+        "expected": "6cd4e508547f6923a71941bd898b50705ac48538e09dce45f863fdedd7a02aa7",
+        "actual": "6cd4e508547f6923a71941bd898b50705ac48538e09dce45f863fdedd7a02aa7",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\controller\\ddr4_v2_2_mc_ecc_merge_enc.sv",
+        "expected": "75705f08f691699b24dcf34691dcb4f46467db5ada10bc470d5991c8ef27cca8",
+        "actual": "75705f08f691699b24dcf34691dcb4f46467db5ada10bc470d5991c8ef27cca8",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\controller\\ddr4_v2_2_mc_group.sv",
+        "expected": "42788a5915c8a7ecfef2241f32e083f57a02d590b9c03cd205b758116389e0cf",
+        "actual": "42788a5915c8a7ecfef2241f32e083f57a02d590b9c03cd205b758116389e0cf",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\controller\\ddr4_v2_2_mc_periodic.sv",
+        "expected": "e6d67afe32015b1f6f963f888fe5f9640f6bede4b5cd10cd0e4c6192ab73f944",
+        "actual": "e6d67afe32015b1f6f963f888fe5f9640f6bede4b5cd10cd0e4c6192ab73f944",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\controller\\ddr4_v2_2_mc_rd_wr.sv",
+        "expected": "53c0d2cfb0a745143057236249960cc4240ea9b954499e8bceb9dd7ce5771543",
+        "actual": "53c0d2cfb0a745143057236249960cc4240ea9b954499e8bceb9dd7ce5771543",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\controller\\ddr4_v2_2_mc_ref.sv",
+        "expected": "f68813805a940336c23788c610a6e7563dad13c418860d60b6fd1942c9b88c51",
+        "actual": "f68813805a940336c23788c610a6e7563dad13c418860d60b6fd1942c9b88c51",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\controller\\ddr4_v2_2_mc_wtr.sv",
+        "expected": "f0fd491814d1064143e271c31c415e67b7b28ad7ab5896798778b1ac7bf61f25",
+        "actual": "f0fd491814d1064143e271c31c415e67b7b28ad7ab5896798778b1ac7bf61f25",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\ip_top\\ddr4_v2_2_20_ddr4_assert.vh",
+        "expected": "6742c2f98e5eac1ac063c67ff814fc65b298455387781726e622add6496e25d0",
+        "actual": "6742c2f98e5eac1ac063c67ff814fc65b298455387781726e622add6496e25d0",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\ip_top\\w8_platform_memory_0.sv",
+        "expected": "a0d90a60d9eaa4a7cf51752213dc6ef47392765e6ecdbe9034e5c984dae1940c",
+        "actual": "a0d90a60d9eaa4a7cf51752213dc6ef47392765e6ecdbe9034e5c984dae1940c",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\ip_top\\w8_platform_memory_0_ddr4.sv",
+        "expected": "8c09775a5065e9c05be4d964ecb17c8a86ec010be79764f431ef57306d7861c6",
+        "actual": "8c09775a5065e9c05be4d964ecb17c8a86ec010be79764f431ef57306d7861c6",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\ip_top\\w8_platform_memory_0_ddr4_mem_intfc.sv",
+        "expected": "9743bafe18ba310a7d94d8bd45762bfdb8250a51ded931379aa25d91193eb4de",
+        "actual": "9743bafe18ba310a7d94d8bd45762bfdb8250a51ded931379aa25d91193eb4de",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\ui\\ddr4_v2_2_ui.sv",
+        "expected": "c12db2c67cb04b5e1c3457e8c1c33d570723210c3628ecd91b68913c21d98be1",
+        "actual": "c12db2c67cb04b5e1c3457e8c1c33d570723210c3628ecd91b68913c21d98be1",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\ui\\ddr4_v2_2_ui_cmd.sv",
+        "expected": "dabea3dee42c7d098cc760e5e19ff98c8ce06b4288d8c9b49a0776d916e5108f",
+        "actual": "dabea3dee42c7d098cc760e5e19ff98c8ce06b4288d8c9b49a0776d916e5108f",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\ui\\ddr4_v2_2_ui_rd_data.sv",
+        "expected": "adcb49bc3a326c8425583a89c50120ac20b69ae34b22ac7be03f4265ecb8cfc6",
+        "actual": "adcb49bc3a326c8425583a89c50120ac20b69ae34b22ac7be03f4265ecb8cfc6",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_memory_0\\rtl\\ui\\ddr4_v2_2_ui_wr_data.sv",
+        "expected": "2df0c0b9b46876444436ca09a854a94faa96071862f5684f302d9153f5dfb6b4",
+        "actual": "2df0c0b9b46876444436ca09a854a94faa96071862f5684f302d9153f5dfb6b4",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_one_0\\synth\\w8_platform_one_0.v",
+        "expected": "14c548b94574f4f82542dfe3e90deb45e76ef502e7cba3f02e0239c341e42296",
+        "actual": "14c548b94574f4f82542dfe3e90deb45e76ef502e7cba3f02e0239c341e42296",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_xbar_0\\synth\\w8_platform_xbar_0.v",
+        "expected": "eb5a636a290b01433e0703b9fda47f6fde4941ed7eeb93b29957c5bed9aea4da",
+        "actual": "eb5a636a290b01433e0703b9fda47f6fde4941ed7eeb93b29957c5bed9aea4da",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ip\\w8_platform_zero_0\\synth\\w8_platform_zero_0.v",
+        "expected": "c10031ae8b504ca1e0a2791cba64d148b2546a826d9398dec616cf25585b1382",
+        "actual": "c10031ae8b504ca1e0a2791cba64d148b2546a826d9398dec616cf25585b1382",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ipshared\\10ab\\hdl\\generic_baseblocks_v2_1_vl_rfs.v",
+        "expected": "052a0d90ba4b5ad1f0e7086fa83c0ba4430bbc7ad39c8d8c654292464281358d",
+        "actual": "052a0d90ba4b5ad1f0e7086fa83c0ba4430bbc7ad39c8d8c654292464281358d",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ipshared\\279e\\hdl\\axi_data_fifo_v2_1_vl_rfs.v",
+        "expected": "6d714b4a87c3bd2a217b3de4e554e16d9c265f9816f743ba884f831cd0c8458c",
+        "actual": "6d714b4a87c3bd2a217b3de4e554e16d9c265f9816f743ba884f831cd0c8458c",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ipshared\\670d\\hdl\\axi_dwidth_converter_v2_1_vlsyn_rfs.v",
+        "expected": "f7a75d89398dba21d5c8a2a6193d8c4bb0c76d6083e6de35c2036757fd3557fb",
+        "actual": "f7a75d89398dba21d5c8a2a6193d8c4bb0c76d6083e6de35c2036757fd3557fb",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ipshared\\769c\\hdl\\axi_clock_converter_v2_1_vl_rfs.v",
+        "expected": "9f05db0c98f134e7df112a01e76f16e2d21eb5bdedaa6e6a92731d948e8faf65",
+        "actual": "9f05db0c98f134e7df112a01e76f16e2d21eb5bdedaa6e6a92731d948e8faf65",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ipshared\\a29c\\hdl\\verilog\\xsdbs_v1_0_3_i2x.vh",
+        "expected": "ae350566fb5890f43fa3e773306e539305f01e0862db8d84903bba8946332cbe",
+        "actual": "ae350566fb5890f43fa3e773306e539305f01e0862db8d84903bba8946332cbe",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ipshared\\a29c\\hdl\\verilog\\xsdbs_v1_0_3_in.vh",
+        "expected": "8bb9024b81e1dcf9c6e3de2418fd0e58203f1df11c80473c1de86687e05cb79d",
+        "actual": "8bb9024b81e1dcf9c6e3de2418fd0e58203f1df11c80473c1de86687e05cb79d",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ipshared\\a29c\\hdl\\xsdbs_v1_0_vl_rfs.v",
+        "expected": "56f724a590362555ff34a40d9a212c092a0d189cc274d313314b566be4b4962a",
+        "actual": "56f724a590362555ff34a40d9a212c092a0d189cc274d313314b566be4b4962a",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ipshared\\a63f\\hdl\\axi_protocol_converter_v2_1_vl_rfs.v",
+        "expected": "0c4c649835d20395e266b6f463216186a81f1020a68496d8b5ee475dc74bcdfe",
+        "actual": "0c4c649835d20395e266b6f463216186a81f1020a68496d8b5ee475dc74bcdfe",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ipshared\\b140\\hdl\\jtag_axi_v1_2_syn_rfs.v",
+        "expected": "ed2aa748f3948fb48ae7fed817384307c9d6182e72c26d2a42ccc2eac5dfdc9d",
+        "actual": "ed2aa748f3948fb48ae7fed817384307c9d6182e72c26d2a42ccc2eac5dfdc9d",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ipshared\\c2c6\\mmcm_pll_drp_func_7s_mmcm.vh",
+        "expected": "cb6259dc85e41582d115449bbf8fc6c002853e9e225354a95da19f83bf48302d",
+        "actual": "cb6259dc85e41582d115449bbf8fc6c002853e9e225354a95da19f83bf48302d",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ipshared\\c2c6\\mmcm_pll_drp_func_7s_pll.vh",
+        "expected": "f1f234705549666997cd3fc989e46098c9c330441f93934b744adcd8bec86038",
+        "actual": "f1f234705549666997cd3fc989e46098c9c330441f93934b744adcd8bec86038",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ipshared\\c2c6\\mmcm_pll_drp_func_us_mmcm.vh",
+        "expected": "4ab7d9af8568c56cabbd51a99e9879f5f9384f8b393f4ad5b39cf092dab24716",
+        "actual": "4ab7d9af8568c56cabbd51a99e9879f5f9384f8b393f4ad5b39cf092dab24716",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ipshared\\c2c6\\mmcm_pll_drp_func_us_pll.vh",
+        "expected": "35119dfda232b24a866c8c535aa8af47ccb7626c9c706e01095deec87ccd5aa3",
+        "actual": "35119dfda232b24a866c8c535aa8af47ccb7626c9c706e01095deec87ccd5aa3",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ipshared\\c2c6\\mmcm_pll_drp_func_us_plus_mmcm.vh",
+        "expected": "dba7a26da5bac79f19075d4a9b6a2a98f7047bf355a3e4c85e5ac871db3805dc",
+        "actual": "dba7a26da5bac79f19075d4a9b6a2a98f7047bf355a3e4c85e5ac871db3805dc",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ipshared\\c2c6\\mmcm_pll_drp_func_us_plus_pll.vh",
+        "expected": "b5817437a92aa100ec92d27117987c9a49f2bd1637cd661d4f01017eac092230",
+        "actual": "b5817437a92aa100ec92d27117987c9a49f2bd1637cd661d4f01017eac092230",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ipshared\\d390\\hdl\\xlconstant_v1_1_vl_rfs.v",
+        "expected": "97f9ad44585576c0a05be89a535f0224c75452c304478f58760298aec175e8e9",
+        "actual": "97f9ad44585576c0a05be89a535f0224c75452c304478f58760298aec175e8e9",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ipshared\\e2ba\\hdl\\ltlib_v1_0_vl_rfs.v",
+        "expected": "88126dc2a1b115a3b26e13b082f1f62fe70e31a20744ad8c383ca7fad67428ff",
+        "actual": "88126dc2a1b115a3b26e13b082f1f62fe70e31a20744ad8c383ca7fad67428ff",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ipshared\\e2ba\\hdl\\verilog\\ltlib_v1_0_1_lib_fn.vh",
+        "expected": "949a5513cab4e642e121b79b89cc898ad5b1f3b3c580abf1bc1252ce35780490",
+        "actual": "949a5513cab4e642e121b79b89cc898ad5b1f3b3c580abf1bc1252ce35780490",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ipshared\\e2ba\\hdl\\verilog\\ltlib_v1_0_1_ver.vh",
+        "expected": "5bc61708187f0764f1ea953a99a94fb84c037b7f63c0af04fa02dc0516b37c3d",
+        "actual": "5bc61708187f0764f1ea953a99a94fb84c037b7f63c0af04fa02dc0516b37c3d",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ipshared\\ec67\\hdl\\axi_infrastructure_v1_1_0.vh",
+        "expected": "6f75042bd294dd05d9e4d326fe845e6bd44ec51637b1ad8ce66fbc295f16cc52",
+        "actual": "6f75042bd294dd05d9e4d326fe845e6bd44ec51637b1ad8ce66fbc295f16cc52",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ipshared\\ec67\\hdl\\axi_infrastructure_v1_1_vl_rfs.v",
+        "expected": "64a5966a7f6c9f296102fb2816e0f4ac4808888b2b64bc0bdafae9ea019a72c4",
+        "actual": "64a5966a7f6c9f296102fb2816e0f4ac4808888b2b64bc0bdafae9ea019a72c4",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ipshared\\fb47\\hdl\\axi_crossbar_v2_1_vl_rfs.v",
+        "expected": "3a906e8ef6fb333de95ac7e0ad144c333fa8409bedc78562f18c7a00322f98b8",
+        "actual": "3a906e8ef6fb333de95ac7e0ad144c333fa8409bedc78562f18c7a00322f98b8",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\ipshared\\ff9f\\hdl\\axi_register_slice_v2_1_vl_rfs.v",
+        "expected": "a7fd32be7d1c10618460bbb01abe55ffab3f6010b7bfcfef11a6861a7fc0fe33",
+        "actual": "a7fd32be7d1c10618460bbb01abe55ffab3f6010b7bfcfef11a6861a7fc0fe33",
+        "status": "PASS"
+      },
+      {
+        "path": "D:\\fpga\\vit_tiny_vcu118\\hf02_d166_sy\\project\\host75_synth.gen\\sources_1\\bd\\w8_platform\\synth\\w8_platform.v",
+        "expected": "f22832cd2aab9d84608524a137addb56e01efe83439d0387aed9cd9de0f1467c",
+        "actual": "f22832cd2aab9d84608524a137addb56e01efe83439d0387aed9cd9de0f1467c",
+        "status": "PASS"
+      }
+    ],
+    "nominal_counter_scope": {
+      "period_ns": 6.0,
+      "frequency_measured": false,
+      "core_cycles": 1306518791,
+      "job_cycles": 1306524792,
+      "core_latency_ms": 7839.112746,
+      "job_latency_ms": 7839.148752,
+      "collector_and_handoff_cycles": 6001,
+      "collector_and_handoff_ms": 0.036006,
+      "claim": "Failed numerical run; not accepted inference FPS; counters exclude JTAG upload and host readout"
+    },
+    "root_cause": "UNKNOWN",
+    "new_simulation": "NOT_RUN",
+    "new_build": "NOT_RUN",
+    "rtl_or_golden_changed": false
+  },
+  "model_meta": {
+    "schema": "vit-tiny-w8a8-pc-v2",
+    "layers": 12,
+    "hidden": 192,
+    "heads": 3,
+    "tokens": 197,
+    "classes": 1000,
+    "profile": "input_grid",
+    "alpha": 0.75,
+    "input_scale": 0.00784313725490196,
+    "input_zp": 0,
+    "arrays_sha256": "67bbc4304975bd0882b7e5f665982fc97eaecc8986ed59ba7c0e28cfb501f415",
+    "runtime": "integer only",
+    "formal_accuracy": "NOT_RUN",
+    "rounding": "RNE",
+    "score_fraction": 10,
+    "exp_fraction": 30,
+    "input_encoding": "rgb_u8_minus_128",
+    "input_offset": 0.00392156862745098,
+    "input_offset_folded_in_patch_bias": true
+  },
+  "model": {
+    "layers": 12,
+    "tokens": 197,
+    "embedding": 192,
+    "heads": 3,
+    "head_dimension": 64,
+    "mlp": 768,
+    "classes": 1000
+  },
+  "instruction_count": 13024,
+  "op_counts": {
+    "8": 323,
+    "1": 86,
+    "10": 1,
+    "2": 4729,
+    "7": 684,
+    "3": 7092,
+    "9": 36,
+    "4": 36,
+    "6": 24,
+    "5": 12,
+    "15": 1
+  },
+  "gemm_commands": 122,
+  "gemm_macs": 1253683200,
+  "gemm_families": {
+    "patch": {
+      "commands": 1,
+      "macs": 28901376,
+      "shapes": [
+        [
+          196,
+          192,
+          768
+        ]
+      ]
+    },
+    "qkv": {
+      "commands": 12,
+      "macs": 261439488,
+      "shapes": [
+        [
+          197,
+          576,
+          192
+        ]
+      ]
+    },
+    "qk": {
+      "commands": 36,
+      "macs": 89415936,
+      "shapes": [
+        [
+          197,
+          197,
+          64
+        ]
+      ]
+    },
+    "av": {
+      "commands": 36,
+      "macs": 89415936,
+      "shapes": [
+        [
+          197,
+          64,
+          197
+        ]
+      ]
+    },
+    "projection": {
+      "commands": 12,
+      "macs": 87146496,
+      "shapes": [
+        [
+          197,
+          192,
+          192
+        ]
+      ]
+    },
+    "fc1": {
+      "commands": 12,
+      "macs": 348585984,
+      "shapes": [
+        [
+          197,
+          768,
+          192
+        ]
+      ]
+    },
+    "fc2": {
+      "commands": 12,
+      "macs": 348585984,
+      "shapes": [
+        [
+          197,
+          192,
+          768
+        ]
+      ]
+    },
+    "head": {
+      "commands": 1,
+      "macs": 192000,
+      "shapes": [
+        [
+          1,
+          1000,
+          192
+        ]
+      ]
+    }
+  },
+  "logical_blobs": [
+    {
+      "name": "input_patch_codes",
+      "offset": 0,
+      "bytes": 150528,
+      "sha256": "874a632f2e9e19a377a11b544272ab9d3f0319b76a35b832fb4b9233cc8e1a33"
+    },
+    {
+      "name": "exp_Q30",
+      "offset": 150528,
+      "bytes": 65540,
+      "sha256": "3db16f73a3c12782d89b66fe1b52236b72fd7a5e98cb318d2b7e6b3ed5a9af3c"
+    },
+    {
+      "name": "patch_embed.proj.weights",
+      "offset": 216128,
+      "bytes": 147456,
+      "sha256": "7f1d2ba49ec298f4aa3113a4461ef15ffd68a90c0ffb5597dc88d0830b3871fd"
+    },
+    {
+      "name": "patch_embed.proj.bias",
+      "offset": 363584,
+      "bytes": 768,
+      "sha256": "a64433ef2f85e3ebb1cb66150d1a9fdd5a4ab53846b73f2d549f4e7f1de782a6"
+    },
+    {
+      "name": "patch_embed.proj.rq",
+      "offset": 364352,
+      "bytes": 1536,
+      "sha256": "ef9aa088ed858cb0c52223f54611161c2fd1559ff253e8be5d109f951bfed3bc"
+    },
+    {
+      "name": "position_CLS_Q20",
+      "offset": 365888,
+      "bytes": 151296,
+      "sha256": "0242e8d10205a0e028a335f69c6ba475d9e4ea2101991141745735f64954d6ce"
+    },
+    {
+      "name": "frontend_conversion",
+      "offset": 517184,
+      "bytes": 6144,
+      "sha256": "beffe20bdfbadd83b84364ea57fec345a3ae8764ab7d1d66a97533eb48d28bfe"
+    },
+    {
+      "name": "blocks.0.norm1.params",
+      "offset": 523328,
+      "bytes": 6144,
+      "sha256": "ba08c45b5b0ef6ff715059e13b42f50226bc1376c8cb985614bf756a6c4ee690"
+    },
+    {
+      "name": "blocks.0.attn.qkv.weights",
+      "offset": 529472,
+      "bytes": 110592,
+      "sha256": "355c456790a3e326fb62b68f663e06106b9ad19b81ff2804f937d5739c4cecf6"
+    },
+    {
+      "name": "blocks.0.attn.qkv.bias",
+      "offset": 640064,
+      "bytes": 2304,
+      "sha256": "b3943ee71788e0623350b77cb1cc93dd5d4f2f9cd5255f1a0e1d1e50e2a08e7a"
+    },
+    {
+      "name": "blocks.0.attn.qkv.rq",
+      "offset": 642368,
+      "bytes": 4608,
+      "sha256": "42cd67dc91c9c24de9d2e00b443feb923373aa34360115b4080fc6a7ff271a3a"
+    },
+    {
+      "name": "zero_dynamic_QK",
+      "offset": 646976,
+      "bytes": 13312,
+      "sha256": "7784ef4f0c425eb5578559102faaa99c4fba0ab2c2ff7dbe5fcc3c9e731a97a7"
+    },
+    {
+      "name": "zero_dynamic_AV",
+      "offset": 660288,
+      "bytes": 12608,
+      "sha256": "8e06738f2ac46a9104ebda20fba2aee88442fe884fe4476e969fce00832d5a9c"
+    },
+    {
+      "name": "attn0.0.av_rq",
+      "offset": 672896,
+      "bytes": 512,
+      "sha256": "b4d76a1e6683d0f70f8bdde4c903b3a8e57118db6d3a794de80cf81c7e4ef2c2"
+    },
+    {
+      "name": "attn0.1.av_rq",
+      "offset": 673408,
+      "bytes": 512,
+      "sha256": "1355121d5995f217da91a5534a5cf072b2b1504ff49669b90fa97b0ab28df5e9"
+    },
+    {
+      "name": "attn0.2.av_rq",
+      "offset": 673920,
+      "bytes": 512,
+      "sha256": "59379809fd6ff679ee7fc910c1462e6d486afb024f203e5e647c27ba79141d0c"
+    },
+    {
+      "name": "blocks.0.attn.proj.weights",
+      "offset": 674432,
+      "bytes": 36864,
+      "sha256": "fc94ca6ca7d4c881f4e83d6a41a00c526fae186420010b166ab34fd923f2adfa"
+    },
+    {
+      "name": "blocks.0.attn.proj.bias",
+      "offset": 711296,
+      "bytes": 768,
+      "sha256": "0d452007e8b25b529c72760667d6e23758e4ee9f4b8423ca403702d77368c45b"
+    },
+    {
+      "name": "blocks.0.attn.proj.rq",
+      "offset": 712064,
+      "bytes": 1536,
+      "sha256": "cb4edefea2755bc15df6403184350cb431794a0824609467051a1daaabe66445"
+    },
+    {
+      "name": "res0.params",
+      "offset": 713600,
+      "bytes": 6144,
+      "sha256": "15d5ac1fedde63d44d8698d55d8ca396a1188e33cb49d5ffa7f33eaa94fc2c29"
+    },
+    {
+      "name": "blocks.0.norm2.params",
+      "offset": 719744,
+      "bytes": 6144,
+      "sha256": "d3202fe90c203feb43dd0dfc670eccdd0aed6883a6c77f834aae301193e1d147"
+    },
+    {
+      "name": "blocks.0.mlp.fc1.weights",
+      "offset": 725888,
+      "bytes": 147456,
+      "sha256": "2de317e3913bdbd919cb2fdf215e5e189c7b8adf3ef28c489eba087faeb8050f"
+    },
+    {
+      "name": "blocks.0.mlp.fc1.bias",
+      "offset": 873344,
+      "bytes": 3072,
+      "sha256": "4ebba6475971215d068bf8428b7cd9964ceb1855ecd8e682f99217b47cfa144e"
+    },
+    {
+      "name": "blocks.0.mlp.fc1.rq",
+      "offset": 876416,
+      "bytes": 6144,
+      "sha256": "120f7c481edf77253ddfabb384b2dd3a361aad3ec63f6a8b61e96d728512099e"
+    },
+    {
+      "name": "blocks.0.gelu",
+      "offset": 882560,
+      "bytes": 196608,
+      "sha256": "01b16af57d27d172c43978061e01b59e7653785f611fe81b4aad9f9267d3e3dc"
+    },
+    {
+      "name": "blocks.0.mlp.fc2.weights",
+      "offset": 1079168,
+      "bytes": 147456,
+      "sha256": "3278f6b07c325f7a9300eb19b4edd296429ec8b6af1b5a249bbbf7da374821a1"
+    },
+    {
+      "name": "blocks.0.mlp.fc2.bias",
+      "offset": 1226624,
+      "bytes": 768,
+      "sha256": "535fcbe2b160c6590e72768bf642b3b57373dbbb839cc9bea4e690fa9b951458"
+    },
+    {
+      "name": "blocks.0.mlp.fc2.rq",
+      "offset": 1227392,
+      "bytes": 1536,
+      "sha256": "2c585f5e35666ad8744b256b96635608b485865a466415110603c1ecf60620cb"
+    },
+    {
+      "name": "res1.params",
+      "offset": 1228928,
+      "bytes": 6144,
+      "sha256": "f69816becfc2bb87d5e77271b0e3e21a74fdf2899c034ae46500d647e7f2f7bc"
+    },
+    {
+      "name": "blocks.1.norm1.params",
+      "offset": 1235072,
+      "bytes": 6144,
+      "sha256": "231378bf15150425f51adebb31e59b0d7a04ad429f8aac1af47c652897a5a0cc"
+    },
+    {
+      "name": "blocks.1.attn.qkv.weights",
+      "offset": 1241216,
+      "bytes": 110592,
+      "sha256": "3fce39db5998d43edfa6716a3b3410364548151319375e41a5ce33b8d377a5ab"
+    },
+    {
+      "name": "blocks.1.attn.qkv.bias",
+      "offset": 1351808,
+      "bytes": 2304,
+      "sha256": "1bad9e00a63f6d8aa02255ea391a119e966ec3ef36c10176f848e945befdf773"
+    },
+    {
+      "name": "blocks.1.attn.qkv.rq",
+      "offset": 1354112,
+      "bytes": 4608,
+      "sha256": "68216ef9b86fa86e7bb3875730172694a8d78ebee32825a894ee290a335338bd"
+    },
+    {
+      "name": "attn1.0.av_rq",
+      "offset": 1358720,
+      "bytes": 512,
+      "sha256": "7d03a427b951631e8e53ca80bfb2bc25cd9ca77961a34f1e00b6b86587b1ce88"
+    },
+    {
+      "name": "attn1.1.av_rq",
+      "offset": 1359232,
+      "bytes": 512,
+      "sha256": "ac677a30895feef32e3e358a92a2c70270b0557384ec2693ee8155c9287c83bb"
+    },
+    {
+      "name": "attn1.2.av_rq",
+      "offset": 1359744,
+      "bytes": 512,
+      "sha256": "337da16192b8fa96cee142d975b64ed1f5430c23705208e75781b55a23391fb7"
+    },
+    {
+      "name": "blocks.1.attn.proj.weights",
+      "offset": 1360256,
+      "bytes": 36864,
+      "sha256": "11d6e65e6119dca77a724adfc6c397924bea1a8abef0cea626db27a2cd4e186f"
+    },
+    {
+      "name": "blocks.1.attn.proj.bias",
+      "offset": 1397120,
+      "bytes": 768,
+      "sha256": "fecd36673c19eb88462e673dca78e520e6ce5143d8f34dd5a26e808864c19263"
+    },
+    {
+      "name": "blocks.1.attn.proj.rq",
+      "offset": 1397888,
+      "bytes": 1536,
+      "sha256": "edc02a863a7cdae2eeb4ed1b5523d8c436fb8f4d61a1fe0a2ed00e90edf8ad95"
+    },
+    {
+      "name": "res2.params",
+      "offset": 1399424,
+      "bytes": 6144,
+      "sha256": "b85d5c2241cc202ad630be67b92444e2281c41c91ccca72fa548c70e256cabfa"
+    },
+    {
+      "name": "blocks.1.norm2.params",
+      "offset": 1405568,
+      "bytes": 6144,
+      "sha256": "6b7674d132a637646858b7f8ca0e2e691b7190473953f66a833203af666e6cf2"
+    },
+    {
+      "name": "blocks.1.mlp.fc1.weights",
+      "offset": 1411712,
+      "bytes": 147456,
+      "sha256": "d3c7cc3b1df92789238ddd22da95a5ca574bc492226bdc55ebff9581fdd313d2"
+    },
+    {
+      "name": "blocks.1.mlp.fc1.bias",
+      "offset": 1559168,
+      "bytes": 3072,
+      "sha256": "9af8877a3b76e985c84f52fd5f4c8672c90e2fa65adc4336539ac9098097d98d"
+    },
+    {
+      "name": "blocks.1.mlp.fc1.rq",
+      "offset": 1562240,
+      "bytes": 6144,
+      "sha256": "275318792caefacafffa05d11e2d52346eeda9f67d63a8dcb0588716972cffe5"
+    },
+    {
+      "name": "blocks.1.gelu",
+      "offset": 1568384,
+      "bytes": 196608,
+      "sha256": "99d5a7109496e74c616a2b2439efaa5297ffa301cfbce8041254a9d865e4dd77"
+    },
+    {
+      "name": "blocks.1.mlp.fc2.weights",
+      "offset": 1764992,
+      "bytes": 147456,
+      "sha256": "0ad536e6d8359bcb443588540329c403ec7eac653946eb324b65076412d070bd"
+    },
+    {
+      "name": "blocks.1.mlp.fc2.bias",
+      "offset": 1912448,
+      "bytes": 768,
+      "sha256": "662c93d0b90e3df4c379adf42d85b428a56ad099a43bce86a6dcb9b323b47525"
+    },
+    {
+      "name": "blocks.1.mlp.fc2.rq",
+      "offset": 1913216,
+      "bytes": 1536,
+      "sha256": "148e932d58fb0159dcdbedefc4d4548287e3ae871d9ea334139cbc3bf48e9dec"
+    },
+    {
+      "name": "res3.params",
+      "offset": 1914752,
+      "bytes": 6144,
+      "sha256": "a06d3bf503cad30e647abdec68f7a636065941ea6b6b549f97475394c1570937"
+    },
+    {
+      "name": "blocks.2.norm1.params",
+      "offset": 1920896,
+      "bytes": 6144,
+      "sha256": "6577f975b2247a369b449a1281e654704813790b77888d30dbe83cde027d6f90"
+    },
+    {
+      "name": "blocks.2.attn.qkv.weights",
+      "offset": 1927040,
+      "bytes": 110592,
+      "sha256": "7213693e7d90e3d0a23f6a52815c95fe68c731c674495109501f1f9e2bbe4e0e"
+    },
+    {
+      "name": "blocks.2.attn.qkv.bias",
+      "offset": 2037632,
+      "bytes": 2304,
+      "sha256": "ff1bd8cce62dd8179ce639b09a44408303a376f5492174bd9c70236f4c2a20bd"
+    },
+    {
+      "name": "blocks.2.attn.qkv.rq",
+      "offset": 2039936,
+      "bytes": 4608,
+      "sha256": "16e3ce42958fe8be7e55318d09dd2e5a990875213d1cd13d1f7275f3912579aa"
+    },
+    {
+      "name": "attn2.0.av_rq",
+      "offset": 2044544,
+      "bytes": 512,
+      "sha256": "31882e3605d2be268923af9e22e78e47ae07c382e070ead890e11d0b1dd774aa"
+    },
+    {
+      "name": "attn2.1.av_rq",
+      "offset": 2045056,
+      "bytes": 512,
+      "sha256": "836492a63a5c9706a926e98f70e80f0268d10b23fff09c3bc1b4aaa3a511c9dc"
+    },
+    {
+      "name": "attn2.2.av_rq",
+      "offset": 2045568,
+      "bytes": 512,
+      "sha256": "0b8d964129d491574fa23f2158c71d8a2dc0ec269219a5bcc2187cc564b8ae8c"
+    },
+    {
+      "name": "blocks.2.attn.proj.weights",
+      "offset": 2046080,
+      "bytes": 36864,
+      "sha256": "4ce17be24d73f2576e4589f11b1b229fca9d05319bd490ac036c9630b947b3b9"
+    },
+    {
+      "name": "blocks.2.attn.proj.bias",
+      "offset": 2082944,
+      "bytes": 768,
+      "sha256": "0cc43f03b61485f9640a7eb7099bc9ad8cd5469f3ff3da058a21f1b7d5cc7069"
+    },
+    {
+      "name": "blocks.2.attn.proj.rq",
+      "offset": 2083712,
+      "bytes": 1536,
+      "sha256": "4e69a52ab68d45ed263e49c2b3f02d664ce260c9f510d25fdc4484b60e37cb71"
+    },
+    {
+      "name": "res4.params",
+      "offset": 2085248,
+      "bytes": 6144,
+      "sha256": "a37998cddf49d93c720b5584f29e956bc8ce00b8c966769374737b2bc905630c"
+    },
+    {
+      "name": "blocks.2.norm2.params",
+      "offset": 2091392,
+      "bytes": 6144,
+      "sha256": "082140750f13b988467dbebf944bf8ff98a72c9a082078f924c7d3b17ba6f0b6"
+    },
+    {
+      "name": "blocks.2.mlp.fc1.weights",
+      "offset": 2097536,
+      "bytes": 147456,
+      "sha256": "e55fd49400d60bc94da510e4575694a9f56c57e00f32a425cd6512d584725771"
+    },
+    {
+      "name": "blocks.2.mlp.fc1.bias",
+      "offset": 2244992,
+      "bytes": 3072,
+      "sha256": "071f3b27b45115f2a4cd567711535aa239735c017c627c0a98b011a56314c0bf"
+    },
+    {
+      "name": "blocks.2.mlp.fc1.rq",
+      "offset": 2248064,
+      "bytes": 6144,
+      "sha256": "f2d65e718d260c9df516fd458af2251e77efcf9b17188672ea7ddf4f29e4309c"
+    },
+    {
+      "name": "blocks.2.gelu",
+      "offset": 2254208,
+      "bytes": 196608,
+      "sha256": "f8d67c97ffa57d3d8e8a8cbd9bf4898c01ac720bea0c35ea943577ed80ba198d"
+    },
+    {
+      "name": "blocks.2.mlp.fc2.weights",
+      "offset": 2450816,
+      "bytes": 147456,
+      "sha256": "a07be83c8b4c3e6f556e847446a724c95b9ef5876a261bd1aad7d18d0f42a11e"
+    },
+    {
+      "name": "blocks.2.mlp.fc2.bias",
+      "offset": 2598272,
+      "bytes": 768,
+      "sha256": "a01edc031ca49aaa1d5642b828ef5d8318dc7b18939ef116436aefaa34a46b39"
+    },
+    {
+      "name": "blocks.2.mlp.fc2.rq",
+      "offset": 2599040,
+      "bytes": 1536,
+      "sha256": "b0ddaaf8d7107fc60c8aa7ccad88c017994b024bcd66db9d2a11237285e2236f"
+    },
+    {
+      "name": "res5.params",
+      "offset": 2600576,
+      "bytes": 6144,
+      "sha256": "d9d656f0814e6081b35432255f19a36447175da087aab9efb7c7f1f8ec69db1d"
+    },
+    {
+      "name": "blocks.3.norm1.params",
+      "offset": 2606720,
+      "bytes": 6144,
+      "sha256": "2b4aeefbbcf1a79279c76293eba20f3e34f0d7babd306045fabeb0057061d0b2"
+    },
+    {
+      "name": "blocks.3.attn.qkv.weights",
+      "offset": 2612864,
+      "bytes": 110592,
+      "sha256": "7d86532201a62351edb788bf1bad11d6611e07d9392e500b1c4cc4976e69b823"
+    },
+    {
+      "name": "blocks.3.attn.qkv.bias",
+      "offset": 2723456,
+      "bytes": 2304,
+      "sha256": "4ec67ac5e75ad08f93b966b7fbfe1cfdc97af4b02aee95eb37ab7ea9f864493c"
+    },
+    {
+      "name": "blocks.3.attn.qkv.rq",
+      "offset": 2725760,
+      "bytes": 4608,
+      "sha256": "448905a7836033437b1c3d6bb55790182a166ebc096d3fa0d3680ec394cca1eb"
+    },
+    {
+      "name": "attn3.0.av_rq",
+      "offset": 2730368,
+      "bytes": 512,
+      "sha256": "9801b12c3680cabe165151164268cf8a9e8395f0ffa22b69f11a0945075240a9"
+    },
+    {
+      "name": "attn3.1.av_rq",
+      "offset": 2730880,
+      "bytes": 512,
+      "sha256": "f57bedb8bf9413f06f1c173ad2c1b354891d48bb7714f161b3ff93cc3653af52"
+    },
+    {
+      "name": "attn3.2.av_rq",
+      "offset": 2731392,
+      "bytes": 512,
+      "sha256": "b46b6e7c6a8026d0975c788092341db8ea281a6ef694032deecf1133f3efad1f"
+    },
+    {
+      "name": "blocks.3.attn.proj.weights",
+      "offset": 2731904,
+      "bytes": 36864,
+      "sha256": "99b19b4de7ee95071cc5ce74ad0e363a4577e9c1b0082f51046287ca73378690"
+    },
+    {
+      "name": "blocks.3.attn.proj.bias",
+      "offset": 2768768,
+      "bytes": 768,
+      "sha256": "49bd2ec326f0a1d595c5d3517aedec9108ad09c0eb8f8019a945592ebc5a18e1"
+    },
+    {
+      "name": "blocks.3.attn.proj.rq",
+      "offset": 2769536,
+      "bytes": 1536,
+      "sha256": "2aecac072bb17a28b4c6cbd7202656e6cfc8dc78b4516455f72f2c2f3af2a553"
+    },
+    {
+      "name": "res6.params",
+      "offset": 2771072,
+      "bytes": 6144,
+      "sha256": "71d692ba4479bc3490ae4f8e6900cc6b92ec103b56d84b38ff6f5435c6f8ab63"
+    },
+    {
+      "name": "blocks.3.norm2.params",
+      "offset": 2777216,
+      "bytes": 6144,
+      "sha256": "2068432102d27af6fab04385bf252d9ecfee2b6edc244e51f52a792da4dd90fd"
+    },
+    {
+      "name": "blocks.3.mlp.fc1.weights",
+      "offset": 2783360,
+      "bytes": 147456,
+      "sha256": "c2d42f86dfcba7139cb619b6cf1e9f8719a614c8354fbb6e01e09d103b137524"
+    },
+    {
+      "name": "blocks.3.mlp.fc1.bias",
+      "offset": 2930816,
+      "bytes": 3072,
+      "sha256": "f2849253311206201c674c97545adfd2f9d74be1578529c410e0696ed9773026"
+    },
+    {
+      "name": "blocks.3.mlp.fc1.rq",
+      "offset": 2933888,
+      "bytes": 6144,
+      "sha256": "59d511b35493387a62517d10e19a52534f4434a4c4a6f728f856f299a979ed02"
+    },
+    {
+      "name": "blocks.3.gelu",
+      "offset": 2940032,
+      "bytes": 196608,
+      "sha256": "68112afeda5cff76c4c0b2db677945348fd18bb5163573e4d746eded038c6895"
+    },
+    {
+      "name": "blocks.3.mlp.fc2.weights",
+      "offset": 3136640,
+      "bytes": 147456,
+      "sha256": "09ad7badf13d0d174c69be170b8820560114c0007b4f1f93e5e0abef3660368e"
+    },
+    {
+      "name": "blocks.3.mlp.fc2.bias",
+      "offset": 3284096,
+      "bytes": 768,
+      "sha256": "8a66ea11783b360da3ca3b1f33f3e50c7b529509bf6cfaf54738d71c335246a2"
+    },
+    {
+      "name": "blocks.3.mlp.fc2.rq",
+      "offset": 3284864,
+      "bytes": 1536,
+      "sha256": "950da486111812b6899d8e2e06f9544dbae6d104892fa274a7b0ab59ae9c95a8"
+    },
+    {
+      "name": "res7.params",
+      "offset": 3286400,
+      "bytes": 6144,
+      "sha256": "92fff06a69a963a1293f7e69e6561b31e8aaa99dca88c8490cf6ed78414ffaa0"
+    },
+    {
+      "name": "blocks.4.norm1.params",
+      "offset": 3292544,
+      "bytes": 6144,
+      "sha256": "2716c1ce2326c63060d7496f66028afd20c99c6f9c3b3828f3752b47cb7c917a"
+    },
+    {
+      "name": "blocks.4.attn.qkv.weights",
+      "offset": 3298688,
+      "bytes": 110592,
+      "sha256": "ee27734a2c9a0cbdb2b0a807c460bca9a7ab8c055547de18903b834bf805d97c"
+    },
+    {
+      "name": "blocks.4.attn.qkv.bias",
+      "offset": 3409280,
+      "bytes": 2304,
+      "sha256": "b1f09d0e1c6ce01f4298d4fe5db8fac5cc38174cc206f20a7bbead5695a08c37"
+    },
+    {
+      "name": "blocks.4.attn.qkv.rq",
+      "offset": 3411584,
+      "bytes": 4608,
+      "sha256": "9350c3d6df89547f3769c258dbc1d94321d879e2594d298100b958d12b6522ab"
+    },
+    {
+      "name": "attn4.0.av_rq",
+      "offset": 3416192,
+      "bytes": 512,
+      "sha256": "767a0ff68d7a9d61b58e192b2b63830e057078dc5bf5d782622c853031caf5db"
+    },
+    {
+      "name": "attn4.1.av_rq",
+      "offset": 3416704,
+      "bytes": 512,
+      "sha256": "52f4d45fef003c98a43c782b2d1fde8612f2f04ef18a6577dfc54ca8dc99e3da"
+    },
+    {
+      "name": "attn4.2.av_rq",
+      "offset": 3417216,
+      "bytes": 512,
+      "sha256": "90ee30dc0b7bd0a62d245325343f4ffa5f060e0ecc7a669e48973183e7650ca5"
+    },
+    {
+      "name": "blocks.4.attn.proj.weights",
+      "offset": 3417728,
+      "bytes": 36864,
+      "sha256": "891658621a77ef149e203123f5ac15966a0fb30a2e97b635d83e2d43cad5ae27"
+    },
+    {
+      "name": "blocks.4.attn.proj.bias",
+      "offset": 3454592,
+      "bytes": 768,
+      "sha256": "8bcb70defc72cc593b8caf02c803b810fbb3aa0ec2150d348b0691cfdc9217e4"
+    },
+    {
+      "name": "blocks.4.attn.proj.rq",
+      "offset": 3455360,
+      "bytes": 1536,
+      "sha256": "14617e750c19ee232b16237dfeeb7b580befec9ddeb11583b57a839e18405d06"
+    },
+    {
+      "name": "res8.params",
+      "offset": 3456896,
+      "bytes": 6144,
+      "sha256": "b286f2a0f3b8aac091c95e8d69e686b28333f27b5b11450dd605e5ab0865eb4f"
+    },
+    {
+      "name": "blocks.4.norm2.params",
+      "offset": 3463040,
+      "bytes": 6144,
+      "sha256": "8ec343ac685e5806471795e862ce10a2d970147802ba4746d00d2bec35fd5c29"
+    },
+    {
+      "name": "blocks.4.mlp.fc1.weights",
+      "offset": 3469184,
+      "bytes": 147456,
+      "sha256": "765e67ddc0b614a2d9148726c5a16f5ff29465d6fda130efd2f6a7d995dce4c7"
+    },
+    {
+      "name": "blocks.4.mlp.fc1.bias",
+      "offset": 3616640,
+      "bytes": 3072,
+      "sha256": "ebafd6b6fe5e59006019117629c661f443940cd28c92f722b5ba158fc17e8bac"
+    },
+    {
+      "name": "blocks.4.mlp.fc1.rq",
+      "offset": 3619712,
+      "bytes": 6144,
+      "sha256": "76071c90407d63d26c3622348347140d975a731e614632bfae3a5b3158a8a64c"
+    },
+    {
+      "name": "blocks.4.gelu",
+      "offset": 3625856,
+      "bytes": 196608,
+      "sha256": "b7267034156168269aa520542090ee6dd5d24b0f38ebcc5771e80f92bd6c2d05"
+    },
+    {
+      "name": "blocks.4.mlp.fc2.weights",
+      "offset": 3822464,
+      "bytes": 147456,
+      "sha256": "c5380e76c859c304e75e1555352b7b3036b2d6a0132984b568b10fe7e6480475"
+    },
+    {
+      "name": "blocks.4.mlp.fc2.bias",
+      "offset": 3969920,
+      "bytes": 768,
+      "sha256": "b369a09c2837adc4e5f2591d5f8b6251e85f52d5d21a9fe81b0860aa0cf02147"
+    },
+    {
+      "name": "blocks.4.mlp.fc2.rq",
+      "offset": 3970688,
+      "bytes": 1536,
+      "sha256": "5ba8b7863071b88b31fa0b485feef442307b4b5d47da85dfe11fe8705b4b9627"
+    },
+    {
+      "name": "res9.params",
+      "offset": 3972224,
+      "bytes": 6144,
+      "sha256": "891d7e8dbbe30da78d9a58eda77f4a66ff73a480d3d2f0581c328246aebc05cc"
+    },
+    {
+      "name": "blocks.5.norm1.params",
+      "offset": 3978368,
+      "bytes": 6144,
+      "sha256": "a0eeef81d92d61c312b75a6c504edd2c4359f786fb0463b85d4bacfdfcf5935a"
+    },
+    {
+      "name": "blocks.5.attn.qkv.weights",
+      "offset": 3984512,
+      "bytes": 110592,
+      "sha256": "3b96edc6de2d7ab4cd154e07eb00dc92745636eeb8eeff8175e974b87695d1c2"
+    },
+    {
+      "name": "blocks.5.attn.qkv.bias",
+      "offset": 4095104,
+      "bytes": 2304,
+      "sha256": "14143846e1d0b9b01dbb596c1588e69917805e93b2e1563934dc4370fc2e011a"
+    },
+    {
+      "name": "blocks.5.attn.qkv.rq",
+      "offset": 4097408,
+      "bytes": 4608,
+      "sha256": "a11fd6fe82847fa1cad81e6c54a00b4f000dcc11e2d4e606f8d1e58128ff9ac5"
+    },
+    {
+      "name": "attn5.0.av_rq",
+      "offset": 4102016,
+      "bytes": 512,
+      "sha256": "60eb6be6c502327e5fd395c158f7fbc5b502c9d21cc749c132781b9f80861b8a"
+    },
+    {
+      "name": "attn5.1.av_rq",
+      "offset": 4102528,
+      "bytes": 512,
+      "sha256": "c41b0381a43bdef703720eecc8a9263ef65d34d2930c5654891f4a4c73031911"
+    },
+    {
+      "name": "attn5.2.av_rq",
+      "offset": 4103040,
+      "bytes": 512,
+      "sha256": "11caf0ed3d78f67d364cafd2b3246189ba21b96db94a63b18aefe440597ed51a"
+    },
+    {
+      "name": "blocks.5.attn.proj.weights",
+      "offset": 4103552,
+      "bytes": 36864,
+      "sha256": "81e9b1849e34c9cec367053151cedbe651a70cc38bddced1466b6f2cf372652f"
+    },
+    {
+      "name": "blocks.5.attn.proj.bias",
+      "offset": 4140416,
+      "bytes": 768,
+      "sha256": "d738c3b45c8007486291726b0e65331ca72589823a4aa24124720d243fe29cf3"
+    },
+    {
+      "name": "blocks.5.attn.proj.rq",
+      "offset": 4141184,
+      "bytes": 1536,
+      "sha256": "85d8eab9702970685e5ff3f0c67873968e566b1c7c5c5d2949cd5a578cd4e959"
+    },
+    {
+      "name": "res10.params",
+      "offset": 4142720,
+      "bytes": 6144,
+      "sha256": "7eeb8c83ab672d4dc99810363564db596821e3ef1924d28fc7778802fd1aabd1"
+    },
+    {
+      "name": "blocks.5.norm2.params",
+      "offset": 4148864,
+      "bytes": 6144,
+      "sha256": "b561290fe4a27992745945b76462554feda45788a282be8b716a1d2c30c70523"
+    },
+    {
+      "name": "blocks.5.mlp.fc1.weights",
+      "offset": 4155008,
+      "bytes": 147456,
+      "sha256": "3bf906311ff714b6eb71d3caaa206f388a4fd7013320ac562a26ebecad36f1b6"
+    },
+    {
+      "name": "blocks.5.mlp.fc1.bias",
+      "offset": 4302464,
+      "bytes": 3072,
+      "sha256": "199099216ae0f9e2319e2ba114aeba49314497e6eecaed4e057529d4241c68e8"
+    },
+    {
+      "name": "blocks.5.mlp.fc1.rq",
+      "offset": 4305536,
+      "bytes": 6144,
+      "sha256": "4108b682e82aa698d37ab1f98dc563d510e8204817b5cf81275b5bbf1cbd17de"
+    },
+    {
+      "name": "blocks.5.gelu",
+      "offset": 4311680,
+      "bytes": 196608,
+      "sha256": "ff28335745be898d3f6f6bfd1bb4b6076d15bc4badac21e24c0e299c6e689579"
+    },
+    {
+      "name": "blocks.5.mlp.fc2.weights",
+      "offset": 4508288,
+      "bytes": 147456,
+      "sha256": "b23d69da36409c13a9955a5159662227c736f599ef4cb5556ae7a7e8bc08011a"
+    },
+    {
+      "name": "blocks.5.mlp.fc2.bias",
+      "offset": 4655744,
+      "bytes": 768,
+      "sha256": "af841223758d5081cd7c7bd96226be76ba14e7c3dc3561f6d9591121fd54c506"
+    },
+    {
+      "name": "blocks.5.mlp.fc2.rq",
+      "offset": 4656512,
+      "bytes": 1536,
+      "sha256": "31432e6049a9b9c2364a1173c2b1466fd89acbfe3ecd5727a5ae8b307e0fc4f8"
+    },
+    {
+      "name": "res11.params",
+      "offset": 4658048,
+      "bytes": 6144,
+      "sha256": "c99c1c7bf726a60d6f30e0c87d33aaa812a54dd67fb37d5951ff3b9cd4ac6623"
+    },
+    {
+      "name": "blocks.6.norm1.params",
+      "offset": 4664192,
+      "bytes": 6144,
+      "sha256": "89db7f00e5da6cb375ed6f2cd3e281b9aa068dc59c251bf73007e7004f5e741f"
+    },
+    {
+      "name": "blocks.6.attn.qkv.weights",
+      "offset": 4670336,
+      "bytes": 110592,
+      "sha256": "7c86380dba89a7241bd05a37f025f3e750ac53fd088cd0180912b78045d24c9f"
+    },
+    {
+      "name": "blocks.6.attn.qkv.bias",
+      "offset": 4780928,
+      "bytes": 2304,
+      "sha256": "66ae47b113539fc0f6e8a690542fc9cc87471996b4ee5a31c074610c41959e51"
+    },
+    {
+      "name": "blocks.6.attn.qkv.rq",
+      "offset": 4783232,
+      "bytes": 4608,
+      "sha256": "cdaefcc5c2e6791726a1b122d6abb08787346a56a29834cfbacdc5f6f8e33242"
+    },
+    {
+      "name": "attn6.0.av_rq",
+      "offset": 4787840,
+      "bytes": 512,
+      "sha256": "8c4761384c5e6852ad9d0f2a3da5f0caa834a0dbc901cc3f99121201c5368fb0"
+    },
+    {
+      "name": "attn6.1.av_rq",
+      "offset": 4788352,
+      "bytes": 512,
+      "sha256": "a72732e2acdc54a4befaf3bc48e51da155c5acf4a14246b816910c2aab09b834"
+    },
+    {
+      "name": "attn6.2.av_rq",
+      "offset": 4788864,
+      "bytes": 512,
+      "sha256": "a3e02c9bc74f6648536a1a0c202dd6c6bddf0a95ef297d3c70519eda8d03c2d7"
+    },
+    {
+      "name": "blocks.6.attn.proj.weights",
+      "offset": 4789376,
+      "bytes": 36864,
+      "sha256": "7f046d88fd7ace5c97571cecf9a62cf4efaaa85c191942048abe445ae70f1e19"
+    },
+    {
+      "name": "blocks.6.attn.proj.bias",
+      "offset": 4826240,
+      "bytes": 768,
+      "sha256": "88fdd9515eca059e0c0f696a8c3e24b5c5db6553798c081be4da3091d7e7ce0c"
+    },
+    {
+      "name": "blocks.6.attn.proj.rq",
+      "offset": 4827008,
+      "bytes": 1536,
+      "sha256": "0c1a9e6e62ee169f5627437c0975f24ae9f55aa3d1237151d5a79a6986beb627"
+    },
+    {
+      "name": "res12.params",
+      "offset": 4828544,
+      "bytes": 6144,
+      "sha256": "0e1ed9ca97ba2e9e123b0a6dcc375484239b7aec180a766ffbba154f7c7f1355"
+    },
+    {
+      "name": "blocks.6.norm2.params",
+      "offset": 4834688,
+      "bytes": 6144,
+      "sha256": "c8d8cdb704dd9342af6bb9204a419cc6b0ac41a25d78c698b0da99acb774e6f2"
+    },
+    {
+      "name": "blocks.6.mlp.fc1.weights",
+      "offset": 4840832,
+      "bytes": 147456,
+      "sha256": "5e24e7280eeccf32acca3172ad01ceaa67a66274458c6712f6ccb4b8ddac9e59"
+    },
+    {
+      "name": "blocks.6.mlp.fc1.bias",
+      "offset": 4988288,
+      "bytes": 3072,
+      "sha256": "8c91eb30a689ac88f982b4403a7c4384c6e9e304bac5ad9168f8d1b97ede62da"
+    },
+    {
+      "name": "blocks.6.mlp.fc1.rq",
+      "offset": 4991360,
+      "bytes": 6144,
+      "sha256": "c402d29038a4fb5d5cb09f17a04fd9dc775fbc6786b5c433c2e2ababb632c0f1"
+    },
+    {
+      "name": "blocks.6.gelu",
+      "offset": 4997504,
+      "bytes": 196608,
+      "sha256": "036ed4d029a72daba4bee6205dd23796ce205231bf54f2c391adc54dbc18124a"
+    },
+    {
+      "name": "blocks.6.mlp.fc2.weights",
+      "offset": 5194112,
+      "bytes": 147456,
+      "sha256": "ece412e1637eca5d219cc5aefedfe8ad5ec802b910aac62585e3b9725765251a"
+    },
+    {
+      "name": "blocks.6.mlp.fc2.bias",
+      "offset": 5341568,
+      "bytes": 768,
+      "sha256": "58205645af787cb1450836dc3e9260321dc32ed4174454bf025e34173f55d099"
+    },
+    {
+      "name": "blocks.6.mlp.fc2.rq",
+      "offset": 5342336,
+      "bytes": 1536,
+      "sha256": "081637e9a2c4ac60c6bf7c95ebf8fbfd0ab3c8c23a8dd6f7d2bebddc9b008fb8"
+    },
+    {
+      "name": "res13.params",
+      "offset": 5343872,
+      "bytes": 6144,
+      "sha256": "f0b94f522ecaf18973f03bf0027dc0cfb417cd013431275673fb7b71b58c17b0"
+    },
+    {
+      "name": "blocks.7.norm1.params",
+      "offset": 5350016,
+      "bytes": 6144,
+      "sha256": "31dbc91d1c7b591d70b4ef609902b34c2924a12780e14350f2a47c77a4567404"
+    },
+    {
+      "name": "blocks.7.attn.qkv.weights",
+      "offset": 5356160,
+      "bytes": 110592,
+      "sha256": "4e6c508ddca8ae0150ec388770824ec497a39f6dc5b63912651ec0a1f054ebe1"
+    },
+    {
+      "name": "blocks.7.attn.qkv.bias",
+      "offset": 5466752,
+      "bytes": 2304,
+      "sha256": "2baa1dc70910a2e9f54ce33363601523e7057209585fe9ee73704888202b6134"
+    },
+    {
+      "name": "blocks.7.attn.qkv.rq",
+      "offset": 5469056,
+      "bytes": 4608,
+      "sha256": "3a7d7e24abd407ed6eea8c19fbda259d2dd51938110046f0fd65668a79badd90"
+    },
+    {
+      "name": "attn7.0.av_rq",
+      "offset": 5473664,
+      "bytes": 512,
+      "sha256": "5953dc44aea8513c8b775a23d9207939f514baf5e939eb5178d39d264215691f"
+    },
+    {
+      "name": "attn7.1.av_rq",
+      "offset": 5474176,
+      "bytes": 512,
+      "sha256": "768024f951aff03551240675373a8fe7bd99f92897078acab6c088698a92912f"
+    },
+    {
+      "name": "attn7.2.av_rq",
+      "offset": 5474688,
+      "bytes": 512,
+      "sha256": "9ee204b0ccf22f93d17bc93a4f3165b8bc86a718af04aa7dbd64f81a897371df"
+    },
+    {
+      "name": "blocks.7.attn.proj.weights",
+      "offset": 5475200,
+      "bytes": 36864,
+      "sha256": "8220f882d379e4ca19ca7f14c58feec029d9e6dd2eeaa343a96fba9cbef31470"
+    },
+    {
+      "name": "blocks.7.attn.proj.bias",
+      "offset": 5512064,
+      "bytes": 768,
+      "sha256": "e6d4f3b9d2cc4a138d85826b8e55c1737e525c045fb120a0febf414c20b95c10"
+    },
+    {
+      "name": "blocks.7.attn.proj.rq",
+      "offset": 5512832,
+      "bytes": 1536,
+      "sha256": "11e6f23d32625218908ca048e9d337a47a2bbf2e54f6f37dfc3377ecc5a98358"
+    },
+    {
+      "name": "res14.params",
+      "offset": 5514368,
+      "bytes": 6144,
+      "sha256": "2f8db38327ca18e36b283e101bd436d2b1ee2c49738494e3acad554ff15e1e08"
+    },
+    {
+      "name": "blocks.7.norm2.params",
+      "offset": 5520512,
+      "bytes": 6144,
+      "sha256": "61810af26e40f37f8a5dec44a89795bedbbb9ba0bc5625efc218067863cb463f"
+    },
+    {
+      "name": "blocks.7.mlp.fc1.weights",
+      "offset": 5526656,
+      "bytes": 147456,
+      "sha256": "5db15a0f89f1d1f5bbbc242f55b8a010762e86b2f622beecd6633e3880bda1fc"
+    },
+    {
+      "name": "blocks.7.mlp.fc1.bias",
+      "offset": 5674112,
+      "bytes": 3072,
+      "sha256": "6f139f33de05bdb285017934e2e806c5a701f4379feabafe280e03e3a079ec16"
+    },
+    {
+      "name": "blocks.7.mlp.fc1.rq",
+      "offset": 5677184,
+      "bytes": 6144,
+      "sha256": "4bda57908756f3e86562b162de8798b0f7f1acbc12e173e0eb27b1af751d190c"
+    },
+    {
+      "name": "blocks.7.gelu",
+      "offset": 5683328,
+      "bytes": 196608,
+      "sha256": "5d3d517e55a64102888ab3834d6bfc18cc8657741c62d0895aeec2f6fd007e0e"
+    },
+    {
+      "name": "blocks.7.mlp.fc2.weights",
+      "offset": 5879936,
+      "bytes": 147456,
+      "sha256": "b8f0b485b19907030250702abf7ae9e29ba015c04b49d8b80c31952978677a36"
+    },
+    {
+      "name": "blocks.7.mlp.fc2.bias",
+      "offset": 6027392,
+      "bytes": 768,
+      "sha256": "f2a0313e236b0c48b4a1f8cb2c1d35112798ccf65bab2b41d4c12b9d8e967a35"
+    },
+    {
+      "name": "blocks.7.mlp.fc2.rq",
+      "offset": 6028160,
+      "bytes": 1536,
+      "sha256": "f08d59b68349c8fa8b71c9a8f13e36afd0df5ec32ecea6d546fca1c7ecff4b4f"
+    },
+    {
+      "name": "res15.params",
+      "offset": 6029696,
+      "bytes": 6144,
+      "sha256": "3d25c34567cad4fb33eebd73c1abfa630a89a8e3a1871036fb19277d89f5c3ee"
+    },
+    {
+      "name": "blocks.8.norm1.params",
+      "offset": 6035840,
+      "bytes": 6144,
+      "sha256": "25b3148038eae8f63257bff9c98ec44fa0094d61ac91f5332f1d3fbfb22f0b2b"
+    },
+    {
+      "name": "blocks.8.attn.qkv.weights",
+      "offset": 6041984,
+      "bytes": 110592,
+      "sha256": "6c9f99ff65f189615ee92addce55e253ce023e1ed408255c10b6d5b98f32be1b"
+    },
+    {
+      "name": "blocks.8.attn.qkv.bias",
+      "offset": 6152576,
+      "bytes": 2304,
+      "sha256": "be6d474e6eb5d9794d3e299e4bbe1c90aa48ca7d7a2b5aac4a5313c33baeb9df"
+    },
+    {
+      "name": "blocks.8.attn.qkv.rq",
+      "offset": 6154880,
+      "bytes": 4608,
+      "sha256": "67386fedd4168b978bff709186a433f6251bcd6d3d947d7c7ba591ee91f3a378"
+    },
+    {
+      "name": "attn8.0.av_rq",
+      "offset": 6159488,
+      "bytes": 512,
+      "sha256": "55ede5ef441cd5cf8d84e2b4d1418808af261c67ae6b94f5b5fb2b7ceb199f75"
+    },
+    {
+      "name": "attn8.1.av_rq",
+      "offset": 6160000,
+      "bytes": 512,
+      "sha256": "d32c65ef086193bd2d2cb42b2a049ab36883d13b91b9d2446b861a346178a170"
+    },
+    {
+      "name": "attn8.2.av_rq",
+      "offset": 6160512,
+      "bytes": 512,
+      "sha256": "de25a023ab8a612afb3e923279f5cd665e90cd2e909b2da2060cd29cdf7ab19f"
+    },
+    {
+      "name": "blocks.8.attn.proj.weights",
+      "offset": 6161024,
+      "bytes": 36864,
+      "sha256": "aa78451639106fdf89244535c51a2ad234fa2b282cc09fb96f50ebc4a4bc17ef"
+    },
+    {
+      "name": "blocks.8.attn.proj.bias",
+      "offset": 6197888,
+      "bytes": 768,
+      "sha256": "a5d7360965789566fe910b051832fe1c2664bc8f8bec56d91780d76ec88ebac2"
+    },
+    {
+      "name": "blocks.8.attn.proj.rq",
+      "offset": 6198656,
+      "bytes": 1536,
+      "sha256": "7af79592331d0c1f6ae0a5483351ff54da7a4528441c0858962b81db3c744406"
+    },
+    {
+      "name": "res16.params",
+      "offset": 6200192,
+      "bytes": 6144,
+      "sha256": "3a014287fb6c04a7fed01095cb2302c4fa652c61726da77f870bbaab2072d178"
+    },
+    {
+      "name": "blocks.8.norm2.params",
+      "offset": 6206336,
+      "bytes": 6144,
+      "sha256": "7303c129888a7d3521c8648137e90b67c9be24085f1c8205984ee5f85d653d0b"
+    },
+    {
+      "name": "blocks.8.mlp.fc1.weights",
+      "offset": 6212480,
+      "bytes": 147456,
+      "sha256": "cdcf7d90781badcc9b4e3f402e7953ec86c457034c7b6d22a894187a69438542"
+    },
+    {
+      "name": "blocks.8.mlp.fc1.bias",
+      "offset": 6359936,
+      "bytes": 3072,
+      "sha256": "bd98abfc8daeaf3df5303e87e54f2cdae04bb40fc9d07c814f5cbaab4c373026"
+    },
+    {
+      "name": "blocks.8.mlp.fc1.rq",
+      "offset": 6363008,
+      "bytes": 6144,
+      "sha256": "5f29e23f5a05eca556d0515f67054c256e42bab988672940c37f5002544327f7"
+    },
+    {
+      "name": "blocks.8.gelu",
+      "offset": 6369152,
+      "bytes": 196608,
+      "sha256": "4f97c6069116537475b5b9c6d8ffe4e3f12471aa8d6e7f9b15d0dbb0379d5a3d"
+    },
+    {
+      "name": "blocks.8.mlp.fc2.weights",
+      "offset": 6565760,
+      "bytes": 147456,
+      "sha256": "54e096ec8e21855a9e52c10bd66a811fc101859f7810a22acd547b464ef25113"
+    },
+    {
+      "name": "blocks.8.mlp.fc2.bias",
+      "offset": 6713216,
+      "bytes": 768,
+      "sha256": "0b61dfb4ead78673beb86ba0472c21770ee6ed5ff42c0caf91ad02dd77e390b2"
+    },
+    {
+      "name": "blocks.8.mlp.fc2.rq",
+      "offset": 6713984,
+      "bytes": 1536,
+      "sha256": "eab631685b9ce47ce28db0043caf2aaf0cd5df985b48339f6b2298a00f7f77ee"
+    },
+    {
+      "name": "res17.params",
+      "offset": 6715520,
+      "bytes": 6144,
+      "sha256": "9e1b8116a9e81085834b326488683efc683c8613c44aff353dbd4c49d023831c"
+    },
+    {
+      "name": "blocks.9.norm1.params",
+      "offset": 6721664,
+      "bytes": 6144,
+      "sha256": "61f047fe4ea05c7a1ec0e6261548a38bfe257f4a37a6a973d67ec533bfd5b441"
+    },
+    {
+      "name": "blocks.9.attn.qkv.weights",
+      "offset": 6727808,
+      "bytes": 110592,
+      "sha256": "dd3c9dce5854f477c872c9741ed4feae9a8ee3df7b3d3c1b05ed4bbf4e4afb47"
+    },
+    {
+      "name": "blocks.9.attn.qkv.bias",
+      "offset": 6838400,
+      "bytes": 2304,
+      "sha256": "40e203a422b6f1db36157cbacd8fb056f5167e762d8e2047bd0ba8b270c85d8a"
+    },
+    {
+      "name": "blocks.9.attn.qkv.rq",
+      "offset": 6840704,
+      "bytes": 4608,
+      "sha256": "072823c40dc6f6b88e718995ee1068e493fbb5511f871cf352a8c72caa0165ba"
+    },
+    {
+      "name": "attn9.0.av_rq",
+      "offset": 6845312,
+      "bytes": 512,
+      "sha256": "1d9bb7a1a0b2278731346149801e5670755a7a535b16d6911035127ec501b134"
+    },
+    {
+      "name": "attn9.1.av_rq",
+      "offset": 6845824,
+      "bytes": 512,
+      "sha256": "5a31a9e3b10dcff8d34c1c69d33bc66c0ffda6fe9ccab3c2a47eeeeb171d96a1"
+    },
+    {
+      "name": "attn9.2.av_rq",
+      "offset": 6846336,
+      "bytes": 512,
+      "sha256": "54095357aad2bb981a050a4f456ffad765962ef9c32d47331a1550dd50a7cd84"
+    },
+    {
+      "name": "blocks.9.attn.proj.weights",
+      "offset": 6846848,
+      "bytes": 36864,
+      "sha256": "ccc815521ea42f52e0b246506841c9ce4257d385573594ffd8be487d10f684f6"
+    },
+    {
+      "name": "blocks.9.attn.proj.bias",
+      "offset": 6883712,
+      "bytes": 768,
+      "sha256": "8ae1911f5889b523eae93e9fc4be837e5454ed034bb0776c6c84bdb28ffc15b5"
+    },
+    {
+      "name": "blocks.9.attn.proj.rq",
+      "offset": 6884480,
+      "bytes": 1536,
+      "sha256": "6cebd5825cc77348fc75005546e84d9f3112d0e62396d7bdea488c6d18e39f25"
+    },
+    {
+      "name": "res18.params",
+      "offset": 6886016,
+      "bytes": 6144,
+      "sha256": "0bafca13628093615a9340e19f760b88393927867934dda00758238e6a877c8c"
+    },
+    {
+      "name": "blocks.9.norm2.params",
+      "offset": 6892160,
+      "bytes": 6144,
+      "sha256": "1c078f843e54465e9cf9a1633ee241ffd2fa49f8c558d5d268abfd2b8b220ca5"
+    },
+    {
+      "name": "blocks.9.mlp.fc1.weights",
+      "offset": 6898304,
+      "bytes": 147456,
+      "sha256": "5aec86a8fb2dd9e905a71efdfb61e58ed2b27e4921aaa545e297cbb2a169d330"
+    },
+    {
+      "name": "blocks.9.mlp.fc1.bias",
+      "offset": 7045760,
+      "bytes": 3072,
+      "sha256": "504c87a1d1f35504793b52109de4467c4f3a9d08b564f9c3307d234257c50823"
+    },
+    {
+      "name": "blocks.9.mlp.fc1.rq",
+      "offset": 7048832,
+      "bytes": 6144,
+      "sha256": "fb89081b59ce815d0225e1947ffcbf0fb70a3f1e990a7bf7fb5e0bc28b29dca6"
+    },
+    {
+      "name": "blocks.9.gelu",
+      "offset": 7054976,
+      "bytes": 196608,
+      "sha256": "d99d44abea31f9d0f32b6bfa245c58d8c4fd86068cc75bc49fc7c5565aee6969"
+    },
+    {
+      "name": "blocks.9.mlp.fc2.weights",
+      "offset": 7251584,
+      "bytes": 147456,
+      "sha256": "e6cb65556f5788164d7219ab6b5f3a0cc05f3cce0ab8f957b7a2cc95ff3e5dff"
+    },
+    {
+      "name": "blocks.9.mlp.fc2.bias",
+      "offset": 7399040,
+      "bytes": 768,
+      "sha256": "0c959826da066c1b4bebc5f22c4ff84faf3fbdaaf5c8f56fe14dfd8fb5694de3"
+    },
+    {
+      "name": "blocks.9.mlp.fc2.rq",
+      "offset": 7399808,
+      "bytes": 1536,
+      "sha256": "7f3bbb2799ff5dafd9c4f24edecf8050ae41df40b5304094f038b634907ab9f9"
+    },
+    {
+      "name": "res19.params",
+      "offset": 7401344,
+      "bytes": 6144,
+      "sha256": "38da52d2de6fefb23a727ff527f5dbb67e628551f24a2f31a0ba8da9f6840ccb"
+    },
+    {
+      "name": "blocks.10.norm1.params",
+      "offset": 7407488,
+      "bytes": 6144,
+      "sha256": "f2e4f8a26cbaa0d19aa6d50e0e8ac5572eedc2fd87c1c4d5716fe437f0bfbb68"
+    },
+    {
+      "name": "blocks.10.attn.qkv.weights",
+      "offset": 7413632,
+      "bytes": 110592,
+      "sha256": "3a15d559712e97c11b627e7ccb1f7fa6ac93fbbb02fc0c7e3ad3490fad652322"
+    },
+    {
+      "name": "blocks.10.attn.qkv.bias",
+      "offset": 7524224,
+      "bytes": 2304,
+      "sha256": "19c04018de3a4c7d7d9f46f0df883b1a5d4930ab77ca39e1c431a2fb372261af"
+    },
+    {
+      "name": "blocks.10.attn.qkv.rq",
+      "offset": 7526528,
+      "bytes": 4608,
+      "sha256": "aa92d604cff23a8fdc8a9eb087959eba07c65d02342101177c6b9d4106cc1eb0"
+    },
+    {
+      "name": "attn10.0.av_rq",
+      "offset": 7531136,
+      "bytes": 512,
+      "sha256": "7826b92326d81b8d3bba1b99e958c0082a18e129d0afb3131ea513c17ef01bd3"
+    },
+    {
+      "name": "attn10.1.av_rq",
+      "offset": 7531648,
+      "bytes": 512,
+      "sha256": "4614ca756a205154f44256a49bbba92b4ef984fb43b084d02de25750cdc95c78"
+    },
+    {
+      "name": "attn10.2.av_rq",
+      "offset": 7532160,
+      "bytes": 512,
+      "sha256": "08bffafa852f37020c6c5d224e1b20143cc0e0576e1984ec01ea387bfb41a213"
+    },
+    {
+      "name": "blocks.10.attn.proj.weights",
+      "offset": 7532672,
+      "bytes": 36864,
+      "sha256": "e53d65b0b56b637d42ef48d476750ab3cbc19dc02bf4cc9718d03391fcdacdb9"
+    },
+    {
+      "name": "blocks.10.attn.proj.bias",
+      "offset": 7569536,
+      "bytes": 768,
+      "sha256": "454c84755dc82b91e411aefa960d9fd2b21d88aa1c9ffdda378269ae1e8f8e89"
+    },
+    {
+      "name": "blocks.10.attn.proj.rq",
+      "offset": 7570304,
+      "bytes": 1536,
+      "sha256": "dca72d78d95376700a77377a88d49f6853001364d25d1ed002665288e81ec424"
+    },
+    {
+      "name": "res20.params",
+      "offset": 7571840,
+      "bytes": 6144,
+      "sha256": "dcc6759c9d05039052603f3c6292a377518ef44ad6b5773b6f4caae7057b8d4b"
+    },
+    {
+      "name": "blocks.10.norm2.params",
+      "offset": 7577984,
+      "bytes": 6144,
+      "sha256": "329518d82938e556fab431a89c044872e84f607aaa1d8fb78d4ae28860a0f187"
+    },
+    {
+      "name": "blocks.10.mlp.fc1.weights",
+      "offset": 7584128,
+      "bytes": 147456,
+      "sha256": "b95b77a50fbaf82e059ce8e8a773034d380f438eb0abc63012048761b645b141"
+    },
+    {
+      "name": "blocks.10.mlp.fc1.bias",
+      "offset": 7731584,
+      "bytes": 3072,
+      "sha256": "38b7a1725d37d49d1a087abe5759ce0fb3f63b7b425f0bf0f4d9c380f2335965"
+    },
+    {
+      "name": "blocks.10.mlp.fc1.rq",
+      "offset": 7734656,
+      "bytes": 6144,
+      "sha256": "ffa8b1e8940cf74574546ef873ed8b887e7ac82ad7ca1447717fbacc05cbb8b6"
+    },
+    {
+      "name": "blocks.10.gelu",
+      "offset": 7740800,
+      "bytes": 196608,
+      "sha256": "589a8a576a34d21841e794cf9a016d6db11b2860d9fdeb3e1b9b8d2bfbe8d329"
+    },
+    {
+      "name": "blocks.10.mlp.fc2.weights",
+      "offset": 7937408,
+      "bytes": 147456,
+      "sha256": "f4e5197d3df2daf62716f2552bf8e96bf1d63a910fec658979109e0b64dcf49d"
+    },
+    {
+      "name": "blocks.10.mlp.fc2.bias",
+      "offset": 8084864,
+      "bytes": 768,
+      "sha256": "3dda9313481b1a752b320e22e45a2afd7105e18d4710dc83da1b8c12e866e155"
+    },
+    {
+      "name": "blocks.10.mlp.fc2.rq",
+      "offset": 8085632,
+      "bytes": 1536,
+      "sha256": "f3e98d746cb9905eb9bb9e561dc7312ce76fd7b954ca90f47526c2e9750a2a6f"
+    },
+    {
+      "name": "res21.params",
+      "offset": 8087168,
+      "bytes": 6144,
+      "sha256": "c1bc1cc84c753ccd0c068bc97cf0c1bf37388037aa35180fab41ae68526f745f"
+    },
+    {
+      "name": "blocks.11.norm1.params",
+      "offset": 8093312,
+      "bytes": 6144,
+      "sha256": "ba2783204a21154f6dacad9a77bc9bf3f94121d66fae1f1b308b642d7da4245a"
+    },
+    {
+      "name": "blocks.11.attn.qkv.weights",
+      "offset": 8099456,
+      "bytes": 110592,
+      "sha256": "415a73af081191bfb6928ac54d096c7aa4df8d781ab1523daa9ce8a421f01e12"
+    },
+    {
+      "name": "blocks.11.attn.qkv.bias",
+      "offset": 8210048,
+      "bytes": 2304,
+      "sha256": "b02e5ea19445e39a00d0c2240eadf984e7c3d86c637e545070001ff746b47916"
+    },
+    {
+      "name": "blocks.11.attn.qkv.rq",
+      "offset": 8212352,
+      "bytes": 4608,
+      "sha256": "7828e0e93735253c17e3dd9cf42b493f48038046f08a6ab7a36320d46e782a41"
+    },
+    {
+      "name": "attn11.0.av_rq",
+      "offset": 8216960,
+      "bytes": 512,
+      "sha256": "fce707522555709e70cc3a994c5c8533b27d825764faede9946ccb5d746e76d0"
+    },
+    {
+      "name": "attn11.1.av_rq",
+      "offset": 8217472,
+      "bytes": 512,
+      "sha256": "639c943b32ce24822f9d7acb26f41ec7f40438f50b3ecfd2728d2961d0ae1d1c"
+    },
+    {
+      "name": "attn11.2.av_rq",
+      "offset": 8217984,
+      "bytes": 512,
+      "sha256": "b514e703b60710149bb75cb97ee8281b7bc464c40f0f8823b42575995a7acd99"
+    },
+    {
+      "name": "blocks.11.attn.proj.weights",
+      "offset": 8218496,
+      "bytes": 36864,
+      "sha256": "8f85d7918d159405a6516fc27f9dfa6b36c8c1cb9ac17a390e0d6bebcfdcd291"
+    },
+    {
+      "name": "blocks.11.attn.proj.bias",
+      "offset": 8255360,
+      "bytes": 768,
+      "sha256": "37627b3edefd67566d9b7eb483d255039ff70790c7a56afb51e57bd6a0a57c4f"
+    },
+    {
+      "name": "blocks.11.attn.proj.rq",
+      "offset": 8256128,
+      "bytes": 1536,
+      "sha256": "050bf183eaf313d79350138bba2576d346b4852f2f6c99f82a93920c13755226"
+    },
+    {
+      "name": "res22.params",
+      "offset": 8257664,
+      "bytes": 6144,
+      "sha256": "4d9f7ef5d3853c9e713d4712409e7b2fa81b515dc735ce5dda46a5812e38b685"
+    },
+    {
+      "name": "blocks.11.norm2.params",
+      "offset": 8263808,
+      "bytes": 6144,
+      "sha256": "4983cd5d385fce5a1dcc5e0329af2a1d02846a98d1ca97dbfde1b2bea2576ee1"
+    },
+    {
+      "name": "blocks.11.mlp.fc1.weights",
+      "offset": 8269952,
+      "bytes": 147456,
+      "sha256": "f2e4828fe224d57cda858c1cc99687bd5a81c94284733d13a4c72086c3fecf98"
+    },
+    {
+      "name": "blocks.11.mlp.fc1.bias",
+      "offset": 8417408,
+      "bytes": 3072,
+      "sha256": "ee1fb32e748d44d107e27947995fa23aad933872553ef0fe9ffbd1260d1a2253"
+    },
+    {
+      "name": "blocks.11.mlp.fc1.rq",
+      "offset": 8420480,
+      "bytes": 6144,
+      "sha256": "e88c506cc3c9ceb2034262fb94e1b8e643da8318424f4b2c8777885e37200e45"
+    },
+    {
+      "name": "blocks.11.gelu",
+      "offset": 8426624,
+      "bytes": 196608,
+      "sha256": "e4099ac9a2775fce903974c14a719442a5c3c742ac92ec17daa4043e48622934"
+    },
+    {
+      "name": "blocks.11.mlp.fc2.weights",
+      "offset": 8623232,
+      "bytes": 147456,
+      "sha256": "ce0e3b9b40db1fb31689b527084d59b289ea565cfabdfa4bbb5ef1ce61d33099"
+    },
+    {
+      "name": "blocks.11.mlp.fc2.bias",
+      "offset": 8770688,
+      "bytes": 768,
+      "sha256": "ddb1807acc0010f9a71b15362333f1a1a4e950d25dec70f017b5b6a442a17a2f"
+    },
+    {
+      "name": "blocks.11.mlp.fc2.rq",
+      "offset": 8771456,
+      "bytes": 1536,
+      "sha256": "643447b43281d6919d3d70a0a0aed7f97a7e55518ea83c3a7fa6f8be41c410a1"
+    },
+    {
+      "name": "res23.params",
+      "offset": 8772992,
+      "bytes": 6144,
+      "sha256": "4c5e43058d1b5ff2ecd51293c2baa847a1f66ed548d47c7c78aa3d6d961abbae"
+    },
+    {
+      "name": "norm.params",
+      "offset": 8779136,
+      "bytes": 6144,
+      "sha256": "19f6955399e0affc8a349bc077587702ed8605765c978bb6afb58cd761f7b499"
+    },
+    {
+      "name": "head.weights",
+      "offset": 8785280,
+      "bytes": 193536,
+      "sha256": "86d66a44f2b45b7e78cf0856ee03d4cf165d8ee7b536db0c066b0b11dc89b563"
+    },
+    {
+      "name": "head.bias",
+      "offset": 8978816,
+      "bytes": 4032,
+      "sha256": "7d3079fda1430cb4bc9c3b4de6208fd305fcb1305e59df36798914f0bb540a28"
+    },
+    {
+      "name": "head.rq",
+      "offset": 8982848,
+      "bytes": 8064,
+      "sha256": "0da5abe94f71587d26e6ada7c51188683694b15698f05f2bb14184041c6c7360"
+    }
+  ],
+  "ddr_bytes": 8990912,
+  "parameter_arrays": 718,
+  "weight_arrays": 50,
+  "historical_full12": {
+    "status": "PASS",
+    "execution_state": "FINISHED",
+    "scope": "Gate for one normal numerical full12 only; no board or physical approval",
+    "started_utc": "2026-10-30T11:29:40.464822+00:00",
+    "work": "D:\\fpga\\vit_tiny_vcu118\\experiments\\board_closure_20261030\\full72_recovery_20261030\\runs\\full_1793359780460422100",
+    "stages": [
+      {
+        "label": "compile",
+        "status": "PASS",
+        "seconds": 2.1182365999998183,
+        "receipt": "D:\\fpga\\vit_tiny_vcu118\\experiments\\board_closure_20261030\\full72_recovery_20261030\\runs\\full_1793359780460422100\\compile.json"
+      },
+      {
+        "label": "elaborate",
+        "status": "PASS",
+        "seconds": 24.17556959999979,
+        "receipt": "D:\\fpga\\vit_tiny_vcu118\\experiments\\board_closure_20261030\\full72_recovery_20261030\\runs\\full_1793359780460422100\\elaborate.json"
+      },
+      {
+        "label": "simulate",
+        "status": "PASS",
+        "seconds": 104355.8309612,
+        "receipt": "D:\\fpga\\vit_tiny_vcu118\\experiments\\board_closure_20261030\\full72_recovery_20261030\\runs\\full_1793359780460422100\\simulate.json"
+      }
+    ],
+    "full12_numerical_PASS": true,
+    "full_bad_expected_second_run": "NOT_RUN",
+    "JTAG": "NOT_RUN",
+    "real_MIG_DDR": "NOT_RUN",
+    "board_CDC": "NOT_RUN",
+    "P_and_R": "NOT_RUN",
+    "Bitstream": "NOT_RUN",
+    "active_stage": "final_assertions_and_trace_checker",
+    "wall_seconds": 104383.0182056,
+    "actual_counts": {
+      "host_outputs": 1000,
+      "checkpoints": 257,
+      "values": 11532400,
+      "cycles": 1282750775,
+      "load_cycles": 10209170,
+      "compute_cycles": 1272460010,
+      "schedule_cycles": 77817,
+      "collector_cycles": 2000,
+      "cycle_scope": "Actual original TB counters, not physical MHz/FPS; load/compute/schedule mutually selected and collector counted independently"
+    },
+    "Host_checker_status": "PASS",
+    "Host_checker_scope": "Output checker FI, not a second full-network RTL fault run",
+    "actual_Host_trace_sha256": "1117a30836ab44cc1b1585884e7c5e41524cf2558636d821047b8a58f3ce64a2",
+    "simulation_native_seconds": 104355.8309612,
+    "protected_inputs_unchanged": true,
+    "real_board_or_physical_PASS": false,
+    "ended_utc": "2026-10-31T16:29:26.770726+00:00",
+    "authorized_max_seconds": 259200,
+    "resource_summary": {
+      "samples": 205969,
+      "hard_RAM_cap": false,
+      "peak_owned_private_GiB": 0.308624267578125,
+      "peak_owned_working_set_GiB": 0.2767906188964844,
+      "min_available_physical_GiB": 4.590816497802734,
+      "max_system_commit_GiB": 18.403797149658203,
+      "max_commit_fraction": 0.5787838885459108,
+      "max_pagefile_used_GiB": 4.3754730224609375
+    }
+  },
+  "scoped": {
+    "status": "RUNNING",
+    "checkpoints": [
+      {
+        "name": "patch_embed.proj",
+        "values": 37632,
+        "cycle": 1541041
+      },
+      {
+        "name": "frontend",
+        "values": 37824,
+        "cycle": 10491472
+      },
+      {
+        "name": "blocks.0.norm1",
+        "values": 37824,
+        "cycle": 32196565
+      },
+      {
+        "name": "blocks.0.attn.qkv",
+        "values": 113472,
+        "cycle": 34598871
+      },
+      {
+        "name": "attn0.0.score",
+        "values": 38809,
+        "cycle": 34867798
+      },
+      {
+        "name": "attn0.0.prob",
+        "values": 38809,
+        "cycle": 45098258
+      },
+      {
+        "name": "attn0.0.av",
+        "values": 12608,
+        "cycle": 45587275
+      },
+      {
+        "name": "attn0.1.score",
+        "values": 38809,
+        "cycle": 45944504
+      }
+    ],
+    "values": 355787,
+    "last_progress": [
+      "490",
+      "8",
+      "48000000"
+    ],
+    "first_divergence": [],
+    "max_checkpoints": 20,
+    "max_values": 989142,
+    "external_memory": "AXI protocol model; real DDR/CDC not included"
+  },
+  "source_root_license_found": false,
+  "evidence": [
+    {
+      "id": "e01",
+      "path": "experiments/full128_bank_reset_fix_20261102/SOURCE_MANIFEST.json",
+      "description": "当前冻结505文件清单",
+      "version": "bank_reset",
+      "sha256": "bd2004660656ea2f950d7957014924d588e469345cc1ab6fb69e3489eeec8cc8",
+      "bytes": 51695,
+      "mtime": "2026-11-02T13:52:32.331435+08:00",
+      "snapshot": "report/evidence/e01_source_manifest.json",
+      "status": "READ_VERIFIED"
+    },
+    {
+      "id": "e02",
+      "path": "experiments/full128_downclock_bit_20261102/delivery_166p7/ACTUAL_SYNTH_INPUTS_166.json",
+      "description": "实际综合输入身份",
+      "version": "166p7",
+      "sha256": "d0e9fac8a5f021056d14850e8f17fee6ff525a7ba0df77e43fcd53baffd5c837",
+      "bytes": 76002,
+      "mtime": "2026-11-02T22:24:55.996589+08:00",
+      "snapshot": "report/evidence/e02_actual_synth_inputs_166.json",
+      "status": "READ_VERIFIED"
+    },
+    {
+      "id": "e03",
+      "path": "experiments/w8a8_systematic_calibration_20261029/ADOPTED_BASELINE.json",
+      "description": "input_grid采用决定及参数绑定",
+      "version": "input_grid",
+      "sha256": "db9d0d5b7e54c7240b2ebc6c2e689c3c50209908993ae0ac7a494162d7550cae",
+      "bytes": 2264,
+      "mtime": "2026-10-29T13:28:52.510602+08:00",
+      "snapshot": "report/evidence/e03_adopted_baseline.json",
+      "status": "READ_VERIFIED"
+    },
+    {
+      "id": "e04",
+      "path": "experiments/w8a8_systematic_calibration_20261029/CONFIRMATION.json",
+      "description": "固定512张确认集",
+      "version": "input_grid",
+      "sha256": "6621aa1db2588e9efb8b52eaf4448d4eecf43fad2c6723f816682b38d1082808",
+      "bytes": 889,
+      "mtime": "2026-10-29T13:23:39.705747+08:00",
+      "snapshot": "report/evidence/e04_confirmation.json",
+      "status": "READ_VERIFIED"
+    },
+    {
+      "id": "e05",
+      "path": "experiments/w8a8_systematic_calibration_20261029/native/confirmation_01.json",
+      "description": "512确认进程原生退出",
+      "version": "input_grid",
+      "sha256": "4fceec131fc646c4d43d91a23508ee64b38efdc27db2894d4a687984f346ffe0",
+      "bytes": 1694,
+      "mtime": "2026-10-29T13:23:40.393671+08:00",
+      "snapshot": "report/evidence/e05_confirmation_01.json",
+      "status": "READ_VERIFIED"
+    },
+    {
+      "id": "e06",
+      "path": "experiments/board_closure_20261030/full72_recovery_20261030/FINAL_RESULT.json",
+      "description": "历史完整257点及Host1000最终结果",
+      "version": "jointfix",
+      "sha256": "2b0b62942e0ef779c9e2baf676c826a3e4ad8a0797ce89379d59f054c7dbdb11",
+      "bytes": 2675,
+      "mtime": "2026-11-01T00:29:30.524894+08:00",
+      "snapshot": "report/evidence/e06_final_result.json",
+      "status": "READ_VERIFIED"
+    },
+    {
+      "id": "e07",
+      "path": "experiments/board_closure_20261030/full72_recovery_20261030/STATUS.json",
+      "description": "历史回归计数与104355秒仿真",
+      "version": "jointfix",
+      "sha256": "2b0b62942e0ef779c9e2baf676c826a3e4ad8a0797ce89379d59f054c7dbdb11",
+      "bytes": 2675,
+      "mtime": "2026-11-01T00:29:30.524894+08:00",
+      "snapshot": "report/evidence/e07_status.json",
+      "status": "READ_VERIFIED"
+    },
+    {
+      "id": "e08",
+      "path": "experiments/board_closure_20261030/full72_recovery_20261030/runs/full_1793359780460422100/simulate.json",
+      "description": "历史回归原生进程和dump检查",
+      "version": "jointfix",
+      "sha256": "5ca7833f0ebe2b2c64f0762c5e94e85e64eb3d08149fe885b705d4d4ee8614f2",
+      "bytes": 5526,
+      "mtime": "2026-11-01T00:29:26.300239+08:00",
+      "snapshot": "report/evidence/e08_simulate.json",
+      "status": "READ_VERIFIED"
+    },
+    {
+      "id": "e09",
+      "path": "experiments/board_closure_20261030/full72_recovery_20261030/runs/full_1793359780460422100/simulate.stdout.log",
+      "description": "历史257点原始日志",
+      "version": "jointfix",
+      "sha256": "120f3c02fd25776d77c9a94891eb0b458031c626d6ef129b88b3308329ea4313",
+      "bytes": 16819,
+      "mtime": "2026-11-01T00:29:25.248588+08:00",
+      "snapshot": "report/evidence/e09_simulate.stdout.log",
+      "status": "READ_VERIFIED"
+    },
+    {
+      "id": "e10",
+      "path": "experiments/board_closure_20261030/full72_recovery_20261030/FROZEN_INPUTS.json",
+      "description": "历史L3源码绑定",
+      "version": "jointfix",
+      "sha256": "15ba0ee76df516f94d668913fd2b6002a851da640d83d65093fa842ccc62a62c",
+      "bytes": 99085,
+      "mtime": "2026-10-30T19:12:14.817187+08:00",
+      "snapshot": "report/evidence/e10_frozen_inputs.json",
+      "status": "READ_VERIFIED"
+    },
+    {
+      "id": "e11",
+      "path": "experiments/full128_bank_reset_fix_20261102/RESULTS.md",
+      "description": "当前Bank修改及L1/L2结果",
+      "version": "bank_reset",
+      "sha256": "b0c8358487aeab1dda8b04f7d612ababac04f7938c5bfccea6d9f5e1b5fc3326",
+      "bytes": 5803,
+      "mtime": "2026-11-02T13:54:23.088284+08:00",
+      "snapshot": "report/evidence/e11_results.md",
+      "status": "READ_VERIFIED"
+    },
+    {
+      "id": "e12",
+      "path": "experiments/full128_bank_reset_fix_20261102/CHANGED_FILES.json",
+      "description": "Bank最后一轮修改清单",
+      "version": "bank_reset",
+      "sha256": "4bdd540804672ba7eb401b484db8dccd01979edcf0fec02d598de07dd9822fb3",
+      "bytes": 929,
+      "mtime": "2026-11-02T13:52:32.166496+08:00",
+      "snapshot": "report/evidence/e12_changed_files.json",
+      "status": "READ_VERIFIED"
+    },
+    {
+      "id": "e13",
+      "path": "experiments/full128_bank_reset_fix_20261102/evidence/LOCAL_TESTS.json",
+      "description": "当前局部数值及故障注入记录",
+      "version": "bank_reset",
+      "sha256": "3fd3e320c2c1bddf6728aed2ee648fe1b35b75f2e47133b2713fd16d5a43fa33",
+      "bytes": 5840,
+      "mtime": "2026-11-02T13:42:41.873591+08:00",
+      "snapshot": "report/evidence/e13_local_tests.json",
+      "status": "READ_VERIFIED"
+    },
+    {
+      "id": "e14",
+      "path": "experiments/full128_route_20261102/RESULTS.md",
+      "description": "完整200MHz真实布线失败结果",
+      "version": "200m_route",
+      "sha256": "a0a7b23da4146f4a4a2ffedcb94bd9681f10961bc731a08a766cb3f52f0a48b4",
+      "bytes": 4048,
+      "mtime": "2026-11-02T18:59:43.653052+08:00",
+      "snapshot": "report/evidence/e14_results.md",
+      "status": "READ_VERIFIED"
+    },
+    {
+      "id": "e15",
+      "path": "experiments/full128_downclock_bit_20261102/delivery_166p7/FINAL_STATUS.json",
+      "description": "当前166.7MHz物理与Bitstream最终状态",
+      "version": "166p7",
+      "sha256": "372a582ec62026070cccdacf0103dabb234b67355a6adb5b99436d64130e4dbe",
+      "bytes": 2155,
+      "mtime": "2026-11-03T08:06:36.999114+08:00",
+      "snapshot": "report/evidence/e15_final_status.json",
+      "status": "READ_VERIFIED"
+    },
+    {
+      "id": "e16",
+      "path": "experiments/full128_downclock_bit_20261102/delivery_166p7/reports/timing_summary.rpt",
+      "description": "当前完整Setup/Hold和未约束检查",
+      "version": "166p7",
+      "sha256": "113ca7ca4f9bbb35280f638af6b06b33263f9c97fab50cf6e536c6feef765f95",
+      "bytes": 616491,
+      "mtime": "2026-11-02T23:35:57.469819+08:00",
+      "snapshot": "report/evidence/e16_timing_summary.rpt",
+      "status": "READ_VERIFIED"
+    },
+    {
+      "id": "e17",
+      "path": "experiments/full128_downclock_bit_20261102/delivery_166p7/reports/setup20.rpt",
+      "description": "当前最差20条Setup",
+      "version": "166p7",
+      "sha256": "6cac08e769c1fd9860e605cc8714f3a26368e161015640837035d5a34c197451",
+      "bytes": 260628,
+      "mtime": "2026-11-02T23:36:01.593405+08:00",
+      "snapshot": "report/evidence/e17_setup20.rpt",
+      "status": "READ_VERIFIED"
+    },
+    {
+      "id": "e18",
+      "path": "experiments/full128_downclock_bit_20261102/delivery_166p7/reports/hold20.rpt",
+      "description": "当前最差20条Hold",
+      "version": "166p7",
+      "sha256": "89f06621a57462640b4a600734386d066dc57f69931996e4e6dd2b15b2ddd571",
+      "bytes": 245320,
+      "mtime": "2026-11-02T23:36:05.096883+08:00",
+      "snapshot": "report/evidence/e18_hold20.rpt",
+      "status": "READ_VERIFIED"
+    },
+    {
+      "id": "e19",
+      "path": "experiments/full128_downclock_bit_20261102/delivery_166p7/reports/utilization.rpt",
+      "description": "当前完整整机资源",
+      "version": "166p7",
+      "sha256": "a4fb29ea81fbf0fe670d3d0a58be080422c21a23a372bb2d33b97cd1b3f42e5c",
+      "bytes": 19790,
+      "mtime": "2026-11-02T23:42:13.946383+08:00",
+      "snapshot": "report/evidence/e19_utilization.rpt",
+      "status": "READ_VERIFIED"
+    },
+    {
+      "id": "e20",
+      "path": "experiments/full128_downclock_bit_20261102/delivery_166p7/reports/drc.rpt",
+      "description": "当前默认DRC原始结果",
+      "version": "166p7",
+      "sha256": "45e7e181300c9e209759f9ec2cf2ad51f0ad18718e2acd79ae1c2919d1e48976",
+      "bytes": 69972,
+      "mtime": "2026-11-02T23:42:42.859796+08:00",
+      "snapshot": "report/evidence/e20_drc.rpt",
+      "status": "READ_VERIFIED"
+    },
+    {
+      "id": "e21",
+      "path": "experiments/full128_downclock_bit_20261102/delivery_166p7/reports/cdc.rpt",
+      "description": "当前CDC原始结果",
+      "version": "166p7",
+      "sha256": "8209c34bc4759615dcb2b8ce0daf48af6ac293159ef6587e65846b8a3cf912b8",
+      "bytes": 94436,
+      "mtime": "2026-11-02T23:43:59.749659+08:00",
+      "snapshot": "report/evidence/e21_cdc.rpt",
+      "status": "READ_VERIFIED"
+    },
+    {
+      "id": "e22",
+      "path": "experiments/full128_downclock_bit_20261102/delivery_166p7/reports/route_status.rpt",
+      "description": "123520条完整布通",
+      "version": "166p7",
+      "sha256": "e2003552780333c85f334415b7eed1416e6a1f4169d1f0142e0011151ca84930",
+      "bytes": 651,
+      "mtime": "2026-11-02T23:35:39.838242+08:00",
+      "snapshot": "report/evidence/e22_route_status.rpt",
+      "status": "READ_VERIFIED"
+    },
+    {
+      "id": "e23",
+      "path": "experiments/full128_downclock_bit_20261102/delivery_166p7/reports/path_families.tsv",
+      "description": "按路径族Setup/Hold统计",
+      "version": "166p7",
+      "sha256": "70a6b2a5e0a0614b73658352a0b08a616fe9bd7199a4c5224908d2cf3fb33694",
+      "bytes": 692,
+      "mtime": "2026-11-02T23:41:28.014851+08:00",
+      "snapshot": "report/evidence/e23_path_families.tsv",
+      "status": "READ_VERIFIED"
+    },
+    {
+      "id": "e24",
+      "path": "experiments/full128_downclock_bit_20261102/delivery_166p7/WARNING_REVIEW.md",
+      "description": "DRC/CDC告警分类边界",
+      "version": "166p7",
+      "sha256": "c2bac49f69f6f2cfb586607309e9a941a41d9f8fc72b4401d3bd9ac5a22dc7bc",
+      "bytes": 9769,
+      "mtime": "2026-11-03T07:58:32.994024+08:00",
+      "snapshot": "report/evidence/e24_warning_review.md",
+      "status": "READ_VERIFIED"
+    },
+    {
+      "id": "e25",
+      "path": "experiments/full128_downclock_bit_20261102/delivery_166p7/reports/bit_bitstream.json",
+      "description": "Bitstream生成及原生退出",
+      "version": "166p7",
+      "sha256": "596ccb9a4e2d700fbd2353e5c562c121e219d8916cece2dad1b0244ec8d27f3c",
+      "bytes": 6619,
+      "mtime": "2026-11-03T08:06:21.982893+08:00",
+      "snapshot": "report/evidence/e25_bit_bitstream.json",
+      "status": "READ_VERIFIED"
+    },
+    {
+      "id": "e26",
+      "path": "experiments/full128_downclock_bit_20261102/delivery_166p7/BIT_HEADER_CHECK.json",
+      "description": "Bitstream文件头与器件",
+      "version": "166p7",
+      "sha256": "1100d73a4ef2f0a199f6f1f0fd338b852b2f1ae673f2b7c8653b40672d359e7c",
+      "bytes": 443,
+      "mtime": "2026-11-03T08:07:21.897170+08:00",
+      "snapshot": "report/evidence/e26_bit_header_check.json",
+      "status": "READ_VERIFIED"
+    },
+    {
+      "id": "e27",
+      "path": "experiments/full128_downclock_bit_20261102/board_kit_166p7/MANIFEST.json",
+      "description": "板级包身份",
+      "version": "166p7",
+      "sha256": "ba6b0d7df3d90bd6b83a104fa0473d5efa821443cf1da9cdd90ca31478d4cbd1",
+      "bytes": 2089,
+      "mtime": "2026-11-03T08:09:57.414971+08:00",
+      "snapshot": "report/evidence/e27_manifest.json",
+      "status": "READ_VERIFIED"
+    },
+    {
+      "id": "e28",
+      "path": "experiments/board_logit_diagnostic_20261103/capture_1793697684_24312_3377448321/summary.txt",
+      "description": "首次真实板级稳定两遍读回",
+      "version": "first_board",
+      "sha256": "1e49b29a9a1345377a5da81c2d505f1c77faf15c81d98260c07ccd0f78ba9143",
+      "bytes": 1937,
+      "mtime": "2026-11-03T17:21:30.361549+08:00",
+      "snapshot": "report/evidence/e28_summary.txt",
+      "status": "READ_VERIFIED"
+    },
+    {
+      "id": "e29",
+      "path": "experiments/board_logit_diagnostic_20261103/capture_1793697684_24312_3377448321/observed_pass1.hex",
+      "description": "实测1000输出第一遍",
+      "version": "first_board",
+      "sha256": "1983c3247342230a3902c74ead92a926ea2db8a089571ec23c41e22a167f36e3",
+      "bytes": 4000,
+      "mtime": "2026-11-03T17:21:27.317935+08:00",
+      "snapshot": "report/evidence/e29_observed_pass1.hex",
+      "status": "READ_VERIFIED"
+    },
+    {
+      "id": "e30",
+      "path": "experiments/board_logit_diagnostic_20261103/capture_1793697684_24312_3377448321/observed_pass2.hex",
+      "description": "实测1000输出第二遍",
+      "version": "first_board",
+      "sha256": "1983c3247342230a3902c74ead92a926ea2db8a089571ec23c41e22a167f36e3",
+      "bytes": 4000,
+      "mtime": "2026-11-03T17:21:30.159489+08:00",
+      "snapshot": "report/evidence/e30_observed_pass2.hex",
+      "status": "READ_VERIFIED"
+    },
+    {
+      "id": "e31",
+      "path": "experiments/board_logit_diagnostic_20261103/ACTUAL_BOARD_ANALYSIS.json",
+      "description": "921项差异统计",
+      "version": "first_board",
+      "sha256": "88da3c6c6c9f84169f2d7364f289af77ef04fd863e9a5aa179e49f1b50a48bea",
+      "bytes": 79529,
+      "mtime": "2026-11-03T17:24:35.412775+08:00",
+      "snapshot": "report/evidence/e31_actual_board_analysis.json",
+      "status": "READ_VERIFIED"
+    },
+    {
+      "id": "e32",
+      "path": "experiments/board_first_divergence_20261103/BOARD_SESSION_OBSERVATIONS.json",
+      "description": "后续重新下载/复位状态变更",
+      "version": "post_reset",
+      "sha256": "ec5eb5b297bfc56788bf41eefc228c94969428de5e2acd8951d848d8fe526ea2",
+      "bytes": 2019,
+      "mtime": "2026-11-03T18:11:16.912851+08:00",
+      "snapshot": "report/evidence/e32_board_session_observations.json",
+      "status": "READ_VERIFIED"
+    },
+    {
+      "id": "e33",
+      "path": "experiments/board_first_divergence_20261103/ddr_single_1793700461_1859422381.tsv",
+      "description": "后续DDR抽查340项失败，不归因首次错误",
+      "version": "post_reset",
+      "sha256": "327661244be2a4a0ad7a0f4db35decf5d0be4061ca01cd372b7306f4c7c7c607",
+      "bytes": 17705,
+      "mtime": "2026-11-03T18:07:45.633208+08:00",
+      "snapshot": "report/evidence/e33_ddr_single_1793700461_1859422381.tsv",
+      "status": "READ_VERIFIED"
+    },
+    {
+      "id": "e34",
+      "path": "experiments/board_first_divergence_20261103/PREPARED.json",
+      "description": "当前定向回归范围",
+      "version": "scoped",
+      "sha256": "31a6e69ff4020a749cf054d8cc49b4d95bf476d116e79c4999c9ddc1563079f2",
+      "bytes": 6298,
+      "mtime": "2026-11-03T17:46:44.378368+08:00",
+      "snapshot": "report/evidence/e34_prepared.json",
+      "status": "READ_VERIFIED"
+    },
+    {
+      "id": "e35",
+      "path": "experiments/board_first_divergence_20261103/BINDING.json",
+      "description": "定向回归实际输入SHA",
+      "version": "scoped",
+      "sha256": "8d8d8e5d28bf95721285dccd6a737f030db9d49346bd3b75d665199c3f9be53c",
+      "bytes": 6767,
+      "mtime": "2026-11-03T17:46:44.378368+08:00",
+      "snapshot": "report/evidence/e35_binding.json",
+      "status": "READ_VERIFIED"
+    },
+    {
+      "id": "e36",
+      "path": "experiments/board_first_divergence_20261103/run/scoped_normal.stdout.log",
+      "description": "定向回归截至取证时刻的日志快照",
+      "version": "scoped",
+      "sha256": "eb4e50cb5cdf8e7620bbff3e30b8cef38aeb923eb547c30d05d9448a2585fdda",
+      "bytes": 3760,
+      "mtime": "2026-11-03T19:36:15.157959+08:00",
+      "snapshot": "report/evidence/e36_scoped_normal.stdout.log",
+      "status": "READ_VERIFIED"
+    },
+    {
+      "id": "e37",
+      "path": "experiments/board_first_divergence_20261103/L3_SOURCE_COMPARISON.json",
+      "description": "当前相对真正L3版本的14项改变/新增",
+      "version": "scoped",
+      "sha256": "6994419637843be3e5a9c6145b76e67f6afdfbf7a698db30ef1c13cb3dcef375",
+      "bytes": 4157,
+      "mtime": "2026-11-03T17:49:47.349623+08:00",
+      "snapshot": "report/evidence/e37_l3_source_comparison.json",
+      "status": "READ_VERIFIED"
+    },
+    {
+      "id": "e38",
+      "path": "experiments/full128_downclock_bit_20261102/delivery_166p7/reports/structure_checks.tsv",
+      "description": "128 DSP结构与四个局部valid检查",
+      "version": "166p7",
+      "sha256": "a3380388b03a80069c9d1731d4e35b960bbddc83356e25e1e057f858de824969",
+      "bytes": 96,
+      "mtime": "2026-11-03T07:56:44.975768+08:00",
+      "snapshot": "report/evidence/e38_structure_checks.tsv",
+      "status": "READ_VERIFIED"
+    },
+    {
+      "id": "e39",
+      "path": "experiments/full128_downclock_bit_20261102/delivery_166p7/reports/bank_receiver_registers.tsv",
+      "description": "实际bank接收寄存器",
+      "version": "166p7",
+      "sha256": "cec150b5188da8813501a30d75d29cea2be17aa7e16929dee0b2e35454c58c8c",
+      "bytes": 14730,
+      "mtime": "2026-11-03T07:56:47.232073+08:00",
+      "snapshot": "report/evidence/e39_bank_receiver_registers.tsv",
+      "status": "READ_VERIFIED"
+    },
+    {
+      "id": "e40",
+      "path": "experiments/full128_downclock_bit_20261102/delivery_166p7/reports/clocks.rpt",
+      "description": "实际生成时钟报告",
+      "version": "166p7",
+      "sha256": "2336cd09e7859ed1774f88b3431d17a304618bfef79507012bf396e5c6244e4c",
+      "bytes": 26747,
+      "mtime": "2026-11-02T23:35:42.060269+08:00",
+      "snapshot": "report/evidence/e40_clocks.rpt",
+      "status": "READ_VERIFIED"
+    },
+    {
+      "id": "e41",
+      "path": "experiments/full128_bank_reset_fix_20261102/data/preprocess.json",
+      "description": "图像1及预处理来源",
+      "version": "input_grid",
+      "sha256": "471f4a9158a531e378646d5417365c7a8bae3e57b4c881fb8c9040d7431ed419",
+      "bytes": 683,
+      "mtime": "2026-10-29T17:51:30.695373+08:00",
+      "snapshot": "report/evidence/e41_preprocess.json",
+      "status": "READ_VERIFIED"
+    },
+    {
+      "id": "e42",
+      "path": "experiments/full128_bank_reset_fix_20261102/board/legacy_platform/board_repo/vcu118/2.3/LICENSE",
+      "description": "板级描述Apache2许可证",
+      "version": "vendor",
+      "sha256": "7fafdec009d89967935f6a9a232ae1e466b3bf0b283b535fdf9177711ce49d31",
+      "bytes": 751,
+      "mtime": "2026-10-29T17:51:30.341994+08:00",
+      "snapshot": "report/evidence/e42_license",
+      "status": "READ_VERIFIED"
+    },
+    {
+      "id": "e43",
+      "path": "experiments/full128_downclock_bit_20261102/prepare_integer_clock.py",
+      "description": "实际M10 D3 O6时钟生成脚本",
+      "version": "166p7",
+      "sha256": "6dc327d74f88befff9dc836f73860f9e8589afdcbe84ba8f29ae65e31431e9a4",
+      "bytes": 1082,
+      "mtime": "2026-11-02T22:13:29.350022+08:00",
+      "snapshot": "report/evidence/e43_prepare_integer_clock.py",
+      "status": "READ_VERIFIED"
+    },
+    {
+      "id": "e44",
+      "path": "experiments/full128_bank_reset_fix_20261102/board/host_w8.tcl",
+      "description": "冻结Host上传/比较脚本",
+      "version": "bank_reset",
+      "sha256": "3b8b44a54d8b01bce65ce6a6d5313b05bf31cf20cc3ad9fd1fb7c731af8b606d",
+      "bytes": 7332,
+      "mtime": "2026-10-29T17:51:30.340001+08:00",
+      "snapshot": "report/evidence/e44_host_w8.tcl",
+      "status": "READ_VERIFIED"
+    },
+    {
+      "id": "h01",
+      "path": "experiments/full128_bank_reset_fix_20261102/data/integer_parameters.npz",
+      "description": "完整冻结整数参数",
+      "version": "input_grid",
+      "sha256": "67bbc4304975bd0882b7e5f665982fc97eaecc8986ed59ba7c0e28cfb501f415",
+      "bytes": 6079813,
+      "mtime": "2026-10-29T17:51:30.621622+08:00",
+      "snapshot": null,
+      "status": "READ_VERIFIED"
+    },
+    {
+      "id": "h02",
+      "path": "experiments/full128_bank_reset_fix_20261102/data/contract.json",
+      "description": "实际W8A8数值合同",
+      "version": "input_grid",
+      "sha256": "d5c8fd8f0346461e557c140487632d5bd69d284b2359beb7d38280076eb36ccf",
+      "bytes": 1876832,
+      "mtime": "2026-10-29T17:51:30.614643+08:00",
+      "snapshot": null,
+      "status": "READ_VERIFIED"
+    },
+    {
+      "id": "h03",
+      "path": "experiments/full128_bank_reset_fix_20261102/data/package/package.json",
+      "description": "真实13,024指令与DDR布局",
+      "version": "bank_reset",
+      "sha256": "96d9082630892fe28452da104b8fbd2613c71c39baaf96b51ecc62574ad87ff7",
+      "bytes": 4125465,
+      "mtime": "2026-10-29T17:51:30.690389+08:00",
+      "snapshot": null,
+      "status": "READ_VERIFIED"
+    },
+    {
+      "id": "h04",
+      "path": "experiments/full128_downclock_bit_20261102/delivery_166p7/full128_166p7.bit",
+      "description": "当前下载Bitstream",
+      "version": "166p7",
+      "sha256": "928403c3745abe5b18b57088eaaa1fdb3a181343661a60421b4346aee42d0905",
+      "bytes": 80159232,
+      "mtime": "2026-11-03T08:06:20.066773+08:00",
+      "snapshot": null,
+      "status": "READ_VERIFIED"
+    },
+    {
+      "id": "h05",
+      "path": "experiments/full128_downclock_bit_20261102/delivery_166p7/full128_166p7_final.dcp",
+      "description": "当前最终DCP",
+      "version": "166p7",
+      "sha256": "25c8f75978fb10f65acb18292bb39930801118c4dd43f16201db1370ba001027",
+      "bytes": 69796756,
+      "mtime": "2026-11-03T08:01:45.748255+08:00",
+      "snapshot": null,
+      "status": "READ_VERIFIED"
+    },
+    {
+      "id": "h06",
+      "path": "experiments/full128_bank_reset_fix_20261102/data/package/ddr.bin",
+      "description": "8,990,912字节输入/权重包",
+      "version": "input_grid",
+      "sha256": "1de3ad14541283d55b581cbb534ca2575383faa1cfd23e63f23a862e5062aa79",
+      "bytes": 8990912,
+      "mtime": "2026-10-29T17:51:30.663479+08:00",
+      "snapshot": null,
+      "status": "READ_VERIFIED"
+    },
+    {
+      "id": "h07",
+      "path": "experiments/full128_downclock_bit_20261102/delivery_166p7/effective_final.xdc",
+      "description": "最终有效XDC快照，重建仍需IP作用域",
+      "version": "166p7",
+      "sha256": "c7564a7c35148278055f1e6976cc12f9f38ebcc8d8dfbb213ea7349bfb44cf82",
+      "bytes": 4927055,
+      "mtime": "2026-11-03T08:01:13.036521+08:00",
+      "snapshot": null,
+      "status": "READ_VERIFIED"
+    },
+    {
+      "id": "h08",
+      "path": "experiments/full128_jointfix_20261029/software/golden.py",
+      "description": "当前数值方法的冻结独立整数参考",
+      "version": "jointfix",
+      "sha256": "ba5028699422e46507dc872b6559c37a1b93cb698b30bafb9cfe35a015952bff",
+      "bytes": 5565,
+      "mtime": "2026-10-29T17:51:30.350964+08:00",
+      "snapshot": null,
+      "status": "READ_VERIFIED"
+    }
+  ]
+}

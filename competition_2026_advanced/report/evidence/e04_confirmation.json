@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "scope": "bounded software numerical experiment; not full precision signoff",
+  "results": [
+    {
+      "candidate": "center",
+      "images": 512,
+      "fp32_correct": 383,
+      "correct": 377,
+      "fp32_top1": 74.8046875,
+      "integer_top1": 73.6328125,
+      "drop_pp": 1.171875,
+      "agreement": 462,
+      "normalized_mse": 7.922590495089981e-05
+    },
+    {
+      "candidate": "input_grid",
+      "images": 512,
+      "fp32_correct": 383,
+      "correct": 377,
+      "fp32_top1": 74.8046875,
+      "integer_top1": 73.6328125,
+      "drop_pp": 1.171875,
+      "agreement": 461,
+      "normalized_mse": 7.954995023540327e-05
+    }
+  ],
+  "selected": "input_grid",
+  "confirmation_cannot_reselect": true,
+  "seconds": 1538.4756974000047,
+  "formal_full50000": "NOT_RUN",
+  "RTL": "NOT_RUN",
+  "timing200MHz": "NOT_RUN"
+}

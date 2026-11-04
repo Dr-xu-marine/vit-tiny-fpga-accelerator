@@ -1,0 +1,121 @@
+# Host75 opt-only: reuse corrected DCP and complete vendor caches. No synthesis/place/route.
+set_param general.maxThreads 1
+if {[llength $argv] != 5} {error "Expected CANDIDATE OUTPUT CACHE INPUT_DCP"}
+lassign $argv candidate out cache input_dcp build_scripts
+proc stage {out text} {
+ set f [open [file join $out stage.txt] w]; puts $f $text; close $f
+ puts "DUAL_CACHE_STAGE $text"; flush stdout
+}
+proc snapshot {dir} {
+ file mkdir $dir
+ report_debug_core -file [file join $dir debug_cores.rpt]
+ report_clocks -file [file join $dir clocks.rpt]
+ set f [open [file join $dir clock_properties.tsv] w]
+ foreach c [get_clocks -quiet] {
+  puts $f "CLOCK\t$c"
+  foreach p {PERIOD IS_GENERATED MASTER_CLOCK SOURCE_PINS SETUP_UNCERTAINTY HOLD_UNCERTAINTY} {
+   if {[lsearch -exact [list_property $c] $p]>=0} {puts $f "$p\t[get_property $p $c]"}
+  }
+ }
+ close $f
+ set f [open [file join $dir debug_clock.tsv] w]
+ foreach c [get_debug_cores -quiet] {
+  report_property -all -file [file join $dir debug_[string map {/ _} $c].rpt] $c
+ }
+ foreach pin [get_pins -hier -quiet -filter {NAME =~ dbg_hub/*}] {
+  puts $f "$pin\t[get_nets -quiet -of_objects $pin]\t[get_clocks -quiet -of_objects $pin]"
+ }
+ close $f
+ set f [open [file join $dir blackboxes.tsv] w]
+ foreach c [get_cells -hier -quiet -filter {IS_BLACKBOX == 1}] {
+  puts $f "$c\t[get_property REF_NAME $c]"
+ }
+ close $f
+ set mm [get_cells -hier -quiet -filter {REF_NAME == MMCME4_ADV}]
+ set n 0
+ foreach c $mm {
+  report_property -all -file [file join $dir mmcm_[incr n].rpt] $c
+ }
+ set pl [get_cells -hier -quiet -filter {REF_NAME =~ PLLE4*}]
+ set n 0
+ foreach c $pl {report_property -all -file [file join $dir pll_[incr n].rpt] $c}
+ set f [open [file join $dir dsp_registers.tsv] w]
+ foreach c [get_cells -hier -quiet -filter {REF_NAME == DSP48E2}] {
+  puts $f "$c\t[get_property AREG $c]\t[get_property BREG $c]\t[get_property MREG $c]\t[get_property PREG $c]"
+ }
+ close $f
+ set f [open [file join $dir local_valid_drivers.tsv] w]
+ foreach c [get_cells -hier -quiet -filter {NAME =~ */local_read_v1_reg* && IS_SEQUENTIAL == 1}] {
+  set pin [get_pins -of_objects $c -filter {REF_PIN_NAME == Q}]
+  set net [get_nets -of_objects $pin]
+  puts $f "$c\t$pin\t$net\t[llength [get_pins -leaf -of_objects $net -filter {DIRECTION == IN}]]\t[get_property LOC $c]"
+ }
+ close $f
+}
+
+# Cache miss must not silently launch unapproved synthesis or implementation.
+foreach command {synth_design launch_runs place_design phys_opt_design route_design write_bitstream} {
+ trace add execution $command enter {apply {{cmd op} {error "FORBIDDEN_STAGE_OR_CACHE_MISS_SYNTHESIS"}}}
+}
+source {D:/fpga/vit_tiny_vcu118/experiments/full128_host75_opt_20261101/scripts/clock_checks.tcl}
+
+stage $out OPEN_CHECKPOINT
+open_checkpoint $input_dcp
+source {D:/fpga/vit_tiny_vcu118/experiments/full128_downclock_bit_20261102/build_scripts/calibration_status_166.tcl}
+apply_calibration_status_contract [file join $out calibration_contract.tsv]
+write_checkpoint [file join $out 03_calibration_configured.dcp]
+config_ip_cache -use_cache_location $cache
+set_property IP_CACHE_PERMISSIONS {read} [current_project]
+report_property -all -file [file join $out project_cache_before.rpt] [current_project]
+source {D:/fpga/vit_tiny_vcu118/experiments/full128_downclock_bit_20261102/clock_contract_166/scripts/board_clock.tcl}
+snapshot [file join $out before]
+validate_host75_clocks [file join $out before_clocks.tsv]
+stage $out OPT_DESIGN
+opt_design -directive RuntimeOptimized
+stage $out SAVE_OPTIMIZED_CHECKPOINT
+# Save the actual optimization result before any optional report can fail.
+write_checkpoint [file join $out 04_optimized_host75.dcp]
+stage $out REPORTS
+set failures {}
+set summary [open [file join $out report_status.tsv] w]
+proc checked_report {name command} {
+ global failures summary
+ if {[catch {uplevel 1 $command} msg options]} {
+  lappend failures $name
+  puts $summary "$name\tFAIL\t[string map {\n { } \t { }} $msg]"
+  set f [open [file join $::out ${name}_error.txt] w]
+  puts $f $msg; puts $f [dict get $options -errorinfo]; close $f
+ } else {puts $summary "$name\tPASS"}
+ flush $summary
+}
+checked_report board_clock {source {D:/fpga/vit_tiny_vcu118/experiments/full128_downclock_bit_20261102/clock_contract_166/scripts/board_clock.tcl}}
+checked_report snapshot {snapshot [file join $out after]}
+checked_report host75_clocks {validate_host75_clocks [file join $out after_clocks.tsv]}
+checked_report compute_structure {validate_compute_structure $out}
+checked_report joint_banks {source [file join $build_scripts check_banks.tcl];check_joint_banks $out}
+checked_report request_fences {source [file join $candidate scripts check_request_structure.tcl];check_request_structure $out}
+checked_report effective_constraints {write_xdc -force [file join $out effective_constraints.xdc]}
+checked_report timing_summary {report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -file [file join $out timing_summary.rpt]}
+checked_report check_timing {check_timing -verbose -file [file join $out check_timing.rpt]}
+checked_report setup20 {report_timing -delay_type max -max_paths 20 -nworst 1 -path_type full_clock_expanded -input_pins -file [file join $out setup20.rpt]}
+checked_report hold20 {report_timing -delay_type min -max_paths 20 -nworst 1 -path_type full_clock_expanded -input_pins -file [file join $out hold20.rpt]}
+checked_report high_fanout {report_high_fanout_nets -timing -max_nets 100 -file [file join $out high_fanout.rpt]}
+checked_report methodology {report_methodology -file [file join $out methodology.rpt]}
+checked_report drc {report_drc -file [file join $out drc.rpt]}
+checked_report cdc {report_cdc -details -file [file join $out cdc.rpt]}
+checked_report clock_interaction {report_clock_interaction -file [file join $out clock_interaction.rpt]}
+checked_report utilization {report_utilization -file [file join $out utilization.rpt]}
+checked_report hierarchical_utilization {report_utilization -hierarchical -file [file join $out utilization_hierarchy.rpt]}
+checked_report memory_mapping {report_ram_utilization -include_lutram -file [file join $out memory_mapping.rpt]}
+set f [open [file join $out final_checks.tsv] w]
+puts $f "errors\t[get_msg_config -count -severity ERROR]"
+puts $f "critical_warnings_current_project\t[get_msg_config -count -severity {CRITICAL WARNING}]"
+puts $f "blackboxes\t[llength [get_cells -hier -quiet -filter {IS_BLACKBOX == 1}]]"
+puts $f "DSP48E2\t[llength [get_cells -hier -quiet -filter {REF_NAME == DSP48E2}]]"
+puts $f "report_failures\t$failures"
+close $f
+close $summary
+if {[llength $failures]} {stage $out REPORT_FAILURE_DCP_SAVED; error "Required report commands failed: $failures"}
+stage $out COMPLETE_NOT_PLACED_NOT_TIMING_SIGNOFF
+puts HOST75_OPT_AND_CLOCK_REPORTS_COMPLETE_NOT_PLACED_NOT_TIMING_SIGNOFF
+exit 0

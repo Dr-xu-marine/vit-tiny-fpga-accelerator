@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "pid": 1316,
+  "phase": "confirmation",
+  "native_exit_code": 0,
+  "seconds": 1544.0551714897156,
+  "command": [
+    "D:\\python1\\python.exe",
+    "-I",
+    "-B",
+    "D:\\fpga\\vit_tiny_vcu118\\experiments\\w8a8_systematic_calibration_20261029\\guard.py",
+    "confirmation"
+  ],
+  "sources": {
+    "D:\\fpga\\vit_tiny_vcu118\\experiments\\w8a8_systematic_calibration_20261029\\domain_proof.py": "f5610398c07812a61490d5fb14562ea65ce53a3baa90c8d9f9aeaaf4a22652b9",
+    "D:\\fpga\\vit_tiny_vcu118\\experiments\\w8a8_systematic_calibration_20261029\\env.py": "ec6ed4f5efe4fc528dde89048f99efc056eea295c632dc94fb62e2b91942612a",
+    "D:\\fpga\\vit_tiny_vcu118\\experiments\\w8a8_systematic_calibration_20261029\\guard.py": "1b05b2231e7e0181dd49af69f0941e009cd46edb4ed3654eb7dcd237611379a4",
+    "D:\\fpga\\vit_tiny_vcu118\\experiments\\w8a8_systematic_calibration_20261029\\launch.py": "187ea046f90b11db847aca053e4500f95502c6bea24ab36fe2bef37071ee70a4",
+    "D:\\fpga\\vit_tiny_vcu118\\experiments\\w8a8_systematic_calibration_20261029\\reconstruction.py": "6b3dcbe99204484b4dd178ed2d5755faea53de5f45962f66d66b5a6002ef9c74",
+    "D:\\fpga\\vit_tiny_vcu118\\experiments\\w8a8_systematic_calibration_20261029\\sequential_refit.py": "68ed0187305ecd0a14cc656fcc8c3faa47d0f77792a20b6c78ab408556b2116c",
+    "D:\\fpga\\vit_tiny_vcu118\\experiments\\w8a8_systematic_calibration_20261029\\systematic.py": "aebf4f95614a424acab24d099c8b50221b9208e78cfc5f215265143280df4b10",
+    "D:\\fpga\\vit_tiny_vcu118\\experiments\\w8a8_systematic_calibration_20261029\\workflow.py": "d54c6999d99ab99f7a5fd4f44aeff2102db90cf87521b23978a2fe60b5bd7267"
+  },
+  "dumps": []
+}

@@ -1,0 +1,81 @@
+`timescale 1ns/1ps
+`include "w8_test_paths.vh"
+module tb_act_pipeline;
+ reg clk=0;always #2.5 clk=~clk;reg rst=1,wide=0;
+ reg ar=0,br=0,bw=0;reg [11:0] aa=0,ba=0;reg [7:0] bd=0;
+ reg wv=0,rv=0,ready=0;reg [23:0] wa=0,ra=0;reg [127:0] wd=0;reg [15:0] wm=0,rm=0;
+ wire wr0,wr1,we0,we1,rr0,rr1,v0,v1,e0,e1;wire [127:0] d0,d1;wire [15:0] m0,m1;wire [7:0] a0,a1,b0,b1;
+ wire request=rv&&rr0&&rr1;
+ tiny_act_banked_ram #(.ADDR_W(12)) oracle(.clk(clk),.rst(rst),.wide_mode(wide),.legacy_a_re(ar),.legacy_a_addr(aa),.legacy_a_rdata(a0),.legacy_b_re(br),.legacy_b_we(bw),.legacy_b_addr(ba),.legacy_b_wdata(bd),.legacy_b_rdata(b0),.wr_valid(wv),.wr_ready(wr0),.wr_addr(wa),.wr_data(wd),.wr_mask(wm),.wr_error(we0),.rd_valid(request),.rd_ready(rr0),.rd_addr(ra),.rd_mask(rm),.rsp_valid(v0),.rsp_ready(ready&&v1),.rsp_data(d0),.rsp_mask(m0),.rsp_error(e0),.wide_idle());
+ w8_act_local_ram #(.ADDR_W(12)) dut(.clk(clk),.rst(rst),.wide_mode(wide),.legacy_a_re(ar),.legacy_a_addr(aa),.legacy_a_rdata(a1),.legacy_b_re(br),.legacy_b_we(bw),.legacy_b_addr(ba),.legacy_b_wdata(bd),.legacy_b_rdata(b1),.wr_valid(wv),.wr_ready(wr1),.wr_addr(wa),.wr_data(wd),.wr_mask(wm),.wr_error(we1),.rd_valid(request),.rd_ready(rr1),.rd_addr(ra),.rd_mask(rm),.rsp_valid(v1),.rsp_ready(ready),.rsp_data(d1),.rsp_mask(m1),.rsp_error(e1),.wide_idle());
+ reg [7:0] initial_bytes[0:4095],reference[0:4095];reg [127:0] wanted;reg [15:0] wanted_mask;reg wanted_error,pending=0;
+ reg [7:0] ad0=0,ad1=0,ad2=0,ad3=0,bd0=0,bd1=0,bd2=0,bd3=0;reg we_delay=0;integer cycles=0,reads=0,values=0,legacy_checks=0,resets=0,i,j,phase,ticks,accept_cycle=0;reg saw_first=0;reg [31:0] rng=32'h7c31bd29;
+ always @(posedge clk)begin
+  cycles<=cycles+1;
+  if(rst)pending<=0;
+  else begin
+   if(request)begin
+    if(pending)$fatal(1,"ACT_TWO_OWNERS");pending<=1;wanted=0;wanted_mask=0;wanted_error=0;accept_cycle=cycles;saw_first=0;
+    for(integer n=0;n<16;n=n+1)if(rm[n])begin
+     if(ra+n<4096)begin wanted[8*n+:8]=reference[ra+n];wanted_mask[n]=1;end else wanted_error=1;
+    end
+   end
+   if(v1&&ready)begin pending<=0;reads<=reads+1;end
+   if(wide&&wv&&wr1)for(integer n=0;n<16;n=n+1)if(wm[n]&&wa+n<4096)reference[wa+n]=wd[8*n+:8];
+   if(!wide&&bw)reference[ba]=bd;
+  end
+ end
+ always @(negedge clk)begin
+  #0.1;
+  if(rst)begin ad0=0;ad1=0;ad2=0;ad3=0;bd0=0;bd1=0;bd2=0;bd3=0;we_delay=0;end else begin
+   if(a1!==ad3||b1!==bd3)$fatal(1,"ACT_LEGACY_AGE_MISMATCH cycle=%0d",cycles);
+   ad3=ad2;ad2=ad1;ad1=ad0;ad0=a0;bd3=bd2;bd2=bd1;bd1=bd0;bd0=b0;legacy_checks=legacy_checks+2;
+   if(we_delay!==we1)$fatal(1,"ACT_WRITE_ERROR_AGE");we_delay=we0;
+   if(v1)begin
+    if(!saw_first)begin if(cycles-accept_cycle!=6)$fatal(1,"ACT_RESPONSE_LATENCY actual=%0d expected=6",cycles-accept_cycle);saw_first=1;end
+    if(!v0||!pending||d1!==d0||m1!==m0||e1!==e0||d1!==wanted||m1!==wanted_mask||e1!==wanted_error)$fatal(1,"ACT_RSP_MISMATCH cycle=%0d",cycles);
+    values=values+16;
+   end
+  end
+ end
+ task automatic read_word(input [23:0] address,input [15:0] mask,input integer stall);
+ begin
+  @(negedge clk);ra=address;rm=mask;rv=1;ready=0;ticks=0;
+  do begin @(posedge clk);ticks=ticks+1;if(ticks>20)$fatal(1,"ACT_REQUEST_TIMEOUT");end while(!request);
+  @(negedge clk);rv=0;wait(v1);repeat(stall)@(negedge clk);@(negedge clk);ready=1;@(negedge clk);ready=0;
+ end endtask
+ initial begin
+  $readmemh({`W8_ROOT,"/testbench/act_pattern.hex"},initial_bytes);
+  repeat(4)@(negedge clk);rst=0;
+  for(i=0;i<4096;i=i+1)begin bw=1;ba=i;bd=initial_bytes[i];@(negedge clk);end bw=0;
+  for(i=0;i<256;i=i+1)begin ar=1;br=1;aa=(37*i+13)%4096;ba=(91*i+27)%4096;@(negedge clk);end ar=0;br=0;
+  repeat(6)@(negedge clk);wide=1;
+  for(i=0;i<16;i=i+1)read_word(80+i,16'hffff,i%5);
+  for(i=0;i<128;i=i+1)begin rng=1664525*rng+1013904223;read_word(rng[11:0],rng[31:16],i%7);end
+  read_word(4090,16'hffff,5);read_word(4096,16'hffff,2);read_word(4095,16'h0000,1);
+  // A colliding read must wait for the write, then see the committed data.
+  @(negedge clk);wa=17;wm=16'hffff;wd=128'hfedcba9876543210a5a5b6b6c7c7d8d8;wv=1;ra=17;rm=16'hffff;rv=1;
+  #0.2;if(rr0||rr1)$fatal(1,"ACT_COLLISION_NOT_BLOCKED");
+  @(negedge clk);wv=0;do @(posedge clk);while(!request);@(negedge clk);rv=0;wait(v1);repeat(5)@(negedge clk);ready=1;@(negedge clk);ready=0;
+  // Cancel in each RAM/gather/response phase. Memories retain their contents.
+  for(phase=0;phase<6;phase=phase+1)begin
+   @(negedge clk);rv=1;ra=37;rm=16'hffff;do @(posedge clk);while(!request);@(negedge clk);rv=0;
+   repeat(phase)@(negedge clk);rst=1;@(negedge clk);rst=0;resets=resets+1;
+   repeat(8)begin @(negedge clk);if(v0||v1)$fatal(1,"ACT_RESET_STALE");end
+  end
+  // Illegal partial writes must retain in-range bytes and flag an error.
+  @(negedge clk);wv=1;wa=4090;wm=16'hffff;wd=128'h1133557799bbddff22446688aaccee00;
+  @(negedge clk);wv=0;repeat(4)@(negedge clk);read_word(4090,16'hffff,4);
+  // Writes accepted before reset remain durable through both request stages.
+  for(phase=0;phase<3;phase=phase+1)begin
+   @(negedge clk);wv=1;wa=512+16*phase;wm=16'hffff;wd=128'hf1e2d3c4b5a697887766554433221100+phase;
+   @(negedge clk);wv=0;repeat(phase)@(negedge clk);rst=1;@(negedge clk);rst=0;
+   repeat(5)@(negedge clk);read_word(512+16*phase,16'hffff,3);resets=resets+1;
+  end
+  read_word(17,16'hffff,4);wide=0;repeat(5)@(negedge clk);ar=1;aa=17;@(negedge clk);ar=0;repeat(5)@(negedge clk);
+  $display("ACT_PIPELINE_PASS reads=%0d checked_bytes=%0d legacy_cycles=%0d reset_phases=%0d wide_response_edges=6 scalar_edges=5 cycles=%0d",reads,values,legacy_checks,resets,cycles);$finish;
+ end
+ initial if($test$plusargs("CORRUPT_GATHER"))begin wait(dut.wide_pipe[3]);force dut.wide_low_q=128'bx;end
+ initial if($test$plusargs("CORRUPT_REQUEST"))begin wait(dut.raw_r_valid);force dut.raw_rd_addr=24'd0;end
+ initial begin #2000000;$fatal(1,"ACT_GLOBAL_TIMEOUT");end
+endmodule

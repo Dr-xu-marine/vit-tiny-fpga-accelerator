@@ -1,0 +1,65 @@
+{
+  "status": "PASS",
+  "execution_state": "FINISHED",
+  "scope": "Gate for one normal numerical full12 only; no board or physical approval",
+  "started_utc": "2026-10-30T11:29:40.464822+00:00",
+  "work": "D:\\fpga\\vit_tiny_vcu118\\experiments\\board_closure_20261030\\full72_recovery_20261030\\runs\\full_1793359780460422100",
+  "stages": [
+    {
+      "label": "compile",
+      "status": "PASS",
+      "seconds": 2.1182365999998183,
+      "receipt": "D:\\fpga\\vit_tiny_vcu118\\experiments\\board_closure_20261030\\full72_recovery_20261030\\runs\\full_1793359780460422100\\compile.json"
+    },
+    {
+      "label": "elaborate",
+      "status": "PASS",
+      "seconds": 24.17556959999979,
+      "receipt": "D:\\fpga\\vit_tiny_vcu118\\experiments\\board_closure_20261030\\full72_recovery_20261030\\runs\\full_1793359780460422100\\elaborate.json"
+    },
+    {
+      "label": "simulate",
+      "status": "PASS",
+      "seconds": 104355.8309612,
+      "receipt": "D:\\fpga\\vit_tiny_vcu118\\experiments\\board_closure_20261030\\full72_recovery_20261030\\runs\\full_1793359780460422100\\simulate.json"
+    }
+  ],
+  "full12_numerical_PASS": true,
+  "full_bad_expected_second_run": "NOT_RUN",
+  "JTAG": "NOT_RUN",
+  "real_MIG_DDR": "NOT_RUN",
+  "board_CDC": "NOT_RUN",
+  "P_and_R": "NOT_RUN",
+  "Bitstream": "NOT_RUN",
+  "active_stage": "final_assertions_and_trace_checker",
+  "wall_seconds": 104383.0182056,
+  "actual_counts": {
+    "host_outputs": 1000,
+    "checkpoints": 257,
+    "values": 11532400,
+    "cycles": 1282750775,
+    "load_cycles": 10209170,
+    "compute_cycles": 1272460010,
+    "schedule_cycles": 77817,
+    "collector_cycles": 2000,
+    "cycle_scope": "Actual original TB counters, not physical MHz/FPS; load/compute/schedule mutually selected and collector counted independently"
+  },
+  "Host_checker_status": "PASS",
+  "Host_checker_scope": "Output checker FI, not a second full-network RTL fault run",
+  "actual_Host_trace_sha256": "1117a30836ab44cc1b1585884e7c5e41524cf2558636d821047b8a58f3ce64a2",
+  "simulation_native_seconds": 104355.8309612,
+  "protected_inputs_unchanged": true,
+  "real_board_or_physical_PASS": false,
+  "ended_utc": "2026-10-31T16:29:26.770726+00:00",
+  "authorized_max_seconds": 259200,
+  "resource_summary": {
+    "samples": 205969,
+    "hard_RAM_cap": false,
+    "peak_owned_private_GiB": 0.308624267578125,
+    "peak_owned_working_set_GiB": 0.2767906188964844,
+    "min_available_physical_GiB": 4.590816497802734,
+    "max_system_commit_GiB": 18.403797149658203,
+    "max_commit_fraction": 0.5787838885459108,
+    "max_pagefile_used_GiB": 4.3754730224609375
+  }
+}

@@ -1,0 +1,57 @@
+"""Verify delivery and protected frozen evidence, never run HDL tools."""
+from pathlib import Path
+import json,hashlib,subprocess,re
+from datetime import datetime,timezone,timedelta
+from zipfile import ZipFile
+from lxml import etree
+from pypdf import PdfReader
+from PIL import Image,ImageDraw
+R=Path(__file__).resolve().parents[1];W=R.parent;O=R/'report';Q=O/'qa'
+def sha(p):
+ with Path(p).open('rb') as f:return hashlib.file_digest(f,'sha256').hexdigest()
+f=json.loads((O/'evidence/audit_facts.json').read_text())
+P=Path(f['current_snapshot']);manifest=json.loads((P/'SOURCE_MANIFEST.json').read_text())['files']
+changed=[s for s,h in manifest.items() if sha(P/s)!=h];assert not changed,changed
+stable=[x for x in f['evidence'] if x['id'] in ['h01','h02','h03','h04','h05','h06','h07','h08','e01','e02','e04','e06','e09','e29','e30']]
+for e in stable:assert sha(W/e['path'])==e['sha256'],e['id']
+pdf=PdfReader(O/'design_report.pdf');assert len(pdf.pages)==28
+assert all(float(p.mediabox.width)>590 and float(p.mediabox.width)<600 for p in pdf.pages)
+texts=[p.extract_text() or '' for p in pdf.pages]
+for i,t in enumerate(texts):assert len(t)>250,(i,len(t))
+alltext='\n'.join(texts)
+for token in ['921','1.171875','49299','59093','137','1129','355787','0.073','0.005']:
+ assert token in alltext,token
+assert '目录.' not in texts[2]
+ns={'w':'http://schemas.openxmlformats.org/wordprocessingml/2006/main','m':'http://schemas.openxmlformats.org/officeDocument/2006/math'}
+with ZipFile(O/'design_report.docx') as z:
+ assert z.testzip() is None
+ doc=etree.fromstring(z.read('word/document.xml'));st=etree.fromstring(z.read('word/styles.xml'))
+ assert len(doc.findall('.//w:pBdr',ns))==len(st.findall('.//w:pBdr',ns))==0
+ assert len(doc.findall('.//m:sSub',ns))>=18
+ assert len(doc.findall('.//m:f',ns))>=4
+ fields=' '.join(doc.xpath('//w:instrText/text()',namespaces=ns))
+ assert 'TOC' in fields and 'PAGE' in fields
+figs=list((O/'figures').glob('*.svg'));assert len(figs)==16
+for s in figs:
+ etree.parse(str(s));im=Image.open(s.with_suffix('.png'));im.verify()
+for name in ['evidence_index.md','verification_status.md','missing_evidence.md','llm_collaboration.md','contribution_review.md']:
+ assert (O/name).stat().st_size>500
+for n in range(0,28,2):
+ a=Image.open(Q/f'page-{n+1:02d}.png').convert('RGB');b=Image.open(Q/f'page-{n+2:02d}.png').convert('RGB')
+ board=Image.new('RGB',(a.width+b.width+16,max(a.height,b.height)+25),'white')
+ board.paste(a,(0,25));board.paste(b,(a.width+16,25));dd=ImageDraw.Draw(board);dd.text((10,5),f'FINAL pages {n+1} / {n+2}',fill='black');board.save(Q/f'final_sheet_{n//2+1:02d}.png')
+tracked=subprocess.check_output(['git','status','--short','--untracked-files=no'],cwd=W,text=True).strip()
+assert tracked==f['git']['tracked_status'],(tracked,f['git']['tracked_status'])
+out={
+ 'checked_at':datetime.now(timezone(timedelta(hours=8))).isoformat(timespec='seconds'),
+ 'status':'PASS_ARTIFACT_CHECKS_NOT_FPGA_SIGNOFF','pages':len(pdf.pages),'figures':16,
+ 'frozen_files_unchanged':len(manifest),'stable_evidence_unchanged':len(stable),
+ 'tracked_git_status_unchanged':True,'native_render':'Microsoft Word; canonical LibreOffice renderer unavailable',
+ 'skill_helpers':json.loads((R/'skill/selftest_results.json').read_text()),
+ 'outputs':[{ 'path':str(O/n),'bytes':(O/n).stat().st_size,'sha256':sha(O/n)} for n in ['design_report.md','design_report.docx','design_report.pdf']],
+ 'FPGA_status':'166p7 TIMING_PASS; first board numeric FAIL; current full12 L3 NOT_RUN',
+ 'new_vivado_runs':0,'new_simulations':0,'new_FPGA_operations':0,
+ 'official_upload_pdf_visual_review':'BLOCKED_TEMP_SOURCE_REMOVED; actual extracted text and original SHA retained',
+}
+(Q/'delivery_checks.json').write_text(json.dumps(out,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
+print(json.dumps({k:out[k] for k in ['status','pages','figures','frozen_files_unchanged','stable_evidence_unchanged','outputs']},ensure_ascii=False,indent=2))

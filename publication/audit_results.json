@@ -1,0 +1,58 @@
+{
+  "status": "PASS_PUBLICATION_FILE_CHECKS_ONLY",
+  "active_synthesis_sources_exact": 27,
+  "copied_sources_checked": 280,
+  "read_only_original_rechecked": true,
+  "python_files_parsed": 9,
+  "relative_doc_links_checked": 17,
+  "high_confidence_secret_files_scanned": 327,
+  "file_count": 327,
+  "total_bytes": 17395887,
+  "largest_files": [
+    {
+      "path": "data/package/package.json",
+      "bytes": 4125465
+    },
+    {
+      "path": "competition_2026_advanced/report/design_report.docx",
+      "bytes": 2160367
+    },
+    {
+      "path": "competition_2026_advanced/report/design_report.pdf",
+      "bytes": 1888756
+    },
+    {
+      "path": "data/package/program.hex",
+      "bytes": 1693120
+    },
+    {
+      "path": "competition_2026_advanced/report/evidence/e16_timing_summary.rpt",
+      "bytes": 616491
+    },
+    {
+      "path": "testbench/depth_pattern.hex",
+      "bytes": 262144
+    },
+    {
+      "path": "competition_2026_advanced/report/evidence/e17_setup20.rpt",
+      "bytes": 260628
+    },
+    {
+      "path": "competition_2026_advanced/report/figures/fig02_system.png",
+      "bytes": 256872
+    }
+  ],
+  "issues": [],
+  "notes": [
+    "PDF binary scanned for high-confidence credentials; corresponding source Markdown scanned; no report re-render performed"
+  ],
+  "limits": [
+    "Pattern scanning is not a guarantee that every possible credential is absent",
+    "No Vivado/RTL/network/board validation run",
+    "No complete independent model/data reproduction",
+    "GitHub account and target repository pending"
+  ],
+  "new_simulations": 0,
+  "new_vivado_runs": 0,
+  "new_hardware_operations": 0
+}

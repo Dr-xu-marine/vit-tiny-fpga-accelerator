@@ -1,0 +1,31 @@
+`timescale 1ns/1ps
+module tb_w8_ln;
+ localparam ROOT="testbench/ln";
+ reg clk=0;always #2.5 clk=~clk;
+ reg rst=1,flush=0,start=0;reg [511:0] command=0;wire busy,done,error;
+ wire [19:0] aa,ba;wire ar,br,bw;wire [7:0] wd;reg [7:0] aq=0;
+ wire [15:0] pa;wire pr;reg [31:0] pq=0;
+ reg [7:0] inputs[0:191],outputs[0:191],expected[0:191];reg [31:0] params_mem[0:1535];reg [191:0] seen=0;
+ w8_aux_engine dut(.clk(clk),.rst(rst),.flush(flush),.start(start),.command(command),.busy(busy),.done(done),.error(error),.a_addr(aa),.b_addr(ba),.a_re(ar),.b_re(br),.b_we(bw),.b_wdata(wd),.a_rdata(aq),.b_rdata(8'd0),.param_addr(pa),.param_re(pr),.param_rdata(pq),.gelu_addr(),.gelu_re(),.gelu_rdata(8'd0),.exp_addr(),.exp_re(),.exp_rdata(32'd0),.score_addr(),.score_re(),.score_rdata(32'd0),.prob_addr(),.prob_re(),.prob_we(),.prob_wdata(),.prob_rdata(16'd0));
+ longint cycles=0;integer f,n,cid,j,i,passed=0;string label;reg flip;
+ always @(posedge clk)begin
+  cycles<=cycles+1;if(cycles>30000000)$fatal(1,"LN timeout");
+  if(ar)begin if(aa>=192)$fatal(1,"LN input bounds");aq<=inputs[aa];end
+  if(pr)begin if(pa>=1536)$fatal(1,"LN parameter bounds");pq<=params_mem[pa];end
+  if(bw)begin if(ba<1024||ba>=1216||seen[ba-1024])$fatal(1,"LN output duplicate/bounds");outputs[ba-1024]<=wd;seen[ba-1024]<=1;end
+ end
+ initial begin
+  flip=$test$plusargs("BAD_EXPECTED");f=$fopen({ROOT,"/cases.txt"},"r");if(!f)$fatal(1,"LN cases missing");
+  command[31:0]=2;command[127:96]=1024;command[159:128]=1;command[223:192]=192;
+  repeat(4)@(negedge clk);rst=0;
+  while(!$feof(f))begin
+   n=$fscanf(f,"%d %d %s\n",cid,j,label);if(n!=3)$fatal(1,"LN metadata parse");
+   $readmemh($sformatf("%s/%02d_param.hex",ROOT,j),params_mem);$readmemh($sformatf("%s/%03d_input.hex",ROOT,cid),inputs);$readmemh($sformatf("%s/%03d_expected.hex",ROOT,cid),expected);
+   @(negedge clk);seen=0;start=1;@(negedge clk);start=0;wait(done);@(negedge clk);
+   if(error||busy||seen!=={192{1'b1}})$fatal(1,"LN completion/count");
+   for(i=0;i<192;i=i+1)if(outputs[i]!==(expected[i]^((flip&&cid==7&&i==17)?8'h1:8'h0)))$fatal(1,"LN_MISMATCH case=%0d layer=%0d channel=%0d",cid,j,i);
+   passed=passed+1;$display("LN_ROW_PASS case=%0d layer=%0d label=%s cycles=%0d",cid,j,label,cycles);
+  end
+  $display("W8_LN_PASS layers=25 rows=%0d values=%0d cycles=%0d",passed,passed*192,cycles);$finish;
+ end
+endmodule

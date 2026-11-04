@@ -1,0 +1,7245 @@
+[
+  {
+    "name": "patch_embed.proj.W",
+    "shape": [
+      192,
+      768
+    ],
+    "dtype": "int8",
+    "minimum": -127,
+    "maximum": 127,
+    "bytes": 147456
+  },
+  {
+    "name": "patch_embed.proj.B",
+    "shape": [
+      192
+    ],
+    "dtype": "int32",
+    "minimum": -677082,
+    "maximum": 579630,
+    "bytes": 768
+  },
+  {
+    "name": "patch_embed.proj.M",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1077462168,
+    "maximum": 2145342225,
+    "bytes": 768
+  },
+  {
+    "name": "patch_embed.proj.R",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 39,
+    "maximum": 45,
+    "bytes": 192
+  },
+  {
+    "name": "patch_embed.proj.Z",
+    "shape": [
+      192
+    ],
+    "dtype": "int8",
+    "minimum": 0,
+    "maximum": 0,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.0.attn.qkv.W",
+    "shape": [
+      576,
+      192
+    ],
+    "dtype": "int8",
+    "minimum": -127,
+    "maximum": 127,
+    "bytes": 110592
+  },
+  {
+    "name": "blocks.0.attn.qkv.B",
+    "shape": [
+      576
+    ],
+    "dtype": "int32",
+    "minimum": -145387,
+    "maximum": 287896,
+    "bytes": 2304
+  },
+  {
+    "name": "blocks.0.attn.qkv.M",
+    "shape": [
+      576
+    ],
+    "dtype": "uint32",
+    "minimum": 1076141321,
+    "maximum": 2137591413,
+    "bytes": 2304
+  },
+  {
+    "name": "blocks.0.attn.qkv.R",
+    "shape": [
+      576
+    ],
+    "dtype": "uint8",
+    "minimum": 38,
+    "maximum": 42,
+    "bytes": 576
+  },
+  {
+    "name": "blocks.0.attn.qkv.Z",
+    "shape": [
+      576
+    ],
+    "dtype": "int8",
+    "minimum": 0,
+    "maximum": 0,
+    "bytes": 576
+  },
+  {
+    "name": "blocks.0.attn.proj.W",
+    "shape": [
+      192,
+      192
+    ],
+    "dtype": "int8",
+    "minimum": -127,
+    "maximum": 127,
+    "bytes": 36864
+  },
+  {
+    "name": "blocks.0.attn.proj.B",
+    "shape": [
+      192
+    ],
+    "dtype": "int32",
+    "minimum": -37484,
+    "maximum": 28409,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.0.attn.proj.M",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1079902631,
+    "maximum": 2135344292,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.0.attn.proj.R",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 38,
+    "maximum": 40,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.0.attn.proj.Z",
+    "shape": [
+      192
+    ],
+    "dtype": "int8",
+    "minimum": 0,
+    "maximum": 0,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.0.mlp.fc1.W",
+    "shape": [
+      768,
+      192
+    ],
+    "dtype": "int8",
+    "minimum": -127,
+    "maximum": 127,
+    "bytes": 147456
+  },
+  {
+    "name": "blocks.0.mlp.fc1.B",
+    "shape": [
+      768
+    ],
+    "dtype": "int32",
+    "minimum": -38962,
+    "maximum": 15175,
+    "bytes": 3072
+  },
+  {
+    "name": "blocks.0.mlp.fc1.M",
+    "shape": [
+      768
+    ],
+    "dtype": "uint32",
+    "minimum": 1073789315,
+    "maximum": 2145588115,
+    "bytes": 3072
+  },
+  {
+    "name": "blocks.0.mlp.fc1.R",
+    "shape": [
+      768
+    ],
+    "dtype": "uint8",
+    "minimum": 37,
+    "maximum": 41,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.0.mlp.fc1.Z",
+    "shape": [
+      768
+    ],
+    "dtype": "int8",
+    "minimum": 0,
+    "maximum": 0,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.0.mlp.fc2.W",
+    "shape": [
+      192,
+      768
+    ],
+    "dtype": "int8",
+    "minimum": -127,
+    "maximum": 127,
+    "bytes": 147456
+  },
+  {
+    "name": "blocks.0.mlp.fc2.B",
+    "shape": [
+      192
+    ],
+    "dtype": "int32",
+    "minimum": -638535,
+    "maximum": 425618,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.0.mlp.fc2.M",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1074808092,
+    "maximum": 2132179922,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.0.mlp.fc2.R",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 38,
+    "maximum": 41,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.0.mlp.fc2.Z",
+    "shape": [
+      192
+    ],
+    "dtype": "int8",
+    "minimum": 0,
+    "maximum": 0,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.1.attn.qkv.W",
+    "shape": [
+      576,
+      192
+    ],
+    "dtype": "int8",
+    "minimum": -127,
+    "maximum": 127,
+    "bytes": 110592
+  },
+  {
+    "name": "blocks.1.attn.qkv.B",
+    "shape": [
+      576
+    ],
+    "dtype": "int32",
+    "minimum": -112265,
+    "maximum": 88648,
+    "bytes": 2304
+  },
+  {
+    "name": "blocks.1.attn.qkv.M",
+    "shape": [
+      576
+    ],
+    "dtype": "uint32",
+    "minimum": 1074967552,
+    "maximum": 2143352764,
+    "bytes": 2304
+  },
+  {
+    "name": "blocks.1.attn.qkv.R",
+    "shape": [
+      576
+    ],
+    "dtype": "uint8",
+    "minimum": 39,
+    "maximum": 42,
+    "bytes": 576
+  },
+  {
+    "name": "blocks.1.attn.qkv.Z",
+    "shape": [
+      576
+    ],
+    "dtype": "int8",
+    "minimum": 0,
+    "maximum": 0,
+    "bytes": 576
+  },
+  {
+    "name": "blocks.1.attn.proj.W",
+    "shape": [
+      192,
+      192
+    ],
+    "dtype": "int8",
+    "minimum": -127,
+    "maximum": 127,
+    "bytes": 36864
+  },
+  {
+    "name": "blocks.1.attn.proj.B",
+    "shape": [
+      192
+    ],
+    "dtype": "int32",
+    "minimum": -55919,
+    "maximum": 57790,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.1.attn.proj.M",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1076960118,
+    "maximum": 2140512793,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.1.attn.proj.R",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 38,
+    "maximum": 40,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.1.attn.proj.Z",
+    "shape": [
+      192
+    ],
+    "dtype": "int8",
+    "minimum": 0,
+    "maximum": 0,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.1.mlp.fc1.W",
+    "shape": [
+      768,
+      192
+    ],
+    "dtype": "int8",
+    "minimum": -127,
+    "maximum": 127,
+    "bytes": 147456
+  },
+  {
+    "name": "blocks.1.mlp.fc1.B",
+    "shape": [
+      768
+    ],
+    "dtype": "int32",
+    "minimum": -52474,
+    "maximum": 17795,
+    "bytes": 3072
+  },
+  {
+    "name": "blocks.1.mlp.fc1.M",
+    "shape": [
+      768
+    ],
+    "dtype": "uint32",
+    "minimum": 1074682109,
+    "maximum": 2145172672,
+    "bytes": 3072
+  },
+  {
+    "name": "blocks.1.mlp.fc1.R",
+    "shape": [
+      768
+    ],
+    "dtype": "uint8",
+    "minimum": 38,
+    "maximum": 41,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.1.mlp.fc1.Z",
+    "shape": [
+      768
+    ],
+    "dtype": "int8",
+    "minimum": 0,
+    "maximum": 0,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.1.mlp.fc2.W",
+    "shape": [
+      192,
+      768
+    ],
+    "dtype": "int8",
+    "minimum": -127,
+    "maximum": 127,
+    "bytes": 147456
+  },
+  {
+    "name": "blocks.1.mlp.fc2.B",
+    "shape": [
+      192
+    ],
+    "dtype": "int32",
+    "minimum": -242840,
+    "maximum": 283372,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.1.mlp.fc2.M",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1082353135,
+    "maximum": 2136368592,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.1.mlp.fc2.R",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 38,
+    "maximum": 41,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.1.mlp.fc2.Z",
+    "shape": [
+      192
+    ],
+    "dtype": "int8",
+    "minimum": 0,
+    "maximum": 0,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.2.attn.qkv.W",
+    "shape": [
+      576,
+      192
+    ],
+    "dtype": "int8",
+    "minimum": -127,
+    "maximum": 127,
+    "bytes": 110592
+  },
+  {
+    "name": "blocks.2.attn.qkv.B",
+    "shape": [
+      576
+    ],
+    "dtype": "int32",
+    "minimum": -57164,
+    "maximum": 47235,
+    "bytes": 2304
+  },
+  {
+    "name": "blocks.2.attn.qkv.M",
+    "shape": [
+      576
+    ],
+    "dtype": "uint32",
+    "minimum": 1074878344,
+    "maximum": 2147459347,
+    "bytes": 2304
+  },
+  {
+    "name": "blocks.2.attn.qkv.R",
+    "shape": [
+      576
+    ],
+    "dtype": "uint8",
+    "minimum": 39,
+    "maximum": 41,
+    "bytes": 576
+  },
+  {
+    "name": "blocks.2.attn.qkv.Z",
+    "shape": [
+      576
+    ],
+    "dtype": "int8",
+    "minimum": 0,
+    "maximum": 0,
+    "bytes": 576
+  },
+  {
+    "name": "blocks.2.attn.proj.W",
+    "shape": [
+      192,
+      192
+    ],
+    "dtype": "int8",
+    "minimum": -127,
+    "maximum": 127,
+    "bytes": 36864
+  },
+  {
+    "name": "blocks.2.attn.proj.B",
+    "shape": [
+      192
+    ],
+    "dtype": "int32",
+    "minimum": -78049,
+    "maximum": 45309,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.2.attn.proj.M",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1084929663,
+    "maximum": 2135576135,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.2.attn.proj.R",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 38,
+    "maximum": 40,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.2.attn.proj.Z",
+    "shape": [
+      192
+    ],
+    "dtype": "int8",
+    "minimum": 0,
+    "maximum": 0,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.2.mlp.fc1.W",
+    "shape": [
+      768,
+      192
+    ],
+    "dtype": "int8",
+    "minimum": -127,
+    "maximum": 127,
+    "bytes": 147456
+  },
+  {
+    "name": "blocks.2.mlp.fc1.B",
+    "shape": [
+      768
+    ],
+    "dtype": "int32",
+    "minimum": -51677,
+    "maximum": 8089,
+    "bytes": 3072
+  },
+  {
+    "name": "blocks.2.mlp.fc1.M",
+    "shape": [
+      768
+    ],
+    "dtype": "uint32",
+    "minimum": 1074428887,
+    "maximum": 2146332290,
+    "bytes": 3072
+  },
+  {
+    "name": "blocks.2.mlp.fc1.R",
+    "shape": [
+      768
+    ],
+    "dtype": "uint8",
+    "minimum": 38,
+    "maximum": 41,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.2.mlp.fc1.Z",
+    "shape": [
+      768
+    ],
+    "dtype": "int8",
+    "minimum": 0,
+    "maximum": 0,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.2.mlp.fc2.W",
+    "shape": [
+      192,
+      768
+    ],
+    "dtype": "int8",
+    "minimum": -127,
+    "maximum": 127,
+    "bytes": 147456
+  },
+  {
+    "name": "blocks.2.mlp.fc2.B",
+    "shape": [
+      192
+    ],
+    "dtype": "int32",
+    "minimum": -222528,
+    "maximum": 140362,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.2.mlp.fc2.M",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1074796196,
+    "maximum": 2146513028,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.2.mlp.fc2.R",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 38,
+    "maximum": 41,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.2.mlp.fc2.Z",
+    "shape": [
+      192
+    ],
+    "dtype": "int8",
+    "minimum": 0,
+    "maximum": 0,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.3.attn.qkv.W",
+    "shape": [
+      576,
+      192
+    ],
+    "dtype": "int8",
+    "minimum": -127,
+    "maximum": 127,
+    "bytes": 110592
+  },
+  {
+    "name": "blocks.3.attn.qkv.B",
+    "shape": [
+      576
+    ],
+    "dtype": "int32",
+    "minimum": -50451,
+    "maximum": 86354,
+    "bytes": 2304
+  },
+  {
+    "name": "blocks.3.attn.qkv.M",
+    "shape": [
+      576
+    ],
+    "dtype": "uint32",
+    "minimum": 1073830075,
+    "maximum": 2145854406,
+    "bytes": 2304
+  },
+  {
+    "name": "blocks.3.attn.qkv.R",
+    "shape": [
+      576
+    ],
+    "dtype": "uint8",
+    "minimum": 39,
+    "maximum": 41,
+    "bytes": 576
+  },
+  {
+    "name": "blocks.3.attn.qkv.Z",
+    "shape": [
+      576
+    ],
+    "dtype": "int8",
+    "minimum": 0,
+    "maximum": 0,
+    "bytes": 576
+  },
+  {
+    "name": "blocks.3.attn.proj.W",
+    "shape": [
+      192,
+      192
+    ],
+    "dtype": "int8",
+    "minimum": -127,
+    "maximum": 127,
+    "bytes": 36864
+  },
+  {
+    "name": "blocks.3.attn.proj.B",
+    "shape": [
+      192
+    ],
+    "dtype": "int32",
+    "minimum": -37743,
+    "maximum": 49423,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.3.attn.proj.M",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1080455611,
+    "maximum": 2143812430,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.3.attn.proj.R",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 38,
+    "maximum": 40,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.3.attn.proj.Z",
+    "shape": [
+      192
+    ],
+    "dtype": "int8",
+    "minimum": 0,
+    "maximum": 0,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.3.mlp.fc1.W",
+    "shape": [
+      768,
+      192
+    ],
+    "dtype": "int8",
+    "minimum": -127,
+    "maximum": 127,
+    "bytes": 147456
+  },
+  {
+    "name": "blocks.3.mlp.fc1.B",
+    "shape": [
+      768
+    ],
+    "dtype": "int32",
+    "minimum": -58643,
+    "maximum": 14731,
+    "bytes": 3072
+  },
+  {
+    "name": "blocks.3.mlp.fc1.M",
+    "shape": [
+      768
+    ],
+    "dtype": "uint32",
+    "minimum": 1074104701,
+    "maximum": 2145685607,
+    "bytes": 3072
+  },
+  {
+    "name": "blocks.3.mlp.fc1.R",
+    "shape": [
+      768
+    ],
+    "dtype": "uint8",
+    "minimum": 38,
+    "maximum": 40,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.3.mlp.fc1.Z",
+    "shape": [
+      768
+    ],
+    "dtype": "int8",
+    "minimum": 0,
+    "maximum": 0,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.3.mlp.fc2.W",
+    "shape": [
+      192,
+      768
+    ],
+    "dtype": "int8",
+    "minimum": -127,
+    "maximum": 127,
+    "bytes": 147456
+  },
+  {
+    "name": "blocks.3.mlp.fc2.B",
+    "shape": [
+      192
+    ],
+    "dtype": "int32",
+    "minimum": -194369,
+    "maximum": 169039,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.3.mlp.fc2.M",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1076455969,
+    "maximum": 2136860185,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.3.mlp.fc2.R",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 38,
+    "maximum": 40,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.3.mlp.fc2.Z",
+    "shape": [
+      192
+    ],
+    "dtype": "int8",
+    "minimum": 0,
+    "maximum": 0,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.4.attn.qkv.W",
+    "shape": [
+      576,
+      192
+    ],
+    "dtype": "int8",
+    "minimum": -127,
+    "maximum": 127,
+    "bytes": 110592
+  },
+  {
+    "name": "blocks.4.attn.qkv.B",
+    "shape": [
+      576
+    ],
+    "dtype": "int32",
+    "minimum": -108907,
+    "maximum": 58255,
+    "bytes": 2304
+  },
+  {
+    "name": "blocks.4.attn.qkv.M",
+    "shape": [
+      576
+    ],
+    "dtype": "uint32",
+    "minimum": 1074270756,
+    "maximum": 2146449931,
+    "bytes": 2304
+  },
+  {
+    "name": "blocks.4.attn.qkv.R",
+    "shape": [
+      576
+    ],
+    "dtype": "uint8",
+    "minimum": 39,
+    "maximum": 41,
+    "bytes": 576
+  },
+  {
+    "name": "blocks.4.attn.qkv.Z",
+    "shape": [
+      576
+    ],
+    "dtype": "int8",
+    "minimum": 0,
+    "maximum": 0,
+    "bytes": 576
+  },
+  {
+    "name": "blocks.4.attn.proj.W",
+    "shape": [
+      192,
+      192
+    ],
+    "dtype": "int8",
+    "minimum": -127,
+    "maximum": 127,
+    "bytes": 36864
+  },
+  {
+    "name": "blocks.4.attn.proj.B",
+    "shape": [
+      192
+    ],
+    "dtype": "int32",
+    "minimum": -58576,
+    "maximum": 82395,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.4.attn.proj.M",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1075796411,
+    "maximum": 2138014521,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.4.attn.proj.R",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 38,
+    "maximum": 41,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.4.attn.proj.Z",
+    "shape": [
+      192
+    ],
+    "dtype": "int8",
+    "minimum": 0,
+    "maximum": 0,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.4.mlp.fc1.W",
+    "shape": [
+      768,
+      192
+    ],
+    "dtype": "int8",
+    "minimum": -127,
+    "maximum": 127,
+    "bytes": 147456
+  },
+  {
+    "name": "blocks.4.mlp.fc1.B",
+    "shape": [
+      768
+    ],
+    "dtype": "int32",
+    "minimum": -60376,
+    "maximum": 9572,
+    "bytes": 3072
+  },
+  {
+    "name": "blocks.4.mlp.fc1.M",
+    "shape": [
+      768
+    ],
+    "dtype": "uint32",
+    "minimum": 1073771495,
+    "maximum": 2146096875,
+    "bytes": 3072
+  },
+  {
+    "name": "blocks.4.mlp.fc1.R",
+    "shape": [
+      768
+    ],
+    "dtype": "uint8",
+    "minimum": 38,
+    "maximum": 41,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.4.mlp.fc1.Z",
+    "shape": [
+      768
+    ],
+    "dtype": "int8",
+    "minimum": 0,
+    "maximum": 0,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.4.mlp.fc2.W",
+    "shape": [
+      192,
+      768
+    ],
+    "dtype": "int8",
+    "minimum": -127,
+    "maximum": 127,
+    "bytes": 147456
+  },
+  {
+    "name": "blocks.4.mlp.fc2.B",
+    "shape": [
+      192
+    ],
+    "dtype": "int32",
+    "minimum": -174170,
+    "maximum": 190250,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.4.mlp.fc2.M",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1077443377,
+    "maximum": 2143509088,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.4.mlp.fc2.R",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 38,
+    "maximum": 40,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.4.mlp.fc2.Z",
+    "shape": [
+      192
+    ],
+    "dtype": "int8",
+    "minimum": 0,
+    "maximum": 0,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.5.attn.qkv.W",
+    "shape": [
+      576,
+      192
+    ],
+    "dtype": "int8",
+    "minimum": -127,
+    "maximum": 127,
+    "bytes": 110592
+  },
+  {
+    "name": "blocks.5.attn.qkv.B",
+    "shape": [
+      576
+    ],
+    "dtype": "int32",
+    "minimum": -27446,
+    "maximum": 130815,
+    "bytes": 2304
+  },
+  {
+    "name": "blocks.5.attn.qkv.M",
+    "shape": [
+      576
+    ],
+    "dtype": "uint32",
+    "minimum": 1074981814,
+    "maximum": 2147282529,
+    "bytes": 2304
+  },
+  {
+    "name": "blocks.5.attn.qkv.R",
+    "shape": [
+      576
+    ],
+    "dtype": "uint8",
+    "minimum": 38,
+    "maximum": 41,
+    "bytes": 576
+  },
+  {
+    "name": "blocks.5.attn.qkv.Z",
+    "shape": [
+      576
+    ],
+    "dtype": "int8",
+    "minimum": 0,
+    "maximum": 0,
+    "bytes": 576
+  },
+  {
+    "name": "blocks.5.attn.proj.W",
+    "shape": [
+      192,
+      192
+    ],
+    "dtype": "int8",
+    "minimum": -127,
+    "maximum": 127,
+    "bytes": 36864
+  },
+  {
+    "name": "blocks.5.attn.proj.B",
+    "shape": [
+      192
+    ],
+    "dtype": "int32",
+    "minimum": -20990,
+    "maximum": 57999,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.5.attn.proj.M",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1086764698,
+    "maximum": 2140123953,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.5.attn.proj.R",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 38,
+    "maximum": 41,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.5.attn.proj.Z",
+    "shape": [
+      192
+    ],
+    "dtype": "int8",
+    "minimum": 0,
+    "maximum": 0,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.5.mlp.fc1.W",
+    "shape": [
+      768,
+      192
+    ],
+    "dtype": "int8",
+    "minimum": -127,
+    "maximum": 127,
+    "bytes": 147456
+  },
+  {
+    "name": "blocks.5.mlp.fc1.B",
+    "shape": [
+      768
+    ],
+    "dtype": "int32",
+    "minimum": -61207,
+    "maximum": 8373,
+    "bytes": 3072
+  },
+  {
+    "name": "blocks.5.mlp.fc1.M",
+    "shape": [
+      768
+    ],
+    "dtype": "uint32",
+    "minimum": 1074231696,
+    "maximum": 2145092466,
+    "bytes": 3072
+  },
+  {
+    "name": "blocks.5.mlp.fc1.R",
+    "shape": [
+      768
+    ],
+    "dtype": "uint8",
+    "minimum": 38,
+    "maximum": 41,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.5.mlp.fc1.Z",
+    "shape": [
+      768
+    ],
+    "dtype": "int8",
+    "minimum": 0,
+    "maximum": 0,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.5.mlp.fc2.W",
+    "shape": [
+      192,
+      768
+    ],
+    "dtype": "int8",
+    "minimum": -127,
+    "maximum": 127,
+    "bytes": 147456
+  },
+  {
+    "name": "blocks.5.mlp.fc2.B",
+    "shape": [
+      192
+    ],
+    "dtype": "int32",
+    "minimum": -218627,
+    "maximum": 194463,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.5.mlp.fc2.M",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1076197707,
+    "maximum": 2143004384,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.5.mlp.fc2.R",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 38,
+    "maximum": 40,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.5.mlp.fc2.Z",
+    "shape": [
+      192
+    ],
+    "dtype": "int8",
+    "minimum": 0,
+    "maximum": 0,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.6.attn.qkv.W",
+    "shape": [
+      576,
+      192
+    ],
+    "dtype": "int8",
+    "minimum": -127,
+    "maximum": 127,
+    "bytes": 110592
+  },
+  {
+    "name": "blocks.6.attn.qkv.B",
+    "shape": [
+      576
+    ],
+    "dtype": "int32",
+    "minimum": -119744,
+    "maximum": 110135,
+    "bytes": 2304
+  },
+  {
+    "name": "blocks.6.attn.qkv.M",
+    "shape": [
+      576
+    ],
+    "dtype": "uint32",
+    "minimum": 1075418067,
+    "maximum": 2144525215,
+    "bytes": 2304
+  },
+  {
+    "name": "blocks.6.attn.qkv.R",
+    "shape": [
+      576
+    ],
+    "dtype": "uint8",
+    "minimum": 39,
+    "maximum": 41,
+    "bytes": 576
+  },
+  {
+    "name": "blocks.6.attn.qkv.Z",
+    "shape": [
+      576
+    ],
+    "dtype": "int8",
+    "minimum": 0,
+    "maximum": 0,
+    "bytes": 576
+  },
+  {
+    "name": "blocks.6.attn.proj.W",
+    "shape": [
+      192,
+      192
+    ],
+    "dtype": "int8",
+    "minimum": -127,
+    "maximum": 127,
+    "bytes": 36864
+  },
+  {
+    "name": "blocks.6.attn.proj.B",
+    "shape": [
+      192
+    ],
+    "dtype": "int32",
+    "minimum": -22495,
+    "maximum": 37638,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.6.attn.proj.M",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1086202634,
+    "maximum": 2139159065,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.6.attn.proj.R",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 38,
+    "maximum": 40,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.6.attn.proj.Z",
+    "shape": [
+      192
+    ],
+    "dtype": "int8",
+    "minimum": 0,
+    "maximum": 0,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.6.mlp.fc1.W",
+    "shape": [
+      768,
+      192
+    ],
+    "dtype": "int8",
+    "minimum": -127,
+    "maximum": 127,
+    "bytes": 147456
+  },
+  {
+    "name": "blocks.6.mlp.fc1.B",
+    "shape": [
+      768
+    ],
+    "dtype": "int32",
+    "minimum": -59889,
+    "maximum": 352,
+    "bytes": 3072
+  },
+  {
+    "name": "blocks.6.mlp.fc1.M",
+    "shape": [
+      768
+    ],
+    "dtype": "uint32",
+    "minimum": 1075209447,
+    "maximum": 2146778771,
+    "bytes": 3072
+  },
+  {
+    "name": "blocks.6.mlp.fc1.R",
+    "shape": [
+      768
+    ],
+    "dtype": "uint8",
+    "minimum": 39,
+    "maximum": 41,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.6.mlp.fc1.Z",
+    "shape": [
+      768
+    ],
+    "dtype": "int8",
+    "minimum": 0,
+    "maximum": 0,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.6.mlp.fc2.W",
+    "shape": [
+      192,
+      768
+    ],
+    "dtype": "int8",
+    "minimum": -127,
+    "maximum": 127,
+    "bytes": 147456
+  },
+  {
+    "name": "blocks.6.mlp.fc2.B",
+    "shape": [
+      192
+    ],
+    "dtype": "int32",
+    "minimum": -176442,
+    "maximum": 271218,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.6.mlp.fc2.M",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1080976006,
+    "maximum": 2132438438,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.6.mlp.fc2.R",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 38,
+    "maximum": 40,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.6.mlp.fc2.Z",
+    "shape": [
+      192
+    ],
+    "dtype": "int8",
+    "minimum": 0,
+    "maximum": 0,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.7.attn.qkv.W",
+    "shape": [
+      576,
+      192
+    ],
+    "dtype": "int8",
+    "minimum": -127,
+    "maximum": 127,
+    "bytes": 110592
+  },
+  {
+    "name": "blocks.7.attn.qkv.B",
+    "shape": [
+      576
+    ],
+    "dtype": "int32",
+    "minimum": -86124,
+    "maximum": 122495,
+    "bytes": 2304
+  },
+  {
+    "name": "blocks.7.attn.qkv.M",
+    "shape": [
+      576
+    ],
+    "dtype": "uint32",
+    "minimum": 1074070090,
+    "maximum": 2145609346,
+    "bytes": 2304
+  },
+  {
+    "name": "blocks.7.attn.qkv.R",
+    "shape": [
+      576
+    ],
+    "dtype": "uint8",
+    "minimum": 39,
+    "maximum": 41,
+    "bytes": 576
+  },
+  {
+    "name": "blocks.7.attn.qkv.Z",
+    "shape": [
+      576
+    ],
+    "dtype": "int8",
+    "minimum": 0,
+    "maximum": 0,
+    "bytes": 576
+  },
+  {
+    "name": "blocks.7.attn.proj.W",
+    "shape": [
+      192,
+      192
+    ],
+    "dtype": "int8",
+    "minimum": -127,
+    "maximum": 127,
+    "bytes": 36864
+  },
+  {
+    "name": "blocks.7.attn.proj.B",
+    "shape": [
+      192
+    ],
+    "dtype": "int32",
+    "minimum": -27272,
+    "maximum": 53898,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.7.attn.proj.M",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1075120938,
+    "maximum": 2135072657,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.7.attn.proj.R",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 39,
+    "maximum": 40,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.7.attn.proj.Z",
+    "shape": [
+      192
+    ],
+    "dtype": "int8",
+    "minimum": 0,
+    "maximum": 0,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.7.mlp.fc1.W",
+    "shape": [
+      768,
+      192
+    ],
+    "dtype": "int8",
+    "minimum": -127,
+    "maximum": 127,
+    "bytes": 147456
+  },
+  {
+    "name": "blocks.7.mlp.fc1.B",
+    "shape": [
+      768
+    ],
+    "dtype": "int32",
+    "minimum": -45096,
+    "maximum": 1412,
+    "bytes": 3072
+  },
+  {
+    "name": "blocks.7.mlp.fc1.M",
+    "shape": [
+      768
+    ],
+    "dtype": "uint32",
+    "minimum": 1075256377,
+    "maximum": 2143689003,
+    "bytes": 3072
+  },
+  {
+    "name": "blocks.7.mlp.fc1.R",
+    "shape": [
+      768
+    ],
+    "dtype": "uint8",
+    "minimum": 38,
+    "maximum": 41,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.7.mlp.fc1.Z",
+    "shape": [
+      768
+    ],
+    "dtype": "int8",
+    "minimum": 0,
+    "maximum": 0,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.7.mlp.fc2.W",
+    "shape": [
+      192,
+      768
+    ],
+    "dtype": "int8",
+    "minimum": -127,
+    "maximum": 127,
+    "bytes": 147456
+  },
+  {
+    "name": "blocks.7.mlp.fc2.B",
+    "shape": [
+      192
+    ],
+    "dtype": "int32",
+    "minimum": -232155,
+    "maximum": 258536,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.7.mlp.fc2.M",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1073799538,
+    "maximum": 2143760595,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.7.mlp.fc2.R",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 36,
+    "maximum": 39,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.7.mlp.fc2.Z",
+    "shape": [
+      192
+    ],
+    "dtype": "int8",
+    "minimum": 0,
+    "maximum": 0,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.8.attn.qkv.W",
+    "shape": [
+      576,
+      192
+    ],
+    "dtype": "int8",
+    "minimum": -127,
+    "maximum": 127,
+    "bytes": 110592
+  },
+  {
+    "name": "blocks.8.attn.qkv.B",
+    "shape": [
+      576
+    ],
+    "dtype": "int32",
+    "minimum": -152075,
+    "maximum": 132599,
+    "bytes": 2304
+  },
+  {
+    "name": "blocks.8.attn.qkv.M",
+    "shape": [
+      576
+    ],
+    "dtype": "uint32",
+    "minimum": 1073945429,
+    "maximum": 2145661298,
+    "bytes": 2304
+  },
+  {
+    "name": "blocks.8.attn.qkv.R",
+    "shape": [
+      576
+    ],
+    "dtype": "uint8",
+    "minimum": 39,
+    "maximum": 41,
+    "bytes": 576
+  },
+  {
+    "name": "blocks.8.attn.qkv.Z",
+    "shape": [
+      576
+    ],
+    "dtype": "int8",
+    "minimum": 0,
+    "maximum": 0,
+    "bytes": 576
+  },
+  {
+    "name": "blocks.8.attn.proj.W",
+    "shape": [
+      192,
+      192
+    ],
+    "dtype": "int8",
+    "minimum": -127,
+    "maximum": 127,
+    "bytes": 36864
+  },
+  {
+    "name": "blocks.8.attn.proj.B",
+    "shape": [
+      192
+    ],
+    "dtype": "int32",
+    "minimum": -112595,
+    "maximum": 26530,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.8.attn.proj.M",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1077507164,
+    "maximum": 2146949172,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.8.attn.proj.R",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 39,
+    "maximum": 40,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.8.attn.proj.Z",
+    "shape": [
+      192
+    ],
+    "dtype": "int8",
+    "minimum": 0,
+    "maximum": 0,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.8.mlp.fc1.W",
+    "shape": [
+      768,
+      192
+    ],
+    "dtype": "int8",
+    "minimum": -127,
+    "maximum": 127,
+    "bytes": 147456
+  },
+  {
+    "name": "blocks.8.mlp.fc1.B",
+    "shape": [
+      768
+    ],
+    "dtype": "int32",
+    "minimum": -55777,
+    "maximum": -496,
+    "bytes": 3072
+  },
+  {
+    "name": "blocks.8.mlp.fc1.M",
+    "shape": [
+      768
+    ],
+    "dtype": "uint32",
+    "minimum": 1074288885,
+    "maximum": 2146227830,
+    "bytes": 3072
+  },
+  {
+    "name": "blocks.8.mlp.fc1.R",
+    "shape": [
+      768
+    ],
+    "dtype": "uint8",
+    "minimum": 39,
+    "maximum": 41,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.8.mlp.fc1.Z",
+    "shape": [
+      768
+    ],
+    "dtype": "int8",
+    "minimum": 0,
+    "maximum": 0,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.8.mlp.fc2.W",
+    "shape": [
+      192,
+      768
+    ],
+    "dtype": "int8",
+    "minimum": -127,
+    "maximum": 127,
+    "bytes": 147456
+  },
+  {
+    "name": "blocks.8.mlp.fc2.B",
+    "shape": [
+      192
+    ],
+    "dtype": "int32",
+    "minimum": -232609,
+    "maximum": 294011,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.8.mlp.fc2.M",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1075641288,
+    "maximum": 2145778132,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.8.mlp.fc2.R",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 38,
+    "maximum": 40,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.8.mlp.fc2.Z",
+    "shape": [
+      192
+    ],
+    "dtype": "int8",
+    "minimum": 0,
+    "maximum": 0,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.9.attn.qkv.W",
+    "shape": [
+      576,
+      192
+    ],
+    "dtype": "int8",
+    "minimum": -127,
+    "maximum": 127,
+    "bytes": 110592
+  },
+  {
+    "name": "blocks.9.attn.qkv.B",
+    "shape": [
+      576
+    ],
+    "dtype": "int32",
+    "minimum": -113105,
+    "maximum": 87512,
+    "bytes": 2304
+  },
+  {
+    "name": "blocks.9.attn.qkv.M",
+    "shape": [
+      576
+    ],
+    "dtype": "uint32",
+    "minimum": 1076384656,
+    "maximum": 2143106785,
+    "bytes": 2304
+  },
+  {
+    "name": "blocks.9.attn.qkv.R",
+    "shape": [
+      576
+    ],
+    "dtype": "uint8",
+    "minimum": 39,
+    "maximum": 41,
+    "bytes": 576
+  },
+  {
+    "name": "blocks.9.attn.qkv.Z",
+    "shape": [
+      576
+    ],
+    "dtype": "int8",
+    "minimum": 0,
+    "maximum": 0,
+    "bytes": 576
+  },
+  {
+    "name": "blocks.9.attn.proj.W",
+    "shape": [
+      192,
+      192
+    ],
+    "dtype": "int8",
+    "minimum": -127,
+    "maximum": 127,
+    "bytes": 36864
+  },
+  {
+    "name": "blocks.9.attn.proj.B",
+    "shape": [
+      192
+    ],
+    "dtype": "int32",
+    "minimum": -42786,
+    "maximum": 29389,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.9.attn.proj.M",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1076795565,
+    "maximum": 2125765480,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.9.attn.proj.R",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 38,
+    "maximum": 40,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.9.attn.proj.Z",
+    "shape": [
+      192
+    ],
+    "dtype": "int8",
+    "minimum": 0,
+    "maximum": 0,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.9.mlp.fc1.W",
+    "shape": [
+      768,
+      192
+    ],
+    "dtype": "int8",
+    "minimum": -127,
+    "maximum": 127,
+    "bytes": 147456
+  },
+  {
+    "name": "blocks.9.mlp.fc1.B",
+    "shape": [
+      768
+    ],
+    "dtype": "int32",
+    "minimum": -61493,
+    "maximum": -1536,
+    "bytes": 3072
+  },
+  {
+    "name": "blocks.9.mlp.fc1.M",
+    "shape": [
+      768
+    ],
+    "dtype": "uint32",
+    "minimum": 1074325529,
+    "maximum": 2147210379,
+    "bytes": 3072
+  },
+  {
+    "name": "blocks.9.mlp.fc1.R",
+    "shape": [
+      768
+    ],
+    "dtype": "uint8",
+    "minimum": 39,
+    "maximum": 40,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.9.mlp.fc1.Z",
+    "shape": [
+      768
+    ],
+    "dtype": "int8",
+    "minimum": 0,
+    "maximum": 0,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.9.mlp.fc2.W",
+    "shape": [
+      192,
+      768
+    ],
+    "dtype": "int8",
+    "minimum": -127,
+    "maximum": 127,
+    "bytes": 147456
+  },
+  {
+    "name": "blocks.9.mlp.fc2.B",
+    "shape": [
+      192
+    ],
+    "dtype": "int32",
+    "minimum": -249563,
+    "maximum": 254263,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.9.mlp.fc2.M",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1075661285,
+    "maximum": 2131513023,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.9.mlp.fc2.R",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 39,
+    "maximum": 40,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.9.mlp.fc2.Z",
+    "shape": [
+      192
+    ],
+    "dtype": "int8",
+    "minimum": 0,
+    "maximum": 0,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.10.attn.qkv.W",
+    "shape": [
+      576,
+      192
+    ],
+    "dtype": "int8",
+    "minimum": -127,
+    "maximum": 127,
+    "bytes": 110592
+  },
+  {
+    "name": "blocks.10.attn.qkv.B",
+    "shape": [
+      576
+    ],
+    "dtype": "int32",
+    "minimum": -128023,
+    "maximum": 140641,
+    "bytes": 2304
+  },
+  {
+    "name": "blocks.10.attn.qkv.M",
+    "shape": [
+      576
+    ],
+    "dtype": "uint32",
+    "minimum": 1074414053,
+    "maximum": 2146693811,
+    "bytes": 2304
+  },
+  {
+    "name": "blocks.10.attn.qkv.R",
+    "shape": [
+      576
+    ],
+    "dtype": "uint8",
+    "minimum": 39,
+    "maximum": 41,
+    "bytes": 576
+  },
+  {
+    "name": "blocks.10.attn.qkv.Z",
+    "shape": [
+      576
+    ],
+    "dtype": "int8",
+    "minimum": 0,
+    "maximum": 0,
+    "bytes": 576
+  },
+  {
+    "name": "blocks.10.attn.proj.W",
+    "shape": [
+      192,
+      192
+    ],
+    "dtype": "int8",
+    "minimum": -127,
+    "maximum": 127,
+    "bytes": 36864
+  },
+  {
+    "name": "blocks.10.attn.proj.B",
+    "shape": [
+      192
+    ],
+    "dtype": "int32",
+    "minimum": -31072,
+    "maximum": 148718,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.10.attn.proj.M",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1080199474,
+    "maximum": 2142371251,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.10.attn.proj.R",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 38,
+    "maximum": 41,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.10.attn.proj.Z",
+    "shape": [
+      192
+    ],
+    "dtype": "int8",
+    "minimum": 0,
+    "maximum": 0,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.10.mlp.fc1.W",
+    "shape": [
+      768,
+      192
+    ],
+    "dtype": "int8",
+    "minimum": -127,
+    "maximum": 127,
+    "bytes": 147456
+  },
+  {
+    "name": "blocks.10.mlp.fc1.B",
+    "shape": [
+      768
+    ],
+    "dtype": "int32",
+    "minimum": -59645,
+    "maximum": -1277,
+    "bytes": 3072
+  },
+  {
+    "name": "blocks.10.mlp.fc1.M",
+    "shape": [
+      768
+    ],
+    "dtype": "uint32",
+    "minimum": 1073751518,
+    "maximum": 2146247534,
+    "bytes": 3072
+  },
+  {
+    "name": "blocks.10.mlp.fc1.R",
+    "shape": [
+      768
+    ],
+    "dtype": "uint8",
+    "minimum": 39,
+    "maximum": 41,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.10.mlp.fc1.Z",
+    "shape": [
+      768
+    ],
+    "dtype": "int8",
+    "minimum": 0,
+    "maximum": 0,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.10.mlp.fc2.W",
+    "shape": [
+      192,
+      768
+    ],
+    "dtype": "int8",
+    "minimum": -127,
+    "maximum": 127,
+    "bytes": 147456
+  },
+  {
+    "name": "blocks.10.mlp.fc2.B",
+    "shape": [
+      192
+    ],
+    "dtype": "int32",
+    "minimum": -202580,
+    "maximum": 335358,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.10.mlp.fc2.M",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1074829573,
+    "maximum": 2143788740,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.10.mlp.fc2.R",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 38,
+    "maximum": 40,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.10.mlp.fc2.Z",
+    "shape": [
+      192
+    ],
+    "dtype": "int8",
+    "minimum": 0,
+    "maximum": 0,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.11.attn.qkv.W",
+    "shape": [
+      576,
+      192
+    ],
+    "dtype": "int8",
+    "minimum": -127,
+    "maximum": 127,
+    "bytes": 110592
+  },
+  {
+    "name": "blocks.11.attn.qkv.B",
+    "shape": [
+      576
+    ],
+    "dtype": "int32",
+    "minimum": -117413,
+    "maximum": 189168,
+    "bytes": 2304
+  },
+  {
+    "name": "blocks.11.attn.qkv.M",
+    "shape": [
+      576
+    ],
+    "dtype": "uint32",
+    "minimum": 1073929235,
+    "maximum": 2145931615,
+    "bytes": 2304
+  },
+  {
+    "name": "blocks.11.attn.qkv.R",
+    "shape": [
+      576
+    ],
+    "dtype": "uint8",
+    "minimum": 39,
+    "maximum": 41,
+    "bytes": 576
+  },
+  {
+    "name": "blocks.11.attn.qkv.Z",
+    "shape": [
+      576
+    ],
+    "dtype": "int8",
+    "minimum": 0,
+    "maximum": 0,
+    "bytes": 576
+  },
+  {
+    "name": "blocks.11.attn.proj.W",
+    "shape": [
+      192,
+      192
+    ],
+    "dtype": "int8",
+    "minimum": -127,
+    "maximum": 127,
+    "bytes": 36864
+  },
+  {
+    "name": "blocks.11.attn.proj.B",
+    "shape": [
+      192
+    ],
+    "dtype": "int32",
+    "minimum": -51130,
+    "maximum": 220050,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.11.attn.proj.M",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1074754982,
+    "maximum": 2145056407,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.11.attn.proj.R",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 38,
+    "maximum": 41,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.11.attn.proj.Z",
+    "shape": [
+      192
+    ],
+    "dtype": "int8",
+    "minimum": 0,
+    "maximum": 0,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.11.mlp.fc1.W",
+    "shape": [
+      768,
+      192
+    ],
+    "dtype": "int8",
+    "minimum": -127,
+    "maximum": 127,
+    "bytes": 147456
+  },
+  {
+    "name": "blocks.11.mlp.fc1.B",
+    "shape": [
+      768
+    ],
+    "dtype": "int32",
+    "minimum": -78876,
+    "maximum": 56546,
+    "bytes": 3072
+  },
+  {
+    "name": "blocks.11.mlp.fc1.M",
+    "shape": [
+      768
+    ],
+    "dtype": "uint32",
+    "minimum": 1073824480,
+    "maximum": 2143709032,
+    "bytes": 3072
+  },
+  {
+    "name": "blocks.11.mlp.fc1.R",
+    "shape": [
+      768
+    ],
+    "dtype": "uint8",
+    "minimum": 38,
+    "maximum": 41,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.11.mlp.fc1.Z",
+    "shape": [
+      768
+    ],
+    "dtype": "int8",
+    "minimum": 0,
+    "maximum": 0,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.11.mlp.fc2.W",
+    "shape": [
+      192,
+      768
+    ],
+    "dtype": "int8",
+    "minimum": -127,
+    "maximum": 127,
+    "bytes": 147456
+  },
+  {
+    "name": "blocks.11.mlp.fc2.B",
+    "shape": [
+      192
+    ],
+    "dtype": "int32",
+    "minimum": -256399,
+    "maximum": 290714,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.11.mlp.fc2.M",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1075165150,
+    "maximum": 2144858042,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.11.mlp.fc2.R",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 38,
+    "maximum": 40,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.11.mlp.fc2.Z",
+    "shape": [
+      192
+    ],
+    "dtype": "int8",
+    "minimum": 0,
+    "maximum": 0,
+    "bytes": 192
+  },
+  {
+    "name": "head.W",
+    "shape": [
+      1000,
+      192
+    ],
+    "dtype": "int8",
+    "minimum": -127,
+    "maximum": 127,
+    "bytes": 192000
+  },
+  {
+    "name": "head.B",
+    "shape": [
+      1000
+    ],
+    "dtype": "int32",
+    "minimum": -36862,
+    "maximum": 46088,
+    "bytes": 4000
+  },
+  {
+    "name": "head.M",
+    "shape": [
+      1000
+    ],
+    "dtype": "uint32",
+    "minimum": 1074235514,
+    "maximum": 2145710850,
+    "bytes": 4000
+  },
+  {
+    "name": "head.R",
+    "shape": [
+      1000
+    ],
+    "dtype": "uint8",
+    "minimum": 40,
+    "maximum": 42,
+    "bytes": 1000
+  },
+  {
+    "name": "head.Z",
+    "shape": [
+      1000
+    ],
+    "dtype": "int8",
+    "minimum": 0,
+    "maximum": 0,
+    "bytes": 1000
+  },
+  {
+    "name": "blocks.0.norm1.MI",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1075269987,
+    "maximum": 2137343887,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.0.norm1.RI",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 21,
+    "maximum": 24,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.0.norm1.G",
+    "shape": [
+      192
+    ],
+    "dtype": "int32",
+    "minimum": 310442,
+    "maximum": 2161447,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.0.norm1.B",
+    "shape": [
+      192
+    ],
+    "dtype": "int32",
+    "minimum": -1307234,
+    "maximum": 1305296,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.0.norm1.MO",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1073929773,
+    "maximum": 2147301613,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.0.norm1.RO",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 44,
+    "maximum": 46,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.0.norm1.Z",
+    "shape": [
+      192
+    ],
+    "dtype": "int8",
+    "minimum": 0,
+    "maximum": 0,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.0.norm2.MI",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1084666856,
+    "maximum": 2122011301,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.0.norm2.RI",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 21,
+    "maximum": 24,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.0.norm2.G",
+    "shape": [
+      192
+    ],
+    "dtype": "int32",
+    "minimum": 347,
+    "maximum": 5854230,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.0.norm2.B",
+    "shape": [
+      192
+    ],
+    "dtype": "int32",
+    "minimum": -2417874,
+    "maximum": 2965165,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.0.norm2.MO",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1074718795,
+    "maximum": 2142470120,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.0.norm2.RO",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 38,
+    "maximum": 48,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.0.norm2.Z",
+    "shape": [
+      192
+    ],
+    "dtype": "int8",
+    "minimum": 0,
+    "maximum": 0,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.1.norm1.MI",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1077338951,
+    "maximum": 2139482064,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.1.norm1.RI",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 21,
+    "maximum": 24,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.1.norm1.G",
+    "shape": [
+      192
+    ],
+    "dtype": "int32",
+    "minimum": -2038,
+    "maximum": 1534749,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.1.norm1.B",
+    "shape": [
+      192
+    ],
+    "dtype": "int32",
+    "minimum": -1985510,
+    "maximum": 2641068,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.1.norm1.MO",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1077026920,
+    "maximum": 2141652965,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.1.norm1.RO",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 38,
+    "maximum": 46,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.1.norm1.Z",
+    "shape": [
+      192
+    ],
+    "dtype": "int8",
+    "minimum": 0,
+    "maximum": 0,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.1.norm2.MI",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1088174451,
+    "maximum": 2144080549,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.1.norm2.RI",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 21,
+    "maximum": 24,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.1.norm2.G",
+    "shape": [
+      192
+    ],
+    "dtype": "int32",
+    "minimum": 533881,
+    "maximum": 1674106,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.1.norm2.B",
+    "shape": [
+      192
+    ],
+    "dtype": "int32",
+    "minimum": -5464345,
+    "maximum": 3768205,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.1.norm2.MO",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1078641962,
+    "maximum": 2142034668,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.1.norm2.RO",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 45,
+    "maximum": 47,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.1.norm2.Z",
+    "shape": [
+      192
+    ],
+    "dtype": "int8",
+    "minimum": -1,
+    "maximum": -1,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.2.norm1.MI",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1078015145,
+    "maximum": 2141713642,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.2.norm1.RI",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 21,
+    "maximum": 24,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.2.norm1.G",
+    "shape": [
+      192
+    ],
+    "dtype": "int32",
+    "minimum": 455651,
+    "maximum": 1426917,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.2.norm1.B",
+    "shape": [
+      192
+    ],
+    "dtype": "int32",
+    "minimum": -1393345,
+    "maximum": 3605588,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.2.norm1.MO",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1074915872,
+    "maximum": 2138994251,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.2.norm1.RO",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 45,
+    "maximum": 46,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.2.norm1.Z",
+    "shape": [
+      192
+    ],
+    "dtype": "int8",
+    "minimum": 0,
+    "maximum": 0,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.2.norm2.MI",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1085691565,
+    "maximum": 2144009724,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.2.norm2.RI",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 22,
+    "maximum": 24,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.2.norm2.G",
+    "shape": [
+      192
+    ],
+    "dtype": "int32",
+    "minimum": 374824,
+    "maximum": 2264333,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.2.norm2.B",
+    "shape": [
+      192
+    ],
+    "dtype": "int32",
+    "minimum": -1484287,
+    "maximum": 4838347,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.2.norm2.MO",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1099824145,
+    "maximum": 1934525525,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.2.norm2.RO",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 45,
+    "maximum": 46,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.2.norm2.Z",
+    "shape": [
+      192
+    ],
+    "dtype": "int8",
+    "minimum": 0,
+    "maximum": 0,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.3.norm1.MI",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1088162582,
+    "maximum": 2145882918,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.3.norm1.RI",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 22,
+    "maximum": 24,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.3.norm1.G",
+    "shape": [
+      192
+    ],
+    "dtype": "int32",
+    "minimum": 501464,
+    "maximum": 1810100,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.3.norm1.B",
+    "shape": [
+      192
+    ],
+    "dtype": "int32",
+    "minimum": -1374060,
+    "maximum": 3211887,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.3.norm1.MO",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1073910557,
+    "maximum": 2140989313,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.3.norm1.RO",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 45,
+    "maximum": 46,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.3.norm1.Z",
+    "shape": [
+      192
+    ],
+    "dtype": "int8",
+    "minimum": -1,
+    "maximum": -1,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.3.norm2.MI",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1075939022,
+    "maximum": 2134351678,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.3.norm2.RI",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 22,
+    "maximum": 24,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.3.norm2.G",
+    "shape": [
+      192
+    ],
+    "dtype": "int32",
+    "minimum": 530718,
+    "maximum": 1668976,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.3.norm2.B",
+    "shape": [
+      192
+    ],
+    "dtype": "int32",
+    "minimum": -2229913,
+    "maximum": 4631013,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.3.norm2.MO",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1074360690,
+    "maximum": 2145796727,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.3.norm2.RO",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 45,
+    "maximum": 46,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.3.norm2.Z",
+    "shape": [
+      192
+    ],
+    "dtype": "int8",
+    "minimum": -1,
+    "maximum": -1,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.4.norm1.MI",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1075590378,
+    "maximum": 2131698761,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.4.norm1.RI",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 22,
+    "maximum": 24,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.4.norm1.G",
+    "shape": [
+      192
+    ],
+    "dtype": "int32",
+    "minimum": 467122,
+    "maximum": 1685116,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.4.norm1.B",
+    "shape": [
+      192
+    ],
+    "dtype": "int32",
+    "minimum": -1399961,
+    "maximum": 3849563,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.4.norm1.MO",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1073813424,
+    "maximum": 2145236624,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.4.norm1.RO",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 45,
+    "maximum": 46,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.4.norm1.Z",
+    "shape": [
+      192
+    ],
+    "dtype": "int8",
+    "minimum": 0,
+    "maximum": 0,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.4.norm2.MI",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1074284947,
+    "maximum": 2134376448,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.4.norm2.RI",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 22,
+    "maximum": 24,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.4.norm2.G",
+    "shape": [
+      192
+    ],
+    "dtype": "int32",
+    "minimum": 460141,
+    "maximum": 1609980,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.4.norm2.B",
+    "shape": [
+      192
+    ],
+    "dtype": "int32",
+    "minimum": -2039939,
+    "maximum": 2795179,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.4.norm2.MO",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1078718024,
+    "maximum": 2147223785,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.4.norm2.RO",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 45,
+    "maximum": 46,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.4.norm2.Z",
+    "shape": [
+      192
+    ],
+    "dtype": "int8",
+    "minimum": 0,
+    "maximum": 0,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.5.norm1.MI",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1075321848,
+    "maximum": 2146893566,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.5.norm1.RI",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 21,
+    "maximum": 24,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.5.norm1.G",
+    "shape": [
+      192
+    ],
+    "dtype": "int32",
+    "minimum": 541268,
+    "maximum": 1551530,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.5.norm1.B",
+    "shape": [
+      192
+    ],
+    "dtype": "int32",
+    "minimum": -1194361,
+    "maximum": 2422660,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.5.norm1.MO",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1129792814,
+    "maximum": 2097468658,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.5.norm1.RO",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 45,
+    "maximum": 46,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.5.norm1.Z",
+    "shape": [
+      192
+    ],
+    "dtype": "int8",
+    "minimum": 0,
+    "maximum": 0,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.5.norm2.MI",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1075571672,
+    "maximum": 2131494541,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.5.norm2.RI",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 22,
+    "maximum": 24,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.5.norm2.G",
+    "shape": [
+      192
+    ],
+    "dtype": "int32",
+    "minimum": 390414,
+    "maximum": 1311891,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.5.norm2.B",
+    "shape": [
+      192
+    ],
+    "dtype": "int32",
+    "minimum": -1532051,
+    "maximum": 2980655,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.5.norm2.MO",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1074165471,
+    "maximum": 2145946220,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.5.norm2.RO",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 45,
+    "maximum": 46,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.5.norm2.Z",
+    "shape": [
+      192
+    ],
+    "dtype": "int8",
+    "minimum": 0,
+    "maximum": 0,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.6.norm1.MI",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1074754600,
+    "maximum": 2146478677,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.6.norm1.RI",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 21,
+    "maximum": 24,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.6.norm1.G",
+    "shape": [
+      192
+    ],
+    "dtype": "int32",
+    "minimum": 588834,
+    "maximum": 1358889,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.6.norm1.B",
+    "shape": [
+      192
+    ],
+    "dtype": "int32",
+    "minimum": -1371501,
+    "maximum": 2439858,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.6.norm1.MO",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1074657752,
+    "maximum": 2147270545,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.6.norm1.RO",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 45,
+    "maximum": 46,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.6.norm1.Z",
+    "shape": [
+      192
+    ],
+    "dtype": "int8",
+    "minimum": 0,
+    "maximum": 0,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.6.norm2.MI",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1073938367,
+    "maximum": 2146163897,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.6.norm2.RI",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 22,
+    "maximum": 24,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.6.norm2.G",
+    "shape": [
+      192
+    ],
+    "dtype": "int32",
+    "minimum": 291769,
+    "maximum": 1521725,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.6.norm2.B",
+    "shape": [
+      192
+    ],
+    "dtype": "int32",
+    "minimum": -1681317,
+    "maximum": 3304977,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.6.norm2.MO",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1077512931,
+    "maximum": 2147390860,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.6.norm2.RO",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 45,
+    "maximum": 46,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.6.norm2.Z",
+    "shape": [
+      192
+    ],
+    "dtype": "int8",
+    "minimum": 0,
+    "maximum": 0,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.7.norm1.MI",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1085154635,
+    "maximum": 2145746041,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.7.norm1.RI",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 21,
+    "maximum": 24,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.7.norm1.G",
+    "shape": [
+      192
+    ],
+    "dtype": "int32",
+    "minimum": 638662,
+    "maximum": 1349074,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.7.norm1.B",
+    "shape": [
+      192
+    ],
+    "dtype": "int32",
+    "minimum": -1852486,
+    "maximum": 2640899,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.7.norm1.MO",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1073916611,
+    "maximum": 2142372925,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.7.norm1.RO",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 45,
+    "maximum": 46,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.7.norm1.Z",
+    "shape": [
+      192
+    ],
+    "dtype": "int8",
+    "minimum": 0,
+    "maximum": 0,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.7.norm2.MI",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1106393330,
+    "maximum": 2135084830,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.7.norm2.RI",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 21,
+    "maximum": 23,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.7.norm2.G",
+    "shape": [
+      192
+    ],
+    "dtype": "int32",
+    "minimum": -6611,
+    "maximum": 1792270,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.7.norm2.B",
+    "shape": [
+      192
+    ],
+    "dtype": "int32",
+    "minimum": -2237002,
+    "maximum": 4268111,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.7.norm2.MO",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1073948672,
+    "maximum": 2132142090,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.7.norm2.RO",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 42,
+    "maximum": 47,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.7.norm2.Z",
+    "shape": [
+      192
+    ],
+    "dtype": "int8",
+    "minimum": 0,
+    "maximum": 0,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.8.norm1.MI",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1077242775,
+    "maximum": 2146243753,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.8.norm1.RI",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 15,
+    "maximum": 23,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.8.norm1.G",
+    "shape": [
+      192
+    ],
+    "dtype": "int32",
+    "minimum": 479293,
+    "maximum": 1437847,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.8.norm1.B",
+    "shape": [
+      192
+    ],
+    "dtype": "int32",
+    "minimum": -1771653,
+    "maximum": 3838947,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.8.norm1.MO",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1086286266,
+    "maximum": 2147030392,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.8.norm1.RO",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 45,
+    "maximum": 47,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.8.norm1.Z",
+    "shape": [
+      192
+    ],
+    "dtype": "int8",
+    "minimum": -1,
+    "maximum": -1,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.8.norm2.MI",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1077132989,
+    "maximum": 2145196080,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.8.norm2.RI",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 15,
+    "maximum": 23,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.8.norm2.G",
+    "shape": [
+      192
+    ],
+    "dtype": "int32",
+    "minimum": -4305,
+    "maximum": 2195793,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.8.norm2.B",
+    "shape": [
+      192
+    ],
+    "dtype": "int32",
+    "minimum": -2735255,
+    "maximum": 5033197,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.8.norm2.MO",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1075666124,
+    "maximum": 2137212842,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.8.norm2.RO",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 41,
+    "maximum": 47,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.8.norm2.Z",
+    "shape": [
+      192
+    ],
+    "dtype": "int8",
+    "minimum": 0,
+    "maximum": 0,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.9.norm1.MI",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1077711138,
+    "maximum": 2144165049,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.9.norm1.RI",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 15,
+    "maximum": 23,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.9.norm1.G",
+    "shape": [
+      192
+    ],
+    "dtype": "int32",
+    "minimum": 361472,
+    "maximum": 1613563,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.9.norm1.B",
+    "shape": [
+      192
+    ],
+    "dtype": "int32",
+    "minimum": -2716012,
+    "maximum": 3825357,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.9.norm1.MO",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1108731267,
+    "maximum": 2136633694,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.9.norm1.RO",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 45,
+    "maximum": 46,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.9.norm1.Z",
+    "shape": [
+      192
+    ],
+    "dtype": "int8",
+    "minimum": 0,
+    "maximum": 0,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.9.norm2.MI",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1074249534,
+    "maximum": 2147210409,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.9.norm2.RI",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 15,
+    "maximum": 23,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.9.norm2.G",
+    "shape": [
+      192
+    ],
+    "dtype": "int32",
+    "minimum": 247333,
+    "maximum": 2331731,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.9.norm2.B",
+    "shape": [
+      192
+    ],
+    "dtype": "int32",
+    "minimum": -4650315,
+    "maximum": 4850241,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.9.norm2.MO",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1074085622,
+    "maximum": 2147022133,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.9.norm2.RO",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 45,
+    "maximum": 47,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.9.norm2.Z",
+    "shape": [
+      192
+    ],
+    "dtype": "int8",
+    "minimum": 0,
+    "maximum": 0,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.10.norm1.MI",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1077053069,
+    "maximum": 2139768977,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.10.norm1.RI",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 15,
+    "maximum": 23,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.10.norm1.G",
+    "shape": [
+      192
+    ],
+    "dtype": "int32",
+    "minimum": 352017,
+    "maximum": 1688092,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.10.norm1.B",
+    "shape": [
+      192
+    ],
+    "dtype": "int32",
+    "minimum": -3608729,
+    "maximum": 3531154,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.10.norm1.MO",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1274467468,
+    "maximum": 2012426325,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.10.norm1.RO",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 45,
+    "maximum": 46,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.10.norm1.Z",
+    "shape": [
+      192
+    ],
+    "dtype": "int8",
+    "minimum": 0,
+    "maximum": 0,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.10.norm2.MI",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1073989390,
+    "maximum": 2140829035,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.10.norm2.RI",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 15,
+    "maximum": 23,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.10.norm2.G",
+    "shape": [
+      192
+    ],
+    "dtype": "int32",
+    "minimum": 363523,
+    "maximum": 2235117,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.10.norm2.B",
+    "shape": [
+      192
+    ],
+    "dtype": "int32",
+    "minimum": -4561611,
+    "maximum": 4567014,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.10.norm2.MO",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1078077161,
+    "maximum": 2093770961,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.10.norm2.RO",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 45,
+    "maximum": 47,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.10.norm2.Z",
+    "shape": [
+      192
+    ],
+    "dtype": "int8",
+    "minimum": 0,
+    "maximum": 0,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.11.norm1.MI",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1075142850,
+    "maximum": 2136446508,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.11.norm1.RI",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 15,
+    "maximum": 23,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.11.norm1.G",
+    "shape": [
+      192
+    ],
+    "dtype": "int32",
+    "minimum": 282989,
+    "maximum": 1699864,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.11.norm1.B",
+    "shape": [
+      192
+    ],
+    "dtype": "int32",
+    "minimum": -2574095,
+    "maximum": 4252768,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.11.norm1.MO",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1090916715,
+    "maximum": 2019194997,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.11.norm1.RO",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 45,
+    "maximum": 46,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.11.norm1.Z",
+    "shape": [
+      192
+    ],
+    "dtype": "int8",
+    "minimum": 0,
+    "maximum": 0,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.11.norm2.MI",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1078709659,
+    "maximum": 2139144579,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.11.norm2.RI",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 15,
+    "maximum": 23,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.11.norm2.G",
+    "shape": [
+      192
+    ],
+    "dtype": "int32",
+    "minimum": 699826,
+    "maximum": 2516272,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.11.norm2.B",
+    "shape": [
+      192
+    ],
+    "dtype": "int32",
+    "minimum": -4534985,
+    "maximum": 3374839,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.11.norm2.MO",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1115977803,
+    "maximum": 1943783865,
+    "bytes": 768
+  },
+  {
+    "name": "blocks.11.norm2.RO",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 46,
+    "maximum": 47,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.11.norm2.Z",
+    "shape": [
+      192
+    ],
+    "dtype": "int8",
+    "minimum": 0,
+    "maximum": 0,
+    "bytes": 192
+  },
+  {
+    "name": "norm.MI",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1082470110,
+    "maximum": 2144758873,
+    "bytes": 768
+  },
+  {
+    "name": "norm.RI",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 15,
+    "maximum": 23,
+    "bytes": 192
+  },
+  {
+    "name": "norm.G",
+    "shape": [
+      192
+    ],
+    "dtype": "int32",
+    "minimum": 1178225,
+    "maximum": 8115962,
+    "bytes": 768
+  },
+  {
+    "name": "norm.B",
+    "shape": [
+      192
+    ],
+    "dtype": "int32",
+    "minimum": -6953720,
+    "maximum": 4077900,
+    "bytes": 768
+  },
+  {
+    "name": "norm.MO",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1083658659,
+    "maximum": 2119736213,
+    "bytes": 768
+  },
+  {
+    "name": "norm.RO",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 46,
+    "maximum": 48,
+    "bytes": 192
+  },
+  {
+    "name": "norm.Z",
+    "shape": [
+      192
+    ],
+    "dtype": "int8",
+    "minimum": 0,
+    "maximum": 0,
+    "bytes": 192
+  },
+  {
+    "name": "position_Q20",
+    "shape": [
+      197,
+      192
+    ],
+    "dtype": "int32",
+    "minimum": -11452356,
+    "maximum": 4033751,
+    "bytes": 151296
+  },
+  {
+    "name": "patch_Q20",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 6607,
+    "maximum": 102059,
+    "bytes": 768
+  },
+  {
+    "name": "front_M",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1078835756,
+    "maximum": 2144431666,
+    "bytes": 768
+  },
+  {
+    "name": "front_R",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 44,
+    "maximum": 47,
+    "bytes": 192
+  },
+  {
+    "name": "res0.A20",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 15286,
+    "maximum": 101248,
+    "bytes": 768
+  },
+  {
+    "name": "res0.B20",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 7501,
+    "maximum": 37029,
+    "bytes": 768
+  },
+  {
+    "name": "res0.M",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1086630881,
+    "maximum": 2125853664,
+    "bytes": 768
+  },
+  {
+    "name": "res0.R",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 44,
+    "maximum": 47,
+    "bytes": 192
+  },
+  {
+    "name": "res1.A20",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 10290,
+    "maximum": 90849,
+    "bytes": 768
+  },
+  {
+    "name": "res1.B20",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 9142,
+    "maximum": 85783,
+    "bytes": 768
+  },
+  {
+    "name": "res1.M",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1077757579,
+    "maximum": 2140313416,
+    "bytes": 768
+  },
+  {
+    "name": "res1.R",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 44,
+    "maximum": 47,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.0.gelu",
+    "shape": [
+      768,
+      256
+    ],
+    "dtype": "int8",
+    "minimum": -128,
+    "maximum": 127,
+    "bytes": 196608
+  },
+  {
+    "name": "attn0.0.SM",
+    "shape": [
+      1
+    ],
+    "dtype": "uint32",
+    "minimum": 1502776900,
+    "maximum": 1502776900,
+    "bytes": 4
+  },
+  {
+    "name": "attn0.0.SR",
+    "shape": [
+      1
+    ],
+    "dtype": "uint8",
+    "minimum": 32,
+    "maximum": 32,
+    "bytes": 1
+  },
+  {
+    "name": "attn0.0.AM",
+    "shape": [
+      64
+    ],
+    "dtype": "uint32",
+    "minimum": 1087063616,
+    "maximum": 2054338377,
+    "bytes": 256
+  },
+  {
+    "name": "attn0.0.AR",
+    "shape": [
+      64
+    ],
+    "dtype": "uint8",
+    "minimum": 37,
+    "maximum": 38,
+    "bytes": 64
+  },
+  {
+    "name": "attn0.0.AZ",
+    "shape": [
+      64
+    ],
+    "dtype": "int8",
+    "minimum": -5,
+    "maximum": -5,
+    "bytes": 64
+  },
+  {
+    "name": "attn0.1.SM",
+    "shape": [
+      1
+    ],
+    "dtype": "uint32",
+    "minimum": 1666983341,
+    "maximum": 1666983341,
+    "bytes": 4
+  },
+  {
+    "name": "attn0.1.SR",
+    "shape": [
+      1
+    ],
+    "dtype": "uint8",
+    "minimum": 33,
+    "maximum": 33,
+    "bytes": 1
+  },
+  {
+    "name": "attn0.1.AM",
+    "shape": [
+      64
+    ],
+    "dtype": "uint32",
+    "minimum": 1079083019,
+    "maximum": 2111872921,
+    "bytes": 256
+  },
+  {
+    "name": "attn0.1.AR",
+    "shape": [
+      64
+    ],
+    "dtype": "uint8",
+    "minimum": 37,
+    "maximum": 39,
+    "bytes": 64
+  },
+  {
+    "name": "attn0.1.AZ",
+    "shape": [
+      64
+    ],
+    "dtype": "int8",
+    "minimum": -5,
+    "maximum": -5,
+    "bytes": 64
+  },
+  {
+    "name": "attn0.2.SM",
+    "shape": [
+      1
+    ],
+    "dtype": "uint32",
+    "minimum": 2041333642,
+    "maximum": 2041333642,
+    "bytes": 4
+  },
+  {
+    "name": "attn0.2.SR",
+    "shape": [
+      1
+    ],
+    "dtype": "uint8",
+    "minimum": 33,
+    "maximum": 33,
+    "bytes": 1
+  },
+  {
+    "name": "attn0.2.AM",
+    "shape": [
+      64
+    ],
+    "dtype": "uint32",
+    "minimum": 1077200979,
+    "maximum": 2127350731,
+    "bytes": 256
+  },
+  {
+    "name": "attn0.2.AR",
+    "shape": [
+      64
+    ],
+    "dtype": "uint8",
+    "minimum": 36,
+    "maximum": 38,
+    "bytes": 64
+  },
+  {
+    "name": "attn0.2.AZ",
+    "shape": [
+      64
+    ],
+    "dtype": "int8",
+    "minimum": -5,
+    "maximum": -5,
+    "bytes": 64
+  },
+  {
+    "name": "res2.A20",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 15004,
+    "maximum": 78288,
+    "bytes": 768
+  },
+  {
+    "name": "res2.B20",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 6483,
+    "maximum": 28391,
+    "bytes": 768
+  },
+  {
+    "name": "res2.M",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1075446074,
+    "maximum": 2119001239,
+    "bytes": 768
+  },
+  {
+    "name": "res2.R",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 44,
+    "maximum": 47,
+    "bytes": 192
+  },
+  {
+    "name": "res3.A20",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 15773,
+    "maximum": 89165,
+    "bytes": 768
+  },
+  {
+    "name": "res3.B20",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 9674,
+    "maximum": 49043,
+    "bytes": 768
+  },
+  {
+    "name": "res3.M",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1076634600,
+    "maximum": 2138970885,
+    "bytes": 768
+  },
+  {
+    "name": "res3.R",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 44,
+    "maximum": 47,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.1.gelu",
+    "shape": [
+      768,
+      256
+    ],
+    "dtype": "int8",
+    "minimum": -128,
+    "maximum": 127,
+    "bytes": 196608
+  },
+  {
+    "name": "attn1.0.SM",
+    "shape": [
+      1
+    ],
+    "dtype": "uint32",
+    "minimum": 1219527418,
+    "maximum": 1219527418,
+    "bytes": 4
+  },
+  {
+    "name": "attn1.0.SR",
+    "shape": [
+      1
+    ],
+    "dtype": "uint8",
+    "minimum": 32,
+    "maximum": 32,
+    "bytes": 1
+  },
+  {
+    "name": "attn1.0.AM",
+    "shape": [
+      64
+    ],
+    "dtype": "uint32",
+    "minimum": 1074331381,
+    "maximum": 2126146884,
+    "bytes": 256
+  },
+  {
+    "name": "attn1.0.AR",
+    "shape": [
+      64
+    ],
+    "dtype": "uint8",
+    "minimum": 36,
+    "maximum": 38,
+    "bytes": 64
+  },
+  {
+    "name": "attn1.0.AZ",
+    "shape": [
+      64
+    ],
+    "dtype": "int8",
+    "minimum": -2,
+    "maximum": -2,
+    "bytes": 64
+  },
+  {
+    "name": "attn1.1.SM",
+    "shape": [
+      1
+    ],
+    "dtype": "uint32",
+    "minimum": 1865309038,
+    "maximum": 1865309038,
+    "bytes": 4
+  },
+  {
+    "name": "attn1.1.SR",
+    "shape": [
+      1
+    ],
+    "dtype": "uint8",
+    "minimum": 33,
+    "maximum": 33,
+    "bytes": 1
+  },
+  {
+    "name": "attn1.1.AM",
+    "shape": [
+      64
+    ],
+    "dtype": "uint32",
+    "minimum": 1075749870,
+    "maximum": 2107034141,
+    "bytes": 256
+  },
+  {
+    "name": "attn1.1.AR",
+    "shape": [
+      64
+    ],
+    "dtype": "uint8",
+    "minimum": 36,
+    "maximum": 38,
+    "bytes": 64
+  },
+  {
+    "name": "attn1.1.AZ",
+    "shape": [
+      64
+    ],
+    "dtype": "int8",
+    "minimum": -2,
+    "maximum": -2,
+    "bytes": 64
+  },
+  {
+    "name": "attn1.2.SM",
+    "shape": [
+      1
+    ],
+    "dtype": "uint32",
+    "minimum": 1216653601,
+    "maximum": 1216653601,
+    "bytes": 4
+  },
+  {
+    "name": "attn1.2.SR",
+    "shape": [
+      1
+    ],
+    "dtype": "uint8",
+    "minimum": 32,
+    "maximum": 32,
+    "bytes": 1
+  },
+  {
+    "name": "attn1.2.AM",
+    "shape": [
+      64
+    ],
+    "dtype": "uint32",
+    "minimum": 1073988668,
+    "maximum": 2127791115,
+    "bytes": 256
+  },
+  {
+    "name": "attn1.2.AR",
+    "shape": [
+      64
+    ],
+    "dtype": "uint8",
+    "minimum": 36,
+    "maximum": 38,
+    "bytes": 64
+  },
+  {
+    "name": "attn1.2.AZ",
+    "shape": [
+      64
+    ],
+    "dtype": "int8",
+    "minimum": -2,
+    "maximum": -2,
+    "bytes": 64
+  },
+  {
+    "name": "res4.A20",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 12198,
+    "maximum": 72245,
+    "bytes": 768
+  },
+  {
+    "name": "res4.B20",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 6077,
+    "maximum": 25529,
+    "bytes": 768
+  },
+  {
+    "name": "res4.M",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1075481600,
+    "maximum": 2123847217,
+    "bytes": 768
+  },
+  {
+    "name": "res4.R",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 44,
+    "maximum": 46,
+    "bytes": 192
+  },
+  {
+    "name": "res5.A20",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 10914,
+    "maximum": 64819,
+    "bytes": 768
+  },
+  {
+    "name": "res5.B20",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 6164,
+    "maximum": 19619,
+    "bytes": 768
+  },
+  {
+    "name": "res5.M",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1074542786,
+    "maximum": 2119024351,
+    "bytes": 768
+  },
+  {
+    "name": "res5.R",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 44,
+    "maximum": 46,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.2.gelu",
+    "shape": [
+      768,
+      256
+    ],
+    "dtype": "int8",
+    "minimum": -128,
+    "maximum": 127,
+    "bytes": 196608
+  },
+  {
+    "name": "attn2.0.SM",
+    "shape": [
+      1
+    ],
+    "dtype": "uint32",
+    "minimum": 1265006285,
+    "maximum": 1265006285,
+    "bytes": 4
+  },
+  {
+    "name": "attn2.0.SR",
+    "shape": [
+      1
+    ],
+    "dtype": "uint8",
+    "minimum": 32,
+    "maximum": 32,
+    "bytes": 1
+  },
+  {
+    "name": "attn2.0.AM",
+    "shape": [
+      64
+    ],
+    "dtype": "uint32",
+    "minimum": 1074835415,
+    "maximum": 2140897862,
+    "bytes": 256
+  },
+  {
+    "name": "attn2.0.AR",
+    "shape": [
+      64
+    ],
+    "dtype": "uint8",
+    "minimum": 37,
+    "maximum": 38,
+    "bytes": 64
+  },
+  {
+    "name": "attn2.0.AZ",
+    "shape": [
+      64
+    ],
+    "dtype": "int8",
+    "minimum": -1,
+    "maximum": -1,
+    "bytes": 64
+  },
+  {
+    "name": "attn2.1.SM",
+    "shape": [
+      1
+    ],
+    "dtype": "uint32",
+    "minimum": 1603832301,
+    "maximum": 1603832301,
+    "bytes": 4
+  },
+  {
+    "name": "attn2.1.SR",
+    "shape": [
+      1
+    ],
+    "dtype": "uint8",
+    "minimum": 32,
+    "maximum": 32,
+    "bytes": 1
+  },
+  {
+    "name": "attn2.1.AM",
+    "shape": [
+      64
+    ],
+    "dtype": "uint32",
+    "minimum": 1090763209,
+    "maximum": 2108589854,
+    "bytes": 256
+  },
+  {
+    "name": "attn2.1.AR",
+    "shape": [
+      64
+    ],
+    "dtype": "uint8",
+    "minimum": 37,
+    "maximum": 38,
+    "bytes": 64
+  },
+  {
+    "name": "attn2.1.AZ",
+    "shape": [
+      64
+    ],
+    "dtype": "int8",
+    "minimum": -1,
+    "maximum": -1,
+    "bytes": 64
+  },
+  {
+    "name": "attn2.2.SM",
+    "shape": [
+      1
+    ],
+    "dtype": "uint32",
+    "minimum": 1097333971,
+    "maximum": 1097333971,
+    "bytes": 4
+  },
+  {
+    "name": "attn2.2.SR",
+    "shape": [
+      1
+    ],
+    "dtype": "uint8",
+    "minimum": 32,
+    "maximum": 32,
+    "bytes": 1
+  },
+  {
+    "name": "attn2.2.AM",
+    "shape": [
+      64
+    ],
+    "dtype": "uint32",
+    "minimum": 1077487783,
+    "maximum": 2144542733,
+    "bytes": 256
+  },
+  {
+    "name": "attn2.2.AR",
+    "shape": [
+      64
+    ],
+    "dtype": "uint8",
+    "minimum": 36,
+    "maximum": 38,
+    "bytes": 64
+  },
+  {
+    "name": "attn2.2.AZ",
+    "shape": [
+      64
+    ],
+    "dtype": "int8",
+    "minimum": -1,
+    "maximum": -1,
+    "bytes": 64
+  },
+  {
+    "name": "res6.A20",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 9436,
+    "maximum": 62928,
+    "bytes": 768
+  },
+  {
+    "name": "res6.B20",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 4289,
+    "maximum": 19146,
+    "bytes": 768
+  },
+  {
+    "name": "res6.M",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1080348207,
+    "maximum": 2143098227,
+    "bytes": 768
+  },
+  {
+    "name": "res6.R",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 44,
+    "maximum": 46,
+    "bytes": 192
+  },
+  {
+    "name": "res7.A20",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 11006,
+    "maximum": 59470,
+    "bytes": 768
+  },
+  {
+    "name": "res7.B20",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 6873,
+    "maximum": 20807,
+    "bytes": 768
+  },
+  {
+    "name": "res7.M",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1081692710,
+    "maximum": 2143792894,
+    "bytes": 768
+  },
+  {
+    "name": "res7.R",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 44,
+    "maximum": 46,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.3.gelu",
+    "shape": [
+      768,
+      256
+    ],
+    "dtype": "int8",
+    "minimum": -128,
+    "maximum": 127,
+    "bytes": 196608
+  },
+  {
+    "name": "attn3.0.SM",
+    "shape": [
+      1
+    ],
+    "dtype": "uint32",
+    "minimum": 1085366487,
+    "maximum": 1085366487,
+    "bytes": 4
+  },
+  {
+    "name": "attn3.0.SR",
+    "shape": [
+      1
+    ],
+    "dtype": "uint8",
+    "minimum": 32,
+    "maximum": 32,
+    "bytes": 1
+  },
+  {
+    "name": "attn3.0.AM",
+    "shape": [
+      64
+    ],
+    "dtype": "uint32",
+    "minimum": 1083629800,
+    "maximum": 1998258384,
+    "bytes": 256
+  },
+  {
+    "name": "attn3.0.AR",
+    "shape": [
+      64
+    ],
+    "dtype": "uint8",
+    "minimum": 37,
+    "maximum": 38,
+    "bytes": 64
+  },
+  {
+    "name": "attn3.0.AZ",
+    "shape": [
+      64
+    ],
+    "dtype": "int8",
+    "minimum": -3,
+    "maximum": -3,
+    "bytes": 64
+  },
+  {
+    "name": "attn3.1.SM",
+    "shape": [
+      1
+    ],
+    "dtype": "uint32",
+    "minimum": 1460388284,
+    "maximum": 1460388284,
+    "bytes": 4
+  },
+  {
+    "name": "attn3.1.SR",
+    "shape": [
+      1
+    ],
+    "dtype": "uint8",
+    "minimum": 33,
+    "maximum": 33,
+    "bytes": 1
+  },
+  {
+    "name": "attn3.1.AM",
+    "shape": [
+      64
+    ],
+    "dtype": "uint32",
+    "minimum": 1098079190,
+    "maximum": 1987818988,
+    "bytes": 256
+  },
+  {
+    "name": "attn3.1.AR",
+    "shape": [
+      64
+    ],
+    "dtype": "uint8",
+    "minimum": 35,
+    "maximum": 37,
+    "bytes": 64
+  },
+  {
+    "name": "attn3.1.AZ",
+    "shape": [
+      64
+    ],
+    "dtype": "int8",
+    "minimum": -3,
+    "maximum": -3,
+    "bytes": 64
+  },
+  {
+    "name": "attn3.2.SM",
+    "shape": [
+      1
+    ],
+    "dtype": "uint32",
+    "minimum": 1101804880,
+    "maximum": 1101804880,
+    "bytes": 4
+  },
+  {
+    "name": "attn3.2.SR",
+    "shape": [
+      1
+    ],
+    "dtype": "uint8",
+    "minimum": 32,
+    "maximum": 32,
+    "bytes": 1
+  },
+  {
+    "name": "attn3.2.AM",
+    "shape": [
+      64
+    ],
+    "dtype": "uint32",
+    "minimum": 1096415351,
+    "maximum": 2100662161,
+    "bytes": 256
+  },
+  {
+    "name": "attn3.2.AR",
+    "shape": [
+      64
+    ],
+    "dtype": "uint8",
+    "minimum": 36,
+    "maximum": 38,
+    "bytes": 64
+  },
+  {
+    "name": "attn3.2.AZ",
+    "shape": [
+      64
+    ],
+    "dtype": "int8",
+    "minimum": -3,
+    "maximum": -3,
+    "bytes": 64
+  },
+  {
+    "name": "res8.A20",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 9626,
+    "maximum": 61863,
+    "bytes": 768
+  },
+  {
+    "name": "res8.B20",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 5607,
+    "maximum": 19818,
+    "bytes": 768
+  },
+  {
+    "name": "res8.M",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1080335670,
+    "maximum": 2146397951,
+    "bytes": 768
+  },
+  {
+    "name": "res8.R",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 44,
+    "maximum": 46,
+    "bytes": 192
+  },
+  {
+    "name": "res9.A20",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 10363,
+    "maximum": 56608,
+    "bytes": 768
+  },
+  {
+    "name": "res9.B20",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 6649,
+    "maximum": 21015,
+    "bytes": 768
+  },
+  {
+    "name": "res9.M",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1074036946,
+    "maximum": 2144328243,
+    "bytes": 768
+  },
+  {
+    "name": "res9.R",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 44,
+    "maximum": 47,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.4.gelu",
+    "shape": [
+      768,
+      256
+    ],
+    "dtype": "int8",
+    "minimum": -128,
+    "maximum": 127,
+    "bytes": 196608
+  },
+  {
+    "name": "attn4.0.SM",
+    "shape": [
+      1
+    ],
+    "dtype": "uint32",
+    "minimum": 1741985374,
+    "maximum": 1741985374,
+    "bytes": 4
+  },
+  {
+    "name": "attn4.0.SR",
+    "shape": [
+      1
+    ],
+    "dtype": "uint8",
+    "minimum": 33,
+    "maximum": 33,
+    "bytes": 1
+  },
+  {
+    "name": "attn4.0.AM",
+    "shape": [
+      64
+    ],
+    "dtype": "uint32",
+    "minimum": 1152756988,
+    "maximum": 2099969280,
+    "bytes": 256
+  },
+  {
+    "name": "attn4.0.AR",
+    "shape": [
+      64
+    ],
+    "dtype": "uint8",
+    "minimum": 37,
+    "maximum": 38,
+    "bytes": 64
+  },
+  {
+    "name": "attn4.0.AZ",
+    "shape": [
+      64
+    ],
+    "dtype": "int8",
+    "minimum": 1,
+    "maximum": 1,
+    "bytes": 64
+  },
+  {
+    "name": "attn4.1.SM",
+    "shape": [
+      1
+    ],
+    "dtype": "uint32",
+    "minimum": 1948855574,
+    "maximum": 1948855574,
+    "bytes": 4
+  },
+  {
+    "name": "attn4.1.SR",
+    "shape": [
+      1
+    ],
+    "dtype": "uint8",
+    "minimum": 33,
+    "maximum": 33,
+    "bytes": 1
+  },
+  {
+    "name": "attn4.1.AM",
+    "shape": [
+      64
+    ],
+    "dtype": "uint32",
+    "minimum": 1095197183,
+    "maximum": 2122146698,
+    "bytes": 256
+  },
+  {
+    "name": "attn4.1.AR",
+    "shape": [
+      64
+    ],
+    "dtype": "uint8",
+    "minimum": 36,
+    "maximum": 37,
+    "bytes": 64
+  },
+  {
+    "name": "attn4.1.AZ",
+    "shape": [
+      64
+    ],
+    "dtype": "int8",
+    "minimum": 1,
+    "maximum": 1,
+    "bytes": 64
+  },
+  {
+    "name": "attn4.2.SM",
+    "shape": [
+      1
+    ],
+    "dtype": "uint32",
+    "minimum": 1174543335,
+    "maximum": 1174543335,
+    "bytes": 4
+  },
+  {
+    "name": "attn4.2.SR",
+    "shape": [
+      1
+    ],
+    "dtype": "uint8",
+    "minimum": 32,
+    "maximum": 32,
+    "bytes": 1
+  },
+  {
+    "name": "attn4.2.AM",
+    "shape": [
+      64
+    ],
+    "dtype": "uint32",
+    "minimum": 1082040080,
+    "maximum": 2131156490,
+    "bytes": 256
+  },
+  {
+    "name": "attn4.2.AR",
+    "shape": [
+      64
+    ],
+    "dtype": "uint8",
+    "minimum": 36,
+    "maximum": 38,
+    "bytes": 64
+  },
+  {
+    "name": "attn4.2.AZ",
+    "shape": [
+      64
+    ],
+    "dtype": "int8",
+    "minimum": 1,
+    "maximum": 1,
+    "bytes": 64
+  },
+  {
+    "name": "res10.A20",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 11505,
+    "maximum": 70625,
+    "bytes": 768
+  },
+  {
+    "name": "res10.B20",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 6292,
+    "maximum": 29363,
+    "bytes": 768
+  },
+  {
+    "name": "res10.M",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1081796347,
+    "maximum": 2143830179,
+    "bytes": 768
+  },
+  {
+    "name": "res10.R",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 44,
+    "maximum": 46,
+    "bytes": 192
+  },
+  {
+    "name": "res11.A20",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 12656,
+    "maximum": 61546,
+    "bytes": 768
+  },
+  {
+    "name": "res11.B20",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 9279,
+    "maximum": 25670,
+    "bytes": 768
+  },
+  {
+    "name": "res11.M",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1074244545,
+    "maximum": 2145460004,
+    "bytes": 768
+  },
+  {
+    "name": "res11.R",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 44,
+    "maximum": 47,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.5.gelu",
+    "shape": [
+      768,
+      256
+    ],
+    "dtype": "int8",
+    "minimum": -128,
+    "maximum": 127,
+    "bytes": 196608
+  },
+  {
+    "name": "attn5.0.SM",
+    "shape": [
+      1
+    ],
+    "dtype": "uint32",
+    "minimum": 1347874071,
+    "maximum": 1347874071,
+    "bytes": 4
+  },
+  {
+    "name": "attn5.0.SR",
+    "shape": [
+      1
+    ],
+    "dtype": "uint8",
+    "minimum": 32,
+    "maximum": 32,
+    "bytes": 1
+  },
+  {
+    "name": "attn5.0.AM",
+    "shape": [
+      64
+    ],
+    "dtype": "uint32",
+    "minimum": 1075146405,
+    "maximum": 2124258401,
+    "bytes": 256
+  },
+  {
+    "name": "attn5.0.AR",
+    "shape": [
+      64
+    ],
+    "dtype": "uint8",
+    "minimum": 36,
+    "maximum": 37,
+    "bytes": 64
+  },
+  {
+    "name": "attn5.0.AZ",
+    "shape": [
+      64
+    ],
+    "dtype": "int8",
+    "minimum": 4,
+    "maximum": 4,
+    "bytes": 64
+  },
+  {
+    "name": "attn5.1.SM",
+    "shape": [
+      1
+    ],
+    "dtype": "uint32",
+    "minimum": 1112968181,
+    "maximum": 1112968181,
+    "bytes": 4
+  },
+  {
+    "name": "attn5.1.SR",
+    "shape": [
+      1
+    ],
+    "dtype": "uint8",
+    "minimum": 32,
+    "maximum": 32,
+    "bytes": 1
+  },
+  {
+    "name": "attn5.1.AM",
+    "shape": [
+      64
+    ],
+    "dtype": "uint32",
+    "minimum": 1076602077,
+    "maximum": 2122485208,
+    "bytes": 256
+  },
+  {
+    "name": "attn5.1.AR",
+    "shape": [
+      64
+    ],
+    "dtype": "uint8",
+    "minimum": 37,
+    "maximum": 38,
+    "bytes": 64
+  },
+  {
+    "name": "attn5.1.AZ",
+    "shape": [
+      64
+    ],
+    "dtype": "int8",
+    "minimum": 4,
+    "maximum": 4,
+    "bytes": 64
+  },
+  {
+    "name": "attn5.2.SM",
+    "shape": [
+      1
+    ],
+    "dtype": "uint32",
+    "minimum": 1269687410,
+    "maximum": 1269687410,
+    "bytes": 4
+  },
+  {
+    "name": "attn5.2.SR",
+    "shape": [
+      1
+    ],
+    "dtype": "uint8",
+    "minimum": 32,
+    "maximum": 32,
+    "bytes": 1
+  },
+  {
+    "name": "attn5.2.AM",
+    "shape": [
+      64
+    ],
+    "dtype": "uint32",
+    "minimum": 1105024830,
+    "maximum": 2071935462,
+    "bytes": 256
+  },
+  {
+    "name": "attn5.2.AR",
+    "shape": [
+      64
+    ],
+    "dtype": "uint8",
+    "minimum": 37,
+    "maximum": 38,
+    "bytes": 64
+  },
+  {
+    "name": "attn5.2.AZ",
+    "shape": [
+      64
+    ],
+    "dtype": "int8",
+    "minimum": 4,
+    "maximum": 4,
+    "bytes": 64
+  },
+  {
+    "name": "res12.A20",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 12167,
+    "maximum": 68795,
+    "bytes": 768
+  },
+  {
+    "name": "res12.B20",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 4833,
+    "maximum": 15663,
+    "bytes": 768
+  },
+  {
+    "name": "res12.M",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1074402105,
+    "maximum": 2147090633,
+    "bytes": 768
+  },
+  {
+    "name": "res12.R",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 44,
+    "maximum": 46,
+    "bytes": 192
+  },
+  {
+    "name": "res13.A20",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 13248,
+    "maximum": 64579,
+    "bytes": 768
+  },
+  {
+    "name": "res13.B20",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 10243,
+    "maximum": 68378,
+    "bytes": 768
+  },
+  {
+    "name": "res13.M",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1074611331,
+    "maximum": 2124898089,
+    "bytes": 768
+  },
+  {
+    "name": "res13.R",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 44,
+    "maximum": 47,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.6.gelu",
+    "shape": [
+      768,
+      256
+    ],
+    "dtype": "int8",
+    "minimum": -127,
+    "maximum": 127,
+    "bytes": 196608
+  },
+  {
+    "name": "attn6.0.SM",
+    "shape": [
+      1
+    ],
+    "dtype": "uint32",
+    "minimum": 1810850903,
+    "maximum": 1810850903,
+    "bytes": 4
+  },
+  {
+    "name": "attn6.0.SR",
+    "shape": [
+      1
+    ],
+    "dtype": "uint8",
+    "minimum": 33,
+    "maximum": 33,
+    "bytes": 1
+  },
+  {
+    "name": "attn6.0.AM",
+    "shape": [
+      64
+    ],
+    "dtype": "uint32",
+    "minimum": 1079706042,
+    "maximum": 2132616780,
+    "bytes": 256
+  },
+  {
+    "name": "attn6.0.AR",
+    "shape": [
+      64
+    ],
+    "dtype": "uint8",
+    "minimum": 36,
+    "maximum": 37,
+    "bytes": 64
+  },
+  {
+    "name": "attn6.0.AZ",
+    "shape": [
+      64
+    ],
+    "dtype": "int8",
+    "minimum": 1,
+    "maximum": 1,
+    "bytes": 64
+  },
+  {
+    "name": "attn6.1.SM",
+    "shape": [
+      1
+    ],
+    "dtype": "uint32",
+    "minimum": 2117160864,
+    "maximum": 2117160864,
+    "bytes": 4
+  },
+  {
+    "name": "attn6.1.SR",
+    "shape": [
+      1
+    ],
+    "dtype": "uint8",
+    "minimum": 33,
+    "maximum": 33,
+    "bytes": 1
+  },
+  {
+    "name": "attn6.1.AM",
+    "shape": [
+      64
+    ],
+    "dtype": "uint32",
+    "minimum": 1076290272,
+    "maximum": 2143438187,
+    "bytes": 256
+  },
+  {
+    "name": "attn6.1.AR",
+    "shape": [
+      64
+    ],
+    "dtype": "uint8",
+    "minimum": 37,
+    "maximum": 38,
+    "bytes": 64
+  },
+  {
+    "name": "attn6.1.AZ",
+    "shape": [
+      64
+    ],
+    "dtype": "int8",
+    "minimum": 1,
+    "maximum": 1,
+    "bytes": 64
+  },
+  {
+    "name": "attn6.2.SM",
+    "shape": [
+      1
+    ],
+    "dtype": "uint32",
+    "minimum": 1976690915,
+    "maximum": 1976690915,
+    "bytes": 4
+  },
+  {
+    "name": "attn6.2.SR",
+    "shape": [
+      1
+    ],
+    "dtype": "uint8",
+    "minimum": 33,
+    "maximum": 33,
+    "bytes": 1
+  },
+  {
+    "name": "attn6.2.AM",
+    "shape": [
+      64
+    ],
+    "dtype": "uint32",
+    "minimum": 1075160838,
+    "maximum": 2128876914,
+    "bytes": 256
+  },
+  {
+    "name": "attn6.2.AR",
+    "shape": [
+      64
+    ],
+    "dtype": "uint8",
+    "minimum": 36,
+    "maximum": 37,
+    "bytes": 64
+  },
+  {
+    "name": "attn6.2.AZ",
+    "shape": [
+      64
+    ],
+    "dtype": "int8",
+    "minimum": 1,
+    "maximum": 1,
+    "bytes": 64
+  },
+  {
+    "name": "res14.A20",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 15168,
+    "maximum": 89471,
+    "bytes": 768
+  },
+  {
+    "name": "res14.B20",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 5743,
+    "maximum": 19478,
+    "bytes": 768
+  },
+  {
+    "name": "res14.M",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1079977234,
+    "maximum": 2084107837,
+    "bytes": 768
+  },
+  {
+    "name": "res14.R",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 45,
+    "maximum": 47,
+    "bytes": 192
+  },
+  {
+    "name": "res15.A20",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 16882,
+    "maximum": 91925,
+    "bytes": 768
+  },
+  {
+    "name": "res15.B20",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 12262,
+    "maximum": 4620808,
+    "bytes": 768
+  },
+  {
+    "name": "res15.M",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1074362129,
+    "maximum": 2140504501,
+    "bytes": 768
+  },
+  {
+    "name": "res15.R",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 45,
+    "maximum": 53,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.7.gelu",
+    "shape": [
+      768,
+      256
+    ],
+    "dtype": "int8",
+    "minimum": -128,
+    "maximum": 127,
+    "bytes": 196608
+  },
+  {
+    "name": "attn7.0.SM",
+    "shape": [
+      1
+    ],
+    "dtype": "uint32",
+    "minimum": 1195417314,
+    "maximum": 1195417314,
+    "bytes": 4
+  },
+  {
+    "name": "attn7.0.SR",
+    "shape": [
+      1
+    ],
+    "dtype": "uint8",
+    "minimum": 32,
+    "maximum": 32,
+    "bytes": 1
+  },
+  {
+    "name": "attn7.0.AM",
+    "shape": [
+      64
+    ],
+    "dtype": "uint32",
+    "minimum": 1080498203,
+    "maximum": 2146406205,
+    "bytes": 256
+  },
+  {
+    "name": "attn7.0.AR",
+    "shape": [
+      64
+    ],
+    "dtype": "uint8",
+    "minimum": 37,
+    "maximum": 38,
+    "bytes": 64
+  },
+  {
+    "name": "attn7.0.AZ",
+    "shape": [
+      64
+    ],
+    "dtype": "int8",
+    "minimum": -6,
+    "maximum": -6,
+    "bytes": 64
+  },
+  {
+    "name": "attn7.1.SM",
+    "shape": [
+      1
+    ],
+    "dtype": "uint32",
+    "minimum": 1238233596,
+    "maximum": 1238233596,
+    "bytes": 4
+  },
+  {
+    "name": "attn7.1.SR",
+    "shape": [
+      1
+    ],
+    "dtype": "uint8",
+    "minimum": 32,
+    "maximum": 32,
+    "bytes": 1
+  },
+  {
+    "name": "attn7.1.AM",
+    "shape": [
+      64
+    ],
+    "dtype": "uint32",
+    "minimum": 1111214124,
+    "maximum": 2142649836,
+    "bytes": 256
+  },
+  {
+    "name": "attn7.1.AR",
+    "shape": [
+      64
+    ],
+    "dtype": "uint8",
+    "minimum": 37,
+    "maximum": 38,
+    "bytes": 64
+  },
+  {
+    "name": "attn7.1.AZ",
+    "shape": [
+      64
+    ],
+    "dtype": "int8",
+    "minimum": -6,
+    "maximum": -6,
+    "bytes": 64
+  },
+  {
+    "name": "attn7.2.SM",
+    "shape": [
+      1
+    ],
+    "dtype": "uint32",
+    "minimum": 1277927985,
+    "maximum": 1277927985,
+    "bytes": 4
+  },
+  {
+    "name": "attn7.2.SR",
+    "shape": [
+      1
+    ],
+    "dtype": "uint8",
+    "minimum": 32,
+    "maximum": 32,
+    "bytes": 1
+  },
+  {
+    "name": "attn7.2.AM",
+    "shape": [
+      64
+    ],
+    "dtype": "uint32",
+    "minimum": 1074048374,
+    "maximum": 2141705445,
+    "bytes": 256
+  },
+  {
+    "name": "attn7.2.AR",
+    "shape": [
+      64
+    ],
+    "dtype": "uint8",
+    "minimum": 37,
+    "maximum": 38,
+    "bytes": 64
+  },
+  {
+    "name": "attn7.2.AZ",
+    "shape": [
+      64
+    ],
+    "dtype": "int8",
+    "minimum": -6,
+    "maximum": -6,
+    "bytes": 64
+  },
+  {
+    "name": "res16.A20",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 18895,
+    "maximum": 4685554,
+    "bytes": 768
+  },
+  {
+    "name": "res16.B20",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 6435,
+    "maximum": 24619,
+    "bytes": 768
+  },
+  {
+    "name": "res16.M",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1074886828,
+    "maximum": 2140722670,
+    "bytes": 768
+  },
+  {
+    "name": "res16.R",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 45,
+    "maximum": 53,
+    "bytes": 192
+  },
+  {
+    "name": "res17.A20",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 19561,
+    "maximum": 4703075,
+    "bytes": 768
+  },
+  {
+    "name": "res17.B20",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 15120,
+    "maximum": 37838,
+    "bytes": 768
+  },
+  {
+    "name": "res17.M",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1075403691,
+    "maximum": 2139574258,
+    "bytes": 768
+  },
+  {
+    "name": "res17.R",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 45,
+    "maximum": 53,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.8.gelu",
+    "shape": [
+      768,
+      256
+    ],
+    "dtype": "int8",
+    "minimum": -128,
+    "maximum": 127,
+    "bytes": 196608
+  },
+  {
+    "name": "attn8.0.SM",
+    "shape": [
+      1
+    ],
+    "dtype": "uint32",
+    "minimum": 1568968219,
+    "maximum": 1568968219,
+    "bytes": 4
+  },
+  {
+    "name": "attn8.0.SR",
+    "shape": [
+      1
+    ],
+    "dtype": "uint8",
+    "minimum": 32,
+    "maximum": 32,
+    "bytes": 1
+  },
+  {
+    "name": "attn8.0.AM",
+    "shape": [
+      64
+    ],
+    "dtype": "uint32",
+    "minimum": 1080261731,
+    "maximum": 2128942323,
+    "bytes": 256
+  },
+  {
+    "name": "attn8.0.AR",
+    "shape": [
+      64
+    ],
+    "dtype": "uint8",
+    "minimum": 37,
+    "maximum": 38,
+    "bytes": 64
+  },
+  {
+    "name": "attn8.0.AZ",
+    "shape": [
+      64
+    ],
+    "dtype": "int8",
+    "minimum": -2,
+    "maximum": -2,
+    "bytes": 64
+  },
+  {
+    "name": "attn8.1.SM",
+    "shape": [
+      1
+    ],
+    "dtype": "uint32",
+    "minimum": 1175063122,
+    "maximum": 1175063122,
+    "bytes": 4
+  },
+  {
+    "name": "attn8.1.SR",
+    "shape": [
+      1
+    ],
+    "dtype": "uint8",
+    "minimum": 32,
+    "maximum": 32,
+    "bytes": 1
+  },
+  {
+    "name": "attn8.1.AM",
+    "shape": [
+      64
+    ],
+    "dtype": "uint32",
+    "minimum": 1074264865,
+    "maximum": 2142191576,
+    "bytes": 256
+  },
+  {
+    "name": "attn8.1.AR",
+    "shape": [
+      64
+    ],
+    "dtype": "uint8",
+    "minimum": 37,
+    "maximum": 38,
+    "bytes": 64
+  },
+  {
+    "name": "attn8.1.AZ",
+    "shape": [
+      64
+    ],
+    "dtype": "int8",
+    "minimum": -2,
+    "maximum": -2,
+    "bytes": 64
+  },
+  {
+    "name": "attn8.2.SM",
+    "shape": [
+      1
+    ],
+    "dtype": "uint32",
+    "minimum": 1310456924,
+    "maximum": 1310456924,
+    "bytes": 4
+  },
+  {
+    "name": "attn8.2.SR",
+    "shape": [
+      1
+    ],
+    "dtype": "uint8",
+    "minimum": 32,
+    "maximum": 32,
+    "bytes": 1
+  },
+  {
+    "name": "attn8.2.AM",
+    "shape": [
+      64
+    ],
+    "dtype": "uint32",
+    "minimum": 1079345942,
+    "maximum": 2101054132,
+    "bytes": 256
+  },
+  {
+    "name": "attn8.2.AR",
+    "shape": [
+      64
+    ],
+    "dtype": "uint8",
+    "minimum": 37,
+    "maximum": 38,
+    "bytes": 64
+  },
+  {
+    "name": "attn8.2.AZ",
+    "shape": [
+      64
+    ],
+    "dtype": "int8",
+    "minimum": -2,
+    "maximum": -2,
+    "bytes": 64
+  },
+  {
+    "name": "res18.A20",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 24680,
+    "maximum": 4708379,
+    "bytes": 768
+  },
+  {
+    "name": "res18.B20",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 5770,
+    "maximum": 18381,
+    "bytes": 768
+  },
+  {
+    "name": "res18.M",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1073878461,
+    "maximum": 2146468707,
+    "bytes": 768
+  },
+  {
+    "name": "res18.R",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 45,
+    "maximum": 53,
+    "bytes": 192
+  },
+  {
+    "name": "res19.A20",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 25487,
+    "maximum": 4721101,
+    "bytes": 768
+  },
+  {
+    "name": "res19.B20",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 15533,
+    "maximum": 32553,
+    "bytes": 768
+  },
+  {
+    "name": "res19.M",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1077613067,
+    "maximum": 2140881518,
+    "bytes": 768
+  },
+  {
+    "name": "res19.R",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 45,
+    "maximum": 53,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.9.gelu",
+    "shape": [
+      768,
+      256
+    ],
+    "dtype": "int8",
+    "minimum": -128,
+    "maximum": 127,
+    "bytes": 196608
+  },
+  {
+    "name": "attn9.0.SM",
+    "shape": [
+      1
+    ],
+    "dtype": "uint32",
+    "minimum": 1353863329,
+    "maximum": 1353863329,
+    "bytes": 4
+  },
+  {
+    "name": "attn9.0.SR",
+    "shape": [
+      1
+    ],
+    "dtype": "uint8",
+    "minimum": 32,
+    "maximum": 32,
+    "bytes": 1
+  },
+  {
+    "name": "attn9.0.AM",
+    "shape": [
+      64
+    ],
+    "dtype": "uint32",
+    "minimum": 1097307694,
+    "maximum": 2017036383,
+    "bytes": 256
+  },
+  {
+    "name": "attn9.0.AR",
+    "shape": [
+      64
+    ],
+    "dtype": "uint8",
+    "minimum": 37,
+    "maximum": 38,
+    "bytes": 64
+  },
+  {
+    "name": "attn9.0.AZ",
+    "shape": [
+      64
+    ],
+    "dtype": "int8",
+    "minimum": -4,
+    "maximum": -4,
+    "bytes": 64
+  },
+  {
+    "name": "attn9.1.SM",
+    "shape": [
+      1
+    ],
+    "dtype": "uint32",
+    "minimum": 1421643049,
+    "maximum": 1421643049,
+    "bytes": 4
+  },
+  {
+    "name": "attn9.1.SR",
+    "shape": [
+      1
+    ],
+    "dtype": "uint8",
+    "minimum": 32,
+    "maximum": 32,
+    "bytes": 1
+  },
+  {
+    "name": "attn9.1.AM",
+    "shape": [
+      64
+    ],
+    "dtype": "uint32",
+    "minimum": 1086777176,
+    "maximum": 2069566599,
+    "bytes": 256
+  },
+  {
+    "name": "attn9.1.AR",
+    "shape": [
+      64
+    ],
+    "dtype": "uint8",
+    "minimum": 37,
+    "maximum": 38,
+    "bytes": 64
+  },
+  {
+    "name": "attn9.1.AZ",
+    "shape": [
+      64
+    ],
+    "dtype": "int8",
+    "minimum": -4,
+    "maximum": -4,
+    "bytes": 64
+  },
+  {
+    "name": "attn9.2.SM",
+    "shape": [
+      1
+    ],
+    "dtype": "uint32",
+    "minimum": 1463672063,
+    "maximum": 1463672063,
+    "bytes": 4
+  },
+  {
+    "name": "attn9.2.SR",
+    "shape": [
+      1
+    ],
+    "dtype": "uint8",
+    "minimum": 32,
+    "maximum": 32,
+    "bytes": 1
+  },
+  {
+    "name": "attn9.2.AM",
+    "shape": [
+      64
+    ],
+    "dtype": "uint32",
+    "minimum": 1087152984,
+    "maximum": 2089988475,
+    "bytes": 256
+  },
+  {
+    "name": "attn9.2.AR",
+    "shape": [
+      64
+    ],
+    "dtype": "uint8",
+    "minimum": 37,
+    "maximum": 38,
+    "bytes": 64
+  },
+  {
+    "name": "attn9.2.AZ",
+    "shape": [
+      64
+    ],
+    "dtype": "int8",
+    "minimum": -4,
+    "maximum": -4,
+    "bytes": 64
+  },
+  {
+    "name": "res20.A20",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 27296,
+    "maximum": 4720275,
+    "bytes": 768
+  },
+  {
+    "name": "res20.B20",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 4563,
+    "maximum": 16928,
+    "bytes": 768
+  },
+  {
+    "name": "res20.M",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1077079473,
+    "maximum": 2146988630,
+    "bytes": 768
+  },
+  {
+    "name": "res20.R",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 45,
+    "maximum": 53,
+    "bytes": 192
+  },
+  {
+    "name": "res21.A20",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 26360,
+    "maximum": 4706339,
+    "bytes": 768
+  },
+  {
+    "name": "res21.B20",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 15174,
+    "maximum": 34934,
+    "bytes": 768
+  },
+  {
+    "name": "res21.M",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1079288903,
+    "maximum": 2144685248,
+    "bytes": 768
+  },
+  {
+    "name": "res21.R",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 45,
+    "maximum": 53,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.10.gelu",
+    "shape": [
+      768,
+      256
+    ],
+    "dtype": "int8",
+    "minimum": -128,
+    "maximum": 127,
+    "bytes": 196608
+  },
+  {
+    "name": "attn10.0.SM",
+    "shape": [
+      1
+    ],
+    "dtype": "uint32",
+    "minimum": 1596827151,
+    "maximum": 1596827151,
+    "bytes": 4
+  },
+  {
+    "name": "attn10.0.SR",
+    "shape": [
+      1
+    ],
+    "dtype": "uint8",
+    "minimum": 32,
+    "maximum": 32,
+    "bytes": 1
+  },
+  {
+    "name": "attn10.0.AM",
+    "shape": [
+      64
+    ],
+    "dtype": "uint32",
+    "minimum": 1078293632,
+    "maximum": 2121281949,
+    "bytes": 256
+  },
+  {
+    "name": "attn10.0.AR",
+    "shape": [
+      64
+    ],
+    "dtype": "uint8",
+    "minimum": 36,
+    "maximum": 38,
+    "bytes": 64
+  },
+  {
+    "name": "attn10.0.AZ",
+    "shape": [
+      64
+    ],
+    "dtype": "int8",
+    "minimum": -1,
+    "maximum": -1,
+    "bytes": 64
+  },
+  {
+    "name": "attn10.1.SM",
+    "shape": [
+      1
+    ],
+    "dtype": "uint32",
+    "minimum": 1352456018,
+    "maximum": 1352456018,
+    "bytes": 4
+  },
+  {
+    "name": "attn10.1.SR",
+    "shape": [
+      1
+    ],
+    "dtype": "uint8",
+    "minimum": 32,
+    "maximum": 32,
+    "bytes": 1
+  },
+  {
+    "name": "attn10.1.AM",
+    "shape": [
+      64
+    ],
+    "dtype": "uint32",
+    "minimum": 1085393707,
+    "maximum": 2095647005,
+    "bytes": 256
+  },
+  {
+    "name": "attn10.1.AR",
+    "shape": [
+      64
+    ],
+    "dtype": "uint8",
+    "minimum": 36,
+    "maximum": 37,
+    "bytes": 64
+  },
+  {
+    "name": "attn10.1.AZ",
+    "shape": [
+      64
+    ],
+    "dtype": "int8",
+    "minimum": -1,
+    "maximum": -1,
+    "bytes": 64
+  },
+  {
+    "name": "attn10.2.SM",
+    "shape": [
+      1
+    ],
+    "dtype": "uint32",
+    "minimum": 1520521668,
+    "maximum": 1520521668,
+    "bytes": 4
+  },
+  {
+    "name": "attn10.2.SR",
+    "shape": [
+      1
+    ],
+    "dtype": "uint8",
+    "minimum": 32,
+    "maximum": 32,
+    "bytes": 1
+  },
+  {
+    "name": "attn10.2.AM",
+    "shape": [
+      64
+    ],
+    "dtype": "uint32",
+    "minimum": 1074356174,
+    "maximum": 2114477218,
+    "bytes": 256
+  },
+  {
+    "name": "attn10.2.AR",
+    "shape": [
+      64
+    ],
+    "dtype": "uint8",
+    "minimum": 36,
+    "maximum": 37,
+    "bytes": 64
+  },
+  {
+    "name": "attn10.2.AZ",
+    "shape": [
+      64
+    ],
+    "dtype": "int8",
+    "minimum": -1,
+    "maximum": -1,
+    "bytes": 64
+  },
+  {
+    "name": "res22.A20",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 30591,
+    "maximum": 4723506,
+    "bytes": 768
+  },
+  {
+    "name": "res22.B20",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 7083,
+    "maximum": 58041,
+    "bytes": 768
+  },
+  {
+    "name": "res22.M",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1077927613,
+    "maximum": 2137593735,
+    "bytes": 768
+  },
+  {
+    "name": "res22.R",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 45,
+    "maximum": 53,
+    "bytes": 192
+  },
+  {
+    "name": "res23.A20",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 30601,
+    "maximum": 4675749,
+    "bytes": 768
+  },
+  {
+    "name": "res23.B20",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 10091,
+    "maximum": 68661,
+    "bytes": 768
+  },
+  {
+    "name": "res23.M",
+    "shape": [
+      192
+    ],
+    "dtype": "uint32",
+    "minimum": 1075105942,
+    "maximum": 2130167834,
+    "bytes": 768
+  },
+  {
+    "name": "res23.R",
+    "shape": [
+      192
+    ],
+    "dtype": "uint8",
+    "minimum": 45,
+    "maximum": 53,
+    "bytes": 192
+  },
+  {
+    "name": "blocks.11.gelu",
+    "shape": [
+      768,
+      256
+    ],
+    "dtype": "int8",
+    "minimum": -128,
+    "maximum": 127,
+    "bytes": 196608
+  },
+  {
+    "name": "attn11.0.SM",
+    "shape": [
+      1
+    ],
+    "dtype": "uint32",
+    "minimum": 1870602833,
+    "maximum": 1870602833,
+    "bytes": 4
+  },
+  {
+    "name": "attn11.0.SR",
+    "shape": [
+      1
+    ],
+    "dtype": "uint8",
+    "minimum": 32,
+    "maximum": 32,
+    "bytes": 1
+  },
+  {
+    "name": "attn11.0.AM",
+    "shape": [
+      64
+    ],
+    "dtype": "uint32",
+    "minimum": 1100705004,
+    "maximum": 2078707723,
+    "bytes": 256
+  },
+  {
+    "name": "attn11.0.AR",
+    "shape": [
+      64
+    ],
+    "dtype": "uint8",
+    "minimum": 36,
+    "maximum": 37,
+    "bytes": 64
+  },
+  {
+    "name": "attn11.0.AZ",
+    "shape": [
+      64
+    ],
+    "dtype": "int8",
+    "minimum": 8,
+    "maximum": 8,
+    "bytes": 64
+  },
+  {
+    "name": "attn11.1.SM",
+    "shape": [
+      1
+    ],
+    "dtype": "uint32",
+    "minimum": 1089276346,
+    "maximum": 1089276346,
+    "bytes": 4
+  },
+  {
+    "name": "attn11.1.SR",
+    "shape": [
+      1
+    ],
+    "dtype": "uint8",
+    "minimum": 31,
+    "maximum": 31,
+    "bytes": 1
+  },
+  {
+    "name": "attn11.1.AM",
+    "shape": [
+      64
+    ],
+    "dtype": "uint32",
+    "minimum": 1075095107,
+    "maximum": 2096711775,
+    "bytes": 256
+  },
+  {
+    "name": "attn11.1.AR",
+    "shape": [
+      64
+    ],
+    "dtype": "uint8",
+    "minimum": 36,
+    "maximum": 38,
+    "bytes": 64
+  },
+  {
+    "name": "attn11.1.AZ",
+    "shape": [
+      64
+    ],
+    "dtype": "int8",
+    "minimum": 8,
+    "maximum": 8,
+    "bytes": 64
+  },
+  {
+    "name": "attn11.2.SM",
+    "shape": [
+      1
+    ],
+    "dtype": "uint32",
+    "minimum": 1764941226,
+    "maximum": 1764941226,
+    "bytes": 4
+  },
+  {
+    "name": "attn11.2.SR",
+    "shape": [
+      1
+    ],
+    "dtype": "uint8",
+    "minimum": 32,
+    "maximum": 32,
+    "bytes": 1
+  },
+  {
+    "name": "attn11.2.AM",
+    "shape": [
+      64
+    ],
+    "dtype": "uint32",
+    "minimum": 1085933424,
+    "maximum": 2126369994,
+    "bytes": 256
+  },
+  {
+    "name": "attn11.2.AR",
+    "shape": [
+      64
+    ],
+    "dtype": "uint8",
+    "minimum": 36,
+    "maximum": 38,
+    "bytes": 64
+  },
+  {
+    "name": "attn11.2.AZ",
+    "shape": [
+      64
+    ],
+    "dtype": "int8",
+    "minimum": 8,
+    "maximum": 8,
+    "bytes": 64
+  },
+  {
+    "name": "exp_Q30",
+    "shape": [
+      16385
+    ],
+    "dtype": "uint32",
+    "minimum": 121,
+    "maximum": 1073741824,
+    "bytes": 65540
+  }
+]

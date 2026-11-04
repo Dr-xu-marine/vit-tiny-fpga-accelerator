@@ -1,0 +1,70 @@
+{
+  "status": [
+    "BITSTREAM_GENERATED",
+    "TIMING_PASS",
+    "BOARD_NOT_YET_VERIFIED"
+  ],
+  "frequency_MHz": 166.66666666666666,
+  "compute_period_ns": 6.0,
+  "host_MHz": 75,
+  "DDR_UI_MHz": 300,
+  "MMCM": {
+    "input_MHz": 300,
+    "M": 10,
+    "D": 3,
+    "O": 6,
+    "VCO_MHz": 1000
+  },
+  "timing": {
+    "WNS": 0.073,
+    "TNS": 0.0,
+    "setup_fail": 0,
+    "setup_total": 223194,
+    "WHS": 0.005,
+    "THS": 0.0,
+    "hold_fail": 0,
+    "hold_total": 222285,
+    "WPWS": 0.039,
+    "TPWS": 0.0,
+    "pulse_fail": 0,
+    "pulse_total": 66447
+  },
+  "route": {
+    "routable": 123520,
+    "routed": 123520,
+    "routing_errors": 0
+  },
+  "resources": {
+    "peak_private_GiB": 9.917671203613281,
+    "peak_working_set_GiB": 8.977348327636719,
+    "max_system_commit_GiB": 26.29082489013672,
+    "max_commit_fraction": 0.8268242547585107,
+    "max_pagefile_GiB": 4.374126434326172,
+    "min_available_RAM_GiB": 0.0112457275390625,
+    "max_observed_system_physical_used_GiB": 15.786109924316406
+  },
+  "FPGA_utilization": {
+    "LUT": 49299,
+    "FF": 59093,
+    "DSP": 137,
+    "MAC_DSP": 128,
+    "RAMB36E2": 1129,
+    "RAMB18E2": 97,
+    "BRAM36_equiv": 1177.5,
+    "URAM": 0
+  },
+  "bitstream": "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_downclock_bit_20261102\\delivery_166p7\\full128_166p7.bit",
+  "bitstream_sha256": "928403c3745abe5b18b57088eaaa1fdb3a181343661a60421b4346aee42d0905",
+  "final_dcp": "D:\\fpga\\vit_tiny_vcu118\\experiments\\full128_downclock_bit_20261102\\delivery_166p7\\full128_166p7_final.dcp",
+  "final_dcp_sha256": "25c8f75978fb10f65acb18292bb39930801118c4dd43f16201db1370ba001027",
+  "compute_RTL_changed": false,
+  "clock_IP_and_frequency_metadata_changed": true,
+  "latest_full12_L3": "NOT_RUN",
+  "board": "NOT_RUN",
+  "FPS_power": "NOT_RUN",
+  "P_source_manifest_sha256": "bd2004660656ea2f950d7957014924d588e469345cc1ab6fb69e3489eeec8cc8",
+  "protected_history": "PASS_FROZEN505_BUILD_SCRIPTS_HISTORY",
+  "finished": "2026-11-03T08:06:36.999582+08:00",
+  "complete_frequency_PnR_attempts": 1,
+  "fallback150": "NOT_RUN_NOT_NEEDED"
+}

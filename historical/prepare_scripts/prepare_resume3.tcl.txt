@@ -1,0 +1,80 @@
+set_param general.maxThreads 1
+lassign $argv xpr out candidate source_list target_mhz target_hz cache
+proc stage {s} {puts "DOWNCLOCK_PREP $s";flush stdout;set f [open [file join $::out STAGE.txt] w];puts $f $s;close $f}
+proc inside {p root} {return [expr {[string first "[string tolower [file normalize $root]]/" "[string tolower [file normalize $p]]/"]==0}]}
+foreach cmd {synth_design opt_design place_design phys_opt_design route_design write_bitstream launch_runs} {
+ trace add execution $cmd enter {apply {{cmd op} {error PREPARE_ONLY_NO_IMPLEMENTATION}}}
+}
+# One explicit, normal per-process load. No installation or OS changes.
+set init_file {D:/fpga/Vivado/2023.2/scripts/xguifrmwork/init.tcl}
+set f [open $init_file r];set init_text [read $f];close $f
+if {[string length $init_text]<100} {error INCOMPLETE_XGUI_INIT_READ}
+source $init_file
+if {![llength [info commands ::xgui::utils::init_utils]]} {error XGUI_INIT_NOT_LOADED}
+open_project $xpr
+config_ip_cache -use_cache_location $cache
+set_property IP_CACHE_PERMISSIONS read [current_project]
+source $source_list
+set old {D:/fpga/vit_tiny_vcu118/experiments/full128_jointfix_20261029/}
+set remove {}
+foreach f [get_files -all -quiet] {if {[string first [string tolower $old] [string tolower [file normalize [get_property NAME $f]]]]==0} {lappend remove $f}}
+if {[llength $remove]} {remove_files $remove}
+add_files -norecurse $candidate_sources
+add_files -norecurse [file join $candidate board w8_board_core.v]
+set hdr [file join $candidate rtl w8_program_meta.vh]
+add_files -norecurse $hdr
+set_property FILE_TYPE {Verilog Header} [get_files $hdr]
+set_property include_dirs [list [file join $candidate rtl] [file join $candidate rtl legacy]] [current_fileset]
+update_compile_order -fileset sources_1
+set bd [get_files -all -quiet *w8_platform.bd]
+if {[llength $bd]!=1} {error BD_NOT_UNIQUE}
+if {![inside [get_property NAME $bd] [file dirname $xpr]]} {error BD_OUTSIDE_INDEPENDENT_PROJECT}
+open_bd_design $bd
+stage CONFIGURE_REAL_CLOCK_AND_METADATA
+write_bd_tcl -force [file join $out bd_before.tcl]
+report_property -all -file [file join $out compute_clock_before.rpt] [get_bd_cells compute_clock]
+report_property -all -file [file join $out core_before.rpt] [get_bd_cells core]
+if {abs([get_property CONFIG.PRIM_IN_FREQ [get_bd_cells compute_clock]]-300)>0.001} {error COMPUTE_INPUT_NOT_DDR_UI300}
+set_property -dict [list CONFIG.CLKOUT1_REQUESTED_OUT_FREQ $target_mhz] [get_bd_cells compute_clock]
+set_property -dict [list CONFIG.COMPUTE_HZ $target_hz CONFIG.PARAM_DIR [file join $candidate data package] CONFIG.PROGRAM_FILE [file join $candidate data package program.hex]] [get_bd_cells core]
+foreach n {reset_core reset_ui reset_host} {
+ if {[get_property CONFIG.C_AUX_RESET_HIGH [get_bd_cells $n]]!=1} {error "Unexpected AUX reset polarity $n"}
+ set zero_net [get_bd_nets -of_objects [get_bd_pins $n/aux_reset_in]]
+ if {[get_bd_nets -of_objects [get_bd_pins zero/dout]] ne $zero_net} {error "AUX reset not tied inactive $n"}
+}
+# Module-reference interface metadata must match the newly propagated source.
+set actual_bd_hz [get_property CONFIG.FREQ_HZ [get_bd_pins compute_clock/clk_out1]]
+if {$actual_bd_hz<=0} {error BAD_SOURCE_CLOCK_METADATA}
+set_property CONFIG.FREQ_HZ $actual_bd_hz [get_bd_pins core/clk]
+foreach name {S_AXI M_AXI} {set_property CONFIG.FREQ_HZ $actual_bd_hz [get_bd_intf_pins core/$name]}
+set_property CONFIG.COMPUTE_HZ $actual_bd_hz [get_bd_cells core]
+validate_bd_design
+save_bd_design
+write_bd_tcl -force [file join $out bd_after.tcl]
+stage GENERATE_NEW_IP_OUTPUT_PRODUCTS
+generate_target all $bd
+update_compile_order -fileset sources_1
+report_ip_status -file [file join $out ip_status.rpt]
+report_property -all -file [file join $out compute_clock_after.rpt] [get_bd_cells compute_clock]
+report_property -all -file [file join $out core_after.rpt] [get_bd_cells core]
+set f [open [file join $out source_files.tsv] w]
+foreach file [get_files -compile_order sources -used_in synthesis] {
+ set n [file normalize [get_property NAME $file]];puts $f $n
+ if {![inside $n {D:/fpga/vit_tiny_vcu118}]} {error "Source escapes workspace $n"}
+ if {[string first [string tolower $old] [string tolower $n]]==0} {error "Stale compute source $n"}
+}
+close $f
+set f [open [file join $out ip_xdc_files.tsv] w]
+foreach file [get_files -all -quiet] {
+ if {[get_property FILE_TYPE $file] in {XDC IP {Block Designs}}} {puts $f "[get_property FILE_TYPE $file]\t[get_property NAME $file]"}
+}
+close $f
+set f [open [file join $out simulation_sources.tsv] w]
+foreach file [get_files -compile_order sources -used_in simulation] {puts $f "[get_property FILE_TYPE $file]\t[get_property NAME $file]"}
+close $f
+set f [open [file join $out project_path.txt] w];puts $f [get_property DIRECTORY [current_project]];puts $f [get_property NAME [current_project]];close $f
+save_bd_design
+close_project
+stage PREPARED_NOT_SYNTHESIZED
+puts DOWNCLOCK_BOARD_PREPARED_NO_SYNTHESIS
+exit 0

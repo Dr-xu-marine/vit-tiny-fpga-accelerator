@@ -1,0 +1,46 @@
+{
+  "status": "PASS",
+  "scope": "operator subgraph, not full12 RTL",
+  "name": "head",
+  "k": 192,
+  "n": 1000,
+  "rows": 1,
+  "instructions": 6,
+  "ddr_beats": 3216,
+  "blobs": [
+    {
+      "name": "operator_input",
+      "offset": 0,
+      "bytes": 192,
+      "target": 0,
+      "sha256": "cfbf6f4340b9d94d6b44c9f4db5df1e7c873edf326f951152aae06b7cd164d08"
+    },
+    {
+      "name": "actual_weights",
+      "offset": 192,
+      "bytes": 193536,
+      "target": 1,
+      "sha256": "86d66a44f2b45b7e78cf0856ee03d4cf165d8ee7b536db0c066b0b11dc89b563"
+    },
+    {
+      "name": "actual_bias",
+      "offset": 193728,
+      "bytes": 4032,
+      "target": 2,
+      "sha256": "7d3079fda1430cb4bc9c3b4de6208fd305fcb1305e59df36798914f0bb540a28"
+    },
+    {
+      "name": "actual_rq",
+      "offset": 197760,
+      "bytes": 8064,
+      "target": 3,
+      "sha256": "0da5abe94f71587d26e6ada7c51188683694b15698f05f2bb14184041c6c7360"
+    }
+  ],
+  "no_expected_output_in_DDR": true,
+  "full12_parameters_sha256": "67bbc4304975bd0882b7e5f665982fc97eaecc8986ed59ba7c0e28cfb501f415",
+  "host_read_words": 250,
+  "output_base": 540672,
+  "expected_sha256": "1117a30836ab44cc1b1585884e7c5e41524cf2558636d821047b8a58f3ce64a2",
+  "input_source": "adopted full12 integer Golden norm CLS as declared Head operator input"
+}

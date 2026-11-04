@@ -1,0 +1,1135 @@
+{
+  "status": "PREPARED_NOT_RTL_PASS",
+  "layers": 25,
+  "cases": [
+    {
+      "case": 0,
+      "layer": 0,
+      "name": "blocks.0.norm1",
+      "label": "token0",
+      "source_token": 0,
+      "values": 192,
+      "expected_basis": "frozen full12 integer fixture"
+    },
+    {
+      "case": 1,
+      "layer": 0,
+      "name": "blocks.0.norm1",
+      "label": "token1",
+      "source_token": 1,
+      "values": 192,
+      "expected_basis": "frozen full12 integer fixture"
+    },
+    {
+      "case": 2,
+      "layer": 0,
+      "name": "blocks.0.norm1",
+      "label": "token186",
+      "source_token": 186,
+      "values": 192,
+      "expected_basis": "frozen full12 integer fixture"
+    },
+    {
+      "case": 3,
+      "layer": 0,
+      "name": "blocks.0.norm1",
+      "label": "zero_code",
+      "source_token": null,
+      "values": 192,
+      "expected_basis": "frozen unchanged integer Golden on boundary code input"
+    },
+    {
+      "case": 4,
+      "layer": 0,
+      "name": "blocks.0.norm1",
+      "label": "alternating_codes",
+      "source_token": null,
+      "values": 192,
+      "expected_basis": "frozen unchanged integer Golden on boundary code input"
+    },
+    {
+      "case": 5,
+      "layer": 1,
+      "name": "blocks.0.norm2",
+      "label": "token0",
+      "source_token": 0,
+      "values": 192,
+      "expected_basis": "frozen full12 integer fixture"
+    },
+    {
+      "case": 6,
+      "layer": 1,
+      "name": "blocks.0.norm2",
+      "label": "token1",
+      "source_token": 1,
+      "values": 192,
+      "expected_basis": "frozen full12 integer fixture"
+    },
+    {
+      "case": 7,
+      "layer": 1,
+      "name": "blocks.0.norm2",
+      "label": "token25",
+      "source_token": 25,
+      "values": 192,
+      "expected_basis": "frozen full12 integer fixture"
+    },
+    {
+      "case": 8,
+      "layer": 1,
+      "name": "blocks.0.norm2",
+      "label": "zero_code",
+      "source_token": null,
+      "values": 192,
+      "expected_basis": "frozen unchanged integer Golden on boundary code input"
+    },
+    {
+      "case": 9,
+      "layer": 1,
+      "name": "blocks.0.norm2",
+      "label": "alternating_codes",
+      "source_token": null,
+      "values": 192,
+      "expected_basis": "frozen unchanged integer Golden on boundary code input"
+    },
+    {
+      "case": 10,
+      "layer": 2,
+      "name": "blocks.1.norm1",
+      "label": "token0",
+      "source_token": 0,
+      "values": 192,
+      "expected_basis": "frozen full12 integer fixture"
+    },
+    {
+      "case": 11,
+      "layer": 2,
+      "name": "blocks.1.norm1",
+      "label": "token1",
+      "source_token": 1,
+      "values": 192,
+      "expected_basis": "frozen full12 integer fixture"
+    },
+    {
+      "case": 12,
+      "layer": 2,
+      "name": "blocks.1.norm1",
+      "label": "token9",
+      "source_token": 9,
+      "values": 192,
+      "expected_basis": "frozen full12 integer fixture"
+    },
+    {
+      "case": 13,
+      "layer": 2,
+      "name": "blocks.1.norm1",
+      "label": "zero_code",
+      "source_token": null,
+      "values": 192,
+      "expected_basis": "frozen unchanged integer Golden on boundary code input"
+    },
+    {
+      "case": 14,
+      "layer": 2,
+      "name": "blocks.1.norm1",
+      "label": "alternating_codes",
+      "source_token": null,
+      "values": 192,
+      "expected_basis": "frozen unchanged integer Golden on boundary code input"
+    },
+    {
+      "case": 15,
+      "layer": 3,
+      "name": "blocks.1.norm2",
+      "label": "token0",
+      "source_token": 0,
+      "values": 192,
+      "expected_basis": "frozen full12 integer fixture"
+    },
+    {
+      "case": 16,
+      "layer": 3,
+      "name": "blocks.1.norm2",
+      "label": "token1",
+      "source_token": 1,
+      "values": 192,
+      "expected_basis": "frozen full12 integer fixture"
+    },
+    {
+      "case": 17,
+      "layer": 3,
+      "name": "blocks.1.norm2",
+      "label": "token25",
+      "source_token": 25,
+      "values": 192,
+      "expected_basis": "frozen full12 integer fixture"
+    },
+    {
+      "case": 18,
+      "layer": 3,
+      "name": "blocks.1.norm2",
+      "label": "zero_code",
+      "source_token": null,
+      "values": 192,
+      "expected_basis": "frozen unchanged integer Golden on boundary code input"
+    },
+    {
+      "case": 19,
+      "layer": 3,
+      "name": "blocks.1.norm2",
+      "label": "alternating_codes",
+      "source_token": null,
+      "values": 192,
+      "expected_basis": "frozen unchanged integer Golden on boundary code input"
+    },
+    {
+      "case": 20,
+      "layer": 4,
+      "name": "blocks.2.norm1",
+      "label": "token0",
+      "source_token": 0,
+      "values": 192,
+      "expected_basis": "frozen full12 integer fixture"
+    },
+    {
+      "case": 21,
+      "layer": 4,
+      "name": "blocks.2.norm1",
+      "label": "token1",
+      "source_token": 1,
+      "values": 192,
+      "expected_basis": "frozen full12 integer fixture"
+    },
+    {
+      "case": 22,
+      "layer": 4,
+      "name": "blocks.2.norm1",
+      "label": "token36",
+      "source_token": 36,
+      "values": 192,
+      "expected_basis": "frozen full12 integer fixture"
+    },
+    {
+      "case": 23,
+      "layer": 4,
+      "name": "blocks.2.norm1",
+      "label": "zero_code",
+      "source_token": null,
+      "values": 192,
+      "expected_basis": "frozen unchanged integer Golden on boundary code input"
+    },
+    {
+      "case": 24,
+      "layer": 4,
+      "name": "blocks.2.norm1",
+      "label": "alternating_codes",
+      "source_token": null,
+      "values": 192,
+      "expected_basis": "frozen unchanged integer Golden on boundary code input"
+    },
+    {
+      "case": 25,
+      "layer": 5,
+      "name": "blocks.2.norm2",
+      "label": "token0",
+      "source_token": 0,
+      "values": 192,
+      "expected_basis": "frozen full12 integer fixture"
+    },
+    {
+      "case": 26,
+      "layer": 5,
+      "name": "blocks.2.norm2",
+      "label": "token1",
+      "source_token": 1,
+      "values": 192,
+      "expected_basis": "frozen full12 integer fixture"
+    },
+    {
+      "case": 27,
+      "layer": 5,
+      "name": "blocks.2.norm2",
+      "label": "token22",
+      "source_token": 22,
+      "values": 192,
+      "expected_basis": "frozen full12 integer fixture"
+    },
+    {
+      "case": 28,
+      "layer": 5,
+      "name": "blocks.2.norm2",
+      "label": "zero_code",
+      "source_token": null,
+      "values": 192,
+      "expected_basis": "frozen unchanged integer Golden on boundary code input"
+    },
+    {
+      "case": 29,
+      "layer": 5,
+      "name": "blocks.2.norm2",
+      "label": "alternating_codes",
+      "source_token": null,
+      "values": 192,
+      "expected_basis": "frozen unchanged integer Golden on boundary code input"
+    },
+    {
+      "case": 30,
+      "layer": 6,
+      "name": "blocks.3.norm1",
+      "label": "token0",
+      "source_token": 0,
+      "values": 192,
+      "expected_basis": "frozen full12 integer fixture"
+    },
+    {
+      "case": 31,
+      "layer": 6,
+      "name": "blocks.3.norm1",
+      "label": "token1",
+      "source_token": 1,
+      "values": 192,
+      "expected_basis": "frozen full12 integer fixture"
+    },
+    {
+      "case": 32,
+      "layer": 6,
+      "name": "blocks.3.norm1",
+      "label": "token131",
+      "source_token": 131,
+      "values": 192,
+      "expected_basis": "frozen full12 integer fixture"
+    },
+    {
+      "case": 33,
+      "layer": 6,
+      "name": "blocks.3.norm1",
+      "label": "zero_code",
+      "source_token": null,
+      "values": 192,
+      "expected_basis": "frozen unchanged integer Golden on boundary code input"
+    },
+    {
+      "case": 34,
+      "layer": 6,
+      "name": "blocks.3.norm1",
+      "label": "alternating_codes",
+      "source_token": null,
+      "values": 192,
+      "expected_basis": "frozen unchanged integer Golden on boundary code input"
+    },
+    {
+      "case": 35,
+      "layer": 7,
+      "name": "blocks.3.norm2",
+      "label": "token0",
+      "source_token": 0,
+      "values": 192,
+      "expected_basis": "frozen full12 integer fixture"
+    },
+    {
+      "case": 36,
+      "layer": 7,
+      "name": "blocks.3.norm2",
+      "label": "token1",
+      "source_token": 1,
+      "values": 192,
+      "expected_basis": "frozen full12 integer fixture"
+    },
+    {
+      "case": 37,
+      "layer": 7,
+      "name": "blocks.3.norm2",
+      "label": "token131",
+      "source_token": 131,
+      "values": 192,
+      "expected_basis": "frozen full12 integer fixture"
+    },
+    {
+      "case": 38,
+      "layer": 7,
+      "name": "blocks.3.norm2",
+      "label": "zero_code",
+      "source_token": null,
+      "values": 192,
+      "expected_basis": "frozen unchanged integer Golden on boundary code input"
+    },
+    {
+      "case": 39,
+      "layer": 7,
+      "name": "blocks.3.norm2",
+      "label": "alternating_codes",
+      "source_token": null,
+      "values": 192,
+      "expected_basis": "frozen unchanged integer Golden on boundary code input"
+    },
+    {
+      "case": 40,
+      "layer": 8,
+      "name": "blocks.4.norm1",
+      "label": "token0",
+      "source_token": 0,
+      "values": 192,
+      "expected_basis": "frozen full12 integer fixture"
+    },
+    {
+      "case": 41,
+      "layer": 8,
+      "name": "blocks.4.norm1",
+      "label": "token1",
+      "source_token": 1,
+      "values": 192,
+      "expected_basis": "frozen full12 integer fixture"
+    },
+    {
+      "case": 42,
+      "layer": 8,
+      "name": "blocks.4.norm1",
+      "label": "token134",
+      "source_token": 134,
+      "values": 192,
+      "expected_basis": "frozen full12 integer fixture"
+    },
+    {
+      "case": 43,
+      "layer": 8,
+      "name": "blocks.4.norm1",
+      "label": "zero_code",
+      "source_token": null,
+      "values": 192,
+      "expected_basis": "frozen unchanged integer Golden on boundary code input"
+    },
+    {
+      "case": 44,
+      "layer": 8,
+      "name": "blocks.4.norm1",
+      "label": "alternating_codes",
+      "source_token": null,
+      "values": 192,
+      "expected_basis": "frozen unchanged integer Golden on boundary code input"
+    },
+    {
+      "case": 45,
+      "layer": 9,
+      "name": "blocks.4.norm2",
+      "label": "token0",
+      "source_token": 0,
+      "values": 192,
+      "expected_basis": "frozen full12 integer fixture"
+    },
+    {
+      "case": 46,
+      "layer": 9,
+      "name": "blocks.4.norm2",
+      "label": "token1",
+      "source_token": 1,
+      "values": 192,
+      "expected_basis": "frozen full12 integer fixture"
+    },
+    {
+      "case": 47,
+      "layer": 9,
+      "name": "blocks.4.norm2",
+      "label": "token134",
+      "source_token": 134,
+      "values": 192,
+      "expected_basis": "frozen full12 integer fixture"
+    },
+    {
+      "case": 48,
+      "layer": 9,
+      "name": "blocks.4.norm2",
+      "label": "zero_code",
+      "source_token": null,
+      "values": 192,
+      "expected_basis": "frozen unchanged integer Golden on boundary code input"
+    },
+    {
+      "case": 49,
+      "layer": 9,
+      "name": "blocks.4.norm2",
+      "label": "alternating_codes",
+      "source_token": null,
+      "values": 192,
+      "expected_basis": "frozen unchanged integer Golden on boundary code input"
+    },
+    {
+      "case": 50,
+      "layer": 10,
+      "name": "blocks.5.norm1",
+      "label": "token0",
+      "source_token": 0,
+      "values": 192,
+      "expected_basis": "frozen full12 integer fixture"
+    },
+    {
+      "case": 51,
+      "layer": 10,
+      "name": "blocks.5.norm1",
+      "label": "token1",
+      "source_token": 1,
+      "values": 192,
+      "expected_basis": "frozen full12 integer fixture"
+    },
+    {
+      "case": 52,
+      "layer": 10,
+      "name": "blocks.5.norm1",
+      "label": "token137",
+      "source_token": 137,
+      "values": 192,
+      "expected_basis": "frozen full12 integer fixture"
+    },
+    {
+      "case": 53,
+      "layer": 10,
+      "name": "blocks.5.norm1",
+      "label": "zero_code",
+      "source_token": null,
+      "values": 192,
+      "expected_basis": "frozen unchanged integer Golden on boundary code input"
+    },
+    {
+      "case": 54,
+      "layer": 10,
+      "name": "blocks.5.norm1",
+      "label": "alternating_codes",
+      "source_token": null,
+      "values": 192,
+      "expected_basis": "frozen unchanged integer Golden on boundary code input"
+    },
+    {
+      "case": 55,
+      "layer": 11,
+      "name": "blocks.5.norm2",
+      "label": "token0",
+      "source_token": 0,
+      "values": 192,
+      "expected_basis": "frozen full12 integer fixture"
+    },
+    {
+      "case": 56,
+      "layer": 11,
+      "name": "blocks.5.norm2",
+      "label": "token1",
+      "source_token": 1,
+      "values": 192,
+      "expected_basis": "frozen full12 integer fixture"
+    },
+    {
+      "case": 57,
+      "layer": 11,
+      "name": "blocks.5.norm2",
+      "label": "token190",
+      "source_token": 190,
+      "values": 192,
+      "expected_basis": "frozen full12 integer fixture"
+    },
+    {
+      "case": 58,
+      "layer": 11,
+      "name": "blocks.5.norm2",
+      "label": "zero_code",
+      "source_token": null,
+      "values": 192,
+      "expected_basis": "frozen unchanged integer Golden on boundary code input"
+    },
+    {
+      "case": 59,
+      "layer": 11,
+      "name": "blocks.5.norm2",
+      "label": "alternating_codes",
+      "source_token": null,
+      "values": 192,
+      "expected_basis": "frozen unchanged integer Golden on boundary code input"
+    },
+    {
+      "case": 60,
+      "layer": 12,
+      "name": "blocks.6.norm1",
+      "label": "token0",
+      "source_token": 0,
+      "values": 192,
+      "expected_basis": "frozen full12 integer fixture"
+    },
+    {
+      "case": 61,
+      "layer": 12,
+      "name": "blocks.6.norm1",
+      "label": "token1",
+      "source_token": 1,
+      "values": 192,
+      "expected_basis": "frozen full12 integer fixture"
+    },
+    {
+      "case": 62,
+      "layer": 12,
+      "name": "blocks.6.norm1",
+      "label": "token137",
+      "source_token": 137,
+      "values": 192,
+      "expected_basis": "frozen full12 integer fixture"
+    },
+    {
+      "case": 63,
+      "layer": 12,
+      "name": "blocks.6.norm1",
+      "label": "zero_code",
+      "source_token": null,
+      "values": 192,
+      "expected_basis": "frozen unchanged integer Golden on boundary code input"
+    },
+    {
+      "case": 64,
+      "layer": 12,
+      "name": "blocks.6.norm1",
+      "label": "alternating_codes",
+      "source_token": null,
+      "values": 192,
+      "expected_basis": "frozen unchanged integer Golden on boundary code input"
+    },
+    {
+      "case": 65,
+      "layer": 13,
+      "name": "blocks.6.norm2",
+      "label": "token0",
+      "source_token": 0,
+      "values": 192,
+      "expected_basis": "frozen full12 integer fixture"
+    },
+    {
+      "case": 66,
+      "layer": 13,
+      "name": "blocks.6.norm2",
+      "label": "token1",
+      "source_token": 1,
+      "values": 192,
+      "expected_basis": "frozen full12 integer fixture"
+    },
+    {
+      "case": 67,
+      "layer": 13,
+      "name": "blocks.6.norm2",
+      "label": "token37",
+      "source_token": 37,
+      "values": 192,
+      "expected_basis": "frozen full12 integer fixture"
+    },
+    {
+      "case": 68,
+      "layer": 13,
+      "name": "blocks.6.norm2",
+      "label": "zero_code",
+      "source_token": null,
+      "values": 192,
+      "expected_basis": "frozen unchanged integer Golden on boundary code input"
+    },
+    {
+      "case": 69,
+      "layer": 13,
+      "name": "blocks.6.norm2",
+      "label": "alternating_codes",
+      "source_token": null,
+      "values": 192,
+      "expected_basis": "frozen unchanged integer Golden on boundary code input"
+    },
+    {
+      "case": 70,
+      "layer": 14,
+      "name": "blocks.7.norm1",
+      "label": "token0",
+      "source_token": 0,
+      "values": 192,
+      "expected_basis": "frozen full12 integer fixture"
+    },
+    {
+      "case": 71,
+      "layer": 14,
+      "name": "blocks.7.norm1",
+      "label": "token1",
+      "source_token": 1,
+      "values": 192,
+      "expected_basis": "frozen full12 integer fixture"
+    },
+    {
+      "case": 72,
+      "layer": 14,
+      "name": "blocks.7.norm1",
+      "label": "token93",
+      "source_token": 93,
+      "values": 192,
+      "expected_basis": "frozen full12 integer fixture"
+    },
+    {
+      "case": 73,
+      "layer": 14,
+      "name": "blocks.7.norm1",
+      "label": "token183",
+      "source_token": 183,
+      "values": 192,
+      "expected_basis": "frozen full12 integer fixture"
+    },
+    {
+      "case": 74,
+      "layer": 14,
+      "name": "blocks.7.norm1",
+      "label": "zero_code",
+      "source_token": null,
+      "values": 192,
+      "expected_basis": "frozen unchanged integer Golden on boundary code input"
+    },
+    {
+      "case": 75,
+      "layer": 14,
+      "name": "blocks.7.norm1",
+      "label": "alternating_codes",
+      "source_token": null,
+      "values": 192,
+      "expected_basis": "frozen unchanged integer Golden on boundary code input"
+    },
+    {
+      "case": 76,
+      "layer": 15,
+      "name": "blocks.7.norm2",
+      "label": "token0",
+      "source_token": 0,
+      "values": 192,
+      "expected_basis": "frozen full12 integer fixture"
+    },
+    {
+      "case": 77,
+      "layer": 15,
+      "name": "blocks.7.norm2",
+      "label": "token1",
+      "source_token": 1,
+      "values": 192,
+      "expected_basis": "frozen full12 integer fixture"
+    },
+    {
+      "case": 78,
+      "layer": 15,
+      "name": "blocks.7.norm2",
+      "label": "token164",
+      "source_token": 164,
+      "values": 192,
+      "expected_basis": "frozen full12 integer fixture"
+    },
+    {
+      "case": 79,
+      "layer": 15,
+      "name": "blocks.7.norm2",
+      "label": "token183",
+      "source_token": 183,
+      "values": 192,
+      "expected_basis": "frozen full12 integer fixture"
+    },
+    {
+      "case": 80,
+      "layer": 15,
+      "name": "blocks.7.norm2",
+      "label": "zero_code",
+      "source_token": null,
+      "values": 192,
+      "expected_basis": "frozen unchanged integer Golden on boundary code input"
+    },
+    {
+      "case": 81,
+      "layer": 15,
+      "name": "blocks.7.norm2",
+      "label": "alternating_codes",
+      "source_token": null,
+      "values": 192,
+      "expected_basis": "frozen unchanged integer Golden on boundary code input"
+    },
+    {
+      "case": 82,
+      "layer": 16,
+      "name": "blocks.8.norm1",
+      "label": "token0",
+      "source_token": 0,
+      "values": 192,
+      "expected_basis": "frozen full12 integer fixture"
+    },
+    {
+      "case": 83,
+      "layer": 16,
+      "name": "blocks.8.norm1",
+      "label": "token1",
+      "source_token": 1,
+      "values": 192,
+      "expected_basis": "frozen full12 integer fixture"
+    },
+    {
+      "case": 84,
+      "layer": 16,
+      "name": "blocks.8.norm1",
+      "label": "token90",
+      "source_token": 90,
+      "values": 192,
+      "expected_basis": "frozen full12 integer fixture"
+    },
+    {
+      "case": 85,
+      "layer": 16,
+      "name": "blocks.8.norm1",
+      "label": "zero_code",
+      "source_token": null,
+      "values": 192,
+      "expected_basis": "frozen unchanged integer Golden on boundary code input"
+    },
+    {
+      "case": 86,
+      "layer": 16,
+      "name": "blocks.8.norm1",
+      "label": "alternating_codes",
+      "source_token": null,
+      "values": 192,
+      "expected_basis": "frozen unchanged integer Golden on boundary code input"
+    },
+    {
+      "case": 87,
+      "layer": 17,
+      "name": "blocks.8.norm2",
+      "label": "token0",
+      "source_token": 0,
+      "values": 192,
+      "expected_basis": "frozen full12 integer fixture"
+    },
+    {
+      "case": 88,
+      "layer": 17,
+      "name": "blocks.8.norm2",
+      "label": "token1",
+      "source_token": 1,
+      "values": 192,
+      "expected_basis": "frozen full12 integer fixture"
+    },
+    {
+      "case": 89,
+      "layer": 17,
+      "name": "blocks.8.norm2",
+      "label": "token105",
+      "source_token": 105,
+      "values": 192,
+      "expected_basis": "frozen full12 integer fixture"
+    },
+    {
+      "case": 90,
+      "layer": 17,
+      "name": "blocks.8.norm2",
+      "label": "zero_code",
+      "source_token": null,
+      "values": 192,
+      "expected_basis": "frozen unchanged integer Golden on boundary code input"
+    },
+    {
+      "case": 91,
+      "layer": 17,
+      "name": "blocks.8.norm2",
+      "label": "alternating_codes",
+      "source_token": null,
+      "values": 192,
+      "expected_basis": "frozen unchanged integer Golden on boundary code input"
+    },
+    {
+      "case": 92,
+      "layer": 18,
+      "name": "blocks.9.norm1",
+      "label": "token0",
+      "source_token": 0,
+      "values": 192,
+      "expected_basis": "frozen full12 integer fixture"
+    },
+    {
+      "case": 93,
+      "layer": 18,
+      "name": "blocks.9.norm1",
+      "label": "token1",
+      "source_token": 1,
+      "values": 192,
+      "expected_basis": "frozen full12 integer fixture"
+    },
+    {
+      "case": 94,
+      "layer": 18,
+      "name": "blocks.9.norm1",
+      "label": "zero_code",
+      "source_token": null,
+      "values": 192,
+      "expected_basis": "frozen unchanged integer Golden on boundary code input"
+    },
+    {
+      "case": 95,
+      "layer": 18,
+      "name": "blocks.9.norm1",
+      "label": "alternating_codes",
+      "source_token": null,
+      "values": 192,
+      "expected_basis": "frozen unchanged integer Golden on boundary code input"
+    },
+    {
+      "case": 96,
+      "layer": 19,
+      "name": "blocks.9.norm2",
+      "label": "token0",
+      "source_token": 0,
+      "values": 192,
+      "expected_basis": "frozen full12 integer fixture"
+    },
+    {
+      "case": 97,
+      "layer": 19,
+      "name": "blocks.9.norm2",
+      "label": "token1",
+      "source_token": 1,
+      "values": 192,
+      "expected_basis": "frozen full12 integer fixture"
+    },
+    {
+      "case": 98,
+      "layer": 19,
+      "name": "blocks.9.norm2",
+      "label": "token9",
+      "source_token": 9,
+      "values": 192,
+      "expected_basis": "frozen full12 integer fixture"
+    },
+    {
+      "case": 99,
+      "layer": 19,
+      "name": "blocks.9.norm2",
+      "label": "zero_code",
+      "source_token": null,
+      "values": 192,
+      "expected_basis": "frozen unchanged integer Golden on boundary code input"
+    },
+    {
+      "case": 100,
+      "layer": 19,
+      "name": "blocks.9.norm2",
+      "label": "alternating_codes",
+      "source_token": null,
+      "values": 192,
+      "expected_basis": "frozen unchanged integer Golden on boundary code input"
+    },
+    {
+      "case": 101,
+      "layer": 20,
+      "name": "blocks.10.norm1",
+      "label": "token0",
+      "source_token": 0,
+      "values": 192,
+      "expected_basis": "frozen full12 integer fixture"
+    },
+    {
+      "case": 102,
+      "layer": 20,
+      "name": "blocks.10.norm1",
+      "label": "token1",
+      "source_token": 1,
+      "values": 192,
+      "expected_basis": "frozen full12 integer fixture"
+    },
+    {
+      "case": 103,
+      "layer": 20,
+      "name": "blocks.10.norm1",
+      "label": "token100",
+      "source_token": 100,
+      "values": 192,
+      "expected_basis": "frozen full12 integer fixture"
+    },
+    {
+      "case": 104,
+      "layer": 20,
+      "name": "blocks.10.norm1",
+      "label": "zero_code",
+      "source_token": null,
+      "values": 192,
+      "expected_basis": "frozen unchanged integer Golden on boundary code input"
+    },
+    {
+      "case": 105,
+      "layer": 20,
+      "name": "blocks.10.norm1",
+      "label": "alternating_codes",
+      "source_token": null,
+      "values": 192,
+      "expected_basis": "frozen unchanged integer Golden on boundary code input"
+    },
+    {
+      "case": 106,
+      "layer": 21,
+      "name": "blocks.10.norm2",
+      "label": "token0",
+      "source_token": 0,
+      "values": 192,
+      "expected_basis": "frozen full12 integer fixture"
+    },
+    {
+      "case": 107,
+      "layer": 21,
+      "name": "blocks.10.norm2",
+      "label": "token1",
+      "source_token": 1,
+      "values": 192,
+      "expected_basis": "frozen full12 integer fixture"
+    },
+    {
+      "case": 108,
+      "layer": 21,
+      "name": "blocks.10.norm2",
+      "label": "token100",
+      "source_token": 100,
+      "values": 192,
+      "expected_basis": "frozen full12 integer fixture"
+    },
+    {
+      "case": 109,
+      "layer": 21,
+      "name": "blocks.10.norm2",
+      "label": "zero_code",
+      "source_token": null,
+      "values": 192,
+      "expected_basis": "frozen unchanged integer Golden on boundary code input"
+    },
+    {
+      "case": 110,
+      "layer": 21,
+      "name": "blocks.10.norm2",
+      "label": "alternating_codes",
+      "source_token": null,
+      "values": 192,
+      "expected_basis": "frozen unchanged integer Golden on boundary code input"
+    },
+    {
+      "case": 111,
+      "layer": 22,
+      "name": "blocks.11.norm1",
+      "label": "token0",
+      "source_token": 0,
+      "values": 192,
+      "expected_basis": "frozen full12 integer fixture"
+    },
+    {
+      "case": 112,
+      "layer": 22,
+      "name": "blocks.11.norm1",
+      "label": "token1",
+      "source_token": 1,
+      "values": 192,
+      "expected_basis": "frozen full12 integer fixture"
+    },
+    {
+      "case": 113,
+      "layer": 22,
+      "name": "blocks.11.norm1",
+      "label": "token9",
+      "source_token": 9,
+      "values": 192,
+      "expected_basis": "frozen full12 integer fixture"
+    },
+    {
+      "case": 114,
+      "layer": 22,
+      "name": "blocks.11.norm1",
+      "label": "zero_code",
+      "source_token": null,
+      "values": 192,
+      "expected_basis": "frozen unchanged integer Golden on boundary code input"
+    },
+    {
+      "case": 115,
+      "layer": 22,
+      "name": "blocks.11.norm1",
+      "label": "alternating_codes",
+      "source_token": null,
+      "values": 192,
+      "expected_basis": "frozen unchanged integer Golden on boundary code input"
+    },
+    {
+      "case": 116,
+      "layer": 23,
+      "name": "blocks.11.norm2",
+      "label": "token0",
+      "source_token": 0,
+      "values": 192,
+      "expected_basis": "frozen full12 integer fixture"
+    },
+    {
+      "case": 117,
+      "layer": 23,
+      "name": "blocks.11.norm2",
+      "label": "token1",
+      "source_token": 1,
+      "values": 192,
+      "expected_basis": "frozen full12 integer fixture"
+    },
+    {
+      "case": 118,
+      "layer": 23,
+      "name": "blocks.11.norm2",
+      "label": "token61",
+      "source_token": 61,
+      "values": 192,
+      "expected_basis": "frozen full12 integer fixture"
+    },
+    {
+      "case": 119,
+      "layer": 23,
+      "name": "blocks.11.norm2",
+      "label": "zero_code",
+      "source_token": null,
+      "values": 192,
+      "expected_basis": "frozen unchanged integer Golden on boundary code input"
+    },
+    {
+      "case": 120,
+      "layer": 23,
+      "name": "blocks.11.norm2",
+      "label": "alternating_codes",
+      "source_token": null,
+      "values": 192,
+      "expected_basis": "frozen unchanged integer Golden on boundary code input"
+    },
+    {
+      "case": 121,
+      "layer": 24,
+      "name": "norm",
+      "label": "token0",
+      "source_token": 0,
+      "values": 192,
+      "expected_basis": "frozen full12 integer fixture"
+    },
+    {
+      "case": 122,
+      "layer": 24,
+      "name": "norm",
+      "label": "token1",
+      "source_token": 1,
+      "values": 192,
+      "expected_basis": "frozen full12 integer fixture"
+    },
+    {
+      "case": 123,
+      "layer": 24,
+      "name": "norm",
+      "label": "zero_code",
+      "source_token": null,
+      "values": 192,
+      "expected_basis": "frozen unchanged integer Golden on boundary code input"
+    },
+    {
+      "case": 124,
+      "layer": 24,
+      "name": "norm",
+      "label": "alternating_codes",
+      "source_token": null,
+      "values": 192,
+      "expected_basis": "frozen unchanged integer Golden on boundary code input"
+    }
+  ],
+  "compared_values": 24000,
+  "parameter_sha256": "67bbc4304975bd0882b7e5f665982fc97eaecc8986ed59ba7c0e28cfb501f415",
+  "Golden_sha256": "ba5028699422e46507dc872b6559c37a1b93cb698b30bafb9cfe35a015952bff",
+  "fixture_sha256": "3fd3fe08677307206e92d45537acd3844fb28d9785da9d817c779c44d09ad92e"
+}

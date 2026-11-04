@@ -1,0 +1,22 @@
+[
+  {
+    "file": "rtl/vendor_byte_banks.v",
+    "parent_sha256": "1a9dbcc8f3f892940944cb549591a34ee83d8421b4961b52eb95ad71f9dccd9b",
+    "candidate_sha256": "b8d842bbaf0f3b8d6fd7b0b1c7fbdf6260a3ce601646485365587f51dd9b3f86"
+  },
+  {
+    "file": "rtl/w8_act_local_ram.sv",
+    "parent_sha256": "88344b6403c5fed649063ad0ce9dea1a9dadf0bb72de65f5148d8f1a6598eeda",
+    "candidate_sha256": "ebfaa9d4ccc3c01b4d9cefedb132e8fa3ba7fb02d9b900c9b15d0f732cadbf41"
+  },
+  {
+    "file": "rtl/w8_memories.sv",
+    "parent_sha256": "903dbdd332684a9c29e25948eeb33ce1754c06e644174444e76d2e8223b073a1",
+    "candidate_sha256": "abc6332abeae6d69e502c3bf9d157fb558d63309fbfa6aaebe59ea867517ca56"
+  },
+  {
+    "file": "rtl/w8_test_paths.vh",
+    "parent_sha256": "d6b2377c345d70a73c7df2d6e4d0237be66ffde321654ab2609f5968c0cf64da",
+    "candidate_sha256": "ccdce80342ea2a8074ad1fa84ee3aff1948865344019e326633e0eff28506d50"
+  }
+]

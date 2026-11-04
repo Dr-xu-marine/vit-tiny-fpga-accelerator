@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "fields": {
+    "a": "w8_platform_wrapper;UserID=0XFFFFFFFF;Version=2023.2",
+    "b": "xcvu9p-flga2104-2L-e",
+    "c": "2026/11/03",
+    "d": "08:06:17"
+  },
+  "header_bytes": 124,
+  "payload_bytes": 80159108,
+  "total_bytes": 80159232,
+  "bitstream_SHA256": "928403c3745abe5b18b57088eaaa1fdb3a181343661a60421b4346aee42d0905",
+  "scope": "Header identity and complete length; board programming NOT_RUN"
+}

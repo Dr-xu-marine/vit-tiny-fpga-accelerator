@@ -1,0 +1,9 @@
+{
+  "peak_private_GiB": 9.917671203613281,
+  "peak_working_set_GiB": 8.977348327636719,
+  "max_system_commit_GiB": 26.29082489013672,
+  "max_commit_fraction": 0.8268242547585107,
+  "max_pagefile_GiB": 4.374126434326172,
+  "min_available_RAM_GiB": 0.0112457275390625,
+  "max_observed_system_physical_used_GiB": 15.786109924316406
+}

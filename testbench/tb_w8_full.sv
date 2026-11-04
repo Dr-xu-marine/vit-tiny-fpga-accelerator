@@ -1,0 +1,106 @@
+`include "w8_test_paths.vh"
+`timescale 1ns/1ps
+`include "w8_program_meta.vh"
+`define SYS dut.engine.compute.system_unit
+`define SEQ dut.engine.compute.sequencer
+`define TILE dut.engine.compute.system_unit.tile.gemm.tile
+module tb_w8_full;
+ reg clk=0;always #2.5 clk=~clk;
+ reg aresetn=0,calibrated=0;
+ reg [31:0] awaddr=0,wdata=0,araddr=0;reg [3:0] wstrb=15;
+ reg awvalid=0,wvalid=0,bready=0,arvalid=0,rready=0;
+ wire awready,wready,bvalid,arready,rvalid;wire [1:0] bresp,rresp;wire [31:0] rdata;wire busy,done,error;
+ wire [0:0] did;wire [30:0] daddr;wire [7:0] dlen;wire [2:0] dsize;wire [1:0] dburst;wire dvalid,dready,rrdy;
+ reg [511:0] rd=0;reg [1:0] rp=0;reg rv=0,rl=0;
+ w8_hosted_core #(.PROGRAM_FILE(`W8_PROGRAM_FILE)) dut(.clk(clk),.aresetn(aresetn),.calibrated_async(calibrated),.busy_out(busy),.done_out(done),.error_out(error),
+ .s_axi_awaddr(awaddr),.s_axi_awvalid(awvalid),.s_axi_awready(awready),.s_axi_wdata(wdata),.s_axi_wstrb(wstrb),.s_axi_wvalid(wvalid),.s_axi_wready(wready),.s_axi_bresp(bresp),.s_axi_bvalid(bvalid),.s_axi_bready(bready),
+ .s_axi_araddr(araddr),.s_axi_arvalid(arvalid),.s_axi_arready(arready),.s_axi_rdata(rdata),.s_axi_rresp(rresp),.s_axi_rvalid(rvalid),.s_axi_rready(rready),
+ .m_axi_arid(did),.m_axi_araddr(daddr),.m_axi_arlen(dlen),.m_axi_arsize(dsize),.m_axi_arburst(dburst),.m_axi_arvalid(dvalid),.m_axi_arready(dready),.m_axi_rid(1'b0),.m_axi_rdata(rd),.m_axi_rresp(rp),.m_axi_rlast(rl),.m_axi_rvalid(rv),.m_axi_rready(rrdy));
+ reg [511:0] ddr[0:`W8_DDR_BEATS-1];reg [7:0] logits[0:999];reg [31:0] values[0:151295];
+ longint unsigned cycles=0,load_cycles=0,compute_cycles=0,schedule_cycles=0,collector_cycles=0,prefix_values=0;
+ reg active=0;integer base=0,beat=0,beats=0;reg first_response=1;
+ reg bad_expected,ddr_error,bad_cp,precheck,early_reset;integer meta,fd,sc,cp_pc,cp_space,cp_addr,cp_count,cp_seen=0,i,j,readcount,nread,hostfile;string cp_name;
+ reg [31:0] observed,actual;reg [7:0] actual_byte;reg signed [31:0] prefix[0:127];integer product;
+ assign dready=aresetn&&!active&&(cycles%5!=0);
+ always @(posedge clk)begin
+  if(!aresetn)begin active<=0;rv<=0;rl<=0;rd<=0;rp<=0;first_response<=1;cycles<=0;load_cycles<=0;compute_cycles<=0;schedule_cycles<=0;collector_cycles<=0;end
+  else begin
+   cycles<=cycles+1;if(cycles>64'd20000000000)$fatal(1,"FULL timeout");
+   if(dut.core_busy)begin if(dut.engine.compute.load_busy)load_cycles<=load_cycles+1;else if(dut.engine.compute.compute_busy)compute_cycles<=compute_cycles+1;else schedule_cycles<=schedule_cycles+1;end
+   if(dut.collect_busy)collector_cycles<=collector_cycles+1;
+   if(dvalid&&dready)begin
+    if(dsize!=6||dburst!=1||daddr[5:0]!=0||did!=0||daddr+64*(dlen+1)>`W8_DDR_BEATS*64||daddr[11:0]+64*(dlen+1)>4096)$fatal(1,"invalid DDR request");
+    active<=1;base<=daddr>>6;beats<=dlen+1;beat<=0;
+   end
+   if(rv&&rrdy)begin rv<=0;if(rl)active<=0;else beat<=beat+1;end
+   if(active&&!rv&&(cycles%7!=0))begin rd<=ddr[base+beat];rl<=beat==beats-1;rp<=ddr_error&&first_response?2:0;first_response<=0;rv<=1;end
+  end
+ end
+ task automatic axi_write(input [31:0] address,value,input [1:0] expected_response);
+ begin
+  @(negedge clk);awaddr=address;awvalid=1;do @(posedge clk);while(!awready);@(negedge clk);awvalid=0;
+  repeat(2)@(negedge clk);wdata=value;wvalid=1;do @(posedge clk);while(!wready);@(negedge clk);wvalid=0;
+  wait(bvalid);repeat(3)begin @(negedge clk);if(!bvalid||bresp!==expected_response)$fatal(1,"write response");end
+  bready=1;@(negedge clk);bready=0;
+ end endtask
+ task automatic axi_read(input [31:0] address,output [31:0] value,input [1:0] expected_response);
+ reg [31:0] held;
+ begin
+  @(negedge clk);araddr=address;arvalid=1;do @(posedge clk);while(!arready);@(negedge clk);arvalid=0;
+  wait(rvalid);held=rdata;repeat(3)begin @(negedge clk);if(!rvalid||rdata!==held||rresp!==expected_response)$fatal(1,"read/stall");end
+  value=rdata;rready=1;@(negedge clk);rready=0;
+ end endtask
+ task automatic next_checkpoint;
+ begin
+  if(!$feof(meta))begin sc=$fscanf(meta,"%d %d %d %d %s\n",cp_pc,cp_space,cp_addr,cp_count,cp_name);if(sc!=5)$fatal(1,"checkpoint metadata");end else cp_pc=-1;
+ end endtask
+ // Comparison-only probes. Expected data is never written into the DUT/DDR.
+ always @(negedge clk)if(aresetn&&`SEQ.state==`SEQ.ADVANCE&&`SEQ.pc==cp_pc)begin
+  nread=$fread(values,fd,0,cp_count);if(nread!=cp_count*4)$fatal(1,"checkpoint truncated");
+  for(i=0;i<cp_count;i=i+1)begin
+   case(cp_space)
+    0:begin actual_byte=`SYS.buffers.peek_act(cp_addr+i);actual={{24{actual_byte[7]}},actual_byte};end
+    1:actual=`SYS.buffers.peek_score(cp_addr+i);
+    2:actual={16'd0,`SYS.buffers.peek_prob(cp_addr+i)};
+   endcase
+   if(actual!==(values[i]^((bad_cp&&cp_seen==0&&i==7)?32'd1:32'd0)))$fatal(1,"CHECKPOINT_MISMATCH %s index=%0d got=%h expected=%h cycle=%0d",cp_name,i,actual,values[i],cycles);
+  end
+  cp_seen=cp_seen+1;$display("W8_CHECKPOINT_PASS %s values=%0d cycle=%0d",cp_name,cp_count,cycles);next_checkpoint();
+  if(precheck)begin $display("W8_PREFIX_PASS checkpoints=%0d prefix_values=%0d",cp_seen,prefix_values);$finish;end
+ end
+ // First real tile: all128 INT32 prefixes, read from actual accepted A/B cache.
+ // DSP48E2 and UNISIM remain active. This scoreboard never supplies products.
+ always @(negedge clk)begin
+  if(!aresetn||`TILE.core_clear)for(j=0;j<128;j=j+1)prefix[j]=0;
+  else if(cp_seen==0&&`TILE.commit_valid)begin
+   for(j=0;j<128;j=j+1)begin
+    product=$signed(`TILE.a_memory[`TILE.commit_k][8*(j/16)+:8])*$signed(`TILE.b_memory[`TILE.commit_k][8*(j%16)+:8]);prefix[j]=prefix[j]+product;
+    if(`TILE.p_all[48*j+:32]!==prefix[j])$fatal(1,"PREFIX_MISMATCH k=%0d lane=%0d",`TILE.commit_k,j);
+    prefix_values=prefix_values+1;
+   end
+  end
+ end
+ initial begin
+  bad_expected=$test$plusargs("BAD_EXPECTED");bad_cp=$test$plusargs("BAD_CP");ddr_error=$test$plusargs("DDR_RRESP");precheck=$test$plusargs("PRECHECK");early_reset=$test$plusargs("EARLY_RESET");
+  $readmemh({`W8_ROOT,"/data/package/ddr512.hex"},ddr);$readmemh({`W8_ROOT,"/testbench/expected_logits.hex"},logits);
+  meta=$fopen({`W8_ROOT,"/testbench/checkpoints.txt"},"r");fd=$fopen({`W8_ROOT,"/testbench/checkpoint_values.bin"},"rb");if(!meta||!fd)$fatal(1,"checkpoint missing");next_checkpoint();
+  repeat(5)@(negedge clk);aresetn=1;calibrated=1;repeat(8)@(negedge clk);
+  axi_read(32'h1000,observed,2);axi_write(0,1,0);
+  if(early_reset)begin repeat(127)@(negedge clk);aresetn=0;repeat(5)@(negedge clk);aresetn=1;repeat(8)@(negedge clk);axi_write(0,1,0);end
+  wait(busy);axi_write(0,1,2); // a busy start must be rejected
+  wait(done);
+  if(ddr_error)begin if(!error)$fatal(1,"injected DDR error missed");$display("W8_DDR_FI_PASS");$finish;end
+  if(error||cp_pc!=-1)$fatal(1,"FULL compute/checkpoint failure count=%0d",cp_seen);
+  hostfile=$fopen("host_observed.hex","w");readcount=0;
+  for(i=0;i<250;i=i+1)begin
+   axi_read(32'h1000+4*i,observed,0);
+   for(j=0;j<4;j=j+1)begin
+    if(observed[8*j+:8]!==(logits[4*i+j]^((bad_expected&&4*i+j==37)?8'h1:8'h0)))$fatal(1,"HOST_MISMATCH index=%0d",4*i+j);
+    $fdisplay(hostfile,"%02x",observed[8*j+:8]);readcount=readcount+1;
+   end
+  end
+  axi_read(32'h13e8,observed,2); // first byte beyond1000 result range
+  if(readcount!=1000)$fatal(1,"Host count");$fclose(hostfile);
+  $display("W8_FULL_PASS host=1000 checkpoints=%0d cycles=%0d load=%0d compute=%0d schedule=%0d collect=%0d",cp_seen,cycles,load_cycles,compute_cycles,schedule_cycles,collector_cycles);$finish;
+ end
+endmodule

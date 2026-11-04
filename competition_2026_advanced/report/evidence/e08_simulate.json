@@ -1,0 +1,167 @@
+{
+  "label": "simulate",
+  "tool": "xsim",
+  "args": [
+    "full72_snapshot",
+    "--file",
+    "D:\\fpga\\vit_tiny_vcu118\\experiments\\board_closure_20261030\\full72_recovery_20261030\\runs\\full_1793359780460422100\\xsim.args"
+  ],
+  "cwd": "D:\\fpga\\vit_tiny_vcu118\\experiments\\board_closure_20261030\\full72_recovery_20261030\\runs\\full_1793359780460422100",
+  "started": "2026-10-30T19:30:06.766682+08:00",
+  "timing_origin": "perf_counter elapsed, observation times not exact event timestamps",
+  "processes": [
+    {
+      "pid": 3788,
+      "image": "C:\\Windows\\System32\\cmd.exe",
+      "command_line": {
+        "status": "PASS",
+        "text": "cmd.exe /d /c D:\\fpga\\Vivado\\2023.2\\bin\\xsim.bat full72_snapshot --file D:\\fpga\\vit_tiny_vcu118\\experiments\\board_closure_20261030\\full72_recovery_20261030\\runs\\full_1793359780460422100\\xsim.args"
+      },
+      "first_seen_t": 0.01150059999986297,
+      "exit_code": 0,
+      "exit_hex": "0x0",
+      "exit_observed_t": 104355.61070179999
+    },
+    {
+      "pid": 1920,
+      "image": "C:\\Windows\\System32\\conhost.exe",
+      "command_line": {
+        "status": "PASS",
+        "text": "\\??\\C:\\Windows\\system32\\conhost.exe 0x4"
+      },
+      "first_seen_t": 0.03396599999996397,
+      "exit_code": 0,
+      "exit_hex": "0x0",
+      "exit_observed_t": 104355.6107074
+    },
+    {
+      "pid": 12720,
+      "image": "",
+      "command_line": {
+        "status": "UNAVAILABLE",
+        "needed": 0
+      },
+      "first_seen_t": 0.14368209999997816,
+      "exit_code": 0,
+      "exit_hex": "0x0",
+      "exit_observed_t": 0.1546054999998887
+    },
+    {
+      "pid": 16036,
+      "image": "D:\\fpga\\Vivado\\2023.2\\bin\\unwrapped\\win64.o\\xsim.exe",
+      "command_line": {
+        "status": "PASS",
+        "text": "\"D:/fpga/Vivado/2023.2/bin/unwrapped/win64.o/xsim.exe\"   full72_snapshot --file D:\\fpga\\vit_tiny_vcu118\\experiments\\board_closure_20261030\\full72_recovery_20261030\\runs\\full_1793359780460422100\\xsim.args"
+      },
+      "first_seen_t": 0.2530023999997866,
+      "exit_code": 0,
+      "exit_hex": "0x0",
+      "exit_observed_t": 104355.5550602
+    },
+    {
+      "pid": 5880,
+      "image": "D:\\fpga\\vit_tiny_vcu118\\experiments\\board_closure_20261030\\full72_recovery_20261030\\runs\\full_1793359780460422100\\xsim.dir\\full72_snapshot\\xsimk.exe",
+      "command_line": {
+        "status": "PASS",
+        "text": "xsim.dir/full72_snapshot/xsimk.exe -simmode gui -wdb full72_snapshot.wdb -simrunnum 0 -socket 51796"
+      },
+      "first_seen_t": 3.283243999999968,
+      "exit_code": 0,
+      "exit_hex": "0x0",
+      "exit_observed_t": 104354.2110791
+    },
+    {
+      "pid": 9640,
+      "image": "C:\\Windows\\System32\\conhost.exe",
+      "command_line": {
+        "status": "PASS",
+        "text": "\\??\\C:\\Windows\\system32\\conhost.exe 0x4"
+      },
+      "first_seen_t": 3.294266099999959,
+      "exit_code": 0,
+      "exit_hex": "0x0",
+      "exit_observed_t": 104354.2110886
+    }
+  ],
+  "argv": [
+    "cmd.exe",
+    "/d",
+    "/c",
+    "D:\\fpga\\Vivado\\2023.2\\bin\\xsim.bat",
+    "full72_snapshot",
+    "--file",
+    "D:\\fpga\\vit_tiny_vcu118\\experiments\\board_closure_20261030\\full72_recovery_20261030\\runs\\full_1793359780460422100\\xsim.args"
+  ],
+  "entry_cmd_pid": 3788,
+  "entry_cmd_exit": 0,
+  "job_members_before_close": [],
+  "all_observed_handles_signaled_before_job_close": true,
+  "job_close_t": 104355.8294394,
+  "ended": "2026-11-01T00:29:26.293953+08:00",
+  "seconds": 104355.8309612,
+  "owned_execution_finished": true,
+  "events": [
+    {
+      "t": 0.1546054999998887,
+      "event": "process_exited",
+      "pid": 12720,
+      "image": "",
+      "code": 0
+    },
+    {
+      "t": 104354.1215719,
+      "event": "stdout_observed",
+      "line": "$finish called at time : 6413753900 ns : File \"D:/fpga/vit_tiny_vcu118/experiments/full128_signoff_20261029/tests/tb_full257.sv\" Line 133"
+    },
+    {
+      "t": 104354.2110791,
+      "event": "process_exited",
+      "pid": 5880,
+      "image": "D:\\fpga\\vit_tiny_vcu118\\experiments\\board_closure_20261030\\full72_recovery_20261030\\runs\\full_1793359780460422100\\xsim.dir\\full72_snapshot\\xsimk.exe",
+      "code": 0
+    },
+    {
+      "t": 104354.2110886,
+      "event": "process_exited",
+      "pid": 9640,
+      "image": "C:\\Windows\\System32\\conhost.exe",
+      "code": 0
+    },
+    {
+      "t": 104354.7899007,
+      "event": "stdout_observed",
+      "line": "INFO: [Common 17-206] Exiting xsim at Sun Nov  1 00:29:25 2026..."
+    },
+    {
+      "t": 104355.5550602,
+      "event": "process_exited",
+      "pid": 16036,
+      "image": "D:\\fpga\\Vivado\\2023.2\\bin\\unwrapped\\win64.o\\xsim.exe",
+      "code": 0
+    },
+    {
+      "t": 104355.61070179999,
+      "event": "process_exited",
+      "pid": 3788,
+      "image": "C:\\Windows\\System32\\cmd.exe",
+      "code": 0
+    },
+    {
+      "t": 104355.6107074,
+      "event": "process_exited",
+      "pid": 1920,
+      "image": "C:\\Windows\\System32\\conhost.exe",
+      "code": 0
+    }
+  ],
+  "dumps": [],
+  "abnormal": false,
+  "native_exit_coverage": {
+    "xsim_and_kernel_observed": true,
+    "unobserved_short_lived_processes_cannot_be_excluded": true
+  },
+  "raw_all_child_exits_zero": true,
+  "expected_cpu_probe_exits": [],
+  "exit_qualification": null,
+  "status": "PASS"
+}

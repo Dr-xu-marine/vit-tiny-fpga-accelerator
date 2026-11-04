@@ -1,0 +1,119 @@
+{
+  "active_rtl_modified": false,
+  "adapters": [
+    {
+      "path": "testbench/control_cases.vh",
+      "original": "historical/testbench/control_cases.vh.txt",
+      "change": "file path literals only"
+    },
+    {
+      "path": "testbench/tb_w8_ln.sv",
+      "original": "historical/testbench/tb_w8_ln.sv.txt",
+      "change": "file path literals only"
+    },
+    {
+      "path": "testbench/tb_w8_rq.sv",
+      "original": "historical/testbench/tb_w8_rq.sv.txt",
+      "change": "file path literals only"
+    },
+    {
+      "path": "testbench/tb_w8_rqlimits.sv",
+      "original": "historical/testbench/tb_w8_rqlimits.sv.txt",
+      "change": "file path literals only"
+    },
+    {
+      "path": "testbench/w8_test_paths.vh",
+      "change": "release-relative test paths"
+    },
+    {
+      "path": "scripts/bd_166p7.tcl",
+      "change": "release-relative PROGRAM_FILE/PARAM_DIR; require existing project"
+    },
+    {
+      "path": "testbench/tb_act_depth.sv",
+      "original": "historical/testbench/tb_act_depth.sv.txt",
+      "change": "W8_ROOT tests/ to testbench/; paths only"
+    },
+    {
+      "path": "testbench/tb_act_pipeline.sv",
+      "original": "historical/testbench/tb_act_pipeline.sv.txt",
+      "change": "W8_ROOT tests/ to testbench/; paths only"
+    },
+    {
+      "path": "testbench/tb_adopted_closedloop.sv",
+      "original": "historical/testbench/tb_adopted_closedloop.sv.txt",
+      "change": "W8_ROOT tests/ to testbench/; paths only"
+    },
+    {
+      "path": "testbench/tb_aux_baseline.sv",
+      "original": "historical/testbench/tb_aux_baseline.sv.txt",
+      "change": "W8_ROOT tests/ to testbench/; paths only"
+    },
+    {
+      "path": "testbench/tb_calibration_status.sv",
+      "original": "historical/testbench/tb_calibration_status.sv.txt",
+      "change": "W8_ROOT tests/ to testbench/; paths only"
+    },
+    {
+      "path": "testbench/tb_math_prevent.sv",
+      "original": "historical/testbench/tb_math_prevent.sv.txt",
+      "change": "W8_ROOT tests/ to testbench/; paths only"
+    },
+    {
+      "path": "testbench/tb_real_operators.sv",
+      "original": "historical/testbench/tb_real_operators.sv.txt",
+      "change": "W8_ROOT tests/ to testbench/; paths only"
+    },
+    {
+      "path": "testbench/tb_rq_stream_prevent.sv",
+      "original": "historical/testbench/tb_rq_stream_prevent.sv.txt",
+      "change": "W8_ROOT tests/ to testbench/; paths only"
+    },
+    {
+      "path": "testbench/tb_softmax_closedloop.sv",
+      "original": "historical/testbench/tb_softmax_closedloop.sv.txt",
+      "change": "W8_ROOT tests/ to testbench/; paths only"
+    },
+    {
+      "path": "testbench/tb_w8_aux.sv",
+      "original": "historical/testbench/tb_w8_aux.sv.txt",
+      "change": "W8_ROOT tests/ to testbench/; paths only"
+    },
+    {
+      "path": "testbench/tb_w8_full.sv",
+      "original": "historical/testbench/tb_w8_full.sv.txt",
+      "change": "W8_ROOT tests/ to testbench/; paths only"
+    },
+    {
+      "path": "testbench/tb_w8_math.sv",
+      "original": "historical/testbench/tb_w8_math.sv.txt",
+      "change": "W8_ROOT tests/ to testbench/; paths only"
+    },
+    {
+      "path": "testbench/tb_w8_math_diagnostic.sv",
+      "original": "historical/testbench/tb_w8_math_diagnostic.sv.txt",
+      "change": "W8_ROOT tests/ to testbench/; paths only"
+    },
+    {
+      "path": "testbench/tb_w8_rq_diagnostic.sv",
+      "original": "historical/testbench/tb_w8_rq_diagnostic.sv.txt",
+      "change": "W8_ROOT tests/ to testbench/; paths only"
+    },
+    {
+      "path": "testbench/tb_aux_baseline.sv",
+      "change": "aux fixture directory to aux_cases for Git on Windows"
+    },
+    {
+      "path": "testbench/tb_real_operators.sv",
+      "change": "aux fixture directory to aux_cases for Git on Windows"
+    },
+    {
+      "path": "testbench/tb_w8_aux.sv",
+      "change": "aux fixture directory to aux_cases for Git on Windows"
+    },
+    {
+      "path": "testbench/aux_cases/",
+      "change": "rename original tests/aux because AUX is reserved on Windows"
+    }
+  ]
+}
